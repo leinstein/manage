@@ -1,0 +1,18 @@
+[ 2018-12-05T08:53:02+08:00 ] 127.0.0.1 /Public/Uploads/2018-11-21/5bf521762ad34.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Public
+
+[ 2018-12-05T09:57:02+08:00 ] 127.0.0.1 /Public/Uploads/2018-11-21/5bf521762ad34.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Public
+
+[ 2018-12-05T09:58:39+08:00 ] 127.0.0.1 /Public/Uploads/2018-11-21/5bf521762ad34.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Public
+

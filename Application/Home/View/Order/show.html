@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="UTF-8">
+    <title>欢迎页面-X-admin2.0</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/Public/Home/css/font.css">
+    <link rel="stylesheet" href="/Public/Home/css/xadmin.css">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/Public/Home/lib2/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/Public/Home/js/xadmin.js"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <style>
+      .layui-input{
+          border: 0;
+      }
+      .layui-form-item{
+          border-bottom: 0;
+          width: 45%;
+      }
+      .block_title{
+          margin-left: 10px;
+          font-size: 18px;
+          font-weight: bold;
+      }
+      .title3{
+          margin-top: 35px;
+      }
+  </style>
+  <body>
+    <div class="x-body">
+             <div class="block_title">收货人信息</div>
+             <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th>
+                            收货人姓名
+                        </th>
+                       <th>
+                            收货人电话
+                        </th>
+                        <th>
+                            收货人地址
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            {$info.name}
+                        </td>
+                        <td>
+                            {$info.phone}
+                        </td>
+                        <td>
+                            {$info.address}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="block_title title3">订单详情</div>
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th>
+                            订单号
+                        </th>
+                        <th>
+                            购买商品
+                        </th>
+                        <th>
+                            订单金额
+                        </th>
+                        <th>
+                            优惠金额
+                        </th>
+                        <th>
+                            已付款
+                        </th>
+                        <th>
+                            待付款
+                        </th>
+                        <th>
+                            付款方式
+                        </th>
+                        <th>
+                            支付方式
+                        </th>
+                        <th>
+                            订单状态
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            {$info.orderno}
+                        </td>
+                        <td>
+                            {$info.goods_de}
+                        </td>
+                        <th>
+                            {$info.orderprice|substr=###,0,-3}
+                        </th>
+                        <th>
+                            {$info.cheapprice|substr=###,0,-3}
+                        </th>
+                        <th>
+                            {$info.pay|substr=###,0,-3}
+                        </th>
+                        <th>
+                            {$info.payment|substr=###,0,-3}
+                        </th>
+                        <th>
+                            {$info.paytype}
+                        </th>
+                        <th>
+                           {$info.payform}
+                        </th>
+                        <th>
+                            {$info.orderstatus}
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="block_title title3">物流信息</div>
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th>
+                            快递名称
+                        </th>
+                        <th>
+                            快递单号
+                        </th>
+                        <th>
+                            快递费
+                        </th>
+                        <th>
+                            发货时间
+                        </th>
+                        <th>
+                            签收时间
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            {$info.couriername}
+                        </td>
+                        <td>
+                            {$info.courierlist}
+                        </td>
+                        <td>
+                            {$info.courierfee}
+                        </td>
+                        <td>
+                            <if condition="$info['deliverytime'] neq 0">
+                                {$info.deliverytime|date="Y-m-d",###}
+                            </if>
+                        </td>
+                        <td>
+                            <if condition="$info['reciivingtime'] neq 0">
+                                {$info.reciivingtime|date="Y-m-d",###}
+                            </if>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="block_title title3">订单备注</div>
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th width="150px">
+                            项目-销售
+                        </th>
+                        <th>
+                            备注
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            {$info.objectsale}
+                        </td>
+                        <td>
+                            {$info.desc}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <!--<div class="layui-form-item">-->
+              <!--<label class="layui-form-label">-->
+                  <!--姓名-->
+              <!--</label>-->
+              <!--<div class="layui-input-inline">-->
+                  <!--<input type="text" value="{$info.name}" class="layui-input">-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+              <!--<label class="layui-form-label">-->
+                  <!--电话-->
+              <!--</label>-->
+              <!--<div class="layui-input-inline">-->
+                  <!--<input type="text" value="{$info.phone}" class="layui-input">-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+              <!--<label class="layui-form-label">-->
+                  <!--收货地址-->
+              <!--</label>-->
+              <!--<div class="layui-input-inline">-->
+                  <!--<input type="text" value="{$info.address}" class="layui-input">-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+              <!--<label class="layui-form-label">-->
+                  <!--项目-销售-->
+              <!--</label>-->
+              <!--<div class="layui-input-inline">-->
+                  <!--<input type="text" value="{$info.objectsale}" class="layui-input">-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+              <!--<label class="layui-form-label">-->
+                  <!--订单号-->
+              <!--</label>-->
+              <!--<div class="layui-input-inline">-->
+                  <!--<input type="text" value="{$info.orderno}" class="layui-input">-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+              <!--<label class="layui-form-label">-->
+                  <!--购买商品-->
+              <!--</label>-->
+              <!--<div class="layui-input-inline">-->
+                  <!--<input type="text" value="{$info.goods_de}" class="layui-input">-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+              <!--<label class="layui-form-label">-->
+                  <!--订单金额-->
+              <!--</label>-->
+              <!--<div class="layui-input-inline">-->
+                  <!--<input type="text" value="{$info.orderprice|substr=###,0,-3}" class="layui-input">-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+              <!--<label class="layui-form-label">-->
+                  <!--优惠金额-->
+              <!--</label>-->
+              <!--<div class="layui-input-inline">-->
+                  <!--<input type="text" value="{$info.cheapprice|substr=###,0,-3}" class="layui-input">-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+              <!--<label class="layui-form-label">-->
+                  <!--已付款-->
+              <!--</label>-->
+              <!--<div class="layui-input-inline">-->
+                  <!--<input type="text" value="{$info.pay|substr=###,0,-3}" class="layui-input">-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+              <!--<label class="layui-form-label">-->
+                  <!--待付款-->
+              <!--</label>-->
+              <!--<div class="layui-input-inline">-->
+                  <!--<input type="text" value="{$info.payment|substr=###,0,-3}" class="layui-input">-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+              <!--<label class="layui-form-label">-->
+                  <!--付款方式-->
+              <!--</label>-->
+              <!--<div class="layui-input-inline">-->
+                  <!--<input type="text" value="{$info.paytype}" class="layui-input">-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+              <!--<label class="layui-form-label">-->
+                  <!--支付方式-->
+              <!--</label>-->
+              <!--<div class="layui-input-inline">-->
+                  <!--<input type="text" value="{$info.payform}" class="layui-input">-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+              <!--<label class="layui-form-label">-->
+                  <!--支付方式-->
+              <!--</label>-->
+              <!--<div class="layui-input-inline">-->
+                  <!--<input type="text" value="{$info.payform}" class="layui-input">-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+              <!--<label class="layui-form-label">-->
+                  <!--订单状态-->
+              <!--</label>-->
+              <!--<div class="layui-input-inline">-->
+                  <!--<input type="text" value="{$info.orderstatus}" class="layui-input">-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+              <!--<label class="layui-form-label">-->
+                  <!--快递名称-->
+              <!--</label>-->
+              <!--<div class="layui-input-inline">-->
+                  <!--<input type="text" value="{$info.couriername}" class="layui-input">-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+              <!--<label class="layui-form-label">-->
+                  <!--快递单号-->
+              <!--</label>-->
+              <!--<div class="layui-input-inline">-->
+                  <!--<input type="text" value="{$info.courierlist}" class="layui-input">-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+              <!--<label class="layui-form-label">-->
+                  <!--快递费-->
+              <!--</label>-->
+              <!--<div class="layui-input-inline">-->
+                  <!--<input type="text" value="{$info.courierfee}" class="layui-input">-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+              <!--<label class="layui-form-label">-->
+                  <!--发货时间-->
+              <!--</label>-->
+              <!--<div class="layui-input-inline">-->
+                  <!--<if condition="$info['deliverytime'] neq 0">-->
+                      <!--<input type="text" value='{$info.deliverytime|date="Y-m-d",###}' class="layui-input">-->
+                  <!--</if>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+              <!--<label class="layui-form-label">-->
+                  <!--收货时间-->
+              <!--</label>-->
+              <!--<div class="layui-input-inline">-->
+                  <!--<if condition="$info['reciivingtime'] neq 0">-->
+                      <!--<input type="text" value='{$info.reciivingtime|date="Y-m-d",###}' class="layui-input">-->
+                  <!--</if>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+              <!--<label class="layui-form-label">-->
+                  <!--订单备注-->
+              <!--</label>-->
+              <!--<div class="layui-input-inline">-->
+                  <!--<input type="text" value='{$info.desc}' class="layui-input">-->
+              <!--</div>-->
+            <!--</div>-->
+    </div>
+    <script>
+        layui.use(['form','layer'], function(){
+            $ = layui.jquery;
+          var form = layui.form
+          ,layer = layui.layer;
+        
+          //自定义验证规则
+          form.verify({
+            nikename: function(value){
+              if(value.length < 5){
+                return '昵称至少得5个字符啊';
+              }
+            }
+            ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+            ,repass: function(value){
+                if($('#L_pass').val()!=$('#L_repass').val()){
+                    return '两次密码不一致';
+                }
+            }
+          });
+
+          //监听提交
+          form.on('submit(add)', function(data){
+            console.log(data);
+            //发异步，把数据提交给php
+            layer.alert("增加成功", {icon: 6},function () {
+                // 获得frame索引
+                var index = parent.layer.getFrameIndex(window.name);
+                //关闭当前frame
+                parent.layer.close(index);
+            });
+            return false;
+          });
+          
+          
+        });
+    </script>
+    <script>var _hmt = _hmt || []; (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();</script>
+  </body>
+
+</html>
