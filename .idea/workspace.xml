@@ -2,7 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd57e336-abb4-409d-9161-c9ce2c2a15d5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Home/View/Admin/group_management.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Home/View/Report/return_rate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/3bb90f9584c7009235754b049e2bcde8.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/558b55c4c800ce02204ef3642ac021b6.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/88870f0f370acc0596ec9f25ecf53b94.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/9547bf7422faa71b5aafdc32d547e715.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/98a790b317b33902a2de78ea3ae28e24.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/9e43c61710dc5fb5beec780cab123f52.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/a1de14c399737bccd9ba34cd5eb7eb8a.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/c29c9233a18d9ffc4ce066e9508cd129.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/c506a66e5fd5c20a850e05056283aa1e.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/cd332ac7949cc22ef35cb26fdf7cb02a.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/f026d95c6e3d6147676ddd680dfc7a0b.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Logs/Home/18_12_14.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -99,8 +112,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Home/View/Admin/group_management.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="82" column="30" selection-start-line="82" selection-start-column="30" selection-end-line="82" selection-end-column="30" />
+            <state relative-caret-position="1344">
+              <caret line="77" column="69" lean-forward="true" selection-start-line="77" selection-start-column="69" selection-end-line="77" selection-end-column="69" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
@@ -496,7 +509,7 @@
       <workItem from="1544261421247" duration="11565000" />
       <workItem from="1544336790176" duration="27033000" />
       <workItem from="1544506762346" duration="19193000" />
-      <workItem from="1544778226779" duration="353000" />
+      <workItem from="1544778226779" duration="667000" />
     </task>
     <task id="LOCAL-00001" summary="2018-12-12">
       <created>1544778345578</created>
@@ -512,11 +525,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544778366279</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="2018-12-12">
+      <created>1544778586030</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1544778586030</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="628699000" />
+    <option name="totallyTimeSpent" value="629013000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -950,8 +970,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Home/View/Admin/group_management.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="82" column="30" selection-start-line="82" selection-start-column="30" selection-end-line="82" selection-end-column="30" />
+        <state relative-caret-position="1344">
+          <caret line="77" column="69" lean-forward="true" selection-start-line="77" selection-start-column="69" selection-end-line="77" selection-end-column="69" />
           <folding>
             <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />

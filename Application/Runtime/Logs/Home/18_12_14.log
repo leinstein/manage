@@ -1,0 +1,427 @@
+[ 2018-12-14T11:34:08+08:00 ] 127.0.0.1 /Home/Auth/add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0050s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_auth` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `fb_auth` WHERE `auth_name` = '退单率' LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `fb_auth` (`auth_level`,`auth_pid`,`auth_name`,`auth_c`,`auth_a`) VALUES ('2','30','退单率','Report','return_rate') [ RunTime:0.0000s ]
+
+[ 2018-12-14T12:33:59+08:00 ] 127.0.0.1 /Home/Report/javascript;
+ERR: 非法操作:javascript;
+
+[ 2018-12-14T14:24:35+08:00 ] 127.0.0.1 /Home/Role/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `fb_role` WHERE `name` = '项目一' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `fb_role` (`name`,`description`,`pid`,`create_time`) VALUES ('项目一','13213','2','1544768675') [ RunTime:0.0010s ]
+
+[ 2018-12-14T14:24:47+08:00 ] 127.0.0.1 /Home/Role/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fb_role` WHERE `name` = '项目二' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `fb_role` (`name`,`description`,`pid`,`create_time`) VALUES ('项目二','1545','2','1544768687') [ RunTime:0.0000s ]
+
+[ 2018-12-14T14:26:40+08:00 ] 127.0.0.1 /Home/Admin/add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0030s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: validate D:\www\oa\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\www\oa\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `fb_admin` WHERE `username` = '123eee' LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `fb_admin` (`username`,`nickname`,`mobile`,`role_id`,`create_time`,`password`,`grade`,`bid`) VALUES ('123eee','qwe','12312312312','15','1544768800','f5bb0c8de146c67b44babbf4e6584cc0','1','1') [ RunTime:0.0000s ]
+
+[ 2018-12-14T14:27:43+08:00 ] 127.0.0.1 /Home/Admin/add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: validate D:\www\oa\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\www\oa\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `fb_admin` WHERE `username` = '123123' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `fb_admin` (`username`,`nickname`,`mobile`,`role_id`,`create_time`,`password`,`grade`,`bid`) VALUES ('123123','12312','12312312312','5','1544768863','f5bb0c8de146c67b44babbf4e6584cc0','1','1') [ RunTime:0.0010s ]
+
+[ 2018-12-14T14:40:31+08:00 ] 127.0.0.1 /Home/Admin/group?id=31&role_id=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: UPDATE `fb_admin` SET `role_id`='15',`update_time`='1544769631' WHERE `id` = 31 [ RunTime:0.0010s ]
+
+[ 2018-12-14T14:48:26+08:00 ] 127.0.0.1 /Home/Admin/group?id=31&role_id=15
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: UPDATE `fb_admin` SET `role_id`='5',`update_time`='1544770106' WHERE `id` = 31 [ RunTime:0.0010s ]
+
+[ 2018-12-14T14:49:10+08:00 ] 127.0.0.1 /index.php/Home/Admin/index/p/stop
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: stat_date D:\www\oa\Application\Home\Controller\AdminController.class.php 第 15 行.
+NOTIC: [8] Undefined index: stat_date D:\www\oa\Application\Home\Controller\AdminController.class.php 第 16 行.
+NOTIC: [8] Undefined index: stop_date D:\www\oa\Application\Home\Controller\AdminController.class.php 第 16 行.
+NOTIC: [8] Undefined index: stat_date D:\www\oa\Application\Home\Controller\AdminController.class.php 第 17 行.
+NOTIC: [8] Undefined index: word D:\www\oa\Application\Home\Controller\AdminController.class.php 第 18 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `fb_admin` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `fb_admin` LIMIT 0,5   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `fb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `fb_role` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `fb_role` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `fb_role` WHERE `id` = 13 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `fb_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: i D:\www\oa\Application\Runtime\Cache\Home\c506a66e5fd5c20a850e05056283aa1e.php 第 80 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2018-12-14T14:49:19+08:00 ] 127.0.0.1 /index.php/Home/Admin/index/p/stop
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: stat_date D:\www\oa\Application\Home\Controller\AdminController.class.php 第 15 行.
+NOTIC: [8] Undefined index: stat_date D:\www\oa\Application\Home\Controller\AdminController.class.php 第 16 行.
+NOTIC: [8] Undefined index: stop_date D:\www\oa\Application\Home\Controller\AdminController.class.php 第 16 行.
+NOTIC: [8] Undefined index: stat_date D:\www\oa\Application\Home\Controller\AdminController.class.php 第 17 行.
+NOTIC: [8] Undefined index: word D:\www\oa\Application\Home\Controller\AdminController.class.php 第 18 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `fb_admin` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `fb_admin` LIMIT 0,5   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fb_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `fb_role` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `fb_role` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `fb_role` WHERE `id` = 13 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `fb_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: i D:\www\oa\Application\Runtime\Cache\Home\c506a66e5fd5c20a850e05056283aa1e.php 第 80 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-14T14:57:03+08:00 ] 127.0.0.1 /Home/Role/del
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0100s ]
+SQL: DELETE FROM `fb_role` WHERE `id` = 15 [ RunTime:0.0000s ]
+
+[ 2018-12-14T14:57:07+08:00 ] 127.0.0.1 /Home/Role/del
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0100s ]
+SQL: DELETE FROM `fb_role` WHERE `id` = 13 [ RunTime:0.0000s ]
+
+[ 2018-12-14T14:57:10+08:00 ] 127.0.0.1 /Home/Role/del
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0100s ]
+SQL: DELETE FROM `fb_role` WHERE `id` = 16 [ RunTime:0.0000s ]
+
+[ 2018-12-14T14:57:13+08:00 ] 127.0.0.1 /Home/Role/del
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0090s ]
+SQL: DELETE FROM `fb_role` WHERE `id` = 5 [ RunTime:0.0010s ]
+
+[ 2018-12-14T14:57:17+08:00 ] 127.0.0.1 /Home/Role/del
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0100s ]
+SQL: DELETE FROM `fb_role` WHERE `id` = 4 [ RunTime:0.0010s ]
+
+[ 2018-12-14T14:57:38+08:00 ] 127.0.0.1 /Home/Role/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fb_role` WHERE `name` = '项目一主管' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `fb_role` (`name`,`description`,`pid`,`create_time`) VALUES ('项目一主管','项目一销售','2','1544770658') [ RunTime:0.0000s ]
+
+[ 2018-12-14T14:57:53+08:00 ] 127.0.0.1 /Home/Role/edit?role_id=17
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0090s ]
+SQL: UPDATE `fb_role` SET `name`='项目一主管',`description`='项目一主管',`pid`='2',`create_time`='1544770673' WHERE `id` = 17 [ RunTime:0.0010s ]
+
+[ 2018-12-14T14:58:14+08:00 ] 127.0.0.1 /Home/Role/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fb_role` WHERE `name` = '项目一销售' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `fb_role` (`name`,`description`,`pid`,`create_time`) VALUES ('项目一销售','项目一销售','17','1544770694') [ RunTime:0.0000s ]
+
+[ 2018-12-14T14:58:42+08:00 ] 127.0.0.1 /Home/Role/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `fb_role` WHERE `name` = '项目二主管' LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `fb_role` (`name`,`description`,`pid`,`create_time`) VALUES ('项目二主管','项目二销售','2','1544770722') [ RunTime:0.0000s ]
+
+[ 2018-12-14T14:58:58+08:00 ] 127.0.0.1 /Home/Role/edit?role_id=19
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0100s ]
+SQL: UPDATE `fb_role` SET `name`='项目二主管',`description`='项目二主管',`pid`='2',`create_time`='1544770738' WHERE `id` = 19 [ RunTime:0.0010s ]
+
+[ 2018-12-14T14:59:19+08:00 ] 127.0.0.1 /Home/Role/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `fb_role` WHERE `name` = '项目二销售' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `fb_role` (`name`,`description`,`pid`,`create_time`) VALUES ('项目二销售','项目二销售','19','1544770759') [ RunTime:0.0000s ]
+
+[ 2018-12-14T15:01:15+08:00 ] 127.0.0.1 /Home/Admin/group?id=24&role_id=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0090s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: UPDATE `fb_admin` SET `role_id`='18',`update_time`='1544770875' WHERE `id` = 24 [ RunTime:0.0000s ]
+
+[ 2018-12-14T15:01:39+08:00 ] 127.0.0.1 /Home/Admin/group?id=23&role_id=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0090s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: UPDATE `fb_admin` SET `role_id`='17',`update_time`='1544770899' WHERE `id` = 23 [ RunTime:0.0000s ]
+
+[ 2018-12-14T15:01:52+08:00 ] 127.0.0.1 /Home/Admin/group?id=22&role_id=13
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: UPDATE `fb_admin` SET `role_id`='18',`update_time`='1544770912' WHERE `id` = 22 [ RunTime:0.0000s ]
+
+[ 2018-12-14T15:02:02+08:00 ] 127.0.0.1 /Home/Admin/group?id=21&role_id=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: UPDATE `fb_admin` SET `role_id`='19',`update_time`='1544770922' WHERE `id` = 21 [ RunTime:0.0010s ]
+
+[ 2018-12-14T15:02:20+08:00 ] 127.0.0.1 /Home/Admin/group?id=20&role_id=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: UPDATE `fb_admin` SET `role_id`='20',`update_time`='1544770940' WHERE `id` = 20 [ RunTime:0.0010s ]
+
+[ 2018-12-14T15:02:35+08:00 ] 127.0.0.1 /Home/Admin/group?id=19&role_id=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0060s ]
+SQL: UPDATE `fb_admin` SET `role_id`='20',`update_time`='1544770955' WHERE `id` = 19 [ RunTime:0.0000s ]
+
+[ 2018-12-14T15:02:54+08:00 ] 127.0.0.1 /Home/Admin/group?id=28&role_id=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: UPDATE `fb_admin` SET `role_id`='18',`update_time`='1544770974' WHERE `id` = 28 [ RunTime:0.0000s ]
+
+[ 2018-12-14T15:03:04+08:00 ] 127.0.0.1 /Home/Admin/group?id=29&role_id=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: UPDATE `fb_admin` SET `role_id`='20',`update_time`='1544770984' WHERE `id` = 29 [ RunTime:0.0010s ]
+
+[ 2018-12-14T15:03:14+08:00 ] 127.0.0.1 /Home/Admin/group?id=30&role_id=15
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: UPDATE `fb_admin` SET `role_id`='18',`update_time`='1544770994' WHERE `id` = 30 [ RunTime:0.0010s ]
+
+[ 2018-12-14T15:03:32+08:00 ] 127.0.0.1 /Home/Admin/group?id=31&role_id=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0090s ]
+SQL: UPDATE `fb_admin` SET `role_id`='18',`update_time`='1544771012' WHERE `id` = 31 [ RunTime:0.0010s ]
+
+[ 2018-12-14T15:06:08+08:00 ] 127.0.0.1 /Home/Role/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fb_role` WHERE `name` = '仓库管理员' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `fb_role` (`name`,`description`,`pid`,`create_time`) VALUES ('仓库管理员','仓库管理员','1','1544771168') [ RunTime:0.0010s ]
+
+[ 2018-12-14T15:18:23+08:00 ] 127.0.0.1 /Home/Role/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fb_role` WHERE `name` = '项目三主管' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `fb_role` (`name`,`description`,`pid`,`create_time`) VALUES ('项目三主管','项目三主管','2','1544771903') [ RunTime:0.0010s ]
+
+[ 2018-12-14T15:18:51+08:00 ] 127.0.0.1 /Home/Role/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `fb_role` WHERE `name` = '项目三销售' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `fb_role` (`name`,`description`,`pid`,`create_time`) VALUES ('项目三销售','项目三销售','22','1544771931') [ RunTime:0.0000s ]
+
+[ 2018-12-14T16:16:39+08:00 ] 127.0.0.1 /Home/Role/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `fb_role` WHERE `name` = '项目四主管' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `fb_role` (`name`,`description`,`pid`,`create_time`) VALUES ('项目四主管','123','2','1544775399') [ RunTime:0.0000s ]
+
+[ 2018-12-14T16:17:03+08:00 ] 127.0.0.1 /Home/Role/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fb_role` WHERE `name` = '项目四销售' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `fb_role` (`name`,`description`,`pid`,`create_time`) VALUES ('项目四销售','123','24','1544775423') [ RunTime:0.0000s ]
+
+[ 2018-12-14T16:17:25+08:00 ] 127.0.0.1 /Home/Admin/add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: validate D:\www\oa\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\www\oa\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `fb_admin` WHERE `username` = '撒打算' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `fb_admin` (`username`,`nickname`,`mobile`,`role_id`,`create_time`,`password`,`grade`,`bid`) VALUES ('撒打算','1233123','12312312312','24','1544775445','f5bb0c8de146c67b44babbf4e6584cc0','1','1') [ RunTime:0.0000s ]
+
+[ 2018-12-14T16:17:48+08:00 ] 127.0.0.1 /Home/Admin/add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: validate D:\www\oa\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\www\oa\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `fb_admin` WHERE `username` = '似懂非懂说' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `fb_admin` (`username`,`nickname`,`mobile`,`role_id`,`create_time`,`password`,`grade`,`bid`) VALUES ('似懂非懂说','13213213','12312312312','25','1544775468','f5bb0c8de146c67b44babbf4e6584cc0','1','1') [ RunTime:0.0010s ]
+
+[ 2018-12-14T16:32:53+08:00 ] 127.0.0.1 /Home/Auth/add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_auth` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fb_auth` WHERE `auth_name` = '分组管理' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `fb_auth` (`auth_level`,`auth_pid`,`auth_name`,`auth_c`,`auth_a`) VALUES ('2','1','分组管理','Admin','group') [ RunTime:0.0000s ]
+
+[ 2018-12-14T16:36:09+08:00 ] 127.0.0.1 /Home/Auth/edit?auth_id=46
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_auth` [ RunTime:0.0100s ]
+SQL: UPDATE `fb_auth` SET `auth_level`='2',`auth_pid`='1',`auth_name`='分组管理',`auth_c`='Admin',`auth_a`='group_management' WHERE `auth_id` = 46 [ RunTime:0.0010s ]
+
