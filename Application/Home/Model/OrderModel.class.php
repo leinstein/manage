@@ -113,6 +113,29 @@ class OrderModel extends Model
         }
         return $where;
     }
+
+    /**
+     * @param $month
+     * 2018/12/13
+     * 9:10
+     * @return array
+     * anthor liu
+     * 组装between条件
+     */
+    Public function where_report($month){
+        switch ($month)
+        {
+            case 'month':
+                $where = $this->month();
+                break;
+            case 'lastmonth':
+                $where = $this->lastmonth();
+                break;
+            default:
+        }
+        return $where;
+    }
+
     /**
      * 2018/12/4
      * 15:22

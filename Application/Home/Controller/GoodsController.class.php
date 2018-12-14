@@ -12,8 +12,9 @@ class GoodsController extends HomeController {
      */
     Public function index(){
         $where['goodsdelete'] = 1;
-        if($_POST['stat_date']) $where['create_time'] = ['gt',strtotime($_POST['stat_date'])];
-        if($_POST['stop_date']) $where['create_time'] = ['lt',strtotime($_POST['stop_date'])];
+        if($_GET['stat_date'] and !$_GET['stop_date']) $where['create_time'] = ['egt',strtotime($_GET['stat_date'])];
+        if(!$_GET['stat_date'] and $_GET['stop_date']) $where['create_time'] = ['elt',strtotime($_GET['stop_date'])];
+        if($_GET['stat_date'] and $_GET['stop_date']) $where['create_time'] = ['between',[strtotime($_GET['stat_date']),strtotime($_GET['stop_date'])]];
         if($_POST['word']){
             $word = '%'.trim($_POST['word']).'%';
             $where['goodsname|goodsprice|goodsstock|goodscount'] =array('like',$word);

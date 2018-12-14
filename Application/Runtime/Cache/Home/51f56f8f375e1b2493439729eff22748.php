@@ -253,9 +253,7 @@
                                       margin-right: 16px;
                                       height: 57px !important;
                                       line-height: 57px !important;
-                                      width: 20px;
                                       text-align: center;
-                                      margin-top: 1.5px;
                                       background-color: #1AA094;
                                   }
                                   .list_name{
@@ -280,12 +278,104 @@
                           <div class="layui-tab-content">
                             <div class="layui-tab-item layui-show">
                                 <ul class="list">
-                                    <!--<li id="list_first" style="    margin-top: 20px;">-->
-                                        <!--<div id="list_title">排行榜</div>-->
-                                    <!--</li>-->
                                     <li style="margin-top: 8px">
-                                        <span class="list_icon list_bg" style="color: white;">1</span>
-                                        <span class="list_name">唐三藏</span>
+                                        <span class="list_icon list_bg" style="color: white;">
+                                            <img src="/public/Home/images/10.jpg"  style="border-radius: 50%;width:57px;height: 58px">
+
+                                        </span>
+                                        <span class="list_name">方一勺</span>
+                                        <span class="">130</span>
+                                        <span class="money_width">￥ 52000</span>
+                                        
+                                    </li>
+                                    <li>
+                                        <span class="list_icon list_bg" style="color: white">
+                                            <img src="/public/Home/images/11.jpg"  style="border-radius: 50%;width:57px;height: 58px">
+                                        </span>
+                                        <span class="list_name">沈勇</span>
+                                        <span class="">10</span>
+                                        <span class="money_width">￥ 52000</span>
+                                    </li>
+                                    <li>
+                                        <span class="list_icon list_bg" style="color: white">
+                                            <img src="/public/Home/images/12.jpg"  style="border-radius: 50%;width:57px;height: 58px">
+                                        </span>
+                                        <span class="list_name">蒋佳恩</span>
+                                        <span class="">111</span>
+                                        <span class="money_width">￥ 52000</span>
+                                    </li>
+                                    <li>
+                                        <span class="list_icon list_bg" style="background-color: #ddd;">
+                                            <img src="/public/Home/images/13.jpg"  style="border-radius: 50%;width:57px;height: 58px">
+                                        </span>
+                                        <span class="list_name">周伯通</span>
+                                        <span class="">112 单</span>
+                                        <span class="money_width">￥ 52000</span>
+                                    </li>
+                                    <li>
+                                        <span class="list_icon list_bg" style="background-color: #ddd;">
+                                            <img src="/public/Home/images/14.jpg"  style="border-radius: 50%;width:57px;height: 58px">
+                                        </span>
+                                        <span class="list_name">段誉</span>
+                                        <span class="">196</span>
+                                        <span class="money_width">￥ 52000</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="layui-tab-item">
+                                <ul class="list">
+                                    <li style="margin-top: 8px">
+                                        <span class="list_icon list_bg" style="color: white;">
+                                            <img src="/public/Home/images/10.jpg"  style="border-radius: 50%;width:57px;height: 58px">
+
+                                        </span>
+                                        <span class="list_name">方一勺2</span>
+                                        <span class="">130</span>
+                                        <span class="money_width">￥ 52000</span>
+                                        
+                                    </li>
+                                    <li>
+                                        <span class="list_icon list_bg" style="color: white">
+                                            <img src="/public/Home/images/11.jpg"  style="border-radius: 50%;width:57px;height: 58px">
+                                        </span>
+                                        <span class="list_name">沈勇2</span>
+                                        <span class="">10</span>
+                                        <span class="money_width">￥ 52000</span>
+                                    </li>
+                                    <li>
+                                        <span class="list_icon list_bg" style="color: white">
+                                            <img src="/public/Home/images/12.jpg"  style="border-radius: 50%;width:57px;height: 58px">
+                                        </span>
+                                        <span class="list_name">蒋佳恩2</span>
+                                        <span class="">111</span>
+                                        <span class="money_width">￥ 52000</span>
+                                    </li>
+                                    <li>
+                                        <span class="list_icon list_bg" style="background-color: #ddd;">
+                                            <img src="/public/Home/images/13.jpg"  style="border-radius: 50%;width:57px;height: 58px">
+                                        </span>
+                                        <span class="list_name">周伯通2</span>
+                                        <span class="">112 单</span>
+                                        <span class="money_width">￥ 52000</span>
+                                    </li>
+                                    <li>
+                                        <span class="list_icon list_bg" style="background-color: #ddd;">
+                                            <img src="/public/Home/images/14.jpg"  style="border-radius: 50%;width:57px;height: 58px">
+                                        </span>
+                                        <span class="list_name">段誉2</span>
+                                        <span class="">196</span>
+                                        <span class="money_width">￥ 52000</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="layui-tab-item">
+                                <ul class="list">
+                                    <li style="margin-top: 8px">
+                                        <span class="list_icon list_bg" style="color: white;">
+                                            <img src="/public/Home/images/10.jpg"  style="border-radius: 50%;width:57px;height: 58px">
+
+                                        </span>
+                                        <span class="list_name">方一勺1</span>
                                         <span class="">130</span>
                                         <span class="money_width">￥ 52000</span>
                                         
@@ -538,10 +628,10 @@
                             axisTick: {
                                 alignWithLabel: true
                             },
-                            axisLabel:{
-                                interval:0,//0：全部显示，1：间隔为1显示对应类目，2：依次类推，（简单试一下就明白了，这样说是不是有点抽象）
-                                rotate:-30,//倾斜显示，-：顺时针旋转，+或不写：逆时针旋转
-                            }
+                            // axisLabel:{
+                            //     interval:0,//0：全部显示，1：间隔为1显示对应类目，2：依次类推，（简单试一下就明白了，这样说是不是有点抽象）
+                            //     rotate:-30,//倾斜显示，-：顺时针旋转，+或不写：逆时针旋转
+                            // }
                         }
                     ],
                     yAxis : [

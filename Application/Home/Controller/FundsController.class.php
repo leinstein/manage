@@ -7,8 +7,9 @@ class FundsController extends HomeController
     Public function index(){
         $order = D('Order');
         $where['delete'] = 1;
-        if($_GET['stat_date']) $where['ordercreatetime'] = ['gt',strtotime($_GET['stat_date'])];
-        if($_GET['stop_date']) $where['ordercreatetime'] = ['lt',strtotime($_GET['stop_date'])];
+        if($_GET['stat_date'] and !$_GET['stop_date']) $where['ordercreatetime'] = ['egt',strtotime($_GET['stat_date'])];
+        if(!$_GET['stat_date'] and $_GET['stop_date']) $where['ordercreatetime'] = ['elt',strtotime($_GET['stop_date'])];
+        if($_GET['stat_date'] and $_GET['stop_date']) $where['ordercreatetime'] = ['between',[strtotime($_GET['stat_date']),strtotime($_GET['stop_date'])]];
         if($_GET['paytype']) $where['paytype'] = $_GET['paytype'];
         if($_GET['payform']) $where['payform'] = $_GET['payform'];
         if($_GET['orderstatus']) $where['orderstatus'] = $_GET['orderstatus'];

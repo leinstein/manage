@@ -11,8 +11,9 @@ class CustomerController extends HomeController {
      */
     Public function index(){
         $where['delete'] = 1;
-        if($_GET['stat_date']) $where['create_time'] = ['gt',strtotime($_GET['stat_date'])];
-        if($_GET['stop_date']) $where['create_time'] = ['lt',strtotime($_GET['stop_date'])];
+        if($_GET['stat_date'] and !$_GET['stop_date']) $where['create_time'] = ['egt',strtotime($_GET['stat_date'])];
+        if(!$_GET['stat_date'] and $_GET['stop_date']) $where['create_time'] = ['elt',strtotime($_GET['stop_date'])];
+        if($_GET['stat_date'] and $_GET['stop_date']) $where['create_time'] = ['between',[strtotime($_GET['stat_date']),strtotime($_GET['stop_date'])]];
         if($_GET['name']){
             $word = '%'.trim($_GET['name']).'%';
             $where['name|note|phone|age'] =array('like',$word);

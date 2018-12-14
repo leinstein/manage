@@ -12,10 +12,12 @@ class AdminController extends HomeController {
     public function index()
     {
         $where = '';
-        if(IS_POST){
-            if($_POST['stat_date']) $where['create_time'] = ['gt',strtotime($_POST['stat_date'])];
-            if($_POST['stop_date']) $where['create_time'] = ['lt',strtotime($_POST['stop_date'])];
-            if($_POST['username'])  $where['nickname'] = trim($_POST['username']);
+        if($_GET['stat_date'] and !$_GET['stop_date']) $where['create_time'] = ['egt',strtotime($_GET['stat_date'])];
+        if(!$_GET['stat_date'] and $_GET['stop_date']) $where['create_time'] = ['elt',strtotime($_GET['stop_date'])];
+        if($_GET['stat_date'] and $_GET['stop_date']) $where['create_time'] = ['between',[strtotime($_GET['stat_date']),strtotime($_GET['stop_date'])]];
+        if($_GET['word']){
+            $word = '%'.trim($_GET['name']).'%';
+            $where['username|nickname|mobile'] =array('like',$word);
         }
         $admin = M('Admin');
         $count = $admin->count();//满足条件的数量
@@ -176,15 +178,15 @@ class AdminController extends HomeController {
     public function add()
     {
         if (IS_POST) {
-            $admin           = D('Admin');
-            $data['username']   = trim(I('post.username'));
-            $data['nickname']   = trim(I('post.nickname'));
-            $data['mobile']   = trim(I('post.phone'));
-            $data['role_id'] = $_POST['role'];
-            $data['create_time'] = time();
-            $data['password']     = md5(trim(I('post.pass')));
-            $data['grade']   = session('grade') + 1;
-            $data['bid']     = session('userid');
+            $admin                  = D('Admin');
+            $data['username']       = trim(I('post.username'));
+            $data['nickname']       = trim(I('post.nickname'));
+            $data['mobile']         = trim(I('post.phone'));
+            $data['role_id']        = $_POST['role'];
+            $data['create_time']    = time();
+            $data['password']       = md5(trim(I('post.pass')));
+            $data['grade']          = session('grade') + 1;
+            $data['bid']            = session('userid');
 
             if (!$admin->create()) {
                 $this->ajaxReturn(['status' => 'error', 'msg' => $admin->getError()]);

@@ -114,4 +114,33 @@ class CustomerModel extends Model
         $statistical['yesterdayprev'] = $statistical['history'] - $statistical['yesterday'] - $statistical['today'];
         return $statistical;
     }
+
+    /**
+     * @param $info  客户信息  数组
+     * 2018/12/13
+     * 17:19
+     * anthor liu
+     * 七次复购率
+     */
+    Public function report_rate($info){
+        $buyrate['one'] = $buyrate['two'] = $buyrate['three'] = $buyrate['four'] = $buyrate['five'] = $buyrate['six'] = $buyrate['seven'] = 0;
+        foreach ($info as $m){
+            if($m['buyrate'] >= 1) $buyrate['basic'] ++;
+            if($m['buyrate'] >= 2) $buyrate['one'] ++;
+            if($m['buyrate'] >= 3) $buyrate['two'] ++;
+            if($m['buyrate'] >= 4) $buyrate['three'] ++;
+            if($m['buyrate'] >= 5) $buyrate['four'] ++;
+            if($m['buyrate'] >= 6) $buyrate['five'] ++;
+            if($m['buyrate'] >= 7) $buyrate['six'] ++;
+            if($m['buyrate'] >= 8) $buyrate['seven'] ++;
+        }
+        $buyrate['rate']['one'] = round($buyrate['one'] / $buyrate['basic'],4)*100 . '%';
+        $buyrate['rate']['two'] = round($buyrate['two'] / $buyrate['basic'],4)*100 . '%';
+        $buyrate['rate']['three'] = round($buyrate['three'] / $buyrate['basic'],4)*100 . '%';
+        $buyrate['rate']['four'] = round($buyrate['four'] / $buyrate['basic'],4)*100 . '%';
+        $buyrate['rate']['five'] = round($buyrate['five'] / $buyrate['basic'],4)*100 . '%';
+        $buyrate['rate']['six'] = round($buyrate['six'] / $buyrate['basic'],4)*100 . '%';
+        $buyrate['rate']['seven'] = round($buyrate['seven'] / $buyrate['basic'],4)*100 . '%';
+        return $buyrate;
+    }
 }
