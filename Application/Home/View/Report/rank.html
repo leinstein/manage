@@ -62,37 +62,37 @@
                             <th width="30px">
                                 排名
                             </th>
-                            <th width="45px">
+                            <th width="90px">
                                 销售头像
                             </th>
-                            <th width="60px">
+                            <th width="90px">
                                 销售姓名
                             </th>
                             <th width="60px">
                                 销售额
                             </th>
-                            <th  width="30px">
+                            <th>
                                 客户
                             </th>
-                            <th width="30px">
+                            <th>
                                 订单
                             </th>
-                            <th width="60px">
+                            <th>
                                 客户均价
                             </th>
-                            <th  width="60px">
+                            <th>
                                 订单均价
                             </th>
-                            <th  width="30px">
+                            <th>
                                 退单
                             </th>
-                            <th width="60px">
+                            <th>
                                 退单金额
                             </th>
-                            <th  width="45px">
+                            <th>
                                 退单率
                             </th>
-                            <th  width="60px">
+                            <th>
                                 复购率
                             </th>
                         </tr>
@@ -104,15 +104,21 @@
                             font-weight: bold;
                             color: #009688;
                         }
+                        .rate_font{
+                            font-size: 24px !important;
+                            font-weight: bold;
+                            font-style: italic;
+                            color: #666;
+                        }
                     </style>
                     <tbody>
                         <foreach name="info" item="v">
                             <tr>
-                                <td>
+                                <td class="rate_font">
                                     {$v.sort_amount}
                                 </td>
-                                <td>
-                                    <img src="{$v.img_small}" style="width: 32px;height: 32px;border-radius: 50%">
+                                <td style="padding: 3px">
+                                    <img src="{$v.img_small}" style="width: 40px;height: 40px;border-radius: 50%">
                                 </td>
                                 <td>
                                     {$v.nickname}

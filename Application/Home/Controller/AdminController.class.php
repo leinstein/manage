@@ -25,7 +25,7 @@ class AdminController extends HomeController {
         $page->setConfig('prev','上一页');
         $page->setConfig('next','下一页');
         $show  = $page->show();//分页显示输出
-        $list = $admin->where($where)->limit($page->firstRow . ',' . $page->listRows)->select();
+        $list = $admin->where($where)->order('id desc')->limit($page->firstRow . ',' . $page->listRows)->select();
         $role = M('Role');
         foreach ($list as $v) {
             $a            = $role->where(['id' => $v['role_id']])->find();
@@ -235,6 +235,16 @@ class AdminController extends HomeController {
         $this->assign('count', $count);
         $this->assign('page', $show);
         $this->assign('firstRow', $page->firstRow);
+        $this->display();
+    }
+
+    /**
+     * 2018/12/14
+     * 16:36
+     * anthor liu
+     * 分组管理列表
+     */
+    Public function group_management(){
         $this->display();
     }
 }

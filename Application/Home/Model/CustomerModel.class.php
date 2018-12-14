@@ -125,7 +125,7 @@ class CustomerModel extends Model
     Public function report_rate($info){
         $buyrate['one'] = $buyrate['two'] = $buyrate['three'] = $buyrate['four'] = $buyrate['five'] = $buyrate['six'] = $buyrate['seven'] = 0;
         foreach ($info as $m){
-            if($m['buyrate'] >= 1) $buyrate['basic'] ++;
+            if($m['buyrate'] > 1) $buyrate['basic'] ++;
             if($m['buyrate'] >= 2) $buyrate['one'] ++;
             if($m['buyrate'] >= 3) $buyrate['two'] ++;
             if($m['buyrate'] >= 4) $buyrate['three'] ++;

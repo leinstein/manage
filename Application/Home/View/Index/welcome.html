@@ -554,14 +554,7 @@
             </div>
             
             
-            <script>
-            //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
-            layui.use('element', function(){
-                var element = layui.element;
             
-                //…
-            });
-            </script>
             
         
         </div>
@@ -658,8 +651,10 @@
                 var width = $("#columnar").width();
                 var height = $("#columnar").height();
                 $("#columnar1").css("width", width).css("height", height);
+                console.log('------------');
+                console.log(width);
+                console.log(height);
                 var myChart = echarts.init(dom);
-                //var chart = echarts.init(dom, 'light');
                 var app = {};
                 option = null;
                 app.title = '坐标轴刻度与标签对齐';
@@ -716,8 +711,10 @@
                 var width = $("#columnar").width();
                 var height = $("#columnar").height();
                 $("#columnar2").css("width", width).css("height", height);
+                console.log('------------');
+                console.log(width);
+                console.log(height);
                 var myChart = echarts.init(dom);
-                //var chart = echarts.init(dom, 'light');
                 var app = {};
                 option = null;
                 app.title = '坐标轴刻度与标签对齐';
@@ -1186,6 +1183,14 @@
                 }
                 return date;
             }
+        </script>
+        <script>
+            //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
+            layui.use('element', function(){
+                var element = layui.element;
+
+                //…
+            });
         </script>
     </body>
 </html>

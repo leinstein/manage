@@ -32,9 +32,10 @@
                     /*border: 1px solid red;*/
                     color: rgba(0,0,0,.65);
                     font-size: 16px;
+                    width: 70px;
                     /*margin-bottom: 16px;*/
                     transition: all .3s;
-                    margin-left: 12%;
+                    margin-left: 18%;
                 }
                 .rate_title span{
                     display: inline-block;
@@ -47,9 +48,11 @@
                     width: 48%;
                 }
                 .ring{
+                    position: relative;
+                    top: -14px;
+                    margin-left: 18px;
                     height: 78px;
                     width: 78px;
-                    margin-left: 18px;
                 }
                 .repart_rate{
                     color: rgba(0,0,0,.45);
@@ -67,103 +70,127 @@
                     margin-left: 30%;
     
                 }
-                .layui-col-md2{
-                    background-color: #f2f2f2;
-                }
+                
                 .order_total{
                     color: rgba(0,0,0,.45);
                     font-size: 14px;
-                    margin-left: 18%;
+                    width: 100%;
+                    text-align: center;
                     margin-top: 5px;
                 }
+                .bg_color_div{
+                    background-color: #f2f2f2;
+                    height: 100%;
+                }
+                .order_top{
+                    margin-top: -32px;
+                }
             </style>
-            <style>.layui-col-md2{width: 14.2857143%;min-width: 130px;height: 180px}</style>
+            <style>.layui-col-md2{width: 14.2857143%;min-width: 220px;height: 165px}</style>
             <div class="layui-row" style="width: 99%;margin-left: 0.5%;">
-                <div style="height: 180px;background-color: white;">
-                    <div class="layui-row" style="width: 100%;margin-left: 0;">
-                        <div class="layui-col-md2">
-                          <div class="rate_title">
-                              <span>一次复购</span>
-                          </div>
-                          <div class="buy_rate">
-                              <div class="repart_rate">复购率</div>
-                              <div class="buying_rate">{$buyrate.rate.one}</div>
-                          </div>
-                          <div id="ring_one" class="ring"></div>
-                          <div class="order_total"  style="margin-top: -15px">复购单数：{$buyrate.one}</div>
-                          <div class="order_total">总订单数：{$buyrate.basic}</div>
+                <div class="layui-row layui-col-space20" style="width: 100%;margin-left: 0;">
+                    <div class="layui-col-md2">
+                        <div class="bg_color_div">
+                              <div class="rate_title">
+                                  <span>一次复购</span>
+                              </div>
+                              <div class="buy_rate">
+                                  <div class="repart_rate">复购率</div>
+                                  <div class="buying_rate">{$buyrate.rate.one}</div>
+                              </div>
+                              <div id="ring_one" class="ring"></div>
+                              <div class="order_total order_top">复购/订单：{$buyrate.one} / {$buyrate.basic}</div>
+                              <!--<div class="order_total">总订单数：{$buyrate.basic}</div>-->
                         </div>
-                        <div class="layui-col-md2">
-                          <div class="rate_title">
-                              <span>二次复购</span>
-                          </div>
-                          <div class="buy_rate">
-                              <div class="repart_rate">复购率</div>
-                              <div class="buying_rate">{$buyrate.rate.two}</div>
-                          </div>
-                          <div id="ring_two" class="ring"></div>
-                          <div class="order_total"  style="margin-top: -15px">复购单数：{$buyrate.two}</div>
-                            <div class="order_total">总订单数：{$buyrate.basic}</div>
+                    </div>
+                    <div class="layui-col-md2">
+                        <div class="bg_color_div">
+                            <div class="rate_title">
+                                <span>二次复购</span>
+                            </div>
+                            <div class="buy_rate">
+                                <div class="repart_rate">复购率</div>
+                                <div class="buying_rate">{$buyrate.rate.two}</div>
+                            </div>
+                            <div id="ring_two" class="ring"></div>
+                            <div class="order_total order_top">复购/订单：{$buyrate.two} / {$buyrate.basic}</div>
+                            <!--<div class="order_total order_top">复购单数：{$buyrate.two}</div>-->
+                            <!--<div class="order_total">总订单数：{$buyrate.basic}</div>-->
                         </div>
-                        <div class="layui-col-md2">
-                          <div class="rate_title">
-                              <span>三次复购</span>
-                          </div>
-                          <div class="buy_rate">
-                              <div class="repart_rate">复购率</div>
-                              <div class="buying_rate">{$buyrate.rate.three}</div>
-                          </div>
-                          <div id="ring_three" class="ring"></div>
-                          <div class="order_total"  style="margin-top: -15px">复购单数：{$buyrate.three}</div>
-                            <div class="order_total">总订单数：{$buyrate.basic}</div>
+                    </div>
+                    <div class="layui-col-md2">
+                        <div class="bg_color_div">
+                            <div class="rate_title">
+                                <span>三次复购</span>
+                            </div>
+                            <div class="buy_rate">
+                                <div class="repart_rate">复购率</div>
+                                <div class="buying_rate">{$buyrate.rate.three}</div>
+                            </div>
+                            <div id="ring_three" class="ring"></div>
+                            <div class="order_total order_top">复购/订单：{$buyrate.three} / {$buyrate.basic}</div>
+                            <!--<div class="order_total order_top">复购单数：{$buyrate.three}</div>-->
+                            <!--<div class="order_total">总订单数：{$buyrate.basic}</div>-->
                         </div>
-                        <div class="layui-col-md2">
-                          <div class="rate_title">
-                              <span>四次复购</span>
-                          </div>
-                          <div class="buy_rate">
-                              <div class="repart_rate">复购率</div>
-                              <div class="buying_rate">{$buyrate.rate.four}</div>
-                          </div>
-                          <div id="ring_four" class="ring"></div>
-                          <div class="order_total"  style="margin-top: -15px">复购单数：{$buyrate.four}</div>
-                            <div class="order_total">总订单数：{$buyrate.basic}</div>
+                    </div>
+                    <div class="layui-col-md2">
+                        <div class="bg_color_div">
+                            <div class="rate_title">
+                                <span>四次复购</span>
+                            </div>
+                            <div class="buy_rate">
+                                <div class="repart_rate">复购率</div>
+                                <div class="buying_rate">{$buyrate.rate.four}</div>
+                            </div>
+                            <div id="ring_four" class="ring"></div>
+                            <div class="order_total order_top">复购/订单：{$buyrate.four} / {$buyrate.basic}</div>
+                            <!--<div class="order_total order_top">复购单数：{$buyrate.four}</div>-->
+                            <!--<div class="order_total">总订单数：{$buyrate.basic}</div>-->
                         </div>
-                       <div class="layui-col-md2">
-                          <div class="rate_title">
-                              <span>五次复购</span>
-                          </div>
-                          <div class="buy_rate">
-                              <div class="repart_rate">复购率</div>
-                              <div class="buying_rate">{$buyrate.rate.five}</div>
-                          </div>
-                          <div id="ring_five" class="ring"></div>
-                          <div class="order_total"  style="margin-top: -15px">复购单数：{$buyrate.five}</div>
-                           <div class="order_total">总订单数：{$buyrate.basic}</div>
+                    </div>
+                   <div class="layui-col-md2">
+                       <div class="bg_color_div">
+                            <div class="rate_title">
+                                <span>五次复购</span>
+                            </div>
+                            <div class="buy_rate">
+                                <div class="repart_rate">复购率</div>
+                                <div class="buying_rate">{$buyrate.rate.five}</div>
+                            </div>
+                            <div id="ring_five" class="ring"></div>
+                           <div class="order_total order_top">复购/订单：{$buyrate.five} / {$buyrate.basic}</div>
+                            <!--<div class="order_total order_top">复购单数：{$buyrate.five}</div>-->
+                            <!--<div class="order_total">总订单数：{$buyrate.basic}</div>-->
+                       </div>
+                    </div>
+                    <div class="layui-col-md2">
+                        <div class="bg_color_div">
+                            <div class="rate_title">
+                                <span>六次复购</span>
+                            </div>
+                            <div class="buy_rate">
+                                <div class="repart_rate">复购率</div>
+                                <div class="buying_rate">{$buyrate.rate.six}</div>
+                            </div>
+                            <div id="ring_six" class="ring"></div>
+                            <div class="order_total order_top">复购/订单：{$buyrate.six} / {$buyrate.basic}</div>
+                            <!--<div class="order_total order_top">复购单数：{$buyrate.six}</div>-->
+                            <!--<div class="order_total">总订单数：{$buyrate.basic}</div>-->
                         </div>
-                        <div class="layui-col-md2">
-                          <div class="rate_title">
-                              <span>六次复购</span>
-                          </div>
-                          <div class="buy_rate">
-                              <div class="repart_rate">复购率</div>
-                              <div class="buying_rate">{$buyrate.rate.six}</div>
-                          </div>
-                          <div id="ring_six" class="ring"></div>
-                          <div class="order_total"  style="margin-top: -15px">复购单数：{$buyrate.six}</div>
-                            <div class="order_total">总订单数：{$buyrate.basic}</div>
-                        </div>
-                        <div class="layui-col-md2">
-                          <div class="rate_title">
-                              <span>七次复购</span>
-                          </div>
-                          <div class="buy_rate">
-                              <div class="repart_rate">复购率</div>
-                              <div class="buying_rate">{$buyrate.rate.seven}</div>
-                          </div>
-                          <div id="ring_seven" class="ring"></div>
-                          <div class="order_total"  style="margin-top: -15px">复购单数：{$buyrate.seven}</div>
-                            <div class="order_total">总订单数：{$buyrate.basic}</div>
+                    </div>
+                    <div class="layui-col-md2">
+                        <div class="bg_color_div">
+                            <div class="rate_title">
+                                <span>七次复购</span>
+                            </div>
+                            <div class="buy_rate">
+                                <div class="repart_rate">复购率</div>
+                                <div class="buying_rate">{$buyrate.rate.seven}</div>
+                            </div>
+                            <div id="ring_seven" class="ring"></div>
+                            <div class="order_total order_top">复购/订单：{$buyrate.seven} / {$buyrate.basic}</div>
+                            <!--<div class="order_total order_top">复购单数：{$buyrate.seven}</div>-->
+                            <!--<div class="order_total">总订单数：{$buyrate.basic}</div>-->
                         </div>
                     </div>
                 </div>
@@ -187,7 +214,7 @@
                   <!--</div>-->
                 <!--</div>-->
             <!--</form>-->
-            <xblock>
+            <!--<xblock>-->
                 <!--<a title="本月排名" class="layui-btn"  href="/Home/Report/rank?month=month">-->
                     <!--本月排名-->
                 <!--</a>-->
@@ -197,50 +224,104 @@
                 <!--<a title="历史排名" class="layui-btn"  href="/Home/Report/rank?month=history">-->
                     <!--历史排名-->
                 <!--</a>-->
-                <div class="layui-input-inline">
-                    <a class="layui-btn layui-btn-small" style="padding: 4px 4px"  href="/Home/Report/buyingrate" title="首页">
-                    <img src="/Public/Home/images/indexw.png" style="vertical-align: baseline;width: 27px;height: 27px">
-                    </a>
+                <!--<div class="layui-input-inline">-->
+                    <!--<a class="layui-btn layui-btn-small" style="padding: 4px 4px"  href="/Home/Report/buyingrate" title="首页">-->
+                    <!--<img src="/Public/Home/images/indexw.png" style="vertical-align: baseline;width: 27px;height: 27px">-->
+                    <!--</a>-->
                     <!--<a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>-->
-                </div>
-                <span class="x-right" style="line-height:40px">全部：
-                    <a title="查看历史客户"  href="javascript;">
-                       {$count}
-                    </a>
-                </span>
-            </xblock>
-            <table class="layui-table">
+                <!--</div>-->
+                <!--<span class="x-right" style="line-height:40px">全部：-->
+                    <!--<a title="查看历史客户"  href="javascript;">-->
+                       <!--{$count}-->
+                    <!--</a>-->
+                <!--</span>-->
+            <!--</xblock>-->
+            <style>
+                #layui_table_w{
+                    width: 98%;
+                    margin-left: 1%;
+                    margin-top: 20px;
+                }
+            </style>
+            <table class="layui-table" id="layui_table_w">
                 <thead>
                     <tr>
-                        <th width="30px">
+                        <th width="30px"    rowspan="2">
                             排名
                         </th>
-                        <th width="45px">
+                        <th width="90px"    rowspan="2">
                             销售头像
                         </th>
-                        <th width="60px">
+                        <th width="90px"    rowspan="2">
                             销售姓名
                         </th>
-                        <th>
-                            一次复购率
+                        <th   rowspan="2">
+                            总订单
                         </th>
-                        <th>
+                        <th colspan="2">
+                            复购率
+                        </th>
+                        <th colspan="2">
                             二次复购率
                         </th>
-                        <th>
+                        <th colspan="2">
                             三次复购率
                         </th>
-                        <th>
+                        <th colspan="2">
                             四次复购率
                         </th>
-                        <th>
+                        <th colspan="2">
                             五次复购率
                         </th>
-                        <th>
+                        <th colspan="2">
                             六次复购率
                         </th>
-                        <th>
+                        <th colspan="2">
                             七次复购率
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            单数
+                        </th>
+                        <th>
+                            复购率
+                        </th>
+                        <th>
+                            单数
+                        </th>
+                        <th>
+                            复购率
+                        </th>
+                        <th>
+                            单数
+                        </th>
+                        <th>
+                            复购率
+                        </th>
+                        <th>
+                            单数
+                        </th>
+                        <th>
+                            复购率
+                        </th>
+                        <th>
+                            单数
+                        </th>
+                        <th>
+                            复购率
+                        </th>
+                        <th>
+                            单数
+                        </th>
+                        <th>
+                            复购率
+                        </th>
+                        <th>
+                            单数
+                        </th>
+                        <th>
+                            复购率
                         </th>
                     </tr>
                 </thead>
@@ -251,36 +332,65 @@
                         font-weight: bold;
                         color: #009688;
                     }
+                    .rate_font{
+                        font-size: 24px !important;
+                         font-weight: bold;
+                        font-style: italic;
+                    }
                 </style>
                 <tbody>
                     <foreach name="info" item="v">
                         <tr>
-                            <td>
+                            <td class="rate_font">
                                 {$v.sort_rate}
                             </td>
-                            <td>
-                                <img src="{$v.img_small}" style="width: 32px;height: 32px;border-radius: 50%">
+                            <td style="padding: 3px">
+                                <img src="{$v.img_small}" style="width: 40px;height: 40px;border-radius: 50%">
                             </td>
                             <td>
                                 {$v.nickname}
+                            </td>
+                            <td>
+                                {$v.buyrate.basic}
+                            </td>
+                            <td class="order_total_amount">
+                                {$v.buyrate.one}
                             </td>
                             <td class="order_total_amount">
                                 {$v.buyrate.rate.one}
                             </td>
                             <td>
+                                {$v.buyrate.two}
+                            </td>
+                            <td>
                                 {$v.buyrate.rate.two}
+                            </td>
+                            <td>
+                                {$v.buyrate.three}
                             </td>
                             <td>
                                 {$v.buyrate.rate.three}
                             </td>
                             <td>
+                                {$v.buyrate.four}
+                            </td>
+                            <td>
                                 {$v.buyrate.rate.four}
+                            </td>
+                            <td>
+                                {$v.buyrate.five}
                             </td>
                             <td>
                                 {$v.buyrate.rate.five}
                             </td>
                             <td>
+                                {$v.buyrate.six}
+                            </td>
+                            <td>
                                 {$v.buyrate.rate.six}
+                            </td>
+                            <td>
+                                {$v.buyrate.seven}
                             </td>
                             <td>
                                 {$v.buyrate.rate.seven}

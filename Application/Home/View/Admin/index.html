@@ -38,7 +38,7 @@
                   </div>
                 </div> 
             </form>
-            <xblock><button class="layui-btn" onclick="admin_add('添加用户','add','600','500')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：{$count} 条</span></xblock>
+            <xblock><button class="layui-btn" onclick="admin_add('添加用户','/Home/Admin/add','600','500')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：{$count} 条</span></xblock>
             <table class="layui-table">
                 <thead>
                     <tr>
@@ -122,11 +122,11 @@
                                             <i class="layui-icon">&#xe62f;</i>
                                         </a>
                                 </if>
-                                <a title="编辑" href="javascript:;" onclick="admin_edit('编辑','edit','{$v.id}','','510')"
+                                <a title="编辑" href="javascript:;" onclick="admin_edit('编辑','/Home/Admin/edit','{$v.id}','','510')"
                                 class="ml-5" style="text-decoration:none">
                                     <i class="layui-icon">&#xe642;</i>
                                 </a>
-                                <a style="text-decoration:none"  onclick="admin_group('划分项目组','group','{$v.role_id}','470','300','{$v.id}')"
+                                <a style="text-decoration:none"  onclick="admin_group('划分项目组','/Home/Admin/group','{$v.role_id}','470','300','{$v.id}')"
                                    href="javascript:;" title="划分项目组">
                                 <i class="layui-icon">&#xe631;</i>
                                 </a>
@@ -197,7 +197,7 @@
                 layer.confirm('确认要停用吗？',function(index){
                     $.ajax({
                         type: 'POST',
-                        url: 'stop',
+                        url: '/Home/Admin/stop',
                         dataType: 'json',
                         data:{'id':id},
                         success: function(data){
@@ -223,7 +223,7 @@
                 layer.confirm('确认要启用吗？',function(index){
                     $.ajax({
                         type: 'POST',
-                        url: 'start',
+                        url: '/Home/Admin/start',
                         dataType: 'json',
                         data:{'id':id},
                         success: function(data){
@@ -254,7 +254,7 @@
                 layer.confirm('确认要删除吗？',function(index){
                     $.ajax({
                         type: 'POST',
-                        url: 'del',
+                        url: '/Home/Admin/del',
                         dataType: 'json',
                         data:{'id':id},
                         success: function(data){

@@ -11,7 +11,7 @@ class RoleController extends HomeController{
      * 角色列表
      */
     function index(){
-        $info = M('Role')->select();
+        $info = M('Role')->order('id asc')->select();
         $this->assign('info',$info);
         $this->display();
     }
