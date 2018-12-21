@@ -1,0 +1,6 @@
+[ 2018-12-14T17:28:44+08:00 ] 127.0.0.1 /Public/Home/images/avatar.jpg
+ERR: 无法加载模块:Public
+
+[ 2018-12-14T17:28:44+08:00 ] 127.0.0.1 /favicon.ico
+ERR: 无法加载模块:Favicon
+

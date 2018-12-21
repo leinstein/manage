@@ -107,17 +107,17 @@
                             <div  class="word_english">Today</div>
                             <i class="layui-icon">&#xe770;</i>
                             <span class="word_title">客户数：</span>
-                            <span class="word_number"> 6</span>
+                            <span class="word_number"> <?php echo ($customer_stati["today"]); ?></span>
                             <div class="word_box"></div>
                         
                             <i class="layui-icon">&#xe63c;</i>
                             <span class="word_title">订单数：</span>
-                            <span class="word_number"> 7</span>
+                            <span class="word_number"> <?php echo ($order_stati["today"]); ?></span>
                             <div  class="word_box"></div>
                         
                             <i class="layui-icon">&#xe65e;</i>
                             <span class="word_title">销售额：</span>
-                            <span class="word_number"> 12001</span>
+                            <span class="word_number"> <?php echo (substr($order_stati["today_order"],0,-3)); ?></span>
                         </div>
                     </div>
                 </div>
@@ -131,17 +131,17 @@
                             <div  class="word_english">Yestoday</div>
                             <i class="layui-icon">&#xe770;</i>
                             <span class="word_title">客户数：</span>
-                            <span class="word_number"> 8</span>
+                            <span class="word_number"> <?php echo ($customer_stati["yestoday"]); ?></span>
                             <div class="word_box"></div>
                             
                             <i class="layui-icon">&#xe63c;</i>
                             <span class="word_title">订单数：</span>
-                            <span class="word_number"> 9</span>
+                            <span class="word_number"> <?php echo ($order_stati["yestoday"]); ?></span>
                             <div  class="word_box"></div>
                             
                             <i class="layui-icon">&#xe65e;</i>
                             <span class="word_title">销售额：</span>
-                            <span class="word_number"> 15123</span>
+                            <span class="word_number"> <?php echo (substr($order_stati["yestoday_order"],0,-3)); ?></span>
                         </div>
                     </div>
                 </div>
@@ -155,17 +155,17 @@
                             <div  class="word_english">Month</div>
                             <i class="layui-icon">&#xe770;</i>
                             <span class="word_title">客户数：</span>
-                            <span class="word_number"> 70</span>
+                            <span class="word_number"> <?php echo ($customer_stati["month"]); ?></span>
                             <div class="word_box"></div>
                             
                             <i class="layui-icon">&#xe63c;</i>
                             <span class="word_title">订单数：</span>
-                            <span class="word_number"> 90</span>
+                            <span class="word_number"> <?php echo ($order_stati["month"]); ?></span>
                             <div  class="word_box"></div>
                             
                             <i class="layui-icon">&#xe65e;</i>
                             <span class="word_title">销售额：</span>
-                            <span class="word_number"> 100123</span>
+                            <span class="word_number"> <?php echo (substr($order_stati["month_order"],0,-3)); ?></span>
                         </div>
                     </div>
                 </div>
@@ -179,17 +179,17 @@
                             <div  class="word_english">Last　Month</div>
                             <i class="layui-icon">&#xe770;</i>
                             <span class="word_title">客户数：</span>
-                            <span class="word_number"> 365</span>
+                            <span class="word_number"> <?php echo ($customer_stati["lastmonth"]); ?></span>
                             <div class="word_box"></div>
                             
                             <i class="layui-icon">&#xe63c;</i>
                             <span class="word_title">订单数：</span>
-                            <span class="word_number"> 568</span>
+                            <span class="word_number"> <?php echo ($order_stati["lastmonth"]); ?></span>
                             <div  class="word_box"></div>
                             
                             <i class="layui-icon">&#xe65e;</i>
                             <span class="word_title">销售额：</span>
-                            <span class="word_number"> 1200123</span>
+                            <span class="word_number"> <?php echo (substr($order_stati["lastmonth_order"],0,-3)); ?></span>
                         </div>
                     </div>
                 </div>
@@ -206,13 +206,13 @@
                           </ul>
                           <div class="layui-tab-content">
                             <div class="layui-tab-item layui-show">
-                                <div id="columnar" style="height: 380px"></div>
+                                <div id="columnar" style="height: 380px;min-width: 100px"></div>
                             </div>
                             <div class="layui-tab-item">
-                                <div id="columnar1" style="height: 380px"></div>
+                                <div id="columnar1" style="height: 380px;min-width: 100px"></div>
                             </div>
                             <div class="layui-tab-item">
-                                <div id="columnar2" style="height: 380px"></div>
+                                <div id="columnar2" style="height: 380px;min-width: 100px"></div>
                             </div>
                           </div>
                         </div>
@@ -271,54 +271,57 @@
                                       height: 60px;
                                       padding: 20px;
                                   }
-                                  .money_width{
-                                      width: 60px !important;
-                                  }
+                                  /*.layui-show{*/
+                                      /*width: 1000px;*/
+                                      /*border:1px solid red;*/
+                                  /*}*/
+                                  /*.money_width{*/
+                                      /*width: 60px !important;*/
+                                  /*}*/
                               </style>
                           <div class="layui-tab-content">
                             <div class="layui-tab-item layui-show">
                                 <ul class="list">
                                     <li style="margin-top: 8px">
                                         <span class="list_icon list_bg" style="color: white;">
-                                            <img src="/public/Home/images/10.jpg"  style="border-radius: 50%;width:57px;height: 58px">
-
+                                            <img src="<?php echo ($order_rank["month"]["0"]["img_small"]); ?>"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
-                                        <span class="list_name">方一勺</span>
-                                        <span class="">130</span>
-                                        <span class="money_width">￥ 52000</span>
+                                        <span class="list_name"><?php echo ($order_rank["month"]["0"]["nickname"]); ?></span>
+                                        <span class=""><?php echo ($order_rank["month"]["0"]["order_sum"]); ?> 单</span>
+                                        <span class="money_width">￥ <?php echo (substr($order_rank["month"]["0"]["t_order"],0,-3)); ?></span>
                                         
                                     </li>
                                     <li>
                                         <span class="list_icon list_bg" style="color: white">
-                                            <img src="/public/Home/images/11.jpg"  style="border-radius: 50%;width:57px;height: 58px">
+                                            <img src="<?php echo ($order_rank["month"]["1"]["img_small"]); ?>"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
-                                        <span class="list_name">沈勇</span>
-                                        <span class="">10</span>
-                                        <span class="money_width">￥ 52000</span>
+                                        <span class="list_name"><?php echo ($order_rank["month"]["1"]["nickname"]); ?></span>
+                                        <span class=""><?php echo ($order_rank["month"]["1"]["order_sum"]); ?> 单</span>
+                                        <span class="money_width">￥ <?php echo (substr($order_rank["month"]["1"]["t_order"],0,-3)); ?></span>
                                     </li>
                                     <li>
                                         <span class="list_icon list_bg" style="color: white">
-                                            <img src="/public/Home/images/12.jpg"  style="border-radius: 50%;width:57px;height: 58px">
+                                            <img src="<?php echo ($order_rank["month"]["2"]["img_small"]); ?>"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
-                                        <span class="list_name">蒋佳恩</span>
-                                        <span class="">111</span>
-                                        <span class="money_width">￥ 52000</span>
+                                        <span class="list_name"><?php echo ($order_rank["month"]["2"]["nickname"]); ?></span>
+                                        <span class=""><?php echo ($order_rank["month"]["2"]["order_sum"]); ?> 单</span>
+                                        <span class="money_width">￥ <?php echo (substr($order_rank["month"]["2"]["t_order"],0,-3)); ?></span>
                                     </li>
                                     <li>
                                         <span class="list_icon list_bg" style="background-color: #ddd;">
-                                            <img src="/public/Home/images/13.jpg"  style="border-radius: 50%;width:57px;height: 58px">
+                                            <img src="<?php echo ($order_rank["month"]["3"]["img_small"]); ?>"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
-                                        <span class="list_name">周伯通</span>
-                                        <span class="">112 单</span>
-                                        <span class="money_width">￥ 52000</span>
+                                        <span class="list_name"><?php echo ($order_rank["month"]["3"]["nickname"]); ?></span>
+                                        <span class=""><?php echo ($order_rank["month"]["3"]["order_sum"]); ?> 单</span>
+                                        <span class="money_width">￥ <?php echo (substr($order_rank["month"]["3"]["t_order"],0,-3)); ?></span>
                                     </li>
                                     <li>
                                         <span class="list_icon list_bg" style="background-color: #ddd;">
-                                            <img src="/public/Home/images/14.jpg"  style="border-radius: 50%;width:57px;height: 58px">
+                                            <img src="<?php echo ($order_rank["month"]["4"]["img_small"]); ?>"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
-                                        <span class="list_name">段誉</span>
-                                        <span class="">196</span>
-                                        <span class="money_width">￥ 52000</span>
+                                        <span class="list_name"><?php echo ($order_rank["month"]["4"]["nickname"]); ?></span>
+                                        <span class=""><?php echo ($order_rank["month"]["4"]["order_sum"]); ?> 单</span>
+                                        <span class="money_width">￥ <?php echo (substr($order_rank["month"]["4"]["t_order"],0,-3)); ?></span>
                                     </li>
                                 </ul>
                             </div>
@@ -326,45 +329,44 @@
                                 <ul class="list">
                                     <li style="margin-top: 8px">
                                         <span class="list_icon list_bg" style="color: white;">
-                                            <img src="/public/Home/images/10.jpg"  style="border-radius: 50%;width:57px;height: 58px">
-
+                                            <img src="<?php echo ($order_rank["lastmonth"]["0"]["img_small"]); ?>"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
-                                        <span class="list_name">方一勺2</span>
-                                        <span class="">130</span>
-                                        <span class="money_width">￥ 52000</span>
+                                        <span class="list_name"><?php echo ($order_rank["lastmonth"]["0"]["nickname"]); ?></span>
+                                        <span class=""><?php echo ($order_rank["lastmonth"]["0"]["order_sum"]); ?> 单</span>
+                                        <span class="money_width">￥ <?php echo (substr($order_rank["lastmonth"]["0"]["t_order"],0,-3)); ?></span>
                                         
                                     </li>
                                     <li>
                                         <span class="list_icon list_bg" style="color: white">
-                                            <img src="/public/Home/images/11.jpg"  style="border-radius: 50%;width:57px;height: 58px">
+                                            <img src="<?php echo ($order_rank["lastmonth"]["1"]["img_small"]); ?>"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
-                                        <span class="list_name">沈勇2</span>
-                                        <span class="">10</span>
-                                        <span class="money_width">￥ 52000</span>
+                                        <span class="list_name"><?php echo ($order_rank["lastmonth"]["1"]["nickname"]); ?></span>
+                                        <span class=""><?php echo ($order_rank["lastmonth"]["1"]["order_sum"]); ?> 单</span>
+                                        <span class="money_width">￥ <?php echo (substr($order_rank["lastmonth"]["1"]["t_order"],0,-3)); ?></span>
                                     </li>
                                     <li>
                                         <span class="list_icon list_bg" style="color: white">
-                                            <img src="/public/Home/images/12.jpg"  style="border-radius: 50%;width:57px;height: 58px">
+                                            <img src="<?php echo ($order_rank["lastmonth"]["2"]["img_small"]); ?>"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
-                                        <span class="list_name">蒋佳恩2</span>
-                                        <span class="">111</span>
-                                        <span class="money_width">￥ 52000</span>
+                                        <span class="list_name"><?php echo ($order_rank["lastmonth"]["2"]["nickname"]); ?></span>
+                                        <span class=""><?php echo ($order_rank["lastmonth"]["2"]["order_sum"]); ?> 单</span>
+                                        <span class="money_width">￥ <?php echo (substr($order_rank["lastmonth"]["2"]["t_order"],0,-3)); ?></span>
                                     </li>
                                     <li>
                                         <span class="list_icon list_bg" style="background-color: #ddd;">
-                                            <img src="/public/Home/images/13.jpg"  style="border-radius: 50%;width:57px;height: 58px">
+                                            <img src="<?php echo ($order_rank["lastmonth"]["3"]["img_small"]); ?>"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
-                                        <span class="list_name">周伯通2</span>
-                                        <span class="">112 单</span>
-                                        <span class="money_width">￥ 52000</span>
+                                        <span class="list_name"><?php echo ($order_rank["lastmonth"]["3"]["nickname"]); ?></span>
+                                        <span class=""><?php echo ($order_rank["lastmonth"]["3"]["order_sum"]); ?> 单</span>
+                                        <span class="money_width">￥ <?php echo (substr($order_rank["lastmonth"]["3"]["t_order"],0,-3)); ?></span>
                                     </li>
                                     <li>
                                         <span class="list_icon list_bg" style="background-color: #ddd;">
-                                            <img src="/public/Home/images/14.jpg"  style="border-radius: 50%;width:57px;height: 58px">
+                                            <img src="<?php echo ($order_rank["lastmonth"]["4"]["img_small"]); ?>"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
-                                        <span class="list_name">段誉2</span>
-                                        <span class="">196</span>
-                                        <span class="money_width">￥ 52000</span>
+                                        <span class="list_name"><?php echo ($order_rank["lastmonth"]["4"]["nickname"]); ?></span>
+                                        <span class=""><?php echo ($order_rank["lastmonth"]["4"]["order_sum"]); ?> 单</span>
+                                        <span class="money_width">￥ <?php echo (substr($order_rank["lastmonth"]["4"]["t_order"],0,-3)); ?></span>
                                     </li>
                                 </ul>
                             </div>
@@ -372,45 +374,44 @@
                                 <ul class="list">
                                     <li style="margin-top: 8px">
                                         <span class="list_icon list_bg" style="color: white;">
-                                            <img src="/public/Home/images/10.jpg"  style="border-radius: 50%;width:57px;height: 58px">
-
+                                            <img src="<?php echo ($order_rank["history"]["0"]["img_small"]); ?>"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
-                                        <span class="list_name">方一勺1</span>
-                                        <span class="">130</span>
-                                        <span class="money_width">￥ 52000</span>
+                                        <span class="list_name"><?php echo ($order_rank["history"]["0"]["nickname"]); ?></span>
+                                        <span class=""><?php echo ($order_rank["history"]["0"]["order_sum"]); ?> 单</span>
+                                        <span class="money_width">￥ <?php echo (substr($order_rank["history"]["0"]["t_order"],0,-3)); ?></span>
                                         
                                     </li>
                                     <li>
                                         <span class="list_icon list_bg" style="color: white">
-                                            <img src="/public/Home/images/11.jpg"  style="border-radius: 50%;width:57px;height: 58px">
+                                            <img src="<?php echo ($order_rank["history"]["1"]["img_small"]); ?>"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
-                                        <span class="list_name">沈勇1</span>
-                                        <span class="">10</span>
-                                        <span class="money_width">￥ 52000</span>
+                                        <span class="list_name"><?php echo ($order_rank["history"]["1"]["nickname"]); ?></span>
+                                        <span class=""><?php echo ($order_rank["history"]["1"]["order_sum"]); ?> 单</span>
+                                        <span class="money_width">￥ <?php echo (substr($order_rank["history"]["1"]["t_order"],0,-3)); ?></span>
                                     </li>
                                     <li>
                                         <span class="list_icon list_bg" style="color: white">
-                                            <img src="/public/Home/images/12.jpg"  style="border-radius: 50%;width:57px;height: 58px">
+                                            <img src="<?php echo ($order_rank["history"]["2"]["img_small"]); ?>"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
-                                        <span class="list_name">蒋佳恩1</span>
-                                        <span class="">111</span>
-                                        <span class="money_width">￥ 52000</span>
+                                        <span class="list_name"><?php echo ($order_rank["history"]["2"]["nickname"]); ?></span>
+                                        <span class=""><?php echo ($order_rank["history"]["2"]["order_sum"]); ?> 单</span>
+                                        <span class="money_width">￥ <?php echo (substr($order_rank["history"]["2"]["t_order"],0,-3)); ?></span>
                                     </li>
                                     <li>
                                         <span class="list_icon list_bg" style="background-color: #ddd;">
-                                            <img src="/public/Home/images/13.jpg"  style="border-radius: 50%;width:57px;height: 58px">
+                                            <img src="<?php echo ($order_rank["history"]["3"]["img_small"]); ?>"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
-                                        <span class="list_name">周伯通1</span>
-                                        <span class="">112 单</span>
-                                        <span class="money_width">￥ 52000</span>
+                                        <span class="list_name"><?php echo ($order_rank["history"]["3"]["nickname"]); ?></span>
+                                        <span class=""><?php echo ($order_rank["history"]["3"]["order_sum"]); ?> 单</span>
+                                        <span class="money_width">￥ <?php echo (substr($order_rank["history"]["3"]["t_order"],0,-3)); ?></span>
                                     </li>
                                     <li>
                                         <span class="list_icon list_bg" style="background-color: #ddd;">
-                                            <img src="/public/Home/images/14.jpg"  style="border-radius: 50%;width:57px;height: 58px">
+                                            <img src="<?php echo ($order_rank["history"]["4"]["img_small"]); ?>"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
-                                        <span class="list_name">段誉1</span>
-                                        <span class="">196</span>
-                                        <span class="money_width">￥ 52000</span>
+                                        <span class="list_name"><?php echo ($order_rank["history"]["4"]["nickname"]); ?></span>
+                                        <span class=""><?php echo ($order_rank["history"]["4"]["order_sum"]); ?> 单</span>
+                                        <span class="money_width">￥ <?php echo (substr($order_rank["history"]["4"]["t_order"],0,-3)); ?></span>
                                     </li>
                                 </ul>
                             </div>
@@ -482,7 +483,7 @@
                           </div>
                           <div class="buy_rate">
                               <div class="repart_rate">复购率</div>
-                              <div class="buying_rate">38%</div>
+                              <div class="buying_rate"><?php echo ($buyrate["rate"]["one"]); ?></div>
                           </div>
                           <div id="ring_one" class="ring"></div>
                         </div>
@@ -492,7 +493,7 @@
                           </div>
                           <div class="buy_rate">
                               <div class="repart_rate">复购率</div>
-                              <div class="buying_rate">88%</div>
+                              <div class="buying_rate"><?php echo ($buyrate["rate"]["two"]); ?></div>
                           </div>
                           <div id="ring_two" class="ring"></div>
                         </div>
@@ -502,7 +503,7 @@
                           </div>
                           <div class="buy_rate">
                               <div class="repart_rate">复购率</div>
-                              <div class="buying_rate">65%</div>
+                              <div class="buying_rate"><?php echo ($buyrate["rate"]["three"]); ?></div>
                           </div>
                           <div id="ring_three" class="ring"></div>
                         </div>
@@ -512,7 +513,7 @@
                           </div>
                           <div class="buy_rate">
                               <div class="repart_rate">复购率</div>
-                              <div class="buying_rate">76%</div>
+                              <div class="buying_rate"><?php echo ($buyrate["rate"]["four"]); ?></div>
                           </div>
                           <div id="ring_four" class="ring"></div>
                         </div>
@@ -522,7 +523,7 @@
                           </div>
                           <div class="buy_rate">
                               <div class="repart_rate">复购率</div>
-                              <div class="buying_rate">75%</div>
+                              <div class="buying_rate"><?php echo ($buyrate["rate"]["five"]); ?></div>
                           </div>
                           <div id="ring_five" class="ring"></div>
                         </div>
@@ -532,7 +533,7 @@
                           </div>
                           <div class="buy_rate">
                               <div class="repart_rate">复购率</div>
-                              <div class="buying_rate">77%</div>
+                              <div class="buying_rate"><?php echo ($buyrate["rate"]["six"]); ?></div>
                           </div>
                           <div id="ring_six" class="ring"></div>
                         </div>
@@ -542,7 +543,7 @@
                           </div>
                           <div class="buy_rate">
                               <div class="repart_rate">复购率</div>
-                              <div class="buying_rate">98%</div>
+                              <div class="buying_rate"><?php echo ($buyrate["rate"]["seven"]); ?></div>
                           </div>
                           <div id="ring_seven" class="ring"></div>
                         </div>
@@ -578,6 +579,7 @@
                 </p>
             </div>
         </div>
+        <script src="/Public/home/js/jquery.js"></script>
         <script src="/Public/home/lib/layui/layui.js" charset="utf-8"></script>
         <script src="/Public/home/js/x-admin.js"></script>
         <script src="/Public/home/js/echarts.min.js"></script>
@@ -593,11 +595,14 @@
         <!--柱状图-->
         <script type="text/javascript">
                 var dom = document.getElementById("columnar");
+                var day = <?php echo ($month_day); ?>;
+                var myDate = new Date();
+                year = myDate.getFullYear();
+                month = myDate.getMonth() + 1;
                 var myChart = echarts.init(dom);
-                //var chart = echarts.init(dom, 'light');
                 var app = {};
                 option = null;
-                app.title = '坐标轴刻度与标签对齐';
+                app.title = '本月销售额';
                 
                 option = {
                     color: ['#3398DB'],//柱子颜色  #3aa1ff
@@ -605,7 +610,8 @@
                         trigger: 'axis',
                         axisPointer : {            // 坐标轴指示器，坐标轴触发有效
                             type : 'line'        // 默认为直线，可选为：'line' | 'shadow'
-                        }
+                        },
+                        formatter: year+"-"+month+"-{b}<br /><br /><div style='width: 8px;height: 8px;border: 1px solid #3398db;display: inline-block;border-radius: 50%;background-color: #3398db'></div> {a}: {c}"
                     },
                     grid: {
                         left: '1%',
@@ -617,7 +623,7 @@
                     xAxis : [
                         {
                             type : 'category',
-                            data : ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31'],
+                            data : day.date,
                             axisTick: {
                                 alignWithLabel: true
                             },
@@ -634,10 +640,10 @@
                     ],
                     series : [
                         {
-                            name:'销售额',
+                            name:'本月销售额',
                             type:'bar',
                             barWidth: '50%',
-                            data:[10, 52, 200, 334, 390, 330, 220,10, 52, 160, 380, 352, 142, 400,10, 52, 200, 334, 390, 330, 220,10, 52, 160, 380, 352, 142, 400,45,123,456]
+                            data:day.list
                         }
                     ]
                 };
@@ -651,13 +657,14 @@
                 var width = $("#columnar").width();
                 var height = $("#columnar").height();
                 $("#columnar1").css("width", width).css("height", height);
-                console.log('------------');
-                console.log(width);
-                console.log(height);
+                var day = <?php echo ($month_day); ?>;
+                var day_customer = <?php echo ($month_day_customer); ?>;
+                year = myDate.getFullYear();
+                month = myDate.getMonth() + 1;
                 var myChart = echarts.init(dom);
                 var app = {};
                 option = null;
-                app.title = '坐标轴刻度与标签对齐';
+                app.title = '本月顾客';
                 
                 option = {
                     color: ['#3398DB'],//柱子颜色  #3aa1ff
@@ -665,7 +672,8 @@
                         trigger: 'axis',
                         axisPointer : {            // 坐标轴指示器，坐标轴触发有效
                             type : 'line'        // 默认为直线，可选为：'line' | 'shadow'
-                        }
+                        },
+                        formatter: year+"-"+month+"-{b}<br /><br /><div style='width: 8px;height: 8px;border: 1px solid #3398db;display: inline-block;border-radius: 50%;background-color: #3398db'></div> {a}: {c}"
                     },
                     grid: {
                         left: '1%',
@@ -677,7 +685,7 @@
                     xAxis : [
                         {
                             type : 'category',
-                            data : ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31'],
+                            data : day.date,
                             axisTick: {
                                 alignWithLabel: true
                             },
@@ -694,10 +702,10 @@
                     ],
                     series : [
                         {
-                            name:'销售额',
+                            name:'本月顾客',
                             type:'bar',
                             barWidth: '50%',
-                            data:[10, 52, 200, 334, 390, 330, 20,10, 52, 60, 380, 352, 42, 400,10, 52, 10, 334, 390, 330, 220,10, 52, 160, 370, 352, 142, 400,45,13,456]
+                            data:day_customer
                         }
                     ]
                 };
@@ -711,21 +719,21 @@
                 var width = $("#columnar").width();
                 var height = $("#columnar").height();
                 $("#columnar2").css("width", width).css("height", height);
-                console.log('------------');
-                console.log(width);
-                console.log(height);
+                var day = <?php echo ($month_day); ?>;
+                year = myDate.getFullYear();
+                month = myDate.getMonth() + 1;
                 var myChart = echarts.init(dom);
                 var app = {};
                 option = null;
-                app.title = '坐标轴刻度与标签对齐';
-                
+                app.title = '本月订单';
                 option = {
                     color: ['#3398DB'],//柱子颜色  #3aa1ff
-                    tooltip : {
+                    tooltip: {
                         trigger: 'axis',
-                        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-                            type : 'line'        // 默认为直线，可选为：'line' | 'shadow'
-                        }
+                        axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                            type: 'line'        // 默认为直线，可选为：'line' | 'shadow'
+                        },
+                        formatter: year+"-"+month+"-{b}<br /><br /><div style='width: 8px;height: 8px;border: 1px solid #3398db;display: inline-block;border-radius: 50%;background-color: #3398db'></div> {a}: {c}"
                     },
                     grid: {
                         left: '1%',
@@ -734,10 +742,10 @@
                         // bottom: '3%',
                         containLabel: true
                     },
-                    xAxis : [
+                    xAxis: [
                         {
-                            type : 'category',
-                            data : ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31'],
+                            type: 'category',
+                            data: day.date,
                             axisTick: {
                                 alignWithLabel: true
                             },
@@ -747,17 +755,17 @@
                             // }
                         }
                     ],
-                    yAxis : [
+                    yAxis: [
                         {
-                            type : 'value'
+                            type: 'value'
                         }
                     ],
-                    series : [
+                    series: [
                         {
-                            name:'销售额',
-                            type:'bar',
+                            name: '本月订单',
+                            type: 'bar',
                             barWidth: '50%',
-                            data:[10, 52, 200, 384, 390, 330, 290,10, 52, 140, 380, 352, 142, 410,10, 52, 200, 334, 390, 330, 20,10, 52, 60, 38, 352, 142, 440,45,123,456]
+                            data: day.order_count
                         }
                     ]
                 };
@@ -769,6 +777,12 @@
         <!--折线图-->
         <script type="text/javascript">
                     var dom = document.getElementById("brokenline");
+                    var day = <?php echo ($lastmonth_day_amount); ?>;
+                    var day_customer = <?php echo ($lastmonth_day_customer); ?>;
+                    var myDate = new Date();
+                    year = myDate.getFullYear();
+                    month = myDate.getMonth();
+                    if(month == 0){month = 12;}
                     var myChart = echarts.init(dom);
                     var app = {};
                     option = null;
@@ -778,8 +792,13 @@
                             color:'#ccc'
                         },
                         tooltip: {
-                            trigger: 'axis'
+                            trigger: 'axis',
+                            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                                type: 'line'        // 默认为直线，可选为：'line' | 'shadow'
+                            },
+                            formatter: year+"-"+month+"-{b}<br /><br /><div style='width: 8px;height: 8px;border: 1px solid #c02c38;display: inline-block;border-radius: 50%;background-color: #c02c38'></div> {a0}: {c0}<br /><div style='width: 8px;height: 8px;border: 1px solid #894276;display: inline-block;border-radius: 50%;background-color: #894276'></div> {a1}: {c1}<br /><div style='width: 8px;height: 8px;border: 1px solid #3398db;display: inline-block;border-radius: 50%;background-color: #3398db'></div> {a2}: {c2}"
                         },
+                        color:['#c02c38','#894276','#3398db'],
                         legend: {
                             data:['上月订单','上月销售额','上月顾客']
                         },
@@ -796,7 +815,7 @@
                         xAxis: {
                             type: 'category',
                             boundaryGap: false,
-                            data: ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31']
+                            data: day.date
                         },
                         yAxis: {
                             type: 'value'
@@ -806,19 +825,19 @@
                                 name:'上月订单',
                                 type:'line',
                                 stack: '总量',
-                                data:[120, 132, 101, 134, 90, 230, 210,120, 132, 101, 134, 90, 230, 210,120, 132, 101, 134, 90, 230, 210,120, 132, 101, 134, 90, 230, 210, 90, 230, 210]
+                                data:day.order_count
                             },
                             {
                                 name:'上月销售额',
                                 type:'line',
                                 stack: '总量',
-                                data:[120, 130, 101, 145, 90, 230, 235, 120, 102, 101, 134, 91, 230, 212, 120, 132, 101, 144, 20, 233, 235, 120, 102, 101, 124, 10, 230, 210, 90, 220, 220]
+                                data:day.list
                             },
                             {
                                 name:'上月顾客',
                                 type:'line',
                                 stack: '总量',
-                                data:[100, 112, 93, 124, 80, 201, 174, 123, 70, 120, 122, 40, 230, 210, 100, 112, 93, 124, 80, 201, 174,123, 70, 120, 122, 40, 230, 210, 40, 230, 210]
+                                data:day_customer
                             }
                         ]
                     };
@@ -831,6 +850,8 @@
             var dom = document.getElementById("ring_one");
             var myChart = echarts.init(dom);
             var app = {};
+            var basic = Number("<?php echo ($buyrate["basic"]); ?>") - Number("<?php echo ($buyrate["one"]); ?>");
+            var rate = "<?php echo ($buyrate["one"]); ?>";
             option = null;
             app.title = '环形图';
 
@@ -840,10 +861,10 @@
                     x: 'center',
                     data:['复购率','1']
                 },
-                color:['#f0f2f5','#34bfa3'],
+                color:['#34bfa3','#f2f2f2'],
                 series: [
                     {
-                        name:'访问来源',
+                        name:'复购',
                         type:'pie',
                         radius: ['30%', '70%'],
                         avoidLabelOverlap: false,
@@ -865,8 +886,8 @@
                             }
                         },
                         data:[
-                            {value:335},
-                            {value:148}
+                            {value:rate},
+                            {value:basic}
                         ]
                     }
             ]
@@ -879,6 +900,8 @@
             var dom = document.getElementById("ring_two");
             var myChart = echarts.init(dom);
             var app = {};
+            var basic = Number("<?php echo ($buyrate["basic"]); ?>") - Number("<?php echo ($buyrate["two"]); ?>");
+            var rate = "<?php echo ($buyrate["two"]); ?>";
             option = null;
             app.title = '环形图';
             
@@ -888,10 +911,10 @@
                 x: 'center',
                 data:['复购率','1']
             },
-            color:['#f0f2f5','#34bfa3'],
+            color:['#34bfa3','#f2f2f2'],
             series: [
                 {
-                    name:'访问来源',
+                    name:'复购',
                     type:'pie',
                     radius: ['30%', '70%'],
                     avoidLabelOverlap: false,
@@ -913,8 +936,8 @@
                         }
                     },
                     data:[
-                        {value:335},
-                        {value:1548}
+                        {value:rate},
+                        {value:basic}
                     ]
                 }
             ]
@@ -927,6 +950,8 @@
             var dom = document.getElementById("ring_three");
             var myChart = echarts.init(dom);
             var app = {};
+            var basic = Number("<?php echo ($buyrate["basic"]); ?>") - Number("<?php echo ($buyrate["three"]); ?>");
+            var rate = "<?php echo ($buyrate["three"]); ?>";
             option = null;
             app.title = '环形图';
 
@@ -936,10 +961,10 @@
                     x: 'center',
                     data:['复购率','1']
                 },
-                color:['#f0f2f5','#34bfa3'],
+                color:['#34bfa3','#f2f2f2'],
                 series: [
                     {
-                        name:'访问来源',
+                        name:'复购',
                         type:'pie',
                         radius: ['30%', '70%'],
                         avoidLabelOverlap: false,
@@ -961,8 +986,8 @@
                             }
                         },
                         data:[
-                            {value:335},
-                            {value:548}
+                            {value:rate},
+                            {value:basic}
                         ]
                     }
             ]
@@ -976,6 +1001,8 @@
             var dom = document.getElementById("ring_four");
             var myChart = echarts.init(dom);
             var app = {};
+            var basic = Number("<?php echo ($buyrate["basic"]); ?>") - Number("<?php echo ($buyrate["four"]); ?>");
+            var rate = "<?php echo ($buyrate["four"]); ?>";
             option = null;
             app.title = '环形图';
 
@@ -985,10 +1012,10 @@
                     x: 'center',
                     data:['复购率','1']
                 },
-                color:['#f0f2f5','#34bfa3'],
+                color:['#34bfa3','#f2f2f2'],
                 series: [
                     {
-                        name:'访问来源',
+                        name:'复购',
                         type:'pie',
                         radius: ['30%', '70%'],
                         avoidLabelOverlap: false,
@@ -1010,8 +1037,8 @@
                             }
                         },
                         data:[
-                            {value:35},
-                            {value:148}
+                            {value:rate},
+                            {value:basic}
                         ]
                     }
             ]
@@ -1025,6 +1052,8 @@
             var dom = document.getElementById("ring_five");
             var myChart = echarts.init(dom);
             var app = {};
+            var basic = Number("<?php echo ($buyrate["basic"]); ?>") - Number("<?php echo ($buyrate["five"]); ?>");
+            var rate = "<?php echo ($buyrate["five"]); ?>";
             option = null;
             app.title = '环形图';
 
@@ -1034,10 +1063,10 @@
                     x: 'center',
                     data:['复购率','1']
                 },
-                color:['#f0f2f5','#34bfa3'],
+                color:['#34bfa3','#f2f2f2'],
                 series: [
                     {
-                        name:'访问来源',
+                        name:'复购',
                         type:'pie',
                         radius: ['30%', '70%'],
                         avoidLabelOverlap: false,
@@ -1059,8 +1088,8 @@
                             }
                         },
                         data:[
-                            {value:35},
-                            {value:158}
+                            {value:rate},
+                            {value:basic}
                         ]
                     }
             ]
@@ -1074,6 +1103,8 @@
             var dom = document.getElementById("ring_six");
             var myChart = echarts.init(dom);
             var app = {};
+            var basic = Number("<?php echo ($buyrate["basic"]); ?>") - Number("<?php echo ($buyrate["six"]); ?>");
+            var rate = "<?php echo ($buyrate["six"]); ?>";
             option = null;
             app.title = '环形图';
 
@@ -1083,10 +1114,10 @@
                     x: 'center',
                     data:['复购率','1']
                 },
-                color:['#f0f2f5','#34bfa3'],
+                color:['#34bfa3','#f2f2f2'],
                 series: [
                     {
-                        name:'访问来源',
+                        name:'复购',
                         type:'pie',
                         radius: ['30%', '70%'],
                         avoidLabelOverlap: false,
@@ -1108,8 +1139,8 @@
                             }
                         },
                         data:[
-                            {value:3350},
-                            {value:14800}
+                            {value:rate},
+                            {value:basic}
                         ]
                     }
             ]
@@ -1123,6 +1154,8 @@
             var dom = document.getElementById("ring_seven");
             var myChart = echarts.init(dom);
             var app = {};
+            var basic = Number("<?php echo ($buyrate["basic"]); ?>") - Number("<?php echo ($buyrate["seven"]); ?>");
+            var rate = "<?php echo ($buyrate["seven"]); ?>";
             option = null;
             app.title = '环形图';
 
@@ -1132,10 +1165,10 @@
                     x: 'center',
                     data:['复购率','1']
                 },
-                color:['#f0f2f5','#34bfa3'],
+                color:['#34bfa3','#f2f2f2'],
                 series: [
                     {
-                        name:'访问来源',
+                        name:'复购',
                         type:'pie',
                         radius: ['30%', '70%'],
                         avoidLabelOverlap: false,
@@ -1157,8 +1190,8 @@
                             }
                         },
                         data:[
-                            {value:35},
-                            {value:1408}
+                            {value:rate},
+                            {value:basic}
                         ]
                     }
             ]

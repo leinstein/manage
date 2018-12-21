@@ -1,0 +1,1232 @@
+[ 2018-12-15T08:32:54+08:00 ] 127.0.0.1 /Home/Admin/edit_group
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_group` [ RunTime:0.0100s ]
+SQL: UPDATE `fb_group` SET `group_name`='风暴一组',`remark`='一组很牛逼1',`create_time`='1544833974' WHERE `group_id` = 1 [ RunTime:0.0000s ]
+
+[ 2018-12-15T08:36:10+08:00 ] 127.0.0.1 /Home/Admin/del_group
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_group` [ RunTime:0.0090s ]
+SQL: DELETE FROM `fb_group` WHERE `group_id` = 6 [ RunTime:0.0000s ]
+
+[ 2018-12-15T08:48:56+08:00 ] 127.0.0.1 /Home/Role/del
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0100s ]
+SQL: DELETE FROM `fb_role` WHERE `id` = 5 [ RunTime:0.0000s ]
+
+[ 2018-12-15T08:49:00+08:00 ] 127.0.0.1 /Home/Role/del
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0100s ]
+SQL: DELETE FROM `fb_role` WHERE `id` = 7 [ RunTime:0.0010s ]
+
+[ 2018-12-15T08:49:03+08:00 ] 127.0.0.1 /Home/Role/del
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0100s ]
+SQL: DELETE FROM `fb_role` WHERE `id` = 8 [ RunTime:0.0010s ]
+
+[ 2018-12-15T08:49:07+08:00 ] 127.0.0.1 /Home/Role/del
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0100s ]
+SQL: DELETE FROM `fb_role` WHERE `id` = 25 [ RunTime:0.0010s ]
+
+[ 2018-12-15T08:49:09+08:00 ] 127.0.0.1 /Home/Role/del
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0100s ]
+SQL: DELETE FROM `fb_role` WHERE `id` = 24 [ RunTime:0.0010s ]
+
+[ 2018-12-15T08:49:12+08:00 ] 127.0.0.1 /Home/Role/del
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0090s ]
+SQL: DELETE FROM `fb_role` WHERE `id` = 23 [ RunTime:0.0000s ]
+
+[ 2018-12-15T08:49:15+08:00 ] 127.0.0.1 /Home/Role/del
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0100s ]
+SQL: DELETE FROM `fb_role` WHERE `id` = 22 [ RunTime:0.0010s ]
+
+[ 2018-12-15T08:49:19+08:00 ] 127.0.0.1 /Home/Role/del
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0090s ]
+SQL: DELETE FROM `fb_role` WHERE `id` = 6 [ RunTime:0.0000s ]
+
+[ 2018-12-15T08:49:50+08:00 ] 127.0.0.1 /Home/Role/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fb_role` WHERE `name` = '主管' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `fb_role` (`name`,`description`,`pid`,`create_time`) VALUES ('主管','主管','2','1544834990') [ RunTime:0.0010s ]
+
+[ 2018-12-15T08:50:05+08:00 ] 127.0.0.1 /Home/Role/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_role` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fb_role` WHERE `name` = '销售' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `fb_role` (`name`,`description`,`pid`,`create_time`) VALUES ('销售','销售','2','1544835005') [ RunTime:0.0000s ]
+
+[ 2018-12-15T08:50:39+08:00 ] 127.0.0.1 /Home/Admin/add_group
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_group` [ RunTime:0.0100s ]
+SQL: INSERT INTO `fb_group` (`group_name`,`remark`,`create_time`) VALUES ('技术部','技术部','1544835039') [ RunTime:0.0010s ]
+
+[ 2018-12-15T08:51:06+08:00 ] 127.0.0.1 /Home/Admin/add_group
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_group` [ RunTime:0.0090s ]
+SQL: INSERT INTO `fb_group` (`group_name`,`remark`,`create_time`) VALUES ('行政部','行政部','1544835066') [ RunTime:0.0010s ]
+
+[ 2018-12-15T08:54:41+08:00 ] 127.0.0.1 /Home/Admin/add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: group_id D:\www\oa\Application\Home\Controller\AdminController.class.php 第 186 行.
+NOTIC: [8] Undefined index: validate D:\www\oa\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\www\oa\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `fb_admin` WHERE `username` = 'fengbao003' LIMIT 1   [ RunTime:0.0000s ]
+ERR: 1048:Column 'group_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `fb_admin` (`username`,`nickname`,`mobile`,`role_id`,`group_id`,`create_time`,`password`,`grade`,`bid`) VALUES ('fengbao003','鸠摩智','15112123232','26',NULL,'1544835281','f5bb0c8de146c67b44babbf4e6584cc0','1','1')
+ERR: 1048:Column 'group_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `fb_admin` (`username`,`nickname`,`mobile`,`role_id`,`group_id`,`create_time`,`password`,`grade`,`bid`) VALUES ('fengbao003','鸠摩智','15112123232','26',NULL,'1544835281','f5bb0c8de146c67b44babbf4e6584cc0','1','1')
+
+[ 2018-12-15T08:54:51+08:00 ] 127.0.0.1 /Home/Admin/add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: group_id D:\www\oa\Application\Home\Controller\AdminController.class.php 第 186 行.
+NOTIC: [8] Undefined index: validate D:\www\oa\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\www\oa\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `fb_admin` WHERE `username` = 'fengbao003' LIMIT 1   [ RunTime:0.0010s ]
+ERR: 1048:Column 'group_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `fb_admin` (`username`,`nickname`,`mobile`,`role_id`,`group_id`,`create_time`,`password`,`grade`,`bid`) VALUES ('fengbao003','鸠摩智','15112123232','26',NULL,'1544835291','f5bb0c8de146c67b44babbf4e6584cc0','1','1')
+ERR: 1048:Column 'group_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `fb_admin` (`username`,`nickname`,`mobile`,`role_id`,`group_id`,`create_time`,`password`,`grade`,`bid`) VALUES ('fengbao003','鸠摩智','15112123232','26',NULL,'1544835291','f5bb0c8de146c67b44babbf4e6584cc0','1','1')
+
+[ 2018-12-15T08:56:08+08:00 ] 127.0.0.1 /Home/Admin/add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: validate D:\www\oa\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\www\oa\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `fb_admin` WHERE `username` = 'fengbao005' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `fb_admin` (`username`,`nickname`,`mobile`,`role_id`,`group_id`,`create_time`,`password`,`grade`,`bid`) VALUES ('fengbao005','鸠摩智','15125256363','26','1','1544835368','f5bb0c8de146c67b44babbf4e6584cc0','1','1') [ RunTime:0.0010s ]
+
+[ 2018-12-15T08:58:27+08:00 ] 127.0.0.1 /Home/Admin/add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0090s ]
+NOTIC: [8] Undefined index: validate D:\www\oa\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\www\oa\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `fb_admin` WHERE `username` = 'fengbao009' LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `fb_admin` (`username`,`nickname`,`mobile`,`role_id`,`group_id`,`create_time`,`password`,`grade`,`bid`) VALUES ('fengbao009','纳西','15236365252','27','2','1544835507','f5bb0c8de146c67b44babbf4e6584cc0','1','1') [ RunTime:0.0000s ]
+
+[ 2018-12-15T09:27:40+08:00 ] 127.0.0.1 /Home/Admin/group?id=34&role_id=26&group_id=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: UPDATE `fb_admin` SET `role_id`='27',`update_time`='1544837260' WHERE `id` = 34 [ RunTime:0.0010s ]
+
+[ 2018-12-15T09:29:46+08:00 ] 127.0.0.1 /Home/Admin/group?id=35&role_id=27&group_id=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0060s ]
+SQL: UPDATE `fb_admin` SET `role_id`='26',`update_time`='1544837386' WHERE `id` = 35 [ RunTime:0.0000s ]
+
+[ 2018-12-15T09:35:31+08:00 ] 127.0.0.1 /Home/Admin/group?id=32&role_id=27&group_id=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0120s ]
+SQL: UPDATE `fb_admin` SET `role_id`='26',`update_time`='1544837731' WHERE `id` = 32 [ RunTime:0.0010s ]
+
+[ 2018-12-15T09:36:33+08:00 ] 127.0.0.1 /Home/Admin/group?id=32&role_id=26&group_id=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: UPDATE `fb_admin` SET `role_id`='27',`group_id`='2',`update_time`='1544837793' WHERE `id` = 32 [ RunTime:0.0000s ]
+
+[ 2018-12-15T09:57:57+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T09:57:58+08:00 ] 127.0.0.1 /index.php/home/Index/wel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T09:58:11+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T09:58:26+08:00 ] 127.0.0.1 /Home/Report/rank
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T09:58:29+08:00 ] 127.0.0.1 /Home/Customer/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T09:58:35+08:00 ] 127.0.0.1 /Home/Index/wel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T10:01:46+08:00 ] 127.0.0.1 /Home/Report/buyingrate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T10:01:50+08:00 ] 127.0.0.1 /Home/Report/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T10:10:05+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T10:10:42+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T10:11:06+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T10:11:43+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T10:11:52+08:00 ] 127.0.0.1 /Home/Admin/group_management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T10:11:59+08:00 ] 127.0.0.1 /Home/Admin/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T10:12:07+08:00 ] 127.0.0.1 /Home/Role/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T10:12:53+08:00 ] 127.0.0.1 /Home/Auth/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T10:13:24+08:00 ] 127.0.0.1 /Home/Admin/add_group
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T10:21:57+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T10:22:05+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T10:22:36+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T10:23:18+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T10:24:06+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T10:26:52+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T10:28:08+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T10:28:55+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T10:29:31+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T10:29:45+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T10:30:17+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T10:31:08+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T10:31:43+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T10:31:52+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T10:32:02+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T10:32:07+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T10:32:30+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T10:32:32+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T10:32:40+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T10:32:54+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T10:33:16+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T10:33:44+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T10:34:35+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T10:35:13+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T10:57:11+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T10:58:27+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:02:06+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:02:24+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:02:59+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T11:03:17+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:05:57+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:08:25+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:09:04+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:09:24+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:09:41+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:10:52+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T11:15:12+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T11:16:12+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:16:34+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T11:17:14+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T11:17:53+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:18:35+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:18:52+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T11:18:59+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T11:24:34+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:24:37+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:24:47+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:24:49+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:25:16+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T11:26:05+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:26:29+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:28:39+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T11:30:05+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:30:31+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T11:30:45+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:31:49+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T11:31:52+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T11:33:58+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:34:25+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T11:35:48+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T11:36:13+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:37:38+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:38:33+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T11:43:56+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:45:38+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:47:48+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:48:39+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T11:48:40+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T11:48:53+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T11:49:38+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T11:51:19+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:51:34+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T11:52:21+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:52:55+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T11:52:58+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T11:55:28+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:58:04+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T11:59:29+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T12:01:54+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T13:57:00+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T14:00:51+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T14:01:48+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=lastmonth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T14:01:50+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T14:01:54+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=month
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T14:02:39+08:00 ] 127.0.0.1 /Home/Report/buyingrate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T14:05:36+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=month
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T14:06:04+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T14:06:25+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T14:15:05+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T14:22:37+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T14:23:39+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T14:24:21+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T14:29:19+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T14:29:42+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T14:36:52+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T14:38:08+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) AS tp_sum FROM `fb_order` WHERE `ordercreatetime` BETWEEN 1543593600 AND 1546' at line 1
+ [ SQL语句 ] : SELECT SUM(*) AS tp_sum FROM `fb_order` WHERE `ordercreatetime` BETWEEN 1543593600 AND 1546271999 LIMIT 1  
+
+[ 2018-12-15T14:39:27+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T14:46:22+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T14:50:10+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T14:51:12+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T14:51:52+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T15:41:18+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T15:41:21+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T15:41:38+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=month
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T15:41:41+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=lastmonth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T15:41:44+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T15:41:47+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=lastmonth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T15:41:49+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=month
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T15:41:51+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=lastmonth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T15:41:54+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T15:42:47+08:00 ] 127.0.0.1 /Home/Report/rank
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T15:43:00+08:00 ] 127.0.0.1 /Home/Report/buyingrate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T15:43:28+08:00 ] 127.0.0.1 /Home/Report/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T15:45:16+08:00 ] 127.0.0.1 /Home/Report/rank?stat_date=2018-12-01&stop_date=2018-12-31&name=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T15:49:09+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T15:55:28+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T16:01:46+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T16:03:17+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T16:03:37+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T16:05:11+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T16:06:31+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T16:07:17+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T16:07:34+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T16:09:03+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T16:11:58+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T16:12:25+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T16:14:11+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T16:17:40+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T16:18:15+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T16:19:02+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T16:19:17+08:00 ] 127.0.0.1 /Home/Index/wel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T16:20:36+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T16:20:39+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T16:21:22+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T16:21:38+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T16:22:17+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T16:24:27+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T16:29:43+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T16:31:03+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T16:31:12+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T16:31:59+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T16:32:36+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T16:35:20+08:00 ] 127.0.0.1 /Home/Order/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T16:38:28+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T16:43:06+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T16:45:01+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T16:45:14+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T16:45:25+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T16:46:06+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T16:46:17+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T16:46:30+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T16:48:39+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T17:05:37+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T17:16:49+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T17:17:03+08:00 ] 127.0.0.1 /Home/Customer/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T17:18:03+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T17:26:59+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T17:27:58+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T17:28:36+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T17:28:37+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T17:29:23+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T17:38:18+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T17:39:43+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T17:39:52+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T17:40:56+08:00 ] 127.0.0.1 /Home/Report/return_rate?month=history
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T17:41:50+08:00 ] 127.0.0.1 /Home/Report/return_rate?stat_date=2018-12-15&stop_date=2018-12-15&name=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T17:42:30+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T17:42:31+08:00 ] 127.0.0.1 /index.php/home/Index/wel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T17:42:37+08:00 ] 127.0.0.1 /Home/Report/buyingrate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T17:42:42+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T17:42:52+08:00 ] 127.0.0.1 /Home/Report/rank
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T17:44:45+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T17:47:20+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T17:49:42+08:00 ] 127.0.0.1 /Home/Report/rank
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T17:49:46+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T17:50:35+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T17:52:31+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T17:55:09+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T17:56:12+08:00 ] 127.0.0.1 /Home/Index/wel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T17:56:18+08:00 ] 127.0.0.1 /Home/Customer/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-15T17:56:33+08:00 ] 127.0.0.1 /Home/Order/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T17:56:42+08:00 ] 127.0.0.1 /Home/Goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T17:56:48+08:00 ] 127.0.0.1 /Home/Customer/backlog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T17:56:55+08:00 ] 127.0.0.1 /Home/Customer/kehu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-15T17:57:06+08:00 ] 127.0.0.1 /Home/Funds/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+

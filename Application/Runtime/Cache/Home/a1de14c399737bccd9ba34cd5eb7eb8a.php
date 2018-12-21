@@ -55,6 +55,17 @@
                     </div>
                 </div>
                 <div class="layui-form-item">
+                    <label for="group_id" class="layui-form-label">
+                        <span class="x-red">*</span>分组
+                    </label>
+                    <div class="layui-input-inline">
+                      <select name="group_id">
+                        <option value="">请选择分组</option>
+                            <?php if(is_array($group)): foreach($group as $key=>$v): ?><option value="<?php echo ($v["group_id"]); ?>"><?php echo ($v["group_name"]); ?></option><?php endforeach; endif; ?>
+                      </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
                     <label for="role" class="layui-form-label">
                         <span class="x-red">*</span>角色
                     </label>

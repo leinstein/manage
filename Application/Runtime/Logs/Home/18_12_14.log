@@ -425,3 +425,83 @@ SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id 
 SQL: SHOW COLUMNS FROM `fb_auth` [ RunTime:0.0100s ]
 SQL: UPDATE `fb_auth` SET `auth_level`='2',`auth_pid`='1',`auth_name`='分组管理',`auth_c`='Admin',`auth_a`='group_management' WHERE `auth_id` = 46 [ RunTime:0.0010s ]
 
+[ 2018-12-14T17:28:53+08:00 ] 127.0.0.1 /index.php/Home/Manage/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `fb_admin` WHERE `username` = 'admin' AND `password` = '0192023a7bbd73250516f069df18b500' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `fb_admin` SET `last_login_time`='1544779733',`signup_ip`='127.0.0.1' WHERE `id` = 1 [ RunTime:0.0156s ]
+SQL: SHOW COLUMNS FROM `fb_logininfo` [ RunTime:0.0156s ]
+SQL: INSERT INTO `fb_logininfo` (`ip`,`city`,`logintime`,`loginstatus`,`errorinfo`,`loginname`,`loginpass`,`loginnickname`) VALUES ('127.0.0.1','   ','1544779733','1','登陆成功','admin','admin123','江湖') [ RunTime:0.0000s ]
+
+[ 2018-12-14T17:40:59+08:00 ] 127.0.0.1 /Home/Admin/add_group
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0090s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_group` [ RunTime:0.0080s ]
+SQL: INSERT INTO `fb_group` (`group_name`,`remark`,`create_time`) VALUES ('风暴一组','一组很牛逼','1544780459') [ RunTime:0.0010s ]
+
+[ 2018-12-14T17:57:40+08:00 ] 127.0.0.1 /Home/Admin/add_group
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0090s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_group` [ RunTime:0.0100s ]
+SQL: INSERT INTO `fb_group` (`group_name`,`remark`,`create_time`) VALUES ('风暴2组','2组也很牛逼','1544781460') [ RunTime:0.0000s ]
+
+[ 2018-12-14T17:58:04+08:00 ] 127.0.0.1 /Home/Admin/add_group
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0090s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_group` [ RunTime:0.0070s ]
+SQL: INSERT INTO `fb_group` (`group_name`,`remark`,`create_time`) VALUES ('风暴三组','三组靠业绩说话','1544781484') [ RunTime:0.0000s ]
+
+[ 2018-12-14T17:58:48+08:00 ] 127.0.0.1 /Home/Admin/add_group
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0090s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_group` [ RunTime:0.0080s ]
+SQL: INSERT INTO `fb_group` (`group_name`,`remark`,`create_time`) VALUES ('风暴四组','四组靠颜值牛逼','1544781528') [ RunTime:0.0010s ]
+
+[ 2018-12-14T18:00:14+08:00 ] 127.0.0.1 /Home/Admin/add_group
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0090s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_group` [ RunTime:0.0090s ]
+SQL: INSERT INTO `fb_group` (`group_name`,`remark`,`create_time`) VALUES ('风暴五组','五组的人每天工作14小时','1544781614') [ RunTime:0.0010s ]
+
+[ 2018-12-14T18:00:45+08:00 ] 127.0.0.1 /Home/Admin/add_group
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0090s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_group` [ RunTime:0.0080s ]
+SQL: INSERT INTO `fb_group` (`group_name`,`remark`,`create_time`) VALUES ('风暴六组','六组很年轻，但是业绩很出众','1544781645') [ RunTime:0.0000s ]
+
+[ 2018-12-14T18:35:18+08:00 ] 127.0.0.1 /Home/Admin/edit_group
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0090s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_group` [ RunTime:0.0080s ]
+
+[ 2018-12-14T18:35:32+08:00 ] 127.0.0.1 /Home/Admin/edit_group
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0090s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_group` [ RunTime:0.0080s ]
+

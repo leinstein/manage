@@ -15,7 +15,13 @@
         <link rel="stylesheet" href="/Public/Home/lib2/layui/css/layui.css" media="all">
 
     </head>
-    <body>
+    <style>
+        .x-body{
+            padding: 0;
+        }
+    </style>
+    <body  style="background-color: #f0f2f5">
+        
         <div class="x-body">
             <!--复购率-->
             <style>
@@ -79,15 +85,17 @@
                     margin-top: 5px;
                 }
                 .bg_color_div{
-                    background-color: #f2f2f2;
+                    background-color: white;
                     height: 100%;
                 }
                 .order_top{
                     margin-top: -32px;
                 }
             </style>
-            <style>.layui-col-md2{width: 14.2857143%;min-width: 220px;height: 165px}</style>
-            <div class="layui-row" style="width: 99%;margin-left: 0.5%;">
+            <style>.layui-col-md2{width: 14.2857143%;min-width: 220px;height: 165px;margin-top: 20px;margin-bottom: 20px}</style>
+            <div class="layui-fluid">
+            <div class="layui-card">
+            <div class="layui-row" style="width: 101%;margin-left: -0.5%;background-color: #f0f2f5">
                 <div class="layui-row layui-col-space20" style="width: 100%;margin-left: 0;">
                     <div class="layui-col-md2">
                         <div class="bg_color_div">
@@ -262,22 +270,22 @@
                             复购率
                         </th>
                         <th colspan="2">
-                            二次复购率
+                            二次复购
                         </th>
                         <th colspan="2">
-                            三次复购率
+                            三次复购
                         </th>
                         <th colspan="2">
-                            四次复购率
+                            四次复购
                         </th>
                         <th colspan="2">
-                            五次复购率
+                            五次复购
                         </th>
                         <th colspan="2">
-                            六次复购率
+                            六次复购
                         </th>
                         <th colspan="2">
-                            七次复购率
+                            七次复购
                         </th>
                     </tr>
                     <tr>
@@ -399,14 +407,11 @@
             </table>
             <div id="page" style="margin-bottom: 70px;"><?php echo ($page); ?></div>
         </div>
+        </div>
+    </div>
         <script src="/Public/Home/lib/layui/layui.js" charset="utf-8"></script>
         <script src="/Public/Home/js/x-layui.js" charset="utf-8"></script>
         <script src="/Public/home/js/echarts.min.js"></script>
-        <script>
-            // $('#table_css').click(function (e) {
-            //     $('#table_css').css('background-color','red');
-            // });
-        </script>
         <script>
             layui.use(['laydate','element','laypage','layer'], function(){
                 $ = layui.jquery;//jquery
@@ -506,7 +511,7 @@
                     orient: 'vertical',
                     data:['复购率','1']
                 },
-                color:['#34bfa3','#ffffff'],
+                color:['#34bfa3','#f2f2f2'],
                 series: [
                     {
                         name:'复购',
@@ -556,7 +561,7 @@
                     x: 'center',
                     data:['复购率','1']
                 },
-                color:['#34bfa3','#ffffff'],
+                color:['#34bfa3','#f2f2f2'],
                 series: [
                     {
                         name:'访问来源',
@@ -606,7 +611,7 @@
                     x: 'center',
                     data:['复购率','1']
                 },
-                color:['#34bfa3','#ffffff'],
+                color:['#34bfa3','#f2f2f2'],
                 series: [
                     {
                         name:'访问来源',
@@ -657,7 +662,7 @@
                     x: 'center',
                     data:['复购率','1']
                 },
-                color:['#34bfa3','#ffffff'],
+                color:['#34bfa3','#f2f2f2'],
                 series: [
                     {
                         name:'访问来源',
@@ -708,7 +713,7 @@
                     x: 'center',
                     data:['复购率','1']
                 },
-                color:['#34bfa3','#ffffff'],
+                color:['#34bfa3','#f2f2f2'],
                 series: [
                     {
                         name:'访问来源',
@@ -759,7 +764,7 @@
                     x: 'center',
                     data:['复购率','1']
                 },
-                color:['#34bfa3','#ffffff'],
+                color:['#34bfa3','#f2f2f2'],
                 series: [
                     {
                         name:'访问来源',
@@ -810,7 +815,7 @@
                     x: 'center',
                     data:['复购率','1']
                 },
-                color:['#34bfa3','#ffffff'],
+                color:['#34bfa3','#f2f2f2'],
                 series: [
                     {
                         name:'访问来源',

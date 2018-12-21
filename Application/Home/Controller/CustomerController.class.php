@@ -241,6 +241,9 @@ class CustomerController extends HomeController {
                 $cdata['phone'] = $_POST['phone'];
                 $cdata['saleid'] = session('userid');
                 $cdata['sex'] = $_POST['sex'];
+                $cdata['c_weixin'] = $_POST['c_weixin'];
+                $cdata['a_weixin'] = $_POST['a_weixin'];
+                $cdata['a_role'] = $_POST['a_role'];
                 $cdata['age'] = $_POST['age'];
                 $cdata['note'] = $_POST['note'];
                 $cdata['address_id'] = $addressid;
@@ -289,6 +292,9 @@ class CustomerController extends HomeController {
                 $cdata['cid'] = $_POST['customerid'];
                 $cdata['name'] = $_POST['name'];
                 $cdata['phone'] = $_POST['phone'];
+                $cdata['c_weixin'] = $_POST['c_weixin'];
+                $cdata['a_weixin'] = $_POST['a_weixin'];
+                $cdata['a_role'] = $_POST['a_role'];
                 $cdata['sex'] = $_POST['sex'];
                 $cdata['age'] = $_POST['age'];
                 $cdata['note'] = $_POST['note'];

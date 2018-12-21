@@ -21,20 +21,26 @@ class AdminController extends HomeController {
         }
         $admin = M('Admin');
         $count = $admin->count();//满足条件的数量
-        $page  = new \Think\Page($count, 5);//实例化分页
+        $page  = new \Think\Page($count, 25);//实例化分页
         $page->setConfig('prev','上一页');
         $page->setConfig('next','下一页');
         $show  = $page->show();//分页显示输出
-        $list = $admin->where($where)->order('id desc')->limit($page->firstRow . ',' . $page->listRows)->select();
+        $list = $admin->where($where)->limit($page->firstRow . ',' . $page->listRows)->select();
         $role = M('Role');
         foreach ($list as $v) {
             $a            = $role->where(['id' => $v['role_id']])->find();
             $v['role_name'] = $a['name'];
             $list_r[]     = $v;
         }
+        $group = M('Group');
+        foreach ($list_r as $v) {
+            $a            = $group->where(['group_id' => $v['group_id']])->find();
+            $v['group_name'] = $a['group_name'];
+            $list_g[]     = $v;
+        }
         $id = session('id');
         $this->assign('id', $id);
-        $this->assign('list', $list_r);
+        $this->assign('list', $list_g);
         $this->assign('count', $count);
         $this->assign('page', $show);
         $this->assign('firstRow', $page->firstRow);
@@ -145,6 +151,7 @@ class AdminController extends HomeController {
         if (IS_POST) {
             $admin           = D('Admin');
             $data['role_id']   = I('post.role_id');
+            $data['group_id']   = I('post.group_id');
             $data['id']   = I('post.admin_id');
             $data['update_time'] = time();
             $rows = $admin->save($data);
@@ -154,17 +161,26 @@ class AdminController extends HomeController {
                 $this->ajaxReturn(['statu' => 202, 'msg' => '划分出错']);
             }
         } else {
-            $id = $_GET['id'];
-            $role_id = $_GET['role_id'];
+            $data['admin_id'] = $_GET['id'];
+            $data['group_id'] = $_GET['group_id'];
+            $data['role_id'] = $role_id = $_GET['role_id'];
             $role = M('Role')->field('id,name')->select();
+            $group = M('Group')->field('group_id,group_name')->select();
+            //当前角色名
             foreach ($role as $v){
                 if($v['id'] == $role_id){
-                    $role_name = $v['name'];
+                    $data['role_name'] = $v['name'];
+                }
+            }
+            //当前分组名
+            foreach ($group as $v){
+                if($v['group_id'] == $data['group_id']){
+                    $data['group_name'] = $v['group_name'];
                 }
             }
             $this->assign('role', $role);
-            $this->assign('admin_id', $id);
-            $this->assign('role_name', $role_name);
+            $this->assign('group', $group);
+            $this->assign('data', $data);
             $this->display();
         }
     }
@@ -183,6 +199,7 @@ class AdminController extends HomeController {
             $data['nickname']       = trim(I('post.nickname'));
             $data['mobile']         = trim(I('post.phone'));
             $data['role_id']        = $_POST['role'];
+            $data['group_id']        = $_POST['group_id'];
             $data['create_time']    = time();
             $data['password']       = md5(trim(I('post.pass')));
             $data['grade']          = session('grade') + 1;
@@ -205,7 +222,9 @@ class AdminController extends HomeController {
             }
         } else {
             $role = M('Role')->field('id,name')->select();
+            $group = M('Group')->field('group_id,group_name')->select();
             $this->assign('role', $role);
+            $this->assign('group', $group);
             $this->display();
         }
     }
@@ -245,6 +264,88 @@ class AdminController extends HomeController {
      * 分组管理列表
      */
     Public function group_management(){
+        $group = M('Group')->order('group_id desc')->select();
+        $admin_info = M('Admin')->select();
+        foreach ($group as $v){
+            foreach ($admin_info as $vv){
+                if($vv['group_id'] == $v['group_id']){
+                    $v['team'][] = $vv['nickname'];
+                }
+            }
+            $v['team'] = implode(',',$v['team']);
+            $info[] = $v;
+        }
+        $this->assign('info',$info);
         $this->display();
     }
+
+    /**
+     * 2018/12/14
+     * 17:35
+     * anthor liu
+     * 添加分组
+     */
+    Public function add_group(){
+        if (IS_POST) {
+            $group    = M('Group');
+            $data['group_name']   = I('post.group_name');
+            $data['issale']   = I('post.issale');
+            $data['remark']   = I('post.remark');
+            $data['create_time'] = time();
+            $rows = $group->add($data);
+            if ($rows) {
+                $this->ajaxReturn(['statu' => 200, 'msg' => '添加成功']);
+            } else {
+                $this->ajaxReturn(['statu' => 202, 'msg' => '添加失败，请重试']);
+            }
+        } else {
+            $this->display();
+        }
+    }
+
+    /**
+     * 2018/12/14
+     * 18:21
+     * anthor liu
+     * 编辑分组
+     */
+    Public function edit_group(){
+        $group    = M('Group');
+        if (IS_POST) {
+            $data['group_id'] = I('post.group_id');
+            $data['group_name']   = I('post.group_name');
+            $data['issale']   = I('post.issale');
+            $data['remark']   = I('post.remark');
+            $data['create_time'] = time();
+            $rows = $group->save($data);
+            if ($rows) {
+                $this->ajaxReturn(['statu' => 200, 'msg' => '保存成功']);
+            } else {
+                $this->ajaxReturn(['statu' => 202, 'msg' => '保存失败，请重试']);
+            }
+        } else {
+            $group_id = $_GET['group_id'];
+            $group_info = $group->where(['group_id'=>$group_id])->find();
+            $this->assign('info',$group_info);
+            $this->display();
+        }
+    }
+
+    /**
+     * 2018/12/15
+     * 8:35
+     * anthor liu
+     * 删除分组
+     */
+    public function del_group()
+    {
+        $group_id = $_POST['group_id'];
+        $res = M('Group')->where(['group_id' => $group_id])->delete();
+        if ($res) {
+            $this->ajaxReturn(['statu' => 200, 'msg' => '成功删除']);
+        } else {
+            $this->ajaxReturn(['statu' => 202, 'msg' => "删除出错"]);
+        }
+    }
+
 }

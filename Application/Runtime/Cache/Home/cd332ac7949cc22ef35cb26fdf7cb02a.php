@@ -38,7 +38,7 @@
                   </div>
                 </div> 
             </form>
-            <xblock><button class="layui-btn" onclick="admin_add('添加分组','/Home/Admin/add_group','600','500')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：<?php echo ($count); ?> 条</span></xblock>
+            <xblock><button class="layui-btn" onclick="admin_add('添加分组','/Home/Admin/add_group','600','400')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：<?php echo ($count); ?> 条</span></xblock>
             <table class="layui-table">
                 <thead>
                     <tr>
@@ -52,6 +52,12 @@
                             组员
                         </th>
                         <th>
+                            描述
+                        </th>
+                        <th>
+                            销售组
+                        </th>
+                        <th>
                             创建时间
                         </th>
                         <th>
@@ -60,36 +66,31 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if(is_array($list)): foreach($list as $key=>$v): ?><tr>
+                    <?php if(is_array($info)): foreach($info as $key=>$v): ?><tr>
                             <td>
                                 <?php echo ++$i;?>
                             </td>
                             <td>
-                                <?php echo ($v["username"]); ?>
+                                <?php echo ($v["group_name"]); ?>
                             </td>
                             <td>
-                               <?php echo ($v["nickname"]); ?>
+                               <?php echo ($v["team"]); ?>
                             </td>
-                             <td align="center" valign="middle">
-                                <img  src="<?php echo ($v["img_small"]); ?>" width="40" alt="">
+                            <td>
+                               <?php echo ($v["remark"]); ?>
+                            </td>
+                            <td>
+                               <?php echo ($v["issale"]); ?>
+                            </td>
+                             <td>
+                                <?php echo (date('Y-m-d',$v["create_time"])); ?>
                             </td>
                             <td class="td-manage">
-                                <?php if($v['status'] == '1' ): ?><a style="text-decoration:none" onclick="admin_stop(this,'<?php echo ($v["id"]); ?>')" href="javascript:;" title="停用">
-                                            <i class="layui-icon">&#xe601;</i>
-                                        </a>
-                                    <?php else: ?>
-                                        <a style="text-decoration:none" onClick="admin_start(this,'<?php echo ($v["id"]); ?>')" href="javascript:;" title="启用">
-                                            <i class="layui-icon">&#xe62f;</i>
-                                        </a><?php endif; ?>
-                                <a title="编辑" href="javascript:;" onclick="admin_edit('编辑','/Home/Admin/edit','<?php echo ($v["id"]); ?>','','510')"
+                                <a title="编辑" href="javascript:;" onclick="admin_edit('编辑','/Home/Admin/edit_group','<?php echo ($v["group_id"]); ?>','','400')"
                                 class="ml-5" style="text-decoration:none">
                                     <i class="layui-icon">&#xe642;</i>
                                 </a>
-                                <a style="text-decoration:none"  onclick="admin_group('划分项目组','/Home/Admin/group','<?php echo ($v["role_id"]); ?>','470','300','<?php echo ($v["id"]); ?>')"
-                                   href="javascript:;" title="划分项目组">
-                                <i class="layui-icon">&#xe631;</i>
-                                </a>
-                                <a title="删除" href="javascript:;" onclick="admin_del(this,'<?php echo ($v["id"]); ?>')"
+                                <a title="删除" href="javascript:;" onclick="admin_del(this,'<?php echo ($v["group_id"]); ?>')"
                                 style="text-decoration:none">
                                     <i class="layui-icon">&#xe640;</i>
                                 </a>
@@ -97,7 +98,7 @@
                         </tr><?php endforeach; endif; ?>
                 </tbody>
             </table>
-            <div id="page"><?php echo ($page); ?></div>
+            <!--<div id="page"><?php echo ($page); ?></div>-->
         </div>
         <script src="/Public/Home/lib/layui/layui.js" charset="utf-8"></script>
         <script>
@@ -149,62 +150,11 @@
                 url = url + '?id='+id + '&role_id=' + role_id;
                 x_admin_show(title,url,w,h);
             }
-
-            /*停用*/
-            function admin_stop(obj,id){
-                layer.confirm('确认要停用吗？',function(index){
-                    $.ajax({
-                        type: 'POST',
-                        url: '/Home/Admin/stop',
-                        dataType: 'json',
-                        data:{'id':id},
-                        success: function(data){
-                            if(data.statu == 200){
-                                $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="admin_start(this,id)" href="javascript:;" title="启用"><i class="layui-icon">&#xe62f;</i></a>');
-                                $(obj).parents("tr").find(".td-status").html('<span class="layui-btn layui-btn-warm layui-btn-mini">已停用</span>');
-                                $(obj).remove();
-                                layer.msg('已停用!',{icon: 5,time:1000});
-                            }else{
-                                layer.msg(data.msg);
-                                return false;
-                            }
-                        },
-                        error:function(data) {
-                            layer.msg('系统错误');
-                        },
-                    });
-                });
-            }
-
-            /*启用*/
-            function admin_start(obj,id){
-                layer.confirm('确认要启用吗？',function(index){
-                    $.ajax({
-                        type: 'POST',
-                        url: '/Home/Admin/start',
-                        dataType: 'json',
-                        data:{'id':id},
-                        success: function(data){
-                            if(data.statu == 200){
-                                //发异步把用户状态进行更改
-                                $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="admin_stop(this,id)" href="javascript:;" title="停用"><i class="layui-icon">&#xe601;</i></a>');
-                                $(obj).parents("tr").find(".td-status").html('<span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span>');
-                                $(obj).remove();
-                                layer.msg('已启用!',{icon: 6,time:1000});
-                            }else{
-                                layer.msg(data.msg);
-                                return false;
-                            }
-                        },
-                        error:function(data) {
-                            layer.msg('系统错误');
-                        },
-                    });
-                });
-            }
+            
+            
             //编辑
             function admin_edit (title,url,id,w,h) {
-                url = url+'?id='+id;
+                url = url+'?group_id='+id;
                 x_admin_show(title,url,w,h);
             }
             /*删除*/
@@ -212,9 +162,9 @@
                 layer.confirm('确认要删除吗？',function(index){
                     $.ajax({
                         type: 'POST',
-                        url: '/Home/Admin/del',
+                        url: '/Home/Admin/del_group',
                         dataType: 'json',
-                        data:{'id':id},
+                        data:{'group_id':id},
                         success: function(data){
                             if(data.statu == 200){
                                 $(obj).parents("tr").remove();

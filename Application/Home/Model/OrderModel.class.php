@@ -14,6 +14,9 @@ class OrderModel extends Model
      */
     Public function statistical(){
         $order = M('Order');
+        $where['orderstatus'] =['neq',4]; //不计算退单
+        $where['delete'] = 1; //删除的订单不计算
+
         //获取今天00:00时间戳
         $todaystart = strtotime(date('Y-m-d'.'00:00:00',time()));
         //获取今天24:00时间戳
@@ -21,7 +24,9 @@ class OrderModel extends Model
         //where条件
         $today['ordercreatetime'] = [between,[$todaystart,$todayend]];
         //获取今天添加订单数
-        $statistical['today'] = $order->where($today)->where(['delete'=>1])->count();
+        $statistical['today'] = $order->where($today)->where($where)->count();
+        //获取今天订单金额
+        $statistical['today_order'] = $order->where($today)->where($where)->sum('orderprice');
 
         //获取昨天00:00时间戳
         $beginYesterday=mktime(0,0,0,date('m'),date('d')-1,date('Y'));
@@ -30,7 +35,9 @@ class OrderModel extends Model
         //统计昨天订单
         $yesterday['ordercreatetime'] = [between,[$beginYesterday,$endYesterday]];
         //获取昨天添加订单数
-        $statistical['yesterday'] = $order->where($yesterday)->where(['delete'=>1])->count();
+        $statistical['yesterday'] = $order->where($yesterday)->where($where)->count();
+        //获取昨天订单金额
+        $statistical['yesterday_order'] = $order->where($yesterday)->where($where)->sum('orderprice');
 
         //获取本周00:00时间戳
         $startthisweek=mktime(0,0,0,date('m'),date('d')-date('w')+1,date('Y'));
@@ -39,7 +46,7 @@ class OrderModel extends Model
         //统计本周订单
         $weekday['ordercreatetime'] = [between,[$startthisweek,$endToday]];
         //获取本周添加订单数
-        $statistical['weekday'] = $order->where($weekday)->where(['delete'=>1])->count();
+        $statistical['weekday'] = $order->where($weekday)->where($where)->count();
 
         //获取上周00:00时间戳
         $beginLastweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-7,date('Y'));
@@ -48,7 +55,8 @@ class OrderModel extends Model
         //统计上周订单
         $lastweek['ordercreatetime'] = [between,[$beginLastweek,$endLastweek]];
         //获取上周添加订单数
-        $statistical['lastweek'] = $order->where($lastweek)->where(['delete'=>1])->count();
+        $statistical['lastweek'] = $order->where($lastweek)->where($where)->count();
+
 
         //获取本月00:00时间戳
         $beginThismonth=mktime(0,0,0,date('m'),1,date('Y'));
@@ -57,7 +65,9 @@ class OrderModel extends Model
         //统计本月注册的订单
         $month['ordercreatetime'] = [between,[$beginThismonth,$endThismonth]];
         //获取本月添加订单数
-        $statistical['month'] = $order->where($month)->where(['delete'=>1])->count();
+        $statistical['month'] = $order->where($month)->where($where)->count();
+        //获取本月订单金额
+        $statistical['month_order'] = $order->where($month)->where($where)->sum('orderprice');
 
         //获取上月00:00时间戳
         $beginlastmonth=mktime(0,0,0,date('m')-1,1,date('Y'));
@@ -66,22 +76,33 @@ class OrderModel extends Model
         //统计上月订单
         $lastmonth['ordercreatetime'] = [between,[$beginlastmonth,$endlastmonth]];
         //获取上月添加订单数
-        $statistical['lastmonth'] = $order->where($lastmonth)->where(['delete'=>1])->count();
+        $statistical['lastmonth'] = $order->where($lastmonth)->where($where)->count();
+        //获取上月订单金额
+        $statistical['lastmonth_order'] = $order->where($lastmonth)->where($where)->sum('orderprice');
 
         //获取今年00:00时间戳
-        $beginthisyear=mktime(0,0,0,date('m')-1,1,date('Y'));
+        $beginthisyear=mktime(0,0,0,1,1,date('Y'));
         //获取今年23:59时间戳
-        $endthisyear=mktime(23,59,59,date('m')-1,date('t')-1,date('Y'));
+        $endthisyear=mktime(23,59,59,12,31,date('Y'));
         //统计今年订单
         $year['ordercreatetime'] = [between,[$beginthisyear,$endthisyear]];
         //获取今年添加订单数
-        $statistical['year'] = $order->where($year)->where(['delete'=>1])->count();
+        $statistical['year'] = $order->where($year)->where($where)->count();
 
         //历史订单数
-        $statistical['history'] = $order->where(['delete'=>1])->count();
+        $statistical['history'] = $order->where($where)->count();
         return $statistical;
     }
 
+    /**
+     * @param $day
+     * 2018/12/18
+     * 10:47
+     *
+     * @return array
+     * anthor liu
+     * 组装where条件
+     */
     Public function where_s($day){
         switch ($day)
         {
@@ -263,4 +284,949 @@ class OrderModel extends Model
         $year = [between,[$beginthisyear,$endthisyear]];
         return $year;
     }
+
+    /**
+     * 2018/12/15
+     * 15:38
+     * @return array
+     * anthor liu
+     * 退单率，退单数，退单金额...
+     */
+    Public function return_rate_avg(){
+        $order = D('Order');
+        //本月退单率/历史退单率/上月退单率
+        $history['orderstatus'] = 4;
+        $order_history = $order->where($history)->field('orderprice,ordercreatetime')->select();
+        //获取本月00:00时间戳
+        $beginThismonth=mktime(0,0,0,date('m'),1,date('Y'));
+        //获取本月23:59时间戳
+        $endThismonth=mktime(23,59,59,date('m'),date('t'),date('Y'));
+        //获取上月00:00时间戳
+        $beginlastmonth=mktime(0,0,0,date('m')-1,1,date('Y'));
+        //获取上月23:59时间戳
+        $endlastmonth=mktime(23,59,59,date('m')-1,date('t')-1,date('Y'));
+        $report = [];
+        foreach ($order_history as $z){
+            $report['history']['chargeback'] += 1;
+            $report['history']['refunds'] += $z['orderprice'];
+            if($z['ordercreatetime'] >= $beginThismonth and $z['ordercreatetime'] <= $endThismonth){
+                $report['month']['chargeback'] += 1;
+                $report['month']['refunds'] += $z['orderprice'];
+            }
+            if($z['ordercreatetime'] >= $beginlastmonth and $z['ordercreatetime'] <= $endlastmonth){
+                $report['lastmonth']['chargeback'] += 1;
+                $report['lastmonth']['refunds'] += $z['orderprice'];
+            }
+        }
+        //本月总订单数/本月订单总金额/本月退单率/本月退单金额率
+        $month_where['ordercreatetime'] = $order->where_report('month');
+        $report['month']['sum']         = $order->where($month_where)->count();
+        $report['month']['amount']      = $order->where($month_where)->sum('orderprice');
+        $report['month']['avg']         = round($report['month']['chargeback'] / $report['month']['sum'],3)*100 . '%';
+        $report['month']['amount_avg']         = round($report['month']['refunds'] / $report['month']['amount'],3)*100 . '%';
+        //上月总订单数/上月订单总金额/上月退单率/上月退单金额率
+        $lastmonth_where['ordercreatetime'] = $order->where_report('lastmonth');
+        $report['lastmonth']['sum'] = $order->where($lastmonth_where)->count();
+        $report['lastmonth']['amount'] = $order->where($lastmonth_where)->sum('orderprice');
+        $report['lastmonth']['avg']         = round($report['lastmonth']['chargeback'] / $report['lastmonth']['sum'],3)*100 . '%';
+        $report['lastmonth']['amount_avg']         = round($report['lastmonth']['refunds'] / $report['lastmonth']['amount'],3)*100 . '%';
+        //历史总订单数/历史订单总金额/历史退单率/历史退单金额率
+        $report['history']['sum'] = $order->count();
+        $report['history']['amount'] = $order->sum('orderprice');
+        $report['history']['avg']         = round($report['history']['chargeback'] / $report['history']['sum'],3)*100 . '%';
+        $report['history']['amount_avg']         = round($report['history']['refunds'] / $report['history']['amount'],3)*100 . '%';
+        //实际订单
+        $report['month']['real_order'] = $report['month']['sum'] - $report['month']['chargeback'];
+        $report['month']['real_amount'] = $report['month']['amount'] - $report['month']['refunds'];
+        $report['lastmonth']['real_order'] = $report['lastmonth']['sum'] - $report['lastmonth']['chargeback'];
+        $report['lastmonth']['real_amount'] = $report['lastmonth']['amount'] - $report['lastmonth']['refunds'];
+        $report['history']['real_order'] = $report['history']['sum'] - $report['history']['chargeback'];
+        $report['history']['real_amount'] = $report['history']['amount'] - $report['history']['refunds'];
+        return $report;
+    }
+
+    /**
+     * 2018/12/17
+     * 17:07
+     * anthor liu
+     * 本月端对业绩
+     */
+    Public function group_month(){
+        $admin = M('Admin');
+        $order = D('Order');
+        $customer = M('Customer');
+        $group = M('Group');
+        //获取统计数据
+        $where_order['delete'] = 1;
+
+        $group_info = $group->where(['issale'=>'是'])->limit(6)->select();
+        $admin_info = $admin->select();
+        //初始化默认数据
+        $where_order['ordercreatetime'] = $order->where_report('month');
+        $order_info = $order->where($where_order)->select();
+        foreach ($group_info as $v){
+            //获取分组组员
+            foreach ($admin_info as $vv){
+                if($vv['group_id'] == $v['group_id']){
+                    $v['team'][] = $vv;
+                }
+            }
+            //统计小组业绩
+            $c = [];
+            foreach ($v['team'] as $vvv){
+                foreach ($order_info as $vvvv){
+                    if($vvvv['saleid'] == $vvv['id']){
+                        if($vvvv['orderstatus'] != 4){
+                            $vvv['order_rate'] += 1;
+                            $vvv['order_total_amount'] += $vvvv['orderprice'];
+                            if(!in_array($vvvv['cid'],$vvv['customer_ids'])){
+                                $vvv['customer_ids'][] = $vvvv['cid'];
+                                $vvv['customer_count'] ++;
+                            }
+
+                        }
+                        //退单数/退单金额
+                        if($vvvv['orderstatus'] == 4){
+                            $vvv['order_tui_rate'] += 1;
+                            $vvv['order_total_tui_amount'] += $vvvv['orderprice'];
+                        }
+
+                    }
+                }
+                $c['order_rate'] += $vvv['order_rate'];
+                $c['customer_count'] += $vvv['customer_count'];
+                $c['order_total_amount'] += $vvv['order_total_amount'];
+                $c['order_tui_rate'] += $vvv['order_tui_rate'];
+                $c['order_total_tui_amount'] += $vvv['order_total_tui_amount'];
+            }
+            //订单均价
+            $c['order_average'] = round($c['order_total_amount'] / $c['order_rate'],2);
+            //退单率
+            $c['order_tui_average'] = round($c['order_tui_rate']  / ($c['order_rate'] + $c['order_tui_rate']),4)*100 . "%";
+            //退单金额率
+            $c['order_tui_funds_average'] = round($c['order_total_tui_amount']  / ($c['order_total_amount'] + $vvv['order_total_tui_amount']),4)*100 . "%";
+            //客户均价
+            $c['order_customer_average'] = round($c['order_total_amount'] / $c['customer_count'],2);
+            //复购率
+            $cids = implode(',',$c['customer_ids']);
+            if($cids){
+                $m['cid'] = ['in',$cids];
+            }
+            $m['buyrate'] = ['gt',1];
+            $customer_info_count = $customer->where($m)->count();
+            $c['buying_rate'] = round($customer_info_count / $c['customer_count'],4)*100 . "%";
+            $c['group_people'] = count($v['team']);
+            $c['group_people_avg'] = round($c['order_total_amount'] / $c['group_people'],2);
+            unset($v['team']);
+            $v['funds'] = $c;
+            $grooup_list[] = $v;
+        }
+        //总业绩
+        foreach ($grooup_list as $y){
+            $group_sum['amount'] += $y['funds']['order_total_amount'];
+            $group_sum['group_p'] += $y['funds']['group_people'];
+            $group_sum['tui_amount'] += $y['funds']['order_total_tui_amount'];
+            $group_sum['customer'] += $y['funds']['customer_count'];
+            $group_sum['order_count'] += $y['funds']['order_rate'];
+            $group_sum['order_tui_count'] += $y['funds']['order_tui_rate'];
+        }
+        //总平均业绩
+        $group_sum['amount_avg'] = round($group_sum['amount'] / $group_sum['customer'],2);
+        //总退单率
+        $group_sum['order_tui_avg'] = round($group_sum['order_tui_count']  / ($group_sum['order_count'] + $group_sum['order_tui_count']),4)*100 . "%";
+        //总退单金额率
+        $group_sum['order_tui_amount_avg'] = round($group_sum['tui_amount']  / ($group_sum['amount'] + $group_sum['tui_amount']),4)*100 . "%";
+        //小组业绩占比
+        foreach ($grooup_list as $z){
+            $z['funds']['group_funds_avg'] = round($z['funds']['order_total_amount'] / $group_sum['amount'],4)*100 . '%';
+            $info[] = $z;
+        }
+        foreach($info as $n){
+            $sort[] = $n['funds']["order_total_amount"];
+        }
+        array_multisort($sort,SORT_DESC,$info);
+        return $info;
+    }
+
+    /**
+     * 2018/12/17
+     * 17:09
+     * @return array
+     * anthor liu
+     * 历史业绩统计
+     */
+    Public function group_histort(){
+        $admin = M('Admin');
+        $order = D('Order');
+        $customer = M('Customer');
+        $group = M('Group');
+        //获取统计数据
+        $where_order['delete'] = 1;
+
+        $group_info = $group->where(['issale'=>'是'])->limit(6)->select();
+        $admin_info = $admin->select();
+        //初始化默认数据
+        $order_info = $order->where($where_order)->select();
+        foreach ($group_info as $v){
+            //获取分组组员
+            foreach ($admin_info as $vv){
+                if($vv['group_id'] == $v['group_id']){
+                    $v['team'][] = $vv;
+                }
+            }
+            //统计小组业绩
+            $c = [];
+            foreach ($v['team'] as $vvv){
+                foreach ($order_info as $vvvv){
+                    if($vvvv['saleid'] == $vvv['id']){
+                        if($vvvv['orderstatus'] != 4){
+                            $vvv['order_rate'] += 1;
+                            $vvv['order_total_amount'] += $vvvv['orderprice'];
+                            if(!in_array($vvvv['cid'],$vvv['customer_ids'])){
+                                $vvv['customer_ids'][] = $vvvv['cid'];
+                                $vvv['customer_count'] ++;
+                            }
+
+                        }
+                        //退单数/退单金额
+                        if($vvvv['orderstatus'] == 4){
+                            $vvv['order_tui_rate'] += 1;
+                            $vvv['order_total_tui_amount'] += $vvvv['orderprice'];
+                        }
+
+                    }
+                }
+                $c['order_rate'] += $vvv['order_rate'];
+                $c['customer_count'] += $vvv['customer_count'];
+                $c['order_total_amount'] += $vvv['order_total_amount'];
+                $c['order_tui_rate'] += $vvv['order_tui_rate'];
+                $c['order_total_tui_amount'] += $vvv['order_total_tui_amount'];
+            }
+            //订单均价
+            $c['order_average'] = round($c['order_total_amount'] / $c['order_rate'],2);
+            //退单率
+            $c['order_tui_average'] = round($c['order_tui_rate']  / ($c['order_rate'] + $c['order_tui_rate']),4)*100 . "%";
+            //退单金额率
+            $c['order_tui_funds_average'] = round($c['order_total_tui_amount']  / ($c['order_total_amount'] + $vvv['order_total_tui_amount']),4)*100 . "%";
+            //客户均价
+            $c['order_customer_average'] = round($c['order_total_amount'] / $c['customer_count'],2);
+            //复购率
+            $cids = implode(',',$c['customer_ids']);
+            if($cids){
+                $m['cid'] = ['in',$cids];
+            }
+            $m['buyrate'] = ['gt',1];
+            $customer_info_count = $customer->where($m)->count();
+            $c['buying_rate'] = round($customer_info_count / $c['customer_count'],4)*100 . "%";
+            $c['group_people'] = count($v['team']);
+            $c['group_people_avg'] = round($c['order_total_amount'] / $c['group_people'],2);
+            unset($v['team']);
+            $v['funds'] = $c;
+            $grooup_list[] = $v;
+        }
+        //总业绩
+        foreach ($grooup_list as $y){
+            $group_sum['amount'] += $y['funds']['order_total_amount'];
+            $group_sum['group_p'] += $y['funds']['group_people'];
+            $group_sum['tui_amount'] += $y['funds']['order_total_tui_amount'];
+            $group_sum['customer'] += $y['funds']['customer_count'];
+            $group_sum['order_count'] += $y['funds']['order_rate'];
+            $group_sum['order_tui_count'] += $y['funds']['order_tui_rate'];
+        }
+        //总平均业绩
+        $group_sum['amount_avg'] = round($group_sum['amount'] / $group_sum['customer'],2);
+        //总退单率
+        $group_sum['order_tui_avg'] = round($group_sum['order_tui_count']  / ($group_sum['order_count'] + $group_sum['order_tui_count']),4)*100 . "%";
+        //总退单金额率
+        $group_sum['order_tui_amount_avg'] = round($group_sum['tui_amount']  / ($group_sum['amount'] + $group_sum['tui_amount']),4)*100 . "%";
+        //小组业绩占比
+        foreach ($grooup_list as $z){
+            $z['funds']['group_funds_avg'] = round($z['funds']['order_total_amount'] / $group_sum['amount'],4)*100 . '%';
+            $info[] = $z;
+        }
+        foreach($info as $n){
+            $sort[] = $n['funds']["order_total_amount"];
+        }
+        array_multisort($sort,SORT_DESC,$info);
+        return $info;
+    }
+
+    /**
+     * 2018/12/17
+     * 17:08
+     * @return array
+     * anthor liu
+     * 上月业绩统计
+     */
+    Public function group_lastmonth(){
+        $admin = M('Admin');
+        $order = D('Order');
+        $customer = M('Customer');
+        $group = M('Group');
+        //获取统计数据
+        $where_order['delete'] = 1;
+
+        $group_info = $group->where(['issale'=>'是'])->limit(6)->select();
+        $admin_info = $admin->select();
+        //初始化默认数据
+        $where_order['ordercreatetime'] = $order->where_report('lastmonth');
+        $order_info = $order->where($where_order)->select();
+        foreach ($group_info as $v){
+            //获取分组组员
+            foreach ($admin_info as $vv){
+                if($vv['group_id'] == $v['group_id']){
+                    $v['team'][] = $vv;
+                }
+            }
+            //统计小组业绩
+            $c = [];
+            foreach ($v['team'] as $vvv){
+                foreach ($order_info as $vvvv){
+                    if($vvvv['saleid'] == $vvv['id']){
+                        if($vvvv['orderstatus'] != 4){
+                            $vvv['order_rate'] += 1;
+                            $vvv['order_total_amount'] += $vvvv['orderprice'];
+                            if(!in_array($vvvv['cid'],$vvv['customer_ids'])){
+                                $vvv['customer_ids'][] = $vvvv['cid'];
+                                $vvv['customer_count'] ++;
+                            }
+
+                        }
+                        //退单数/退单金额
+                        if($vvvv['orderstatus'] == 4){
+                            $vvv['order_tui_rate'] += 1;
+                            $vvv['order_total_tui_amount'] += $vvvv['orderprice'];
+                        }
+
+                    }
+                }
+                $c['order_rate'] += $vvv['order_rate'];
+                $c['customer_count'] += $vvv['customer_count'];
+                $c['order_total_amount'] += $vvv['order_total_amount'];
+                $c['order_tui_rate'] += $vvv['order_tui_rate'];
+                $c['order_total_tui_amount'] += $vvv['order_total_tui_amount'];
+            }
+            //订单均价
+            $c['order_average'] = round($c['order_total_amount'] / $c['order_rate'],2);
+            //退单率
+            $c['order_tui_average'] = round($c['order_tui_rate']  / ($c['order_rate'] + $c['order_tui_rate']),4)*100 . "%";
+            //退单金额率
+            $c['order_tui_funds_average'] = round($c['order_total_tui_amount']  / ($c['order_total_amount'] + $vvv['order_total_tui_amount']),4)*100 . "%";
+            //客户均价
+            $c['order_customer_average'] = round($c['order_total_amount'] / $c['customer_count'],2);
+            //复购率
+            $cids = implode(',',$c['customer_ids']);
+            if($cids){
+                $m['cid'] = ['in',$cids];
+            }
+            $m['buyrate'] = ['gt',1];
+            $customer_info_count = $customer->where($m)->count();
+            $c['buying_rate'] = round($customer_info_count / $c['customer_count'],4)*100 . "%";
+            $c['group_people'] = count($v['team']);
+            $c['group_people_avg'] = round($c['order_total_amount'] / $c['group_people'],2);
+            unset($v['team']);
+            $v['funds'] = $c;
+            $grooup_list[] = $v;
+        }
+        //总业绩
+        foreach ($grooup_list as $y){
+            $group_sum['amount'] += $y['funds']['order_total_amount'];
+            $group_sum['group_p'] += $y['funds']['group_people'];
+            $group_sum['tui_amount'] += $y['funds']['order_total_tui_amount'];
+            $group_sum['customer'] += $y['funds']['customer_count'];
+            $group_sum['order_count'] += $y['funds']['order_rate'];
+            $group_sum['order_tui_count'] += $y['funds']['order_tui_rate'];
+        }
+        //总平均业绩
+        $group_sum['amount_avg'] = round($group_sum['amount'] / $group_sum['customer'],2);
+        //总退单率
+        $group_sum['order_tui_avg'] = round($group_sum['order_tui_count']  / ($group_sum['order_count'] + $group_sum['order_tui_count']),4)*100 . "%";
+        //总退单金额率
+        $group_sum['order_tui_amount_avg'] = round($group_sum['tui_amount']  / ($group_sum['amount'] + $group_sum['tui_amount']),4)*100 . "%";
+        //小组业绩占比
+        foreach ($grooup_list as $z){
+            $z['funds']['group_funds_avg'] = round($z['funds']['order_total_amount'] / $group_sum['amount'],4)*100 . '%';
+            $info[] = $z;
+        }
+        foreach($info as $n){
+            $sort[] = $n['funds']["order_total_amount"];
+        }
+        array_multisort($sort,SORT_DESC,$info);
+
+        return $info;
+    }
+
+    /**
+     * 2018/12/18
+     * 10:43
+     * @return array
+     * anthor liu
+     * 按天统计业绩---上月---小组
+     */
+    Public function group_lastmonth_day(){
+        $admin = M('Admin');
+        $order = D('Order');
+        $group = M('Group');
+        //获取统计数据
+        $where_order['delete'] = 1;
+
+        $group_info = $group->where(['issale'=>'是'])->limit(6)->select();
+        $admin_info = $admin->select();
+        //初始化默认数据
+        $where_order['ordercreatetime'] = $order->where_report('lastmonth');
+        $order_info = $order->where($where_order)->select();
+        foreach ($group_info as $v){
+            //获取分组组员
+            foreach ($admin_info as $vv){
+                if($vv['group_id'] == $v['group_id']){
+                    $v['team'][] = $vv;
+                }
+            }
+            //统计小组业绩
+            $c = [];
+            foreach ($v['team'] as $vvv){
+                foreach ($order_info as $vvvv){
+                    if($vvvv['saleid'] == $vvv['id']){
+                        if($vvvv['orderstatus'] != 4){
+                            //获取上月00:00时间戳
+                            $beginlastmonth=mktime(0,0,0,date('m')-1,1,date('Y'));
+                            //获取上月23:59时间戳
+                            $endlastmonth=mktime(23,59,59,date('m')-1,date('t')-1,date('Y'));
+                            $j = 0;
+                            for($i=$beginlastmonth;$i<=$endlastmonth;$i=$i+86400){
+                                $m = $i + 86400;
+                                $j++;
+                                $g = $vvv['group_id'];
+                                if($vvvv['ordercreatetime']>=$i and $vvvv['ordercreatetime']< $m){
+                                    $day_funds['dayprice'][$g][$j] += $vvvv['orderprice'];
+                                }
+                            }
+                        }
+                    }
+                }
+                $c['day_funds'] = $day_funds;
+            }
+            unset($v['team']);
+            $v['funds'] = $c['day_funds']['dayprice'];
+            $grooup_list = $v['funds'];
+        }
+        //获取上月天数
+        $d = date('t', strtotime('-1 month'));
+        foreach ($group_info as $g){
+            foreach ($grooup_list as $k=>$value){
+                if($k == $g['group_id']){
+                    $k = $g['group_name'];
+                    $list[$k] = $value;
+                }
+            }
+        }
+
+        //没有业绩的补充0
+        foreach ($list as $key=>$l){
+            for($i=1;$i<$d+2;$i++){
+                if(!isset($l,$l[$i])){
+                    $l[$i-1] = 0;
+                }else{
+                    $l[$i-1] = $l[$i];
+                }
+            }
+
+            ksort($l);
+            array_pop($l);
+            $list_in[$key] = $l;
+        }
+        //生产日期
+        for($i=1;$i<=$d;$i++){
+            $date[] = $i;
+        }
+//        $date = implode(',',$date);
+        //整理返回值
+//        $arr = ['one','two','three','four','five','six'];
+//        $b = 0;
+        foreach ($list_in as $k=>$v){
+            $info['group_name'][] = $k;
+            ksort($v);
+//            $k_b = $arr[$b];
+            $info['group_amount_day']['name'][] = $k;
+            $info['group_amount_day']['day'][] = $v;
+//            $b++;
+        }
+        $info['group_date'] = $date;
+        return $info;
+    }
+
+    /**
+     * 2018/12/18
+     * 11:31
+     * @return mixed
+     * anthor liu
+     * 按天统计业绩---本月---小组
+     */
+    Public function group_month_day(){
+        $admin = M('Admin');
+        $order = D('Order');
+        $group = M('Group');
+        //获取统计数据
+        $where_order['delete'] = 1;
+
+        $group_info = $group->where(['issale'=>'是'])->limit(6)->select();
+        $admin_info = $admin->select();
+        //初始化默认数据
+        $where_order['ordercreatetime'] = $order->where_report('month');
+        $order_info = $order->where($where_order)->select();
+        foreach ($group_info as $v){
+            //获取分组组员
+            foreach ($admin_info as $vv){
+                if($vv['group_id'] == $v['group_id']){
+                    $v['team'][] = $vv;
+                }
+            }
+            //统计小组业绩
+            $c = [];
+            foreach ($v['team'] as $vvv){
+                foreach ($order_info as $vvvv){
+                    if($vvvv['saleid'] == $vvv['id']){
+                        if($vvvv['orderstatus'] != 4){
+                            //获取本月00:00时间戳
+                            $beginThismonth=mktime(0,0,0,date('m'),1,date('Y'));
+                            //获取本月23:59时间戳
+                            $endThismonth=time();
+
+                            $j = 0;
+                            for($i=$beginThismonth;$i<=$endThismonth;$i=$i+86400){
+                                $m = $i + 86400;
+                                $j++;
+                                $g = $vvv['group_id'];
+                                if($vvvv['ordercreatetime']>=$i and $vvvv['ordercreatetime']< $m){
+                                    $day_funds['dayprice'][$g][$j] += $vvvv['orderprice'];
+                                }
+                            }
+                        }
+                    }
+                }
+                $c['day_funds'] = $day_funds;
+            }
+            unset($v['team']);
+            $v['funds'] = $c['day_funds']['dayprice'];
+            $grooup_list = $v['funds'];
+        }
+        //获取本月天数
+//        $d = date("t");
+        $d = date('d',time());
+        if($d <= 7) $d = 7;
+        foreach ($group_info as $g){
+            foreach ($grooup_list as $k=>$value){
+                if($k == $g['group_id']){
+                    $k = $g['group_name'];
+                    $list[$k] = $value;
+                }
+            }
+        }
+
+        //没有业绩的补充 "0"
+        foreach ($list as $key=>$l){
+            for($i=1;$i<$d+2;$i++){
+                if(!isset($l,$l[$i])){
+                    $l[$i-1] = 0;
+                }else{
+                    $l[$i-1] = $l[$i];
+                }
+            }
+            ksort($l);
+            array_pop($l);
+            $list_in[$key] = $l;
+        }
+        //生产日期
+        for($i=1;$i<=$d;$i++){
+            $date[] = $i;
+        }
+//        $date = implode(',',$date);
+        //整理返回值
+//        $arr = ['one','two','three','four','five','six'];
+//        $b = 0;
+        foreach ($list_in as $k=>$v){
+            $info['group_name'][] = $k;
+            ksort($v);
+//            $k_b = $arr[$b];
+            $info['group_amount_day']['name'][] = $k;
+            $info['group_amount_day']['day'][] = $v;
+//            $b++;
+        }
+        $info['group_date'] = $date;
+        return $info;
+    }
+
+    /**
+     * 2018/12/18
+     * 18:18
+     * @return mixed
+     * anthor liu
+     * 按月统计业绩---本年---小组
+     */
+    Public function group_year(){
+        $admin = M('Admin');
+        $order = D('Order');
+        $group = M('Group');
+        //获取统计数据
+        $where_order['delete'] = 1;
+
+        $group_info = $group->where(['issale'=>'是'])->limit(6)->select();
+        $admin_info = $admin->select();
+        //获取今年00:00时间戳
+        $beginthisyear=mktime(0,0,0,1,1,date('Y'));
+        //获取今年23:59时间戳
+        $endthisyear=mktime(23,59,59,12,31,date('Y'));
+        $where_order['ordercreatetime'] = [between,[$beginthisyear,$endthisyear]];
+        //初始化默认数据
+        $order_info = $order->where($where_order)->select();
+        foreach ($group_info as $v){
+            //获取分组组员
+            foreach ($admin_info as $vv){
+                if($vv['group_id'] == $v['group_id']){
+                    $v['team'][] = $vv;
+                }
+            }
+            //统计小组业绩
+            $c = [];
+            foreach ($v['team'] as $vvv){
+                foreach ($order_info as $vvvv){
+                    if($vvvv['saleid'] == $vvv['id']){
+                        if($vvvv['orderstatus'] != 4){
+                            $j = 0;
+                            $month_day = date('t', strtotime('1 month'));
+                            $m = $beginthisyear + (86400*$month_day);
+                            for($i=$beginthisyear;$i<=$endthisyear;$i=$m){
+                                $m = $i + (86400*$month_day);
+                                $j++;
+                                $month_day = date('t', strtotime(($j+1) .' month'));
+                                $g = $vvv['group_id'];
+                                if($vvvv['ordercreatetime']>=$i and $vvvv['ordercreatetime']< $m){
+                                    $day_funds['dayprice'][$g][$j-1] += $vvvv['orderprice'];
+                                }
+                            }
+                        }
+                    }
+                }
+                $c['day_funds'] = $day_funds;
+            }
+            unset($v['team']);
+            $v['funds'] = $c['day_funds']['dayprice'];
+            $grooup_list = $v['funds'];
+        }
+//        echo "<pre>";
+//        echo ' ';
+//        print_r( $grooup_list);
+//        exit();
+        //获取本月天数
+//        $d = date("t");
+//        $d = 12;
+
+        foreach ($group_info as $g){
+            foreach ($grooup_list as $k=>$value){
+                if($k == $g['group_id']){
+                    $k = $g['group_name'];
+                    $list[$k] = $value;
+                }
+            }
+        }
+        //没有业绩的补充 "0"
+        foreach ($list as $key=>$l){
+            for($i=0;$i<12;$i++){
+                if(!isset($l,$l[$i])){
+                    $l[$i] = 0;
+                }
+            }
+            $list_in[$key] = $l;
+        }
+        //生产日期
+//        for($i=1;$i<=12;$i++){
+//            $date[] = $i;
+//        }
+//        $date = ['Jan','Feb','Mar','Apr','May','June','July','Aug','Sept','Oct','Nov','Dec'];
+        $date = ['1 月','2 月','3 月','4 月','5 月','6 月','7 月','8 月','9 月','10 月','11 月','12 月'];
+//        $date = implode(',',$date);
+        //整理返回值
+//        $arr = ['one','two','three','four','five','six'];
+//        $b = 0;
+        foreach ($list_in as $k=>$v){
+            $info['group_name'][] = $k;
+            ksort($v);
+//            $k_b = $arr[$b];
+            $info['group_amount_day']['name'][] = $k;
+            $info['group_amount_day']['day'][] = $v;
+//            $b++;
+        }
+        $info['group_date'] = $date;
+        return $info;
+    }
+
+    /**
+     * @param $date
+     * 2018/12/21
+     * 11:20
+     * anthor liu
+     * 首页销售排名
+     */
+    Public function wel_sale_rank($date){
+        $admin = M('Admin');
+        $order = D('Order');
+        $where['delete'] = 1;
+        $where['orderstatus'] = ['neq',4];
+        if($date) $where['ordercreatetime'] = $date;
+        //获取销售业绩排名
+        $order_rank = $order
+            ->field('saleid,count(saleid) as order_sum,sum(orderprice) as t_order')
+            ->where($where)
+            ->group('saleid')
+            ->order('t_order desc')
+            ->limit(5)
+            ->select();
+        //获取销售姓名和头像
+        $sale_ids = array_map('array_shift',$order_rank);
+        $sale_ids = implode(',',$sale_ids);
+        $where_admin['id'] = ['in',$sale_ids];
+        $admin_info = $admin
+            ->field('id,nickname,img_small')
+            ->where($where_admin)
+            ->select();
+        //组装数据
+        foreach ($order_rank as $v){
+            foreach ($admin_info as $vv){
+                if($v['saleid'] == $vv['id']){
+                    $info[] = array_merge($v,$vv);
+                }
+            }
+        }
+        return $info;
+    }
+
+    /**
+     * 2018/12/21
+     * 14:29
+     * @return mixed
+     * anthor liu
+     * 按天统计业绩---本月
+     */
+    Public function month_day_amount(){
+        $order = D('Order');
+        //获取统计数据
+        $where_order['delete'] = 1;
+        $where_order['orderstatus'] = ['neq',4];
+
+        //初始化默认数据
+        $where_order['ordercreatetime'] = $order->where_report('month');
+        $order_info = $order->where($where_order)->select();
+
+        //统计
+        $list = $order_count =[];
+        foreach ($order_info as $v){
+            //获取本月00:00时间戳
+            $beginThismonth=mktime(0,0,0,date('m'),1,date('Y'));
+            //获取本月23:59时间戳
+            $endThismonth=mktime(23,59,59,date('m'),date('t'),date('Y'));
+            $j = 0;
+            for($i=$beginThismonth;$i<=$endThismonth;$i=$i+86400){
+                $m = $i + 86400;
+                $j++;
+                if($v['ordercreatetime']>=$i and $v['ordercreatetime']< $m){
+                    $list[$j] += $v['orderprice'];
+                    $order_count[$j] ++;
+                }
+            }
+        }
+
+        //获取本月天数
+        $d = date('d',time());
+        if($d <= 7) $d = 7;
+        //没有业绩的补充0
+        for($i=1;$i<$d+2;$i++){
+            $date[] = $i;
+            if(!isset($list,$list[$i])){
+                $list[$i-1] = 0;
+            }else{
+                $list[$i-1] = $list[$i];
+            }
+            if(!isset($order_count,$order_count[$i])){
+                $order_count[$i-1] = 0;
+            }else{
+                $order_count[$i-1] = $order_count[$i];
+            }
+        }
+
+        ksort($list);
+        ksort($order_count);
+        array_pop($date);
+        array_pop($list);
+        array_pop($order_count);
+        $info['date'] = $date;
+        $info['list'] = $list;
+        $info['order_count'] = $order_count;
+        return $info;
+    }
+
+    /**
+     * 2018/12/21
+     * 16:15
+     * @return array
+     * anthor liu
+     * 按天统计顾客数---本月
+     */
+    Public function month_day_customer(){
+        $order = D('Order');
+        $customer = D('Customer');
+        //获取统计数据
+        $where['delete'] = 1;
+
+        //初始化默认数据
+        $where['create_time'] = $order->where_report('month');
+        $customer_info = $customer->where($where)->select();
+
+        //统计
+        $list = [];
+        foreach ($customer_info as $v){
+            //获取本月00:00时间戳
+            $beginThismonth=mktime(0,0,0,date('m'),1,date('Y'));
+            //获取本月23:59时间戳
+            $endThismonth=mktime(23,59,59,date('m'),date('t'),date('Y'));
+            $j = 0;
+            for($i=$beginThismonth;$i<=$endThismonth;$i=$i+86400){
+                $m = $i + 86400;
+                $j++;
+                if($v['create_time']>=$i and $v['create_time']< $m){
+                    $list[$j] ++;
+                }
+            }
+        }
+
+        //获取本月天数
+        $d = date('d',time());
+        if($d <= 7) $d = 7;
+        //没有业绩的补充0
+        for($i=1;$i<$d+2;$i++){
+            if(!isset($list,$list[$i])){
+                $list[$i-1] = 0;
+            }else{
+                $list[$i-1] = $list[$i];
+            }
+        }
+
+        ksort($list);
+        array_pop($list);
+        return $list;
+    }
+
+    /**
+     * 2018/12/21
+     * 14:30
+     * @return mixed
+     * anthor liu
+     * 按天统计订单---上月
+     */
+    Public function lastmonth_day_amount(){
+        $order = D('Order');
+        //获取统计数据
+        $where_order['delete'] = 1;
+        $where_order['orderstatus'] = ['neq',4];
+
+        //初始化默认数据
+        $where_order['ordercreatetime'] = $order->where_report('lastmonth');
+        $order_info = $order->where($where_order)->select();
+
+        //统计
+        $list = $order_count =[];
+        foreach ($order_info as $v){
+            //获取上月00:00时间戳
+            $beginlastmonth=mktime(0,0,0,date('m')-1,1,date('Y'));
+            //获取上月23:59时间戳
+            $endlastmonth=mktime(23,59,59,date('m')-1,date('t')-1,date('Y'));
+            $j = 0;
+            for($i=$beginlastmonth;$i<=$endlastmonth;$i=$i+86400){
+                $m = $i + 86400;
+                $j++;
+                if($v['ordercreatetime']>=$i and $v['ordercreatetime']< $m){
+                    $list[$j] += $v['orderprice'];
+                    $order_count[$j] ++;
+                }
+            }
+        }
+
+        //获取上月天数
+        $d = date('t', strtotime('-1 month'));
+        //没有业绩的补充0
+        for($i=1;$i<$d+2;$i++){
+            $date[] = $i;
+            if(!isset($list,$list[$i])){
+                $list[$i-1] = 0;
+            }else{
+                $list[$i-1] = $list[$i];
+            }
+            if(!isset($order_count,$order_count[$i])){
+                $order_count[$i-1] = 0;
+            }else{
+                $order_count[$i-1] = $order_count[$i];
+            }
+        }
+
+        ksort($list);
+        ksort($order_count);
+        array_pop($date);
+        array_pop($list);
+        array_pop($order_count);
+        $info['date'] = $date;
+        $info['list'] = $list;
+        $info['order_count'] = $order_count;
+        return $info;
+    }
+
+    /**
+     * 2018/12/21
+     * 15:39
+     * @return mixed
+     * anthor liu
+     * 按天统计顾客数---上月
+     */
+    Public function lastmonth_day_customer(){
+        $order = D('Order');
+        $customer = D('Customer');
+        //获取统计数据
+        $where['delete'] = 1;
+
+        //初始化默认数据
+        $where['create_time'] = $order->where_report('lastmonth');
+        $customer_info = $customer->where($where)->select();
+
+        //统计
+        $list = [];
+        foreach ($customer_info as $v){
+            //获取上月00:00时间戳
+            $beginlastmonth=mktime(0,0,0,date('m')-1,1,date('Y'));
+            //获取上月23:59时间戳
+            $endlastmonth=mktime(23,59,59,date('m')-1,date('t')-1,date('Y'));
+            $j = 0;
+            for($i=$beginlastmonth;$i<=$endlastmonth;$i=$i+86400){
+                $m = $i + 86400;
+                $j++;
+                if($v['create_time']>=$i and $v['create_time']< $m){
+                    $list[$j] ++;
+                }
+            }
+        }
+
+        //获取上月天数
+        $d = date('t', strtotime('-1 month'));
+        //没有业绩的补充0
+        for($i=1;$i<$d+2;$i++){
+            if(!isset($list,$list[$i])){
+                $list[$i-1] = 0;
+            }else{
+                $list[$i-1] = $list[$i];
+            }
+        }
+
+        ksort($list);
+        array_pop($list);
+        return $list;
+    }
+
+
 }

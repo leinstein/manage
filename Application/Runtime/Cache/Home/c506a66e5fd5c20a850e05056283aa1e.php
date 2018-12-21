@@ -38,7 +38,7 @@
                   </div>
                 </div> 
             </form>
-            <xblock><button class="layui-btn" onclick="admin_add('添加用户','/Home/Admin/add','600','500')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：<?php echo ($count); ?> 条</span></xblock>
+            <xblock><button class="layui-btn" onclick="admin_add('添加用户','/Home/Admin/add','600','530')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：<?php echo ($count); ?> 条</span></xblock>
             <table class="layui-table">
                 <thead>
                     <tr>
@@ -59,6 +59,9 @@
                         </th>
                         <th>
                             角色
+                        </th>
+                        <th>
+                            分组名
                         </th>
                         <th>
                             最后登陆时间
@@ -94,6 +97,9 @@
                             <td >
                                 <?php echo ($v["role_name"]); ?>
                             </td>
+                            <td >
+                                <?php echo ($v["group_name"]); ?>
+                            </td>
                             <td>
                                 <?php if($v['last_login_time'] != '0' ): echo (date("Y-m-d H:i:s",$v["last_login_time"])); ?>
                                     <?php else: ?>
@@ -119,7 +125,7 @@
                                 class="ml-5" style="text-decoration:none">
                                     <i class="layui-icon">&#xe642;</i>
                                 </a>
-                                <a style="text-decoration:none"  onclick="admin_group('划分项目组','/Home/Admin/group','<?php echo ($v["role_id"]); ?>','470','300','<?php echo ($v["id"]); ?>')"
+                                <a style="text-decoration:none"  onclick="admin_group('划分项目组','/Home/Admin/group','<?php echo ($v["role_id"]); ?>','470','400','<?php echo ($v["id"]); ?>','<?php echo ($v["group_id"]); ?>')"
                                    href="javascript:;" title="划分项目组">
                                 <i class="layui-icon">&#xe631;</i>
                                 </a>
@@ -179,8 +185,8 @@
             }
 
             /*划分*/
-            function admin_group(title,url,role_id,w,h,id){
-                url = url + '?id='+id + '&role_id=' + role_id;
+            function admin_group(title,url,role_id,w,h,id,group_id){
+                url = url + '?id='+id + '&role_id=' + role_id + '&group_id=' + group_id;
                 x_admin_show(title,url,w,h);
             }
 
@@ -195,7 +201,7 @@
                         success: function(data){
                             if(data.statu == 200){
                                 $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="admin_start(this,id)" href="javascript:;" title="启用"><i class="layui-icon">&#xe62f;</i></a>');
-                                $(obj).parents("tr").find(".td-status").html('<span class="layui-btn layui-btn-warm layui-btn-mini">已停用</span>');
+                                $(obj).parents("tr").find(".td-status").html('<span class="layui-btn layui-btn-danger layui-btn-mini">已停用</span>');
                                 $(obj).remove();
                                 layer.msg('已停用!',{icon: 5,time:1000});
                             }else{
@@ -222,7 +228,7 @@
                             if(data.statu == 200){
                                 //发异步把用户状态进行更改
                                 $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="admin_stop(this,id)" href="javascript:;" title="停用"><i class="layui-icon">&#xe601;</i></a>');
-                                $(obj).parents("tr").find(".td-status").html('<span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span>');
+                                $(obj).parents("tr").find(".td-status").html('<span class="layui-btn layui-btn-mini">已启用</span>');
                                 $(obj).remove();
                                 layer.msg('已启用!',{icon: 6,time:1000});
                             }else{

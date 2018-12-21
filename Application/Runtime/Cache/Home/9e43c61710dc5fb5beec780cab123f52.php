@@ -16,13 +16,34 @@
     <body>
         <div class="x-body">
             <form class="layui-form" action="#" method="post" onsubmit="return false">
-                <input type="hidden" name="admin_id" value="<?php echo ($admin_id); ?>">
+                <input type="hidden" name="admin_id" value="<?php echo ($data["admin_id"]); ?>">
+                <div class="layui-form-item">
+                    <label for="group" class="layui-form-label">
+                        <span class="x-red">*</span>当前分组
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" value="<?php echo ($data["group_name"]); ?>" readonly="readonly" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="group" class="layui-form-label">
+                        <span class="x-red">*</span>新分组
+                    </label>
+                    <div class="layui-input-inline">
+                      <select name="group_id">
+                        <option value="">请选择分组</option>
+                            <?php if(is_array($group)): foreach($group as $key=>$v): if($data['group_id'] == $v['group_id'] ): ?><option value="<?php echo ($v["group_id"]); ?>" selected="selected"><?php echo ($v["group_name"]); ?></option>
+                                    <?php else: ?>
+                                        <option value="<?php echo ($v["group_id"]); ?>"><?php echo ($v["group_name"]); ?></option><?php endif; endforeach; endif; ?>
+                      </select>
+                    </div>
+                </div>
                 <div class="layui-form-item">
                     <label for="role" class="layui-form-label">
                         <span class="x-red">*</span>当前角色
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" value="<?php echo ($role_name); ?>" readonly="readonly" class="layui-input">
+                        <input type="text" value="<?php echo ($data["role_name"]); ?>" readonly="readonly" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -32,7 +53,7 @@
                     <div class="layui-input-inline">
                       <select name="role_id">
                         <option value="">请选择角色</option>
-                            <?php if(is_array($role)): foreach($role as $key=>$v): if($info['role_id'] == $v['id'] ): ?><option value="<?php echo ($v["id"]); ?>" selected="selected"><?php echo ($v["name"]); ?></option>
+                            <?php if(is_array($role)): foreach($role as $key=>$v): if($data['role_id'] == $v['id'] ): ?><option value="<?php echo ($v["id"]); ?>" selected="selected"><?php echo ($v["name"]); ?></option>
                                     <?php else: ?>
                                         <option value="<?php echo ($v["id"]); ?>"><?php echo ($v["name"]); ?></option><?php endif; endforeach; endif; ?>
                       </select>

@@ -1,0 +1,3012 @@
+[ 2018-12-20T08:48:58+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T08:52:32+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T08:52:52+08:00 ] 127.0.0.1 /index.php/Home/Material/index/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T08:53:05+08:00 ] 127.0.0.1 /index.php/Home/Material/index/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T08:53:09+08:00 ] 127.0.0.1 /index.php/Home/Material/index/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T08:56:17+08:00 ] 127.0.0.1 /index.php/Home/Material/index/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:01:00+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:01:06+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:01:09+08:00 ] 127.0.0.1 /index.php/Home/Material/index/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:01:13+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:01:45+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:01:49+08:00 ] 127.0.0.1 /index.php/Home/Material/index/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:01:52+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:05:00+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:09:11+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:11:12+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:11:45+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:14:02+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:19:28+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:22:40+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:26:15+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:26:19+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:26:23+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:26:27+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:26:31+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/1/type/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:28:07+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:28:12+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/3/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:28:19+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/3/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:28:23+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/3/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:28:25+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/3/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:28:41+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/3/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:28:48+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/3/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:29:00+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/1/type/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-12-20T09:29:43+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:29:46+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/1/type/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:29:50+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/1/type/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:29:59+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/2/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:31:53+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/1/type/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:34:21+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/3/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:35:00+08:00 ] 127.0.0.1 /Home/Report/rank
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:38:40+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:40:13+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/2/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:40:28+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/1/type/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:40:32+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:42:39+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:42:40+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/1/type/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:43:02+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:43:03+08:00 ] 127.0.0.1 /index.php/home/Index/wel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:43:06+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:45:38+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:45:41+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/2/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:45:45+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/3/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:45:49+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/1/type/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:45:51+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:45:56+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/1/type/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:46:01+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/1/type/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:46:08+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:46:35+08:00 ] 127.0.0.1 /index.php/Home/Material/index/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:46:44+08:00 ] 127.0.0.1 /index.php/Home/Material/index/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:46:51+08:00 ] 127.0.0.1 /index.php/Home/Material/index/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:46:54+08:00 ] 127.0.0.1 /index.php/Home/Material/index/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:49:32+08:00 ] 127.0.0.1 /index.php/Home/Material/index/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:49:48+08:00 ] 127.0.0.1 /index.php/Home/Material/index/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:56:05+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:56:55+08:00 ] 127.0.0.1 /index.php/Home/Material/index/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T09:58:18+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:58:50+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T09:59:01+08:00 ] 127.0.0.1 /index.php/Home/Material/index/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T10:00:10+08:00 ] 127.0.0.1 /Home/Auth/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T10:00:12+08:00 ] 127.0.0.1 /Home/Auth/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T10:01:34+08:00 ] 127.0.0.1 /Home/Auth/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_auth` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fb_auth` WHERE `auth_name` = '素材管理' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `fb_auth` (`auth_level`,`auth_pid`,`auth_name`,`auth_c`,`auth_a`) VALUES ('2','1','素材管理','Material','management') [ RunTime:0.0010s ]
+
+[ 2018-12-20T10:01:37+08:00 ] 127.0.0.1 /Home/Auth/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T10:01:40+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T10:01:41+08:00 ] 127.0.0.1 /index.php/home/Index/wel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T10:02:01+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T10:03:04+08:00 ] 127.0.0.1 /Home/Goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T10:06:28+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T10:13:33+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T10:15:59+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T10:17:13+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T10:20:01+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T10:29:48+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T10:30:33+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T10:30:53+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T10:34:02+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T10:34:25+08:00 ] 127.0.0.1 /Home/Report/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T10:40:10+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T10:40:46+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T10:42:44+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T10:43:37+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T10:44:41+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T10:46:31+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T10:49:57+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/2/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T10:50:09+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T10:52:50+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T10:58:21+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T10:58:57+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T10:59:20+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T10:59:53+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T11:00:14+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T11:03:33+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T11:03:45+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T11:07:09+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T11:10:09+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T11:11:26+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T11:12:24+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T11:12:51+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T11:13:59+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T11:17:07+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T11:17:36+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T11:18:19+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T11:21:14+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T11:23:22+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T11:23:45+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T11:24:21+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T11:24:39+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T11:28:19+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T11:32:21+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T11:35:52+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T11:36:51+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T11:37:17+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T11:37:35+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T11:37:39+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T11:38:07+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T11:39:12+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T11:39:16+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T11:43:47+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T11:46:04+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T11:46:20+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T11:49:51+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T11:51:44+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T11:54:25+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T11:54:42+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T11:55:21+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T11:55:33+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T12:00:02+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T12:00:33+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T12:15:44+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T12:16:36+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T12:16:38+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T12:18:10+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T12:18:30+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T12:30:21+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T12:33:10+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T12:33:31+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T12:34:58+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T12:35:32+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T13:06:33+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T13:07:10+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T13:08:32+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T13:11:31+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T13:12:02+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T13:29:17+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T13:29:39+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/2/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T13:30:02+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 非法操作:management
+
+[ 2018-12-20T13:30:17+08:00 ] 127.0.0.1 /Home/Admin/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T13:30:24+08:00 ] 127.0.0.1 /Home/Customer/kehu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T13:30:26+08:00 ] 127.0.0.1 /Home/Customer/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T13:30:27+08:00 ] 127.0.0.1 /Home/Goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T13:32:02+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T13:34:57+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T13:42:52+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 1052:Column 'id' in order clause is ambiguous
+ [ SQL语句 ] : SELECT * FROM fb_material m left JOIN fb_class as c ON c.id = m.class_id left JOIN fb_pic_type as p ON p.id = c.id  ORDER BY id desc LIMIT 0,24  
+
+[ 2018-12-20T13:44:07+08:00 ] 127.0.0.1 /Home/Admin/group_management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T13:44:08+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T13:44:10+08:00 ] 127.0.0.1 /index.php/home/Index/wel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T13:44:12+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 1052:Column 'id' in order clause is ambiguous
+ [ SQL语句 ] : SELECT * FROM fb_material m left JOIN fb_class as c ON c.id = m.class_id left JOIN fb_pic_type as p ON p.class_id = c.id  ORDER BY id desc LIMIT 0,24  
+
+[ 2018-12-20T13:46:24+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:03:47+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:06:05+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:07:00+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:08:42+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:09:54+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:19:10+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:20:40+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:21:01+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:21:28+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:21:44+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:22:26+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:24:04+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:24:14+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/2/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:24:44+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:24:46+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 1052:Column 'class_id' in where clause is ambiguous
+ [ SQL语句 ] : SELECT * FROM fb_material m left JOIN fb_class as c ON c.id = m.class_id left JOIN fb_pic_type as p ON p.class_id = m.class_id  WHERE `class_id` = '1' ORDER BY m.id desc LIMIT 0,25  
+
+[ 2018-12-20T14:25:43+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:25:46+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 1054:Unknown column 'm.class_id' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `fb_material` WHERE m.class_id = '1' LIMIT 1  
+
+[ 2018-12-20T14:26:50+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:26:53+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:27:02+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/1/type/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:27:07+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:27:12+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:27:19+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:28:24+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:28:27+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/3/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:28:33+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:28:37+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:28:45+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:28:53+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/1/type/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:28:59+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/1/type/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:29:03+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/1/type/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:30:00+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:30:03+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 1052:Column 'type' in where clause is ambiguous
+ [ SQL语句 ] : SELECT * FROM fb_material m left JOIN fb_class as c ON c.id = m.class_id left JOIN fb_pic_type as p ON p.class_id = m.class_id  WHERE m.class_id = '2' AND `type` = '3' ORDER BY m.id desc LIMIT 0,25  
+
+[ 2018-12-20T14:30:28+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:30:31+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/1/type/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:31:01+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:31:08+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/3/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:31:12+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:31:17+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:31:19+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:36:48+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:36:52+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:37:35+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:37:56+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:38:00+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/3/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:38:03+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/2/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:38:07+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/2/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:38:10+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/2/type/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:38:13+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/1/type/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:38:16+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/1/type/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:38:57+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:39:01+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:39:05+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:39:07+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:39:12+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:39:16+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/1/type/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:39:30+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:39:35+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:39:39+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:39:43+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:40:06+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:40:14+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:40:54+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:41:01+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:41:07+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:41:16+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:41:19+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/2/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:41:51+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:43:06+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:43:15+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/2/type/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:43:57+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/1/type/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:44:08+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:46:39+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:46:43+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:46:46+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:46:53+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:46:58+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:47:28+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:47:33+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:47:36+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:47:50+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:47:54+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:48:00+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:48:20+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:48:25+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:52:02+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:52:05+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:52:08+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:52:12+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:54:09+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:54:12+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T14:54:38+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:54:40+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/1/type/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T14:55:01+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/2/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:01:47+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:05:31+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:05:48+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:06:06+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:06:49+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:07:14+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:08:19+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:09:14+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:09:15+08:00 ] 127.0.0.1 /index.php/home/Index/wel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:09:18+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:11:30+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:11:58+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:12:07+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:12:08+08:00 ] 127.0.0.1 /index.php/home/Index/wel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:12:09+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:14:18+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:16:04+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:19:39+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:20:33+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:20:57+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:21:32+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:23:08+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:23:22+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:24:14+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:24:29+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:25:27+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:26:09+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:26:44+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:28:29+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:29:13+08:00 ] 127.0.0.1 /Home/Goods/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:30:45+08:00 ] 127.0.0.1 /Home/Goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:30:47+08:00 ] 127.0.0.1 /Home/Goods/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:31:20+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:35:17+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:35:34+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/2/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:35:37+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/3/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:35:45+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/1/type/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:35:48+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/2/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:36:08+08:00 ] 127.0.0.1 /Home/Auth/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:36:24+08:00 ] 127.0.0.1 /Home/Auth/edit?auth_id=51
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:36:48+08:00 ] 127.0.0.1 /Home/Auth/edit?auth_id=51
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_auth` [ RunTime:0.0100s ]
+SQL: UPDATE `fb_auth` SET `auth_level`='2',`auth_pid`='49',`auth_name`='素材管理',`auth_c`='Material',`auth_a`='management' WHERE `auth_id` = 51 [ RunTime:0.0010s ]
+
+[ 2018-12-20T15:36:51+08:00 ] 127.0.0.1 /Home/Auth/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:36:55+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:36:56+08:00 ] 127.0.0.1 /index.php/home/Index/wel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:36:59+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:43:48+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:43:50+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T15:43:59+08:00 ] 127.0.0.1 /Home/Material/up_goods_img
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:44:04+08:00 ] 127.0.0.1 /Home/Material/up_goods_img
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:44:23+08:00 ] 127.0.0.1 /Home/Material/up_goods_img
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T15:49:45+08:00 ] 127.0.0.1 /Home/Material/delpic
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_material` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fb_material` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: goodsimg D:\www\oa\Application\Home\Controller\MaterialController.class.php 第 171 行.
+NOTIC: [2] unlink(D:\www\oa): Permission denied D:\www\oa\Application\Home\Controller\MaterialController.class.php 第 171 行.
+NOTIC: [8] Undefined index: goodsthums D:\www\oa\Application\Home\Controller\MaterialController.class.php 第 172 行.
+NOTIC: [2] unlink(D:\www\oa): Permission denied D:\www\oa\Application\Home\Controller\MaterialController.class.php 第 172 行.
+
+[ 2018-12-20T15:51:34+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:02:02+08:00 ] 127.0.0.1 /Home/Goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:02:04+08:00 ] 127.0.0.1 /Home/Goods/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T16:02:45+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:02:47+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T16:03:16+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:04:43+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:06:19+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T16:07:30+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:07:42+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:08:12+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T16:08:13+08:00 ] 127.0.0.1 /index.php/home/Index/wel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T16:08:18+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T16:08:20+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T16:12:16+08:00 ] 127.0.0.1 /Home/Material/up_goods_img
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:12:20+08:00 ] 127.0.0.1 /Home/Material/up_goods_img
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:12:24+08:00 ] 127.0.0.1 /Home/Material/up_goods_img
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:12:29+08:00 ] 127.0.0.1 /Home/Material/up_goods_img
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:12:50+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0020s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_material` [ RunTime:0.0020s ]
+
+[ 2018-12-20T16:16:59+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:17:03+08:00 ] 127.0.0.1 /Home/Material/up_goods_img
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:17:06+08:00 ] 127.0.0.1 /Home/Material/up_goods_img
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T16:17:27+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_material` [ RunTime:0.0100s ]
+SQL: UPDATE `fb_material` SET `class_id`='0',`type_id`='3',`note`='哈哈哈哈哈哈',`create_time`='1545293847' WHERE `id` = 62 [ RunTime:0.0000s ]
+SQL: UPDATE `fb_material` SET `class_id`='0',`type_id`='3',`note`='哈哈哈哈哈哈',`create_time`='1545293847' WHERE `id` = 63 [ RunTime:0.0010s ]
+
+[ 2018-12-20T16:17:29+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T16:19:06+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:19:13+08:00 ] 127.0.0.1 /Home/Material/up_goods_img
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:19:22+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_material` [ RunTime:0.0100s ]
+SQL: UPDATE `fb_material` SET `class_id`='2',`type_id`='3',`note`='132',`create_time`='1545293962' WHERE `id` = 64 [ RunTime:0.0010s ]
+
+[ 2018-12-20T16:19:24+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:36:19+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T16:36:23+08:00 ] 127.0.0.1 /Home/Material/up_goods_img
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:36:26+08:00 ] 127.0.0.1 /Home/Material/up_goods_img
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:36:31+08:00 ] 127.0.0.1 /Home/Material/up_goods_img
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:36:46+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_material` [ RunTime:0.0100s ]
+SQL: UPDATE `fb_material` SET `class_id`='1',`type_id`='3',`note`='123456',`create_time`='1545295006' WHERE `id` = 65 [ RunTime:0.0010s ]
+SQL: UPDATE `fb_material` SET `class_id`='1',`type_id`='3',`note`='123456',`create_time`='1545295006' WHERE `id` = 66 [ RunTime:0.0000s ]
+SQL: UPDATE `fb_material` SET `class_id`='1',`type_id`='3',`note`='123456',`create_time`='1545295006' WHERE `id` = 67 [ RunTime:0.0000s ]
+
+[ 2018-12-20T16:36:48+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:41:25+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T16:46:58+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T16:47:44+08:00 ] 127.0.0.1 /Home/Customer/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T16:47:52+08:00 ] 127.0.0.1 /Home/Customer/member-add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T16:48:04+08:00 ] 127.0.0.1 /Home/Customer/order_add?cid=10252&cname=%E5%BC%A0%E5%A5%8E
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:48:11+08:00 ] 127.0.0.1 /Home/Customer/goods_add_card
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Home\Controller\CustomerController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\www\oa\Application\Home\Controller\CustomerController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_goods` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `fb_goods` WHERE `goodsid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2018-12-20T16:48:18+08:00 ] 127.0.0.1 /Home/Order/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T16:48:27+08:00 ] 127.0.0.1 /Home/Goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T16:48:34+08:00 ] 127.0.0.1 /Home/Customer/kehu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T16:48:36+08:00 ] 127.0.0.1 /Home/Customer/backlog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T16:48:46+08:00 ] 127.0.0.1 /Home/Customer/addbacklog?cid=10252
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:48:47+08:00 ] 127.0.0.1 /Home/Customer/undefinedcss/modules/laydate/default/laydate.css?v=5.0.9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 非法操作:undefinedcss
+
+[ 2018-12-20T16:49:21+08:00 ] 127.0.0.1 /Home/Report/return_rate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:49:26+08:00 ] 127.0.0.1 /Home/Report/consume
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:49:31+08:00 ] 127.0.0.1 /Home/Report/team
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:49:39+08:00 ] 127.0.0.1 /Home/Report/rank
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:49:45+08:00 ] 127.0.0.1 /Home/Report/buyingrate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:49:56+08:00 ] 127.0.0.1 /Home/Funds/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T16:50:09+08:00 ] 127.0.0.1 /Home/Index/wel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:50:49+08:00 ] 127.0.0.1 /index.php/Home/Material/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:56:55+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T16:57:18+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:58:16+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T16:59:37+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T17:04:10+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:04:12+08:00 ] 127.0.0.1 /Home/Material/add_class
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:04:38+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:04:40+08:00 ] 127.0.0.1 /Home/Material/add_class
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:05:01+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:05:02+08:00 ] 127.0.0.1 /Home/Material/add_class
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:05:22+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T17:05:24+08:00 ] 127.0.0.1 /Home/Material/add_class
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T17:07:47+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:07:49+08:00 ] 127.0.0.1 /Home/Material/add_class
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T17:12:58+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T17:13:00+08:00 ] 127.0.0.1 /Home/Material/add_class
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:13:13+08:00 ] 127.0.0.1 /Home/Material/add_class
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_class` [ RunTime:0.0090s ]
+SQL: INSERT INTO `fb_class` (`class_name`,`create_time`) VALUES ('李若彤','1545297193') [ RunTime:0.0010s ]
+
+[ 2018-12-20T17:13:15+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T17:15:34+08:00 ] 127.0.0.1 /Home/Material/add_class
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T17:15:40+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:15:41+08:00 ] 127.0.0.1 /Home/Material/add_class
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T17:16:32+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:16:34+08:00 ] 127.0.0.1 /Home/Material/add_class
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:17:04+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T17:17:06+08:00 ] 127.0.0.1 /Home/Material/add_class
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T17:17:15+08:00 ] 127.0.0.1 /Home/Material/add_class
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_class` [ RunTime:0.0090s ]
+SQL: INSERT INTO `fb_class` (`class_name`,`create_time`) VALUES ('王语嫣','2018-12-20') [ RunTime:0.0000s ]
+
+[ 2018-12-20T17:17:17+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:22:10+08:00 ] 127.0.0.1 /Home/Material/add_pic_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:22:18+08:00 ] 127.0.0.1 /Home/Material/add_class
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T17:22:23+08:00 ] 127.0.0.1 /Home/Material/add_pic_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T17:22:45+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:22:47+08:00 ] 127.0.0.1 /Home/Material/add_pic_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T17:23:00+08:00 ] 127.0.0.1 /Home/Material/add_pic_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: class_name D:\www\oa\Application\Home\Controller\MaterialController.class.php 第 217 行.
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0100s ]
+SQL: INSERT INTO `fb_pic_type` (`class_id`,`create_time`) VALUES ('5','1545297780') [ RunTime:0.0010s ]
+
+[ 2018-12-20T17:23:02+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:23:10+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:23:18+08:00 ] 127.0.0.1 /Home/Material/add_pic_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:23:24+08:00 ] 127.0.0.1 /Home/Material/add_pic_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: class_name D:\www\oa\Application\Home\Controller\MaterialController.class.php 第 217 行.
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0100s ]
+ERR: 1062:Duplicate entry '0' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `fb_pic_type` (`class_id`,`create_time`) VALUES ('5','1545297804')
+ERR: 1062:Duplicate entry '0' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `fb_pic_type` (`class_id`,`create_time`) VALUES ('5','1545297804')
+
+[ 2018-12-20T17:23:28+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T17:23:29+08:00 ] 127.0.0.1 /Home/Material/add_pic_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T17:23:36+08:00 ] 127.0.0.1 /Home/Material/add_pic_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: class_name D:\www\oa\Application\Home\Controller\MaterialController.class.php 第 217 行.
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0090s ]
+ERR: 1062:Duplicate entry '0' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `fb_pic_type` (`class_id`,`create_time`) VALUES ('5','1545297816')
+ERR: 1062:Duplicate entry '0' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `fb_pic_type` (`class_id`,`create_time`) VALUES ('5','1545297816')
+
+[ 2018-12-20T17:24:52+08:00 ] 127.0.0.1 /Home/Material/add_pic_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:25:01+08:00 ] 127.0.0.1 /Home/Material/add_pic_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0100s ]
+ERR: 1062:Duplicate entry '0' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `fb_pic_type` (`type`,`class_id`,`create_time`) VALUES ('生活','5','1545297901')
+ERR: 1062:Duplicate entry '0' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `fb_pic_type` (`type`,`class_id`,`create_time`) VALUES ('生活','5','1545297901')
+
+[ 2018-12-20T17:25:05+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:25:07+08:00 ] 127.0.0.1 /index.php/Home/Material/management/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:25:08+08:00 ] 127.0.0.1 /Home/Material/add_pic_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T17:25:09+08:00 ] 127.0.0.1 /Home/Material/add_pic_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T17:25:13+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:25:15+08:00 ] 127.0.0.1 /Home/Material/add_pic_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T17:25:22+08:00 ] 127.0.0.1 /Home/Material/add_pic_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0100s ]
+ERR: 1062:Duplicate entry '0' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `fb_pic_type` (`type`,`class_id`,`create_time`) VALUES ('生活','5','1545297922')
+ERR: 1062:Duplicate entry '0' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `fb_pic_type` (`type`,`class_id`,`create_time`) VALUES ('生活','5','1545297922')
+
+[ 2018-12-20T17:25:33+08:00 ] 127.0.0.1 /Home/Material/add_pic_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0100s ]
+ERR: 1062:Duplicate entry '0' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `fb_pic_type` (`type`,`class_id`,`create_time`) VALUES ('生活','5','1545297933')
+ERR: 1062:Duplicate entry '0' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `fb_pic_type` (`type`,`class_id`,`create_time`) VALUES ('生活','5','1545297933')
+
+[ 2018-12-20T17:26:19+08:00 ] 127.0.0.1 /Home/Material/add_pic_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0090s ]
+SQL: INSERT INTO `fb_pic_type` (`type`,`class_id`,`create_time`) VALUES ('生活','5','1545297979') [ RunTime:0.0000s ]
+
+[ 2018-12-20T17:26:23+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T17:26:51+08:00 ] 127.0.0.1 /Home/Material/add_class
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T17:26:58+08:00 ] 127.0.0.1 /Home/Material/add_pic_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:27:13+08:00 ] 127.0.0.1 /Home/Material/add_pic_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T17:27:33+08:00 ] 127.0.0.1 /Home/Material/add_pic_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0100s ]
+SQL: INSERT INTO `fb_pic_type` (`type`,`class_id`,`create_time`) VALUES ('绝情谷底','4','1545298053') [ RunTime:0.0010s ]
+
+[ 2018-12-20T17:27:36+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:45:16+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:45:19+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:46:47+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T17:52:40+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T17:52:45+08:00 ] 127.0.0.1 /Home/Material/type_add?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `fb_pic_type` WHERE `class_id` = 1  [ RunTime:0.0000s ]
+
+[ 2018-12-20T17:52:51+08:00 ] 127.0.0.1 /Home/Material/type_add?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fb_pic_type` WHERE `class_id` = 2  [ RunTime:0.0010s ]
+
+[ 2018-12-20T17:52:56+08:00 ] 127.0.0.1 /Home/Material/type_add?id=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0060s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `fb_pic_type` WHERE `class_id` = 4  [ RunTime:0.0000s ]
+
+[ 2018-12-20T17:53:01+08:00 ] 127.0.0.1 /Home/Material/type_add?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `fb_pic_type` WHERE `class_id` = 5  [ RunTime:0.0000s ]
+
+[ 2018-12-20T17:53:06+08:00 ] 127.0.0.1 /Home/Material/type_add?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `fb_pic_type` WHERE `class_id` = 2  [ RunTime:0.0010s ]
+
+[ 2018-12-20T17:53:10+08:00 ] 127.0.0.1 /Home/Material/type_add?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0070s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `fb_pic_type` WHERE `class_id` = 1  [ RunTime:0.0000s ]
+
+[ 2018-12-20T18:00:21+08:00 ] 127.0.0.1 /Home/Material/type_add?id=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0120s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fb_pic_type` WHERE `class_id` = 3  [ RunTime:0.0000s ]
+
+[ 2018-12-20T18:00:26+08:00 ] 127.0.0.1 /Home/Material/type_add?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0090s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `fb_pic_type` WHERE `class_id` = 1  [ RunTime:0.0010s ]
+
+[ 2018-12-20T18:00:45+08:00 ] 127.0.0.1 /Home/Material/add_class
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:01:07+08:00 ] 127.0.0.1 /Home/Material/add_class
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:01:29+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:01:35+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:01:38+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/1/type/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:01:40+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:01:41+08:00 ] 127.0.0.1 /index.php/Home/Material/index/id/1/type/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:01:50+08:00 ] 127.0.0.1 /Home/Material/add_pic_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:02:03+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:02:08+08:00 ] 127.0.0.1 /Home/Material/up_goods_img
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:02:12+08:00 ] 127.0.0.1 /Home/Material/up_goods_img
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:02:16+08:00 ] 127.0.0.1 /Home/Material/type_add?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `fb_pic_type` WHERE `class_id` = 1  [ RunTime:0.0000s ]
+
+[ 2018-12-20T18:02:22+08:00 ] 127.0.0.1 /Home/Material/type_add?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0070s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `fb_pic_type` WHERE `class_id` = 2  [ RunTime:0.0000s ]
+
+[ 2018-12-20T18:02:29+08:00 ] 127.0.0.1 /Home/Material/type_add?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fb_pic_type` WHERE `class_id` = 1  [ RunTime:0.0010s ]
+
+[ 2018-12-20T18:02:32+08:00 ] 127.0.0.1 /Home/Material/type_add?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0050s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `fb_pic_type` WHERE `class_id` = 2  [ RunTime:0.0000s ]
+
+[ 2018-12-20T18:03:42+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_material` [ RunTime:0.0100s ]
+SQL: UPDATE `fb_material` SET `class_id`='2',`type_id`='4',`note`=' 又搭台做完一台手术了 
+虽然累，但很有成就感
+每天进步一点点  
+都说认真工作的样子最美
+那一定要晒照片了',`create_time`='1545300222' WHERE `id` = 68 [ RunTime:0.0010s ]
+SQL: UPDATE `fb_material` SET `class_id`='2',`type_id`='4',`note`=' 又搭台做完一台手术了 
+虽然累，但很有成就感
+每天进步一点点  
+都说认真工作的样子最美
+那一定要晒照片了',`create_time`='1545300222' WHERE `id` = 69 [ RunTime:0.0010s ]
+
+[ 2018-12-20T18:03:44+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:18:04+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:18:06+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:20:29+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:22:29+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:22:33+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:22:35+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:23:04+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:23:59+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:24:38+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:24:45+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:25:18+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:26:58+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:27:39+08:00 ] 127.0.0.1 /Home/Material/type_add?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fb_pic_type` WHERE `class_id` = 2  [ RunTime:0.0010s ]
+
+[ 2018-12-20T18:27:43+08:00 ] 127.0.0.1 /Home/Material/type_add?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fb_pic_type` WHERE `class_id` = 1  [ RunTime:0.0010s ]
+
+[ 2018-12-20T18:28:39+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:29:19+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:29:58+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:30:20+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:30:23+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:30:24+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:30:35+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:30:37+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:30:56+08:00 ] 127.0.0.1 /Home/Material/type_add?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fb_pic_type` WHERE `class_id` = 1  [ RunTime:0.0010s ]
+
+[ 2018-12-20T18:36:22+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:36:36+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:38:17+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:38:20+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:38:21+08:00 ] 127.0.0.1 /index.php/home/Index/wel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:38:24+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:38:27+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:38:45+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:38:46+08:00 ] 127.0.0.1 /index.php/home/Index/wel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:38:55+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:39:48+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:39:57+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:41:14+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:41:17+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:41:24+08:00 ] 127.0.0.1 /Home/Material/type_add?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `fb_pic_type` WHERE `class_id` = 1  [ RunTime:0.0000s ]
+
+[ 2018-12-20T18:42:31+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:42:33+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:42:42+08:00 ] 127.0.0.1 /Home/Goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:42:44+08:00 ] 127.0.0.1 /Home/Goods/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:43:39+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:43:41+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:44:31+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:44:55+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:45:11+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:45:13+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:46:06+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:46:26+08:00 ] 127.0.0.1 /index.php/Home/Material/management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T18:46:28+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:46:45+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:47:39+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:47:45+08:00 ] 127.0.0.1 /Home/Material/up_material_img
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:55:48+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T18:57:46+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T19:00:34+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T19:04:12+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T19:04:50+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T19:05:00+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T19:05:01+08:00 ] 127.0.0.1 /index.php/home/Index/wel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T19:05:05+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T19:05:07+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T19:05:57+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T19:05:57+08:00 ] 127.0.0.1 /index.php/Home/Manage/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T19:06:06+08:00 ] 127.0.0.1 /index.php/Home/Manage/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fb_admin` WHERE `username` = 'admin' AND `password` = '0192023a7bbd73250516f069df18b500' LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `fb_admin` SET `last_login_time`='1545303966',`signup_ip`='127.0.0.1' WHERE `id` = 1 [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_logininfo` [ RunTime:0.0050s ]
+SQL: INSERT INTO `fb_logininfo` (`ip`,`city`,`logintime`,`loginstatus`,`errorinfo`,`loginname`,`loginpass`,`loginnickname`) VALUES ('127.0.0.1','   ','1545303966','1','登陆成功','admin','admin123','江湖') [ RunTime:0.0000s ]
+
+[ 2018-12-20T19:06:07+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T19:06:08+08:00 ] 127.0.0.1 /index.php/home/Index/wel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T19:06:10+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T19:06:12+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T19:07:11+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T19:07:12+08:00 ] 127.0.0.1 /index.php/home/Index/wel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T19:07:13+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T19:07:15+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T19:19:15+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T19:19:15+08:00 ] 127.0.0.1 /index.php/Home/Manage/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T19:19:22+08:00 ] 127.0.0.1 /index.php/Home/Manage/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fb_admin` WHERE `username` = 'admin' AND `password` = '0192023a7bbd73250516f069df18b500' LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `fb_admin` SET `last_login_time`='1545304762',`signup_ip`='127.0.0.1' WHERE `id` = 1 [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_logininfo` [ RunTime:0.0100s ]
+SQL: INSERT INTO `fb_logininfo` (`ip`,`city`,`logintime`,`loginstatus`,`errorinfo`,`loginname`,`loginpass`,`loginnickname`) VALUES ('127.0.0.1','XX XX XX 内网IP','1545304762','1','登陆成功','admin','admin123','江湖') [ RunTime:0.0010s ]
+
+[ 2018-12-20T19:19:23+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T19:19:24+08:00 ] 127.0.0.1 /index.php/home/Index/wel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T19:19:26+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T19:19:29+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-20T19:55:19+08:00 ] 127.0.0.1 /Home/Material/up_material_img
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T19:55:22+08:00 ] 127.0.0.1 /Home/Material/type_add?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_pic_type` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `fb_pic_type` WHERE `class_id` = 2  [ RunTime:0.0000s ]
+
+[ 2018-12-20T19:55:31+08:00 ] 127.0.0.1 /Home/Material/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_auth_ac` FROM fb_admin m INNER JOIN fb_role as r on m.role_id = r.id  WHERE m.id = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `fb_material` [ RunTime:0.0100s ]
+SQL: UPDATE `fb_material` SET `class_id`='2',`type_id`='4',`note`='<p>男人的通病是什么❓&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p><p>我很想延长爱爱时间&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p><p>我很想用你们这个产品&nbsp; &nbsp;</p><p>我想像你发的反馈那样一次半小时</p><p>📍可是我嫌贵</p><p>📍我怕不好使&nbsp;</p><p>📍我怕我老婆不同意&nbsp;</p><p>📍我怕花钱&nbsp;</p><p>📍你说的都对&nbsp;</p><p>️可是我想说你最“勇敢”：你最不怕早泄、阳痿、最不怕被绿‼️</p>',`create_time`='1545306931' WHERE `id` = 71 [ RunTime:0.0010s ]
+
+[ 2018-12-20T19:55:33+08:00 ] 127.0.0.1 /Home/Material/management
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-20T19:56:15+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+

@@ -16,13 +16,38 @@
     <body>
         <div class="x-body">
             <form class="layui-form" action="#" method="post" onsubmit="return false">
-                <input type="hidden" name="admin_id" value="{$admin_id}">
+                <input type="hidden" name="admin_id" value="{$data.admin_id}">
+                <div class="layui-form-item">
+                    <label for="group" class="layui-form-label">
+                        <span class="x-red">*</span>当前分组
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" value="{$data.group_name}" readonly="readonly" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="group" class="layui-form-label">
+                        <span class="x-red">*</span>新分组
+                    </label>
+                    <div class="layui-input-inline">
+                      <select name="group_id">
+                        <option value="">请选择分组</option>
+                            <foreach name="group" item="v">
+                                <if condition="$data['group_id'] eq $v['group_id'] ">
+                                        <option value="{$v.group_id}" selected="selected">{$v.group_name}</option>
+                                    <else />
+                                        <option value="{$v.group_id}">{$v.group_name}</option>
+                                </if>
+                            </foreach>
+                      </select>
+                    </div>
+                </div>
                 <div class="layui-form-item">
                     <label for="role" class="layui-form-label">
                         <span class="x-red">*</span>当前角色
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" value="{$role_name}" readonly="readonly" class="layui-input">
+                        <input type="text" value="{$data.role_name}" readonly="readonly" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -33,7 +58,7 @@
                       <select name="role_id">
                         <option value="">请选择角色</option>
                             <foreach name="role" item="v">
-                                <if condition="$info['role_id'] eq $v['id'] ">
+                                <if condition="$data['role_id'] eq $v['id'] ">
                                         <option value="{$v.id}" selected="selected">{$v.name}</option>
                                     <else />
                                         <option value="{$v.id}">{$v.name}</option>
