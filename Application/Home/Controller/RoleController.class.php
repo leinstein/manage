@@ -20,7 +20,7 @@ class RoleController extends HomeController{
      * 2018/11/17
      * 9:21
      *anthor liu
-     * 角色权限
+     * 分配权限
      */
     function distribution(){
         $role = D('Role');
@@ -56,7 +56,7 @@ class RoleController extends HomeController{
      * 2018/11/19
      * 16:14
      * anthor liu
-     * 删除权限
+     * 删除角色
      */
     public function del(){
         $id = $_POST['role_id'];

@@ -26,14 +26,10 @@
            
         }
        
-        .layui-row{
-         
-            width: 96%;
-            margin-left: 2%;
-            
+        .content_title_box{
+            /*width: 96%;*/
+            /*margin-left: 2%;*/
         }
-    </style>
-    <style>
         .word{
             position: relative;
             top: -56px;
@@ -84,8 +80,8 @@
             background-color: white;
         }
         .sec_black{
-            width: 95%;
-            margin-left: 2.5%;
+            /*width: 95%;*/
+            /*margin-left: 2.5%;*/
             margin-top: 10px;
         }
         .layui-col-sm3{
@@ -96,7 +92,7 @@
     
         <div class="x-body">
             <!--头部统计-->
-            <div class="layui-row layui-col-space20">
+            <div class="layui-row content_title_box layui-col-space20">
                 <div class="layui-col-xs6 layui-col-sm6 layui-col-md3">
                     <div class="bg_color">
                         <div class="l_box">
@@ -131,17 +127,17 @@
                             <div  class="word_english">Yestoday</div>
                             <i class="layui-icon">&#xe770;</i>
                             <span class="word_title">客户数：</span>
-                            <span class="word_number"> {$customer_stati.yestoday}</span>
+                            <span class="word_number"> {$customer_stati.yesterday}</span>
                             <div class="word_box"></div>
                             
                             <i class="layui-icon">&#xe63c;</i>
                             <span class="word_title">订单数：</span>
-                            <span class="word_number"> {$order_stati.yestoday}</span>
+                            <span class="word_number"> {$order_stati.yesterday}</span>
                             <div  class="word_box"></div>
                             
                             <i class="layui-icon">&#xe65e;</i>
                             <span class="word_title">销售额：</span>
-                            <span class="word_number"> {$order_stati.yestoday_order|substr=###,0,-3}</span>
+                            <span class="word_number"> {$order_stati.yesterday_order|substr=###,0,-3}</span>
                         </div>
                     </div>
                 </div>
@@ -420,6 +416,200 @@
                     </div>
                 </div>
               </div>
+            
+            <!--订单统计-->
+            <style>
+            .bg_color_div{
+                background-color: white;
+                /*height: 100%;*/
+            }
+            .layui-col-md4{
+                height: 195px;
+                min-width: 550px;
+                margin-top: 10px;
+            }
+            .content_box{
+                /*width: 99.4%;*/
+                /*margin-left: 0.3%;*/
+            }
+            .content{
+                display: inline-block;
+                /*height: 100%;*/
+            }
+            .content1{
+                width: 30%;
+                margin-left: 0;
+    
+            }
+            .content2{
+                width: 36%;
+                margin-left: 0;
+            }
+            .content2,.content3{
+                margin-left: -0.8%;
+            }
+            .content3{
+                position: relative;
+                top: -35px;
+                width: 34%;
+            }
+            .table_title{
+                padding-left: 25px;
+            }
+            .content_table{
+                margin-top: 18px;
+            }
+            .content_table td{
+                height: 35px;
+                color: rgba(0,0,0,.65);
+            }
+            .ring{
+                width: 100px;
+                height: 100px;
+                margin-left: 15%;
+            }
+            .month{
+                position: relative;
+                display: inline-block;
+                font-size: 38px;
+                width: 100%;
+                margin-left: 20%;
+                color: rgba(0,0,0,.4);
+            }
+            .x-body {
+                padding: 0 20px 20px 20px;
+            }
+            .month_btn{
+                margin-top: 12px;
+            }
+            .layui-input{
+                color: #666;
+                font-weight: normal;
+            }
+        </style>
+            <div class="layui-row layui-col-space20 content_box">
+            <div class="layui-col-xs12 layui-col-sm6 layui-col-md4">
+                <div class="bg_color_div">
+                    <div class="content content1">
+                        <table class="content_table">
+                            <tr>
+                                <td class="table_title">总订单：{$report.month.sum}</td>
+                            </tr>
+                            <tr>
+                                <td class="table_title">退单数：{$report.month.chargeback}</td>
+                            </tr>
+                            <tr>
+                                <td class="table_title">退单率：{$report.month.avg}</td>
+                            </tr>
+                            <tr>
+                                <td class="table_title">实际订单：{$report.month.real_order}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="content content2">
+                        <table class="content_table">
+                            <tr>
+                                <td class="table_title">订单总金额：{$report.month.amount|substr=###,0,-3}</td>
+                            </tr>
+                            <tr>
+                                <td class="table_title">退单总金额：{$report.month.refunds}</td>
+                            </tr>
+                            <tr>
+                                <td class="table_title">退单金额率：{$report.month.amount_avg}</td>
+                            </tr>
+                            <tr>
+                                <td class="table_title">实际成交金额：{$report.month.real_amount}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="content content3">
+                        <div id="ring_one_one" class="ring"></div>
+                        <span class="month">本月</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs12 layui-col-sm6 layui-col-md4">
+                <div class="bg_color_div">
+                    <div class="content content1">
+                        <table class="content_table">
+                            <tr>
+                                <td class="table_title">总订单：{$report.lastmonth.sum}</td>
+                            </tr>
+                            <tr>
+                                <td class="table_title">退单数：{$report.lastmonth.chargeback}</td>
+                            </tr>
+                            <tr>
+                                <td class="table_title">退单率：{$report.lastmonth.avg}</td>
+                            </tr>
+                            <tr>
+                                <td class="table_title">实际订单：{$report.lastmonth.real_order}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="content content2">
+                        <table class="content_table">
+                            <tr>
+                                <td class="table_title">订单总金额：{$report.lastmonth.amount|substr=###,0,-3}</td>
+                            </tr>
+                            <tr>
+                                <td class="table_title">退单总金额：{$report.lastmonth.refunds}</td>
+                            </tr>
+                            <tr>
+                                <td class="table_title">退单金额率：{$report.lastmonth.amount_avg}</td>
+                            </tr>
+                            <tr>
+                                <td class="table_title">实际成交金额：{$report.lastmonth.real_amount}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="content content3">
+                        <div id="ring_one_two" class="ring"></div>
+                        <span class="month">上月</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs12 layui-col-sm6 layui-col-md4">
+                <div class="bg_color_div">
+                    <div class="content content1">
+                        <table class="content_table">
+                            <tr>
+                                <td class="table_title">总订单：{$report.history.sum}</td>
+                            </tr>
+                            <tr>
+                                <td class="table_title">退单数：{$report.history.chargeback}</td>
+                            </tr>
+                            <tr>
+                                <td class="table_title">退单率：{$report.history.avg}</td>
+                            </tr>
+                            <tr>
+                                <td class="table_title">实际订单：{$report.history.real_order}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="content content2">
+                        <table class="content_table">
+                            <tr>
+                                <td class="table_title">订单总金额：{$report.history.amount|substr=###,0,-3}</td>
+                            </tr>
+                            <tr>
+                                <td class="table_title">退单总金额：{$report.history.refunds}</td>
+                            </tr>
+                            <tr>
+                                <td class="table_title">退单金额率：{$report.history.amount_avg}</td>
+                            </tr>
+                            <tr>
+                                <td class="table_title">实际成交金额：{$report.history.real_amount}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="content content3">
+                        <div id="ring_one_three" class="ring"></div>
+                        <span class="month">历史</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
             <!--复购率-->
             <style>
                 .ring,.buy_rate{
@@ -447,7 +637,7 @@
                     position: relative;
                     top: -22px;
                     left: 4%;
-                    width: 48%;
+                    width: 38%;
                 }
                 .ring{
                     height: 78px;
@@ -474,7 +664,7 @@
                 }
             </style>
             <style>.layui-col-md2{width: 14.2857143%;height: 120px}</style>
-            <div class="layui-row" style="width: 95%;margin-left: 2.5%;margin-top: 20px">
+            <div class="layui-row" style="margin-top: 15px">
                 <div style="height: 730px;background-color: white;">
                     <div class="layui-row" style="width: 100%;margin-left: 0;">
                         <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
@@ -548,49 +738,26 @@
                           <div id="ring_seven" class="ring"></div>
                         </div>
                     </div>
-                    <div class="layui-row" style="margin-top: 80px">
+                    <div class="layui-row" style="margin: 80px 30px 0">
                         <div id="brokenline" style="height: 500px"></div>
                     </div>
                 </div>
             </div>
             
-            
-            
-            
+        </div>
         
-        </div>
-        <style>
-            .layui-main p{
-                text-align: center;
-                margin: 20px;
-            }
-        </style>
-        <div class="layui-footer footer footer-demo"  lay-filter="side">
-            <div class="layui-main">
-                <p>
-                    <a   href="javascript:;"  _href="/">
-                        <img src="/public/Home/images/500k.png" width="40px">
-                    </a>
-                </p>
-                <p>
-                    <a target="_blank" href="http://www.miitbeian.gov.cn">
-                        Copyright ©2017 风暴网络
-                    </a>
-                </p>
-            </div>
-        </div>
         <script src="/Public/home/js/jquery.js"></script>
         <script src="/Public/home/lib/layui/layui.js" charset="utf-8"></script>
         <script src="/Public/home/js/x-admin.js"></script>
         <script src="/Public/home/js/echarts.min.js"></script>
         <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+              var s = document.getElementsByTagName("script")[0];
+              s.parentNode.insertBefore(hm, s);
+            })();
         </script>
         <!--柱状图-->
         <script type="text/javascript">
@@ -640,7 +807,7 @@
                     ],
                     series : [
                         {
-                            name:'本月销售额',
+                            name:'销售额',
                             type:'bar',
                             barWidth: '50%',
                             data:day.list
@@ -702,7 +869,7 @@
                     ],
                     series : [
                         {
-                            name:'本月顾客',
+                            name:'顾客',
                             type:'bar',
                             barWidth: '50%',
                             data:day_customer
@@ -762,7 +929,7 @@
                     ],
                     series: [
                         {
-                            name: '本月订单',
+                            name: '订单',
                             type: 'bar',
                             barWidth: '50%',
                             data: day.order_count
@@ -1199,6 +1366,155 @@
             ;
             if (option && typeof option === "object") {
             myChart.setOption(option, true);
+            }
+        </script>
+        
+        <!--退单率-->
+        <script type="text/javascript">
+            var dom = document.getElementById("ring_one_one");
+            var myChart = echarts.init(dom);
+            var app = {};
+            var basic = "{$report.month.refunds}";
+            var rate =  "{$report.month.real_amount}";
+            option = null;
+            app.title = '环形图';
+
+            option = {
+                legend: {
+                    orient: 'vertical',
+                    data:['复购率','1']
+                },
+                color:['#34bfa3','#f2f2f2'],
+                series: [
+                    {
+                        name:'复购',
+                        type:'pie',
+                        radius: ['30%', '70%'],
+                        avoidLabelOverlap: false,
+                        label: {
+                            normal: {
+                                show: false,
+                                position: 'center'  //提示显示位置
+                            },
+                            emphasis: {
+                                show: true,
+                                textStyle: {
+                                    fontSize: '12'
+                                }
+                            }
+                        },
+                        labelLine: {
+                            normal: {
+                                show: false
+                            }
+                        },
+                        data:[
+                            {value:rate},
+                            {value:basic}
+                        ]
+                    }
+                ]
+            };
+            if (option && typeof option === "object") {
+                myChart.setOption(option, true);
+            }
+        </script>
+        <script type="text/javascript">
+            var dom = document.getElementById("ring_one_two");
+            var myChart = echarts.init(dom);
+            var app = {};
+            var basic = "{$report.lastmonth.refunds}";
+            var rate =  "{$report.lastmonth.real_amount}";
+            option = null;
+            app.title = '环形图';
+
+            option = {
+                legend: {
+                    orient: 'vertical',
+                    data:['复购率','1']
+                },
+                color:['#34bfa3','#f2f2f2'],
+                series: [
+                    {
+                        name:'复购',
+                        type:'pie',
+                        radius: ['30%', '70%'],
+                        avoidLabelOverlap: false,
+                        label: {
+                            normal: {
+                                show: false,
+                                position: 'center'  //提示显示位置
+                            },
+                            emphasis: {
+                                show: true,
+                                textStyle: {
+                                    fontSize: '12'
+                                }
+                            }
+                        },
+                        labelLine: {
+                            normal: {
+                                show: false
+                            }
+                        },
+                        data:[
+                            {value:rate},
+                            {value:basic}
+                        ]
+                    }
+                ]
+            };
+            if (option && typeof option === "object") {
+                myChart.setOption(option, true);
+            }
+        </script>
+        <script type="text/javascript">
+            var dom = document.getElementById("ring_one_three");
+            var myChart = echarts.init(dom);
+            var app = {};
+            var basic = "{$report.history.refunds}";
+            var rate =  "{$report.history.real_amount}";
+            option = null;
+            app.title = '环形图';
+
+            option = {
+                legend: {
+                    orient: 'vertical',
+                    data:['复购率','1']
+                },
+                color:['#34bfa3','#f2f2f2'],
+                series: [
+                    {
+                        name:'复购',
+                        type:'pie',
+                        radius: ['30%', '70%'],
+                        avoidLabelOverlap: false,
+                        label: {
+                            normal: {
+                                show: false,
+                                position: 'center'  //提示显示位置
+                            },
+                            emphasis: {
+                                show: true,
+                                textStyle: {
+                                    fontSize: '12'
+                                }
+                            }
+                        },
+                        labelLine: {
+                            normal: {
+                                show: false
+                            }
+                        },
+                        data:[
+                            {value:rate},
+                            {value:basic}
+                        ]
+                    }
+                ]
+            };
+            if (option && typeof option === "object") {
+                myChart.setOption(option, true);
             }
         </script>
         <script>

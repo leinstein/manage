@@ -12,6 +12,7 @@ class GoodsController extends HomeController {
      */
     Public function index(){
         $where['goodsdelete'] = 1;
+        if($_SESSION['username'] != 'admin') $where['status'] = 1;
         if($_GET['stat_date'] and !$_GET['stop_date']) $where['create_time'] = ['egt',strtotime($_GET['stat_date'])];
         if(!$_GET['stat_date'] and $_GET['stop_date']) $where['create_time'] = ['elt',strtotime($_GET['stop_date'])];
         if($_GET['stat_date'] and $_GET['stop_date']) $where['create_time'] = ['between',[strtotime($_GET['stat_date']),strtotime($_GET['stop_date'])]];
@@ -21,11 +22,15 @@ class GoodsController extends HomeController {
         }
         $goods = D('Goods');
         $count = $goods->where($where)->count();//满足条件的数量
-        $page  = new \Think\Page($count, 5);//实例化分页
+        $page  = new \Think\Page($count, 25);//实例化分页
         $page->setConfig('prev','上一页');
         $page->setConfig('next','下一页');
         $show  = $page->show();//分页显示输出
         $list = $goods->where($where)->order('goodsid desc')->limit($page->firstRow . ',' . $page->listRows)->select();
+        $admin = M('Admin')->where(['id'=>$_SESSION['userid']])->find();
+        $role = M('Role')->where(['id'=>$admin['role_id']])->find();
+        $role_ids = $role['role_auth_ids'];
+
         $goods_pic = M('goods_pic');
         foreach ($list as $v) {
             $where['picid'] = ['in',$v["goods_pic_id"]];
@@ -36,6 +41,7 @@ class GoodsController extends HomeController {
         $statistical = $goods->statistical();
         $this->assign('statistical', $statistical);
         $this->assign('list', $list_r);
+        $this->assign('role_ids', $role_ids);
         $this->assign('count', $count);
         $this->assign('page', $show);
         $this->assign('firstRow', $page->firstRow);

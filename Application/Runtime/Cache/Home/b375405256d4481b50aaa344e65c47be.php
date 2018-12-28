@@ -172,15 +172,19 @@
                             </td>
                             <td class="td-manage">
                                 <a title="添加订单" href="javascript:;" onclick="order_add_list('添加订单','/Home/Customer/order_add','<?php echo ($v["cid"]); ?>','1280','760','<?php echo ($v["nickname"]); ?>')"
-                                class="ml-5" style="text-decoration:none">
+                           class="ml-5" style="text-decoration:none">
                                     <img src="/Public/Home/images/jia.png" width="15px">
                                 </a>
                                 <a title="编辑客户" href="javascript:;" onclick="member_edit('编辑客户','/Home/Customer/edit','<?php echo ($v["cid"]); ?>','1000','760')"
-                                class="ml-5" style="text-decoration:none;margin-left: 10px">
+                                   class="ml-5" style="text-decoration:none;margin-left: 10px">
                                     <i class="layui-icon">&#xe642;</i>
                                 </a>
+                                <a title="添加待办任务" href="javascript:;" onclick="member_edit('添加待办任务','/Home/Customer/addbacklog','<?php echo ($v["cid"]); ?>','1000','700')"
+                                   class="ml-5" style="text-decoration:none;margin-left: 10px">
+                                    <i class="layui-icon">&#xe609;</i>
+                                </a>
                                 <a title="删除客户" href="javascript:;" onclick="member_del(this,'<?php echo ($v["cid"]); ?>')"
-                                style="text-decoration:none;margin-left: 10px">
+                                   style="text-decoration:none;margin-left: 10px">
                                     <i class="layui-icon">&#xe640;</i>
                                 </a>
                             </td>
@@ -227,16 +231,20 @@
                                 <td class="td-manage">
                                     <a title="添加订单" href="javascript:;" onclick="order_add_list('添加订单','/Home/Customer/order_add','<?php echo ($v["cid"]); ?>','1280','760','<?php echo ($v["nickname"]); ?>')"
                                        class="ml-5" style="text-decoration:none">
-                                        <img src="/Public/Home/images/jia.png" width="15px">
-                                    </a>
-                                    <a title="编辑客户" href="javascript:;" onclick="member_edit('编辑客户','/Home/Customer/edit','<?php echo ($v["cid"]); ?>','1000','760')"
-                                       class="ml-5" style="text-decoration:none;margin-left: 10px">
-                                        <i class="layui-icon">&#xe642;</i>
-                                    </a>
-                                    <a title="删除客户" href="javascript:;" onclick="member_del(this,'<?php echo ($v["cid"]); ?>')"
-                                       style="text-decoration:none;margin-left: 10px">
-                                        <i class="layui-icon">&#xe640;</i>
-                                    </a>
+                                            <img src="/Public/Home/images/jia.png" width="15px">
+                                        </a>
+                                        <a title="编辑客户" href="javascript:;" onclick="member_edit('编辑客户','/Home/Customer/edit','<?php echo ($v["cid"]); ?>','1000','760')"
+                                           class="ml-5" style="text-decoration:none;margin-left: 10px">
+                                            <i class="layui-icon">&#xe642;</i>
+                                        </a>
+                                        <a title="添加待办任务" href="javascript:;" onclick="member_edit('添加待办任务','/Home/Customer/addbacklog','<?php echo ($v["cid"]); ?>','1000','700')"
+                                           class="ml-5" style="text-decoration:none;margin-left: 10px">
+                                            <i class="layui-icon">&#xe609;</i>
+                                        </a>
+                                        <a title="删除客户" href="javascript:;" onclick="member_del(this,'<?php echo ($v["cid"]); ?>')"
+                                           style="text-decoration:none;margin-left: 10px">
+                                            <i class="layui-icon">&#xe640;</i>
+                                        </a>
                                 </td>
                             </tr><?php endforeach; endif; ?>
                         <?php if($infot != ''): ?><tr><td  colspan="12" class="bg_tr">昨天以前</td></tr><?php endif; ?>
@@ -303,11 +311,7 @@
         </div>
         <script src="/Public/Home/lib/layui/layui.js" charset="utf-8"></script>
         <script src="/Public/Home/js/x-layui.js" charset="utf-8"></script>
-        <script>
-            // $('#table_css').click(function (e) {
-            //     $('#table_css').css('background-color','red');
-            // });
-        </script>
+        
         <script>
             layui.use(['laydate','element','laypage','layer'], function(){
                 $ = layui.jquery;//jquery
@@ -373,7 +377,7 @@
                 layer.confirm('确认要删除这个客户吗？',function(index){
                     $.ajax({
                         type: 'POST',
-                        url: 'del',
+                        url: '/Home/Customer/del',
                         dataType: 'json',
                         data:{'cid':id},
                         success: function(data){

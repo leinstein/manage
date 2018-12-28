@@ -11,6 +11,8 @@ class CustomerController extends HomeController {
      */
     Public function index(){
         $where['delete'] = 1;
+        $userid = $_SESSION['userid'];
+        if($_SESSION['username'] != 'admin') $where['saleid'] = $userid;
         if($_GET['stat_date'] and !$_GET['stop_date']) $where['create_time'] = ['egt',strtotime($_GET['stat_date'])];
         if(!$_GET['stat_date'] and $_GET['stop_date']) $where['create_time'] = ['elt',strtotime($_GET['stop_date'])];
         if($_GET['stat_date'] and $_GET['stop_date']) $where['create_time'] = ['between',[strtotime($_GET['stat_date']),strtotime($_GET['stop_date'])]];
@@ -360,6 +362,7 @@ class CustomerController extends HomeController {
      * 11:18
      * anthor liu
      * 商品加入清单
+     *                           作废
      */
     Public function goods_add_card(){
         if(IS_POST){
@@ -396,6 +399,7 @@ class CustomerController extends HomeController {
                 $where['create_time'] = D('Order')->where_s($_GET['day']);
             }
         }
+        if($_SESSION['username'] != 'admin')  $where['uid'] = $_SESSION['userid'];
         $backlog = D('Backlog');
         $count = $backlog->where($where)->count();//满足条件的数量
         $page  = new \Think\Page($count, 25);//实例化分页
@@ -549,7 +553,7 @@ class CustomerController extends HomeController {
      * 2018/11/22
      * 9:41
      * anthor liu
-     * 客户列表
+     * 客户列表         ----作废
      */
     Public function kehu(){
         $where['delete'] = 1;

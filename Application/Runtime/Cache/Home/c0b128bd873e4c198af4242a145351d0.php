@@ -414,8 +414,8 @@
                     </tbody>
                 </table>
                 <div id="page" style="margin-bottom: 70px;"><?php echo ($page); ?></div>
-        </div>
             </div>
+          </div>
         </div>
     
         <script src="/Public/home/js/jquery.js"></script>
@@ -669,7 +669,7 @@
                     option = null;
                     option = {
                         title: {
-                            text: '历史统计',
+                            text: '今年统计',
                             color:'#ccc'
                         },
                         tooltip: {
@@ -778,6 +778,7 @@
                 $ = layui.jquery;//jquery
               laydate = layui.laydate;//日期插件
               layer = layui.layer;//弹出层
+                var element = layui.element;
               
               
               var start = {

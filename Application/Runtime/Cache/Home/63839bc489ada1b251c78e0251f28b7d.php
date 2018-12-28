@@ -35,12 +35,20 @@
                 </div> 
             </form>
             <style>.layui-table td, .layui-table th{text-align: center}</style>
-            <xblock><button class="layui-btn" onclick="admin_add('添加商品','/Home/Goods/add','680','650')" style="font-size: 16px"><i class="layui-icon">&#xe608;</i> 添 加</button>
+            <xblock>
+                <?php if(in_array(($_SESSION['roleid']), is_array($role_ids)?$role_ids:explode(',',$role_ids))): ?><button class="layui-btn"  onclick="admin_add('添加商品','/Home/Goods/add','680','650')">
+                    <i class="layui-icon">&#xe608;</i> 添 加
+                    </button>
+                <?php else: ?>
+                    <button class="layui-btn layui-btn-disabled">
+                    <i class="layui-icon">&#xe608;</i> 添 加
+                    </button><?php endif; ?>
                 <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px;padding: 2px 4px"  href="/Home/Goods/index" title="首页">
                     <img src="/Public/Home/images/indexw.png" style="vertical-align: baseline;width: 27px;height: 27px">
                     </a>
                     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
-                <span class="x-right" style="line-height:40px">共有数据：<?php echo ($count); ?> 条</span></xblock>
+                <!--&lt;!&ndash;<span class="x-right" style="line-height:40px">共有数据：<?php echo ($count); ?> 条</span>-->
+                </xblock>
             <table class="layui-table">
                 <thead>
                     <tr>
@@ -119,21 +127,31 @@
                                 <?php echo (date("Y-m-d",$v["create_time"])); ?>
                             </td>
                             <td class="td-manage">
-                                <?php if($v['status'] == '1' ): ?><a style="text-decoration:none" onclick="admin_stop(this,'<?php echo ($v["goodsid"]); ?>')" href="javascript:;" title="下架">
+                                <?php if(in_array(($_SESSION['roleid']), is_array($role_ids)?$role_ids:explode(',',$role_ids))): if($v['status'] == '1' ): ?><a style="text-decoration:none" onclick="admin_stop(this,'<?php echo ($v["goodsid"]); ?>')" href="javascript:;" title="下架">
                                             <i class="layui-icon">&#xe601;</i>
                                         </a>
                                     <?php else: ?>
                                         <a style="text-decoration:none;" onClick="admin_start(this,'<?php echo ($v["goodsid"]); ?>')" href="javascript:;" title="上架">
                                             <i class="layui-icon">&#xe62f;</i>
                                         </a><?php endif; ?>
-                                <a title="编辑" href="javascript:;" onclick="admin_edit('编辑','/Home/Goods/edit','<?php echo ($v["goodsid"]); ?>','680','650')"
-                                class="ml-5" style="text-decoration:none;margin-left: 10px">
-                                    <i class="layui-icon">&#xe642;</i>
-                                </a>
-                                <a title="删除" href="javascript:;" onclick="admin_del(this,'<?php echo ($v["goodsid"]); ?>')"
-                                style="text-decoration:none;margin-left: 10px">
-                                    <i class="layui-icon">&#xe640;</i>
-                                </a>
+                                <?php else: ?>
+                                    <a style="text-decoration:none;border: 0" href="javascript:;" class="layui-btn-disabled" title="上架">
+                                        <i class="layui-icon">&#xe62f;</i>
+                                    </a><?php endif; ?>
+                                <?php if(in_array(($_SESSION['roleid']), is_array($role_ids)?$role_ids:explode(',',$role_ids))): ?><a title="编辑" href="javascript:;" onclick="admin_edit('编辑','/Home/Goods/edit','<?php echo ($v["goodsid"]); ?>','680','650')" class="ml-5" style="text-decoration:none;margin-left: 10px">
+                                        <i class="layui-icon">&#xe642;</i>
+                                    </a>
+                                <?php else: ?>
+                                   <a title="编辑" href="javascript:;" class="ml-5 layui-btn-disabled" style="text-decoration:none;margin-left: 10px;border: 0">
+                                        <i class="layui-icon">&#xe642;</i>
+                                    </a><?php endif; ?>
+                                <?php if(in_array(($_SESSION['roleid']), is_array($role_ids)?$role_ids:explode(',',$role_ids))): ?><a title="删除" href="javascript:;" onclick="admin_del(this,'<?php echo ($v["goodsid"]); ?>')" style="text-decoration:none;margin-left: 10px">
+                                        <i class="layui-icon">&#xe640;</i>
+                                    </a>
+                                <?php else: ?>
+                                   <a title="删除" href="javascript:;" class="layui-btn-disabled"  style="text-decoration:none;margin-left: 10px;border: 0">
+                                        <i class="layui-icon">&#xe640;</i>
+                                    </a><?php endif; ?>
                             </td>
                         </tr><?php endforeach; endif; ?>
                 </tbody>
@@ -142,7 +160,7 @@
         </div>
         <script src="/Public/Home/lib/layui/layui.js" charset="utf-8"></script>
         <script>
-            layui.use(['laydate','element','laypage','layer'], function(){
+            layui.use(['laydate','element','layer'], function(){
                 $ = layui.jquery;//jquery
                 laydate = layui.laydate;//日期插件
                 layer = layui.layer;//弹出层
@@ -167,7 +185,7 @@
                     laydate(start);
                 }
                 document.getElementById('LAY_demorange_e').onclick = function(){
-                    end.elem = this
+                    end.elem = this;
                     laydate(end);
                 }
 

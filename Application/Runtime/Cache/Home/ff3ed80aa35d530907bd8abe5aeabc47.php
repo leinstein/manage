@@ -13,28 +13,26 @@
         <meta name="format-detection" content="telephone=no">
         <link rel="stylesheet" href="/Public/Home/css/x-admin.css" media="all">
     </head>
-    <body>
-        <div class="x-body">
-            <form class="layui-form x-center" action="" style="width:800px">
-                <div class="layui-form-pane" style="margin-top: 15px;">
-                  <div class="layui-form-item" style="width: 120%">
-                    <label class="layui-form-label">日期范围</label>
-                    <div class="layui-input-inline">
-                      <input class="layui-input" name="stat_date" placeholder="开始日" id="LAY_demorange_s"  autocomplete="off">
-                    </div>
-                    <div class="layui-input-inline">
-                      <input class="layui-input" name="stop_date" placeholder="截止日" id="LAY_demorange_e"  autocomplete="off">
-                    </div>
-                    <div class="layui-input-inline">
-                      <input type="text" name="name"  placeholder="登录名 | 姓名 | 电话" autocomplete="off" class="layui-input">
-                    </div>
-                    <div class="layui-input-inline" style="width:120px">
-                        <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i> 搜 索</button>
-                    </div>
-                  </div>
-                </div>
-            </form>
-                <xblock>
+    <body style="background-color: #f0f2f5">
+        <style>
+            .layui-fluid{
+                margin-top: 20px;
+                width: 98%;
+                margin-left: 1%;
+                background-color: white;
+            }
+            .layui-input{
+                color: #666;
+                font-weight: normal;
+            }
+            .layui-card{
+                padding: 20px;
+            }
+        </style>
+        <div class="layui-fluid">
+            <div class="layui-card">
+                <!--<div class="x-body">-->
+                <xblock style="background-color: white !important;margin: 0">
                     <a title="本月排名" class="layui-btn"  href="/Home/Report/rank?month=month">
                         本月排名
                     </a>
@@ -50,10 +48,26 @@
                         </a>
                         <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
                     </div>
-                    <span class="x-right" style="line-height:40px">全部：
-                        <a title="查看历史客户"  href="javascript;">
-                           <?php echo ($count); ?>
-                        </a>
+                    <span class="x-right" style="line-height:40px">
+                        <form class="layui-form x-center" action="" style="width:810px;margin-top: -15px;">
+                            <div class="layui-form-pane" style="margin-top: 15px;">
+                              <div class="layui-form-item" style="width: 120%">
+                                <label class="layui-form-label">日期范围</label>
+                                <div class="layui-input-inline">
+                                  <input class="layui-input" name="stat_date" placeholder="开始日" id="LAY_demorange_s"  autocomplete="off">
+                                </div>
+                                <div class="layui-input-inline">
+                                  <input class="layui-input" name="stop_date" placeholder="截止日" id="LAY_demorange_e"  autocomplete="off">
+                                </div>
+                                <div class="layui-input-inline">
+                                  <input type="text" name="name"  placeholder="登录名 | 姓名 | 电话" autocomplete="off" class="layui-input">
+                                </div>
+                                <div class="layui-input-inline" style="width:120px">
+                                    <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i> 搜 索</button>
+                                </div>
+                              </div>
+                            </div>
+                        </form>
                     </span>
                 </xblock>
                 <table class="layui-table">
@@ -153,14 +167,13 @@
                     </tbody>
                 </table>
                 <div id="page" style="margin-bottom: 70px;"><?php echo ($page); ?></div>
-        </div>
+              </div>
+           </div>
+         </div>
+    
         <script src="/Public/Home/lib/layui/layui.js" charset="utf-8"></script>
         <script src="/Public/Home/js/x-layui.js" charset="utf-8"></script>
-        <script>
-            // $('#table_css').click(function (e) {
-            //     $('#table_css').css('background-color','red');
-            // });
-        </script>
+        
         <script>
             layui.use(['laydate','element','laypage','layer'], function(){
                 $ = layui.jquery;//jquery
@@ -194,65 +207,16 @@
               
             });
 
-            //批量删除提交
-             function delAll () {
-                layer.confirm('确认要删除吗？',function(index){
-                    //捉到所有被选中的，发异步进行删除
-                    layer.msg('删除成功', {icon: 1});
-                });
-             }
-             /*用户-添加*/
-            function member_add(title,url,w,h){
-                x_admin_show(title,url,w,h);
-            }
-            /*用户-查看*/
-            function member_show(title,url,id,w,h){
-                x_admin_show(title,url,w,h);
-            }
-
             
-            // 用户-编辑  用戶-添加待办任务
-            function member_edit (title,url,id,w,h) {
-                url = url + '?cid=' + id;
-                x_admin_show(title,url,w,h);
-            }
-            /*添加订单*/
-            function order_add_list(title,url,id,w,h,cname){
-                url = url + '?cid=' + id + '&cname=' + cname;
-                x_admin_show(title,url,w,h);
-            }
-            /*用户-删除*/
-            function member_del(obj,id){
-                layer.confirm('确认要删除这个客户吗？',function(index){
-                    $.ajax({
-                        type: 'POST',
-                        url: 'del',
-                        dataType: 'json',
-                        data:{'cid':id},
-                        success: function(data){
-                            if(data.statu == 200){
-                                $(obj).parents("tr").remove();
-                                layer.msg('客户已删除!',{icon:1,time:1000});
-                            }else{
-                                layer.msg(data.msg);
-                                return false;
-                            }
-                        },
-                        error:function(data) {
-                            layer.msg('系统错误');
-                        },
-                    });
-                });
-            }
-            </script>
-            <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(hm, s);
-        })();
+        </script>
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+              var s = document.getElementsByTagName("script")[0];
+              s.parentNode.insertBefore(hm, s);
+            })();
         </script>
     </body>
 </html>

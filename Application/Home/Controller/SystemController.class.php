@@ -8,7 +8,7 @@ class SystemController extends HomeController{
      * 2018/11/20
      * 11:18
      * anthor liu
-     * 个人基本信息
+     * 个人基本信息-修改
      */
     Public function Index(){
         $admin = M('Admin');
@@ -88,6 +88,78 @@ class SystemController extends HomeController{
             }
         }else {
             $this->ajaxReturn(array('statu'=>202,'msg'=>'上传错误'));
+        }
+    }
+
+    /**
+     * 2018/12/27
+     * 18:36
+     * anthor liu
+     * 目标管理
+     */
+    Public function aims(){
+        $order = M('Order');
+        $aim = M('Aim');
+        $userid = $_SESSION['userid'];
+        $info = $aim->where(['userid'=>$userid])->order('month desc')->select();
+
+        foreach ($info as $v){
+            $arr = explode('-', $v['month']);
+            $m = $arr[1];
+            $y = $arr[0];
+            $u_aim_time = strtotime($v['month']);
+            //上月月初时间戳
+            $u_this_time = mktime(0,0,0,date('m')-1,1,date('Y'));
+            //上月以前的直接存储，不去查询
+            //上月和本月的，每次去查询完成金额
+            //现在以后的空着不管
+            if($v['complete']  == '' and $u_aim_time < time()){
+                    $star = mktime(0,0,0,$m,1,$y);
+                    $end = mktime(23,59,59,$m,date('t', strtotime($v['month'])),$y);
+                    $map['delete'] = 1;
+                    if($_SESSION['userid'] != 'admin'){
+                        $map['saleid'] = $userid;
+                    }
+                    $map['orderstatus'] = ['neq',4];
+                    $map['ordercreatetime'] = ['between',[$star,$end]];
+                    $v['complete'] = $order->where($map)->sum('orderprice');
+                    if($u_aim_time < $u_this_time){
+                        $aim->save($v);
+                    }
+            }
+            $v['avg'] = round($v['complete'] / $v['aim'] , 3) * 100 . '%';
+            $info_full[] = $v;
+        }
+        $this->assign('info',$info_full);
+        $this->display();
+    }
+
+    /**
+     * 2018/12/27
+     * 19:15
+     * anthor liu
+     * 添加目标
+     */
+    Public function add(){
+        if (IS_POST){
+            $aim = M('Aim');
+            $data = $_POST;
+            $data['userid'] = $_SESSION['userid'];
+            $data['create_time'] = time();
+            //只允许设定一次，不能更改
+            $exist = $aim->where(['userid'=>$data['userid'],'month'=>$data['month']])->find();
+            if($exist){
+                $this->ajaxReturn(['statu' => 202, 'msg' => $data['month'].'目标已设定，请勿重复设置']);
+            }else{
+                $res = $aim->add($data);
+                if($res){
+                    $this->ajaxReturn(['statu' => 200, 'msg' => '添加成功']);
+                }else{
+                    $this->ajaxReturn(['statu' => 202, 'msg' => '添加失败']);
+                }
+            }
+        }else{
+            $this->display();
         }
     }
 }

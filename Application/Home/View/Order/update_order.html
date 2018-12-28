@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/Public/Home/css/font.css">
     <link rel="stylesheet" href="/Public/Home/css/xadmin.css">
-    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/Public/Home/js/jquery.min.js"></script>
     <script type="text/javascript" src="/Public/Home/lib2/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="/Public/Home/js/xadmin.js"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
@@ -38,12 +38,14 @@
     <div class="x-body">
         <form class="layui-form" onsubmit="return false">
             <input type="hidden"  name="orderid" value="{$order.orderid}">
+            <input type="hidden"  name="cid" value="{$order.cid}">
+            <input type="hidden"  name="uid" value="{$order.saleid}">
           <div class="layui-form-item">
               <label for="username" class="layui-form-label">
                   <span class="x-red"></span>收货人
               </label>
               <div class="layui-input-inline">
-                  <input type="text" name="username" value="{$name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$phone}" required="" readonly
+                  <input type="text" name="username" value="{$customer['name']}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$customer['phone']}" required="" readonly
                   autocomplete="off" class="layui-input" style="border: 0">
               </div>
           </div>

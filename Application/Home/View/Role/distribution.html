@@ -39,22 +39,23 @@
                             <foreach name="authinfoA" item="v">
                                 <tr>
                                     <td width="130px">
-                                        <input type="checkbox" class="checkx" name="auth_id[]" lay-skin="primary" value="{$v.auth_id}" title="{$v.auth_name}" <in name="v.auth_id" value="$roleinfo.role_auth_ids">checked</in>>
+                                        <input type="checkbox"  class="checkx" name="auth_id[]" lay-skin="primary" value="{$v.auth_id}" title="{$v.auth_name}" <in name="v.auth_id" value="$roleinfo.role_auth_ids">checked</in>>
                                     </td>
                                     <td>
                                         <div class="layui-input-block">
                                             <foreach name="authinfoB" item="vv">
-                                                <eq name="vv.auth_pid" value="$v.auth_id">
-                                                    <input name="auth_id[]" lay-skin="primary" type="checkbox" title="{$vv.auth_name}" class="checkp" value="{$vv.auth_id}" <in name="vv.auth_id" value="$roleinfo.role_auth_ids">checked</in>>
-                                                </eq>
-                                                <foreach name="authinfoC" item="vvv">
-                                                    <eq name="v.auth_id" value="$vv.auth_pid">
-                                                        <eq name="vv.auth_id" value="$vvv.auth_pid">
-                                                                <input name="auth_id[]" lay-skin="primary" type="checkbox" title="{$vvv.auth_name}" class="checkp" value="{$vvv.auth_id}">
-                                                        </eq>
+                                                <div>
+                                                    <eq name="vv.auth_pid" value="$v.auth_id">
+                                                        <input name="auth_id[]" lay-skin="primary" type="checkbox" title="{$vv.auth_name}" class="checkp" value="{$vv.auth_id}" <in name="vv.auth_id" value="$roleinfo.role_auth_ids">checked</in>>
                                                     </eq>
-                                                </foreach>
-                                                <br />
+                                                    <foreach name="authinfoC" item="vvv">
+                                                        <eq name="v.auth_id" value="$vv.auth_pid">
+                                                            <eq name="vv.auth_id" value="$vvv.auth_pid">
+                                                                    <input name="auth_id[]" lay-skin="primary" type="checkbox" title="{$vvv.auth_name}" class="checkp" value="{$vvv.auth_id}" <in name="vvv.auth_id" value="$roleinfo.role_auth_ids">checked</in>>
+                                                            </eq>
+                                                        </eq>
+                                                    </foreach>
+                                                </div>
                                             </foreach>
                                         </div>
                                     </td>
@@ -141,12 +142,6 @@
             });
         //});
     </script>
-    <script>var _hmt = _hmt || []; (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-      })();</script>
   </body>
 
 </html>

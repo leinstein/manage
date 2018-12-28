@@ -22,6 +22,7 @@
             .layui-bg-green{
                 width: 101.8%;
                 margin-left: -1%;
+                margin-top: -10px;
 			}
 			.layui-fluid{
 				margin-bottom: 30px;
@@ -160,7 +161,7 @@
                     title: '素材图片',
                     type: 0,
                     area: [w, h], //宽高
-                    content: '<a href="'+urlimg+'" download="'+note+'"><img  src="'+urlimg+'"  height="540px"  alt=""></a><div style="margin-top: 10px;font-size: 16px;color: #666;width: 100%"><div style="display: inline-block;margin-left: 15px" id="note">'+note+'</div></div>'
+                    content: '<a href="'+urlimg+'" download="'+note+'" style="width:960px;text-align: center;display: inline-block"><img  src="'+urlimg+'"  height="540px"  alt=""></a><div style="margin-top: 10px;font-size: 16px;color: #666;"><div style="display: inline-block;margin-left: 15px" id="note">'+note+'</div></div>'
                 });
             }
         </script>

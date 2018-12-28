@@ -12,6 +12,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="format-detection" content="telephone=no">
         <link rel="stylesheet" href="/Public/Home/css/x-admin.css" media="all">
+        <!--<link rel="stylesheet" href="/Public/Home/lib/layui/css/layui.css" media="all">-->
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     </head>
     <body>
@@ -39,27 +40,61 @@
                             
                             width: 20px;
                         }
-                        .tips{
-                            /*position: relative;*/
-                            /*top: -45px;*/
-                            /*left: 13px;*/
-                            /*display: inline-block;*/
-                            /*width: 15px;*/
-                            /*height: 15px;*/
-                            /*border-radius: 50%;*/
-                            /*background-color:red;*/
-                            color: white;
-                            /*font-size: 14px;*/
+                        #message span{
+                            position: relative;
+                            top: -7px;
+                            left: -3px;
+                            color: red;
+                        }
+                        #message cite{
+                            display: none;
+                            /*padding: 0 0 20px;*/
+                        }
+                        .layui-progress-big,.layui-progress-bar{
+                            display: inline-block;
+                            height: 12px !important;
+                            line-height: 12px !important;
+                            font-size: 12px !important;
+                        }
+                        .layui-progress-big{
+                            width: 30%;
+                            margin-left: 12%;
+                        }
+                        #span{
+                            display: inline-block;
+                            width: 35%;
+                            margin-left: 20%;
+                            height: 60px;
+                            margin-top: -10px;
+                            vertical-align: middle;
+                            line-height: 56px;
+                        }
+                        #span img{
+                            margin-left: 9%;
+                            height: 15px;
+                        }
+                        #span .number{
+                            display: inline-block;
+                            font-size: 18px;
+                            font-weight: bold;
+                            font-style: italic;
                         }
                     </style>
                     <a class="logo" href="">
                        风暴<font style="font-size: 26px"><i> CRM </i></font>管理系统
                     </a>
+                    <if condition="$aim_this_month['aim'] neq 'aim'">
+                        <span id="span">
+                            <img src="/Public/Home/images/mubiao.png"> 任务目标：<div class="number">{$aim_this_month.aim}</div>
+                            <img src="/Public/Home/images/read.png"> 已完成：<div class="number">{$aim_this_month.complete|substr=###,0,-3}</div>
+                            <img src="/Public/Home/images/avg.png"> 完成进度：<div class="number">{$aim_this_month.avg}</div>
+                        </span>
+                    </if>
                     <ul class="layui-nav" lay-filter="side">
                         <li class="layui-nav-item">
-                            <a href="javascript:;" _href="/Home/Customer/backlog?day=today" title="消息">
-                                <img src="/Public/Home/images/tip.png" id="tips"><cite>6</cite>
-                                <!--<span class="tips"></span>-->
+                            <a href="javascript:;" _href="/Home/Customer/backlog?day=today" id="message" title="消息">
+                                <img src="/Public/Home/images/tip.png" id="tips"><cite>今日待办</cite>
+                                <span>{$backlog_count}</span>
                             </a>
                         </li>
                           <li class="layui-nav-item">
@@ -69,7 +104,7 @@
                             <a href="javascript:;">{$Think.session.nickname}</a>
                             <dl class="layui-nav-child"> <!-- 二级菜单 -->
                               <dd><a href="javascript:;" _href="Home/System/index"><cite>个人信息</cite></a></dd>
-                              <dd><a href="{:U('Manage/logout')}">退出</a></dd>
+                              <dd><a href="{:U('Manage/logout')}"><cite>退出</cite></a></dd>
                             </dl>
                           </li>
                     </ul>
@@ -111,7 +146,7 @@
                 </ul>
                 <div class="layui-tab-content site-demo site-demo-body">
                     <div class="layui-tab-item layui-show">
-                        <iframe frameborder="0" src="index.php/home/Index/wel" class="x-iframe"></iframe>
+                        <iframe frameborder="0" src="/Home/Index/wel" class="x-iframe"></iframe>
                     </div>
                 </div>
             </div>
@@ -119,18 +154,8 @@
             </div>
         </div>
         <script src="/Public/Home/lib/layui/layui.js" charset="utf-8"></script>
+        
         <script src="/Public/Home/js/x-admin.js"></script>
-        <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          var list=document.getElementById("myList");
-          hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-          var s = document.getElementsByTagName("script")[0];
-          console.log(list.childNodes[2]);
-          //list.removeChild(list.childNodes[2]);
-          s.parentNode.insertBefore(hm, s);
-        })();
-        </script>
-    </body>
+       
+</body>
 </html>

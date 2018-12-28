@@ -22,7 +22,7 @@
             <table class="layui-table">
                 <thead>
                     <tr>
-                        <th>
+                        <th width="30px">
                             序号
                         </th>
                         <th>
@@ -31,7 +31,7 @@
                         <th>
                             描述
                         </th>
-                        <th>
+                        <th width="90px">
                             操作
                         </th>
                     </tr>
@@ -49,15 +49,15 @@
                             </td>
                             <td class="td-manage">
                                 <a title="分配权限" href="javascript:;" onclick="role_distribution('分配权限','distribution.html','1000','700','<?php echo ($v["id"]); ?>')"
-                                   class="ml-5" style="text-decoration:none">
+                                   class="ml-5" style="text-decoration:none;margin-left: 10px">
                                     <i class="layui-icon">&#xe614;</i>
                                 </a>
                                 <a title="编辑" href="javascript:;" onclick="role_edit('编辑','edit','<?php echo ($v["id"]); ?>','510','400')"
-                                class="ml-5" style="text-decoration:none">
+                                class="ml-5" style="text-decoration:none;margin-left: 10px">
                                     <i class="layui-icon">&#xe642;</i>
                                 </a>
                                 <a title="删除" href="javascript:;" onclick="role_del(this,'<?php echo ($v["id"]); ?>')"
-                                style="text-decoration:none">
+                                style="text-decoration:none;margin-left: 10px">
                                     <i class="layui-icon">&#xe640;</i>
                                 </a>
                             </td>

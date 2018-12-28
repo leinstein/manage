@@ -12,6 +12,9 @@ class OrderController extends HomeController {
      Public function index(){
          $order = D('Order');
          $where['delete'] = 1;
+         $userid = $_SESSION['userid'];
+         if($_SESSION['username'] != 'admin') $where['saleid'] = $userid;
+//         $where['orderstatus'] = ['neq',4];
          if($_GET['stat_date'] and !$_GET['stop_date']) $where['ordercreatetime'] = ['egt',strtotime($_GET['stat_date'])];
          if(!$_GET['stat_date'] and $_GET['stop_date']) $where['ordercreatetime'] = ['elt',strtotime($_GET['stop_date'])];
          if($_GET['stat_date'] and $_GET['stop_date']) $where['ordercreatetime'] = ['between',[strtotime($_GET['stat_date']),strtotime($_GET['stop_date'])]];
@@ -38,10 +41,8 @@ class OrderController extends HomeController {
          $show  = $page->show();//分页显示输出
          $list = $order->where($where)->order('orderid desc')->limit($page->firstRow . ',' . $page->listRows)->select();
          $customer = M('Customer')->select();
-//         $role = M('Role');
          $admin = M('Admin')->select();
-//         $role = M('Role');
-//         $goods = M('Goods');
+
          foreach ($list as $v) {
             foreach ($customer as $vv){
                 if($v['cid'] == $vv['cid']){
@@ -77,6 +78,7 @@ class OrderController extends HomeController {
          $order_s = D('Order');
          //获取统计数据
          $statistical = $order_s->statistical();
+
          $this->assign('statistical', $statistical);
          $this->assign('infotoday', $infotoday);
          $this->assign('infoyestoday', $infoyestoday);
@@ -87,15 +89,6 @@ class OrderController extends HomeController {
          $this->display();
      }
 
-    /**
-     * 2018/11/22
-     * 10:49
-     * anthor liu
-     * 添加订单
-     */
-     Public function add(){
-         $this->display();
-     }
 
     /**
      * 2018/12/4
@@ -256,7 +249,8 @@ class OrderController extends HomeController {
         $order = M('Order');
         $address = M('Address');
         $admin = M('Admin');
-        $role = M('Role');
+        $group = M('Group');
+        $servernote = M('Servernote');
         $orderid = $_GET['orderid'];
         $info = $order->where(['orderid'=>$orderid])->find();
         $customer = M('Customer')->where(['cid'=>$info['cid']])->find();
@@ -266,8 +260,10 @@ class OrderController extends HomeController {
         $add = $address->where(['addressid'=>$info['address_id']])->find();
         $info['address'] = $add['province'].$add['city'].$add['area'].$add['address'];
         $salename = $admin->where(['id'=>$info['saleid']])->find();
-        $objname  = $role->where(['id'=>$info['projectid']])->find();
-        $info['objectsale'] = $objname['name'].'-'.$salename['nickname'];
+        $objname  = $group->where(['group_id'=>$salename['group_id']])->find();
+        $info['objectsale'] = $objname['group_name'].'-'.$salename['nickname'];
+        $info['server_note'] = $servernote->field('server_note')->where(['oid'=>$info['orderid']])->find();
+        $info['server_note'] = $info['server_note']['server_note'];
         //付款方式
         if($info['paytype'] == 1) $info['paytype'] = '付全款';
         if($info['paytype'] == 2) $info['paytype'] = '付定金';
@@ -288,7 +284,7 @@ class OrderController extends HomeController {
      * 2018/11/29
      * 11:40
      * anthor liu
-     * 修改订单
+     * 仓库管理
      */
     Public function update_order(){
         if(IS_POST){
@@ -299,6 +295,17 @@ class OrderController extends HomeController {
 //                //收货时间
 //                $data['reciivingtime'] = strtotime($_POST['reciivingtime']);
 //            }
+            //发货添加待办任务
+            if($_POST['orderstatus'] == 2){
+                $backlog['cid'] = $_POST['cid'];
+                $backlog['uid'] = $_POST['uid'];
+                $backlog['content'] = "跟踪收货，指导服用";
+                $backlog['type'] = "客户跟踪";
+                $backlog['create_time'] = time();
+                $backlog['do_time'] = time() + 259200; // 三天以后提醒
+                M('Backlog')->add($backlog);
+            }
+
             if(M('Order')->save($data)){
                 $this->ajaxReturn(['statu' => 200, 'msg' => '修改订单成功']);
             }else{
@@ -306,21 +313,26 @@ class OrderController extends HomeController {
             }
         }else{
             $orderid = $_GET['orderid'];
-            $order = M('Order')->field('orderid,orderno,cid,address_id,couriername,desc,deliverytime')->where(['orderid'=>$orderid])->find();
+            $order = M('Order')->field('orderid,orderno,cid,address_id,couriername,desc,deliverytime,saleid')->where(['orderid'=>$orderid])->find();
             $order['deliverytime'] = date('Y-m-d',$order['deliverytime']);
             $customer = M('Customer')->where(['cid'=>$order['cid']])->find();
             $address = M('Address')->where(['addressid'=>$order['address_id']])->find();
             //物流选择
             $courier = M('Courier')->order('sort desc')->select();
             $this->assign('courier',$courier);
-            $this->assign('name',$customer['name']);
+            $this->assign('customer',$customer);
             $this->assign('order',$order);
-            $this->assign('phone',$customer['phone']);
             $this->assign('address',$address['province'].$address['city'].$address['area'].$address['address']);
             $this->display();
         }
     }
 
+    /**
+     * 2018/12/24
+     * 10:34
+     * anthor liu
+     * 删除订单
+     */
     Public function del(){
         $orderid = $_POST['orderid'];
         $res = M('Order')->save(['orderid' => $orderid,'delete'=>0]);

@@ -35,18 +35,18 @@ class AuthController extends HomeController{
         $auth = M('Auth');
         if (IS_POST) {
             $data               = $_POST;
-            $auth_name = $data['auth_name'];
-            $r = $auth->where(array('auth_name'=>$auth_name))->find();
-            if($r){
-                $this->ajaxReturn(array('statu'=>202,'msg'=>"此权限名称已经存在"));
-            }else{
+//            $auth_name = $data['auth_name'];
+//            $r = $auth->where(array('auth_name'=>$auth_name))->find();
+//            if($r){
+//                $this->ajaxReturn(array('statu'=>202,'msg'=>"此权限名称已经存在"));
+//            }else{
                 $auth_id = $auth->add($data);
                 if($auth_id){
                     $this->ajaxReturn(array('statu'=>200,'msg'=>'添加成功'));
                 }else{
                     $this->ajaxReturn(array('statu'=>202,'msg'=>"添加失败"));
                 }
-            }
+//            }
         } else {
             $authinfo = $auth->where(['auth_level' => ['in',[1,2]],'delete'=>1])
                 ->select();

@@ -61,49 +61,43 @@
             </a>
             <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
         </div>
-        <span class="x-right" style="line-height:40px">找到：
-            <a>
-               <?php echo ($count); ?>
-            </a>
-          个订单
-        </span>
         <span class="x-right" style="line-height:40px">全部：
-            <a title="查看历史订单"  href="/Home/Funds/index?day=history">
-               <?php echo ($statistical["history"]); ?>
+            <a title="订单 / 销售额"  href="/Home/Order/index?day=history">
+               <?php echo ($statistical["history"]); ?> / <?php echo (substr($statistical["history_order"],0,-3)); ?>
             </a>
         </span>
         <span class="x-right" style="line-height:40px">今年：
-            <a title="查看今年订单"  href="/Home/Funds/index?day=year">
-              <?php echo ($statistical["year"]); ?>
+            <a title="订单 / 销售额"  href="/Home/Order/index?day=year">
+              <?php echo ($statistical["year"]); ?> / <?php echo (substr($statistical["year_order"],0,-3)); ?>
             </a>
         </span>
         <span class="x-right" style="line-height:40px">上月：
-            <a title="查看上月订单"  href="/Home/Funds/index?day=lastmonth">
-                <?php echo ($statistical["lastmonth"]); ?>
+            <a title="订单 / 销售额"  href="/Home/Order/index?day=lastmonth">
+                <?php echo ($statistical["lastmonth"]); ?> / <?php echo (substr($statistical["lastmonth_order"],0,-3)); ?>
             </a></span>
         <span class="x-right" style="line-height:40px">本月：
-            <a title="查看本月订单"  href="/Home/Funds/index?day=month">
-                <?php echo ($statistical["month"]); ?>
+            <a title="订单 / 销售额"  href="/Home/Order/index?day=month">
+                <?php echo ($statistical["month"]); ?> / <?php echo (substr($statistical["month_order"],0,-3)); ?>
             </a>
         </span>
         <span class="x-right" style="line-height:40px">上周：
-            <a title="查看上周订单"  href="/Home/Funds/index?day=lastweek">
-                <?php echo ($statistical["lastweek"]); ?>
+            <a title="订单 / 销售额"  href="/Home/Order/index?day=lastweek">
+                <?php echo ($statistical["lastweek"]); ?> / <?php echo (substr($statistical["lastweek_order"],0,-3)); ?>
             </a>
         </span>
         <span class="x-right" style="line-height:40px">本周：
-            <a title="查看本周订单"  href="/Home/Funds/index?day=weekday">
-                <?php echo ($statistical["weekday"]); ?>
+            <a title="订单 / 销售额"  href="/Home/Order/index?day=weekday">
+                <?php echo ($statistical["weekday"]); ?> / <?php echo (substr($statistical["week_order"],0,-3)); ?>
             </a>
         </span>
         <span class="x-right" style="line-height:40px">昨天：
-            <a title="查看昨日订单"  href="/Home/Funds/index?day=yestoday">
-                <?php echo ($statistical["yesterday"]); ?>
+            <a title="订单 / 销售额"  href="/Home/Order/index?day=yestoday">
+                <?php echo ($statistical["yesterday"]); ?> / <?php echo (substr($statistical["yesterday_order"],0,-3)); ?>
             </a>
         </span>
         <span class="x-right" style="line-height:40px">今天：
-            <a title="查看今日订单"  href="/Home/Funds/index?day=today">
-                <?php echo ($statistical["today"]); ?>
+            <a title="订单 / 销售额"  href="/Home/Order/index?day=today">
+                <?php echo ($statistical["today"]); ?> / <?php echo (substr($statistical["today_order"],0,-3)); ?>
             </a>
         </span>
       </xblock>
@@ -183,7 +177,7 @@
                 <a title="查看"  onclick="x_admin_show('查看','/Home/Order/show?orderid=<?php echo ($v["orderid"]); ?>',1200,700)" href="javascript:;" style="margin-right: 10px">
                   <i class="layui-icon"   style="vertical-align: baseline;width: 13px">&#xe63c;</i>
                 </a>
-                <a title="财务" href="javascript:;" onclick="x_admin_show('财务','update_order?orderid=<?php echo ($v["orderid"]); ?>',800,400)" class="ml-5" style="margin-right: 10px">
+                <a title="财务" href="javascript:;" onclick="x_admin_show('财务','/Home/Funds/update_order?orderid=<?php echo ($v["orderid"]); ?>',800,400)" class="ml-5" style="margin-right: 10px">
                   <img src="/Public/Home/images/caiwu.png" style="vertical-align: baseline;width: 14px;height: 14px">
                 </a>
               </td>
@@ -235,7 +229,7 @@
                 <a title="查看"  onclick="x_admin_show('查看','/Home/Order/show?orderid=<?php echo ($v["orderid"]); ?>',1200,700)" href="javascript:;" style="margin-right: 10px">
                   <i class="layui-icon"   style="vertical-align: baseline;width: 13px">&#xe63c;</i>
                 </a>
-                <a title="财务" href="javascript:;" onclick="x_admin_show('财务','update_order?orderid=<?php echo ($v["orderid"]); ?>',800,400)" class="ml-5" style="margin-right: 10px">
+                <a title="财务" href="javascript:;" onclick="x_admin_show('财务','/Home/Funds/update_order?orderid=<?php echo ($v["orderid"]); ?>',800,400)" class="ml-5" style="margin-right: 10px">
                   <img src="/Public/Home/images/caiwu.png" style="vertical-align: baseline;width: 14px;height: 14px">
                 </a>
               </td>
@@ -283,7 +277,7 @@
                 <a title="查看"  onclick="x_admin_show('查看','/Home/Order/show?orderid=<?php echo ($v["orderid"]); ?>',1200,700)" href="javascript:;" style="margin-right: 10px">
                   <i class="layui-icon"   style="vertical-align: baseline;width: 13px">&#xe63c;</i>
                 </a>
-                <a title="财务" href="javascript:;" onclick="x_admin_show('财务','update_order?orderid=<?php echo ($v["orderid"]); ?>',800,400)" class="ml-5" style="margin-right: 10px">
+                <a title="财务" href="javascript:;" onclick="x_admin_show('财务','/Home/Funds/update_order?orderid=<?php echo ($v["orderid"]); ?>',800,400)" class="ml-5" style="margin-right: 10px">
                   <img src="/Public/Home/images/caiwu.png" style="vertical-align: baseline;width: 14px;height: 14px">
                 </a>
               </td>

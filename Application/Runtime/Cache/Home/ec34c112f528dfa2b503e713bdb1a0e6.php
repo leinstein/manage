@@ -177,11 +177,14 @@
             <table class="layui-table">
                 <thead>
                     <tr>
-                        <th width="150px">
+                        <th width="120px">
                             项目-销售
                         </th>
                         <th>
-                            备注
+                            订单备注
+                        </th>
+                        <th>
+                            客服回访
                         </th>
                     </tr>
                 </thead>
@@ -192,6 +195,9 @@
                         </td>
                         <td>
                             <?php echo ($info["desc"]); ?>
+                        </td>
+                         <td>
+                            <?php echo ($info["server_note"]); ?>
                         </td>
                     </tr>
                 </tbody>

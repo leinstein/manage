@@ -28,6 +28,7 @@ class ManageController extends HomeController {
                     session('userid',$info['id']);
                     session('username',$info['username']);
                     session('nickname',$info['nickname']);
+                    session('roleid',$info['role_id']);
                     session('grade', $info['grade']);
                     session('role_id', $info['role_id']);
                     $time = $logininfo['logintime'] = time();
@@ -102,4 +103,5 @@ class ManageController extends HomeController {
             return false;
         }
     }
+
 }

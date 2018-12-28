@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/Public/Home/css/font.css">
     <link rel="stylesheet" href="/Public/Home/css/xadmin.css">
-    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/Public/Home/js/jquery.min.js"></script>
     <script type="text/javascript" src="/Public/Home/lib2/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="/Public/Home/js/xadmin.js"></script>
     <script src="/Public/Home/laydate/laydate.js"></script>
@@ -82,7 +82,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if($o_info == null): ?><tr><td colspan="5" style="text-align: center">此客户没有订单</td></tr>
+                        <?php if($o_info == null): ?><tr><td colspan="5" style="text-align: center">此客户还没有订单</td></tr>
                         <?php else: ?>
                             <?php if(is_array($o_info)): foreach($o_info as $key=>$v): ?><tr>
                                     <td>

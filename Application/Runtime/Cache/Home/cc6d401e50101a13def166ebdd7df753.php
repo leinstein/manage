@@ -25,10 +25,10 @@
             <table class="layui-table">
                 <thead>
                     <tr>
-                        <th>
-                            <input type="checkbox" name="" value="">
-                        </th>
-                        <th>
+                        <!--<th>-->
+                            <!--<input type="checkbox" name="" value="">-->
+                        <!--</th>-->
+                        <th width="30px">
                             序号
                         </th>
                         <th>
@@ -37,9 +37,9 @@
                         <th>
                             权限名称
                         </th>
-                        <th>
-                            所属分类
-                        </th>
+                        <!--<th>-->
+                            <!--所属分类-->
+                        <!--</th>-->
                         <th>
                             操作
                         </th>
@@ -47,11 +47,11 @@
                 </thead>
                 <tbody id="x-link">
                     <?php if(is_array($info)): foreach($info as $key=>$v): ?><tr>
+                            <!--<td>-->
+                                <!--<input type="checkbox" value="<?php echo ($v["auth_id"]); ?>" name="">-->
+                            <!--</td>-->
                             <td>
-                                <input type="checkbox" value="<?php echo ($v["auth_id"]); ?>" name="">
-                            </td>
-                            <td>
-                                <?php $i++;echo $i; ?>
+                                <?php echo ++$i;?>
                             </td>
                             <td>
                                 <?php echo ($v["rule"]); ?>
@@ -59,9 +59,9 @@
                             <td>
                                 <?php echo str_repeat('&nbsp;',$v['level']*10);?>┝ <?php echo ($v["auth_name"]); ?>
                             </td>
-                            <td>
-                                会员相关
-                            </td>
+                            <!--<td>-->
+                                <!--会员相关-->
+                            <!--</td>-->
                             <td class="td-manage">
                                 <a title="编辑" href="javascript:;" onclick="rule_edit('编辑','edit','<?php echo ($v["auth_id"]); ?>','600','500')"
                                 class="ml-5" style="text-decoration:none">

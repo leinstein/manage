@@ -10,18 +10,58 @@ class ReportController extends HomeController {
      * 统计
      */
     Public function index(){
+        $customer = D('Customer');
+        $order = D('Order');
+        //获取排名
+        //本月
+        $order_createtime_between_month = $order->month();
+        $order_rank['month'] = $order->wel_sale_rank($order_createtime_between_month);
+        //上月
+        $order_createtime_between_lastmonth = $order->lastmonth();
+        $order_rank['lastmonth'] = $order->wel_sale_rank($order_createtime_between_lastmonth);
+        //历史
+        $order_rank['history'] = $order->wel_sale_rank();
+        //复购率
+        $map_c['delete'] = 1;
+        $map_c['buyrate'] = ['gt',0];
+        $customer_info = $customer->where($map_c)->select();
+        //获取总体复购率
+        $buyrate = $customer->report_rate($customer_info);
+
+        //本月按天统计业绩和订单数
+        $month_day = D('Order')->month_day_amount();
+        $month_day = json_encode($month_day);
+        //本月按天统计客户数
+        $month_day_customer = D('Order')->month_day_customer();
+        $month_day_customer = json_encode($month_day_customer);
+
+        //上月按天统计业绩和订单数
+        $lastmonth_day_amount = D('Order')->lastmonth_day_amount();
+        $lastmonth_day_amount = json_encode($lastmonth_day_amount);
+        //上月按天统计客户数
+        $lastmonth_day_customer = D('Order')->lastmonth_day_customer();
+        $lastmonth_day_customer = json_encode($lastmonth_day_customer);
+
+
+
+        $customer_stati = $customer->statistical();
+        $order_stati = $order->statistical();
+
+        //总订单数/订单总金额/退单率/退单金额率
+        $report = $order->return_rate_avg();
+
+        $this->assign('customer_stati',$customer_stati);
+        $this->assign('order_stati',$order_stati);
+        $this->assign('order_rank',$order_rank);
+        $this->assign('buyrate',$buyrate);
+        $this->assign('lastmonth_day_amount',$lastmonth_day_amount);
+        $this->assign('lastmonth_day_customer',$lastmonth_day_customer);
+        $this->assign('month_day',$month_day);
+        $this->assign('month_day_customer',$month_day_customer);
+        $this->assign('report',$report);
         $this->display();
     }
 
-    /**
-     * 2018/12/12
-     * 9:28
-     * anthor liu
-     * 默认系统首页统计
-     */
-    Public function statistics_index(){
-        $this->display('Index/welcome');
-    }
 
     /**
      * 2018/12/12
@@ -539,6 +579,74 @@ class ReportController extends HomeController {
         $this->assign('page', $show);
         $this->assign('firstRow', $page->firstRow);
         $this->assign('info',$info_sort);
+        $this->display();
+    }
+
+    /**
+     * 2018/12/22
+     * 11:40
+     * anthor liu
+     * 财务报表
+     */
+    Public function funds(){
+        $customer = D('Customer');
+        $order = D('Order');
+        $month = isset($_GET['month']) ? $_GET['month'] : 'month';
+        $y = date('Y',time());
+        $m = date('m',time());
+        if($month == 'month'){
+            $month_m = $y . '-' . $m;
+        }elseif ($month == 'lastmonth'){
+            $month_m = $y . '-' . ($m - 1);
+        }else{
+            $month_m = $month;
+        }
+        //今天-昨天-本月-上月数据
+        $customer_stati = $customer->statistical();
+        $order_stati = $order->statistical();
+        //本月销售额---天
+        $month_day = D('Order')->month_day_amount();
+        $month_day = json_encode($month_day);
+        //上月销售额---天
+        $lastmonth_day = D('Order')->lastmonth_day_amount();
+        $lastmonth_day = json_encode($lastmonth_day);
+
+        //按天统计订单数据
+        //销售金额，客户，订单，快递费，手续费，现金收入，代收款
+        $info = $order->month_day_amount_funds($month);
+
+        //历史总数据
+        $history = $order->history();
+        $history['chengbenli'] = round(($history['totalserverfee'] + $history['totalcourierfee']) / $history['totalfunds'],3) * 100 . '%';
+        $history['totalfunds'] = substr($history['totalfunds'],0,-3);
+        $history['totalserverfee'] = substr($history['totalserverfee'],0,-3);
+        $history['totalcourierfee'] = substr($history['totalcourierfee'],0,-3);
+
+        $composite = [];
+        foreach ($info as $v){
+            $v['amount_avg'] = round($v['funds'] / $v['order_count'],1);
+            $v['income'] = $v['funds'] - $v['courierfee'] - $v['serverfee'];
+            $info_list[] = $v;
+            $composite['funds'] += $v['funds'];
+            $composite['courierfee'] += $v['courierfee'];
+            $composite['serverfee'] += $v['serverfee'];
+            $composite['pay'] += $v['pay'];
+            $composite['payment'] += $v['payment'];
+            $composite['refunds'] += $v['refunds'];
+            $composite['order_count'] += $v['order_count'];
+            $composite['customer'] += $v['customer'];
+            $composite['income'] += $v['income'];
+        }
+        $composite['amount_avg'] = round($composite['funds'] / $composite['order_count'],1);
+
+        $this->assign('customer_stati',$customer_stati);
+        $this->assign('order_stati',$order_stati);
+        $this->assign('month_day',$month_day);
+        $this->assign('lastmonth_day',$lastmonth_day);
+        $this->assign('info',$info_list);
+        $this->assign('month',$month_m);
+        $this->assign('history',$history);
+        $this->assign('composite',$composite);
         $this->display();
     }
 

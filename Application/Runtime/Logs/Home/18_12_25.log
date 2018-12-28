@@ -1,0 +1,81 @@
+[ 2018-12-25T08:59:11+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+
+[ 2018-12-25T08:59:11+08:00 ] 127.0.0.1 /index.php/Home/Manage/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-25T08:59:18+08:00 ] 127.0.0.1 /index.php/Home/Manage/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `fb_admin` WHERE `username` = 'admin' AND `password` = '0192023a7bbd73250516f069df18b500' LIMIT 1   [ RunTime:0.0080s ]
+SQL: UPDATE `fb_admin` SET `last_login_time`='1545699558',`signup_ip`='127.0.0.1' WHERE `id` = 1 [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_logininfo` [ RunTime:0.0100s ]
+SQL: INSERT INTO `fb_logininfo` (`ip`,`city`,`logintime`,`loginstatus`,`errorinfo`,`loginname`,`loginpass`,`loginnickname`) VALUES ('127.0.0.1','XX XX XX 内网IP','1545699558','1','登陆成功','admin','admin123','江湖') [ RunTime:0.0020s ]
+
+[ 2018-12-25T08:59:19+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-25T08:59:21+08:00 ] 127.0.0.1 /index.php/home/Index/wel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-25T09:00:07+08:00 ] 127.0.0.1 /index.php/Home/Manage/logout.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-25T09:00:08+08:00 ] 127.0.0.1 /index.php/Home/Manage/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-25T09:00:32+08:00 ] 127.0.0.1 /index.php/Home/Manage/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fb_admin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fb_admin` WHERE `username` = 'sunwukong' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `fb_admin` SET `last_login_time`='1545699632',`signup_ip`='127.0.0.1' WHERE `id` = 23 [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fb_logininfo` [ RunTime:0.0100s ]
+SQL: INSERT INTO `fb_logininfo` (`ip`,`city`,`logintime`,`loginstatus`,`errorinfo`,`loginname`,`loginpass`,`loginnickname`) VALUES ('127.0.0.1','XX XX XX 内网IP','1545699632','1','登陆成功','sunwukong','123456','孙悟空') [ RunTime:0.0010s ]
+
+[ 2018-12-25T09:00:33+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-25T09:00:35+08:00 ] 127.0.0.1 /index.php/home/Index/wel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-25T09:00:40+08:00 ] 127.0.0.1 /Home/Material/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-25T09:05:21+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-25T09:05:22+08:00 ] 127.0.0.1 /index.php/home/Index/wel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+

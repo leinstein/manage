@@ -13,6 +13,9 @@ class IndexController extends HomeController {
         $id=session('userid');
         $username = session('username');
         $admin=M('Admin');
+        $order = D('Order');
+        $backlog = M('Backlog');
+        $aim = M('Aim');
         if($username !== 'admin'){
             $roleinfo = M('Admin')
                 ->alias('m')
@@ -34,9 +37,31 @@ class IndexController extends HomeController {
         }
         $this->assign('authinfoA',$authinfoA);
         $this->assign('authinfoB',$authinfoB);
+        //今日待办任务数
+        $map['do_time'] = $order->today();
+        $backlog_count = $backlog->where($map)->where(['uid'=>$id])->count();
         $info=$admin->field('last_login_time,img_big')->where(['id'=>$id])->find();
-        $this->assign('time',date('Y-m-d H:i:s',$info['last_login_time']));
+        //目标进度
+        $this_month = date('Y',time()) . '-' .date('m',time());
+        $aims = $aim->where(['userid'=>$_SESSION['userid'],'month'=>$this_month])->find();
+        if($aims){
+            $star = mktime(0,0,0,date('m'),1,date('Y'));
+            $end = time();
+            $map['delete'] = 1;
+            $map['orderstatus'] = ['neq',4];
+            $map['ordercreatetime'] = ['between',[$star,$end]];
+            $aim_this_month['complete'] = $order->where($map)->sum('orderprice');
+            $aim_this_month['avg'] = round($aim_this_month['complete'] / $aims['aim'] , 3) * 100 . '%';
+            $aim_this_month['aim'] = $aims['aim'];
+        }else{
+            $aim_this_month['aim'] = 'aim';
+        }
+
+
+//        $this->assign('time',date('Y-m-d H:i:s',$info['last_login_time']));
         $this->assign('avatar',$info['img_big']);
+        $this->assign('backlog_count',$backlog_count);
+        $this->assign('aim_this_month',$aim_this_month);
         $this->assign('id',$id);
         $this->display();
     }
@@ -50,6 +75,8 @@ class IndexController extends HomeController {
     public function wel(){
         $customer = D('Customer');
         $order = D('Order');
+        $userid = $_SESSION['userid'];
+        if($_SESSION['username'] != 'admin') $where_user['saleid'] = $userid;
         //获取排名
         //本月
         $order_createtime_between_month = $order->month();
@@ -62,7 +89,7 @@ class IndexController extends HomeController {
         //复购率
         $map_c['delete'] = 1;
         $map_c['buyrate'] = ['gt',0];
-        $customer_info = $customer->where($map_c)->select();
+        $customer_info = $customer->where($map_c)->where($where_user)->select();
         //获取总体复购率
         $buyrate = $customer->report_rate($customer_info);
 
@@ -80,10 +107,12 @@ class IndexController extends HomeController {
         $lastmonth_day_customer = D('Order')->lastmonth_day_customer();
         $lastmonth_day_customer = json_encode($lastmonth_day_customer);
 
-
-
         $customer_stati = $customer->statistical();
         $order_stati = $order->statistical();
+
+        //总订单数/订单总金额/退单率/退单金额率
+        $report = $order->return_rate_avg();
+
         $this->assign('customer_stati',$customer_stati);
         $this->assign('order_stati',$order_stati);
         $this->assign('order_rank',$order_rank);
@@ -92,6 +121,7 @@ class IndexController extends HomeController {
         $this->assign('lastmonth_day_customer',$lastmonth_day_customer);
         $this->assign('month_day',$month_day);
         $this->assign('month_day_customer',$month_day_customer);
+        $this->assign('report',$report);
         $this->display('welcome');
     }
 }

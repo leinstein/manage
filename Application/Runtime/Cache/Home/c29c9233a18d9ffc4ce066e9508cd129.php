@@ -38,13 +38,14 @@
                         <tbody>
                             <?php if(is_array($authinfoA)): foreach($authinfoA as $key=>$v): ?><tr>
                                     <td width="130px">
-                                        <input type="checkbox" class="checkx" name="auth_id[]" lay-skin="primary" value="<?php echo ($v["auth_id"]); ?>" title="<?php echo ($v["auth_name"]); ?>" <?php if(in_array(($v["auth_id"]), is_array($roleinfo["role_auth_ids"])?$roleinfo["role_auth_ids"]:explode(',',$roleinfo["role_auth_ids"]))): ?>checked<?php endif; ?>>
+                                        <input type="checkbox"  class="checkx" name="auth_id[]" lay-skin="primary" value="<?php echo ($v["auth_id"]); ?>" title="<?php echo ($v["auth_name"]); ?>" <?php if(in_array(($v["auth_id"]), is_array($roleinfo["role_auth_ids"])?$roleinfo["role_auth_ids"]:explode(',',$roleinfo["role_auth_ids"]))): ?>checked<?php endif; ?>>
                                     </td>
                                     <td>
                                         <div class="layui-input-block">
-                                            <?php if(is_array($authinfoB)): foreach($authinfoB as $key=>$vv): if(($vv["auth_pid"]) == $v["auth_id"]): ?><input name="auth_id[]" lay-skin="primary" type="checkbox" title="<?php echo ($vv["auth_name"]); ?>" class="checkp" value="<?php echo ($vv["auth_id"]); ?>" <?php if(in_array(($vv["auth_id"]), is_array($roleinfo["role_auth_ids"])?$roleinfo["role_auth_ids"]:explode(',',$roleinfo["role_auth_ids"]))): ?>checked<?php endif; ?>><?php endif; ?>
-                                                <?php if(is_array($authinfoC)): foreach($authinfoC as $key=>$vvv): if(($v["auth_id"]) == $vv["auth_pid"]): if(($vv["auth_id"]) == $vvv["auth_pid"]): ?><input name="auth_id[]" lay-skin="primary" type="checkbox" title="<?php echo ($vvv["auth_name"]); ?>" class="checkp" value="<?php echo ($vvv["auth_id"]); ?>"><?php endif; endif; endforeach; endif; ?>
-                                                <br /><?php endforeach; endif; ?>
+                                            <?php if(is_array($authinfoB)): foreach($authinfoB as $key=>$vv): ?><div>
+                                                    <?php if(($vv["auth_pid"]) == $v["auth_id"]): ?><input name="auth_id[]" lay-skin="primary" type="checkbox" title="<?php echo ($vv["auth_name"]); ?>" class="checkp" value="<?php echo ($vv["auth_id"]); ?>" <?php if(in_array(($vv["auth_id"]), is_array($roleinfo["role_auth_ids"])?$roleinfo["role_auth_ids"]:explode(',',$roleinfo["role_auth_ids"]))): ?>checked<?php endif; ?>><?php endif; ?>
+                                                    <?php if(is_array($authinfoC)): foreach($authinfoC as $key=>$vvv): if(($v["auth_id"]) == $vv["auth_pid"]): if(($vv["auth_id"]) == $vvv["auth_pid"]): ?><input name="auth_id[]" lay-skin="primary" type="checkbox" title="<?php echo ($vvv["auth_name"]); ?>" class="checkp" value="<?php echo ($vvv["auth_id"]); ?>" <?php if(in_array(($vvv["auth_id"]), is_array($roleinfo["role_auth_ids"])?$roleinfo["role_auth_ids"]:explode(',',$roleinfo["role_auth_ids"]))): ?>checked<?php endif; ?>><?php endif; endif; endforeach; endif; ?>
+                                                </div><?php endforeach; endif; ?>
                                         </div>
                                     </td>
                                 </tr><?php endforeach; endif; ?>
@@ -129,12 +130,6 @@
             });
         //});
     </script>
-    <script>var _hmt = _hmt || []; (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-      })();</script>
   </body>
 
 </html>

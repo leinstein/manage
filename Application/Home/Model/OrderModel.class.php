@@ -16,81 +16,118 @@ class OrderModel extends Model
         $order = M('Order');
         $where['orderstatus'] =['neq',4]; //不计算退单
         $where['delete'] = 1; //删除的订单不计算
-
+        $userid = $_SESSION['userid'];
+        if($userid != 1) $where['saleid'] = $userid;
         //获取今天00:00时间戳
         $todaystart = strtotime(date('Y-m-d'.'00:00:00',time()));
         //获取今天24:00时间戳
         $todayend = strtotime(date('Y-m-d'.'00:00:00',time()+3600*24));
         //where条件
-        $today['ordercreatetime'] = [between,[$todaystart,$todayend]];
+        $today['ordercreatetime'] = ['between',[$todaystart,$todayend]];
         //获取今天添加订单数
-        $statistical['today'] = $order->where($today)->where($where)->count();
-        //获取今天订单金额
-        $statistical['today_order'] = $order->where($today)->where($where)->sum('orderprice');
+        $statistical_info[] = $order
+            ->field('count(orderid) as today,sum(orderprice) as today_order')
+            ->where($today)
+            ->where($where)
+            ->find();
 
         //获取昨天00:00时间戳
         $beginYesterday=mktime(0,0,0,date('m'),date('d')-1,date('Y'));
         //获取昨天24:00时间戳
         $endYesterday=mktime(0,0,0,date('m'),date('d'),date('Y'))-1;
         //统计昨天订单
-        $yesterday['ordercreatetime'] = [between,[$beginYesterday,$endYesterday]];
+        $yesterday['ordercreatetime'] = ['between',[$beginYesterday,$endYesterday]];
         //获取昨天添加订单数
-        $statistical['yesterday'] = $order->where($yesterday)->where($where)->count();
-        //获取昨天订单金额
-        $statistical['yesterday_order'] = $order->where($yesterday)->where($where)->sum('orderprice');
+        $statistical_info[] = $order
+            ->field('count(orderid) as yesterday,sum(orderprice) as yesterday_order')
+            ->where($yesterday)
+            ->where($where)
+            ->find();
 
         //获取本周00:00时间戳
         $startthisweek=mktime(0,0,0,date('m'),date('d')-date('w')+1,date('Y'));
         //获取本周23:59时间戳
         $endToday=mktime(23,59,59,date('m'),date('d')-date('w')+7,date('Y'));
         //统计本周订单
-        $weekday['ordercreatetime'] = [between,[$startthisweek,$endToday]];
+        $weekday['ordercreatetime'] = ['between',[$startthisweek,$endToday]];
         //获取本周添加订单数
-        $statistical['weekday'] = $order->where($weekday)->where($where)->count();
+        $statistical_info[] = $order
+            ->field('count(orderid) as weekday,sum(orderprice) as week_order')
+            ->where($weekday)
+            ->where($where)
+            ->find();
 
         //获取上周00:00时间戳
         $beginLastweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-7,date('Y'));
         //获取上周23:59时间戳
         $endLastweek=mktime(23,59,59,date('m'),date('d')-date('w')+7-7,date('Y'));
         //统计上周订单
-        $lastweek['ordercreatetime'] = [between,[$beginLastweek,$endLastweek]];
+        $lastweek['ordercreatetime'] = ['between',[$beginLastweek,$endLastweek]];
         //获取上周添加订单数
-        $statistical['lastweek'] = $order->where($lastweek)->where($where)->count();
-
+        $statistical_info[] = $order
+            ->field('count(orderid) as lastweek,sum(orderprice) as lastweek_order')
+            ->where($lastweek)
+            ->where($where)
+            ->find();
 
         //获取本月00:00时间戳
         $beginThismonth=mktime(0,0,0,date('m'),1,date('Y'));
         //获取本月23:59时间戳
         $endThismonth=mktime(23,59,59,date('m'),date('t'),date('Y'));
         //统计本月注册的订单
-        $month['ordercreatetime'] = [between,[$beginThismonth,$endThismonth]];
+        $month['ordercreatetime'] = ['between',[$beginThismonth,$endThismonth]];
         //获取本月添加订单数
-        $statistical['month'] = $order->where($month)->where($where)->count();
-        //获取本月订单金额
-        $statistical['month_order'] = $order->where($month)->where($where)->sum('orderprice');
+        $statistical_info[] = $order
+            ->field('count(orderid) as month,sum(orderprice) as month_order')
+            ->where($month)
+            ->where($where)
+            ->find();
 
         //获取上月00:00时间戳
         $beginlastmonth=mktime(0,0,0,date('m')-1,1,date('Y'));
         //获取上月23:59时间戳
         $endlastmonth=mktime(23,59,59,date('m')-1,date('t')-1,date('Y'));
         //统计上月订单
-        $lastmonth['ordercreatetime'] = [between,[$beginlastmonth,$endlastmonth]];
+        $lastmonth['ordercreatetime'] = ['between',[$beginlastmonth,$endlastmonth]];
         //获取上月添加订单数
-        $statistical['lastmonth'] = $order->where($lastmonth)->where($where)->count();
-        //获取上月订单金额
-        $statistical['lastmonth_order'] = $order->where($lastmonth)->where($where)->sum('orderprice');
+        $statistical_info[] = $order
+            ->field('count(orderid) as lastmonth,sum(orderprice) as lastmonth_order')
+            ->where($lastmonth)
+            ->where($where)
+            ->find();
 
         //获取今年00:00时间戳
         $beginthisyear=mktime(0,0,0,1,1,date('Y'));
         //获取今年23:59时间戳
         $endthisyear=mktime(23,59,59,12,31,date('Y'));
         //统计今年订单
-        $year['ordercreatetime'] = [between,[$beginthisyear,$endthisyear]];
+        $year['ordercreatetime'] = ['between',[$beginthisyear,$endthisyear]];
         //获取今年添加订单数
-        $statistical['year'] = $order->where($year)->where($where)->count();
+        $statistical_info[] = $order
+            ->field('count(orderid) as year,sum(orderprice) as year_order')
+            ->where($year)
+            ->where($where)
+            ->find();
 
         //历史订单数
-        $statistical['history'] = $order->where($where)->count();
+        $statistical_info[] = $order
+            ->field('count(orderid) as history,sum(orderprice) as history_order')
+            ->where($where)
+            ->find();
+
+        $statistical = [];
+        foreach ($statistical_info as $v){
+            $statistical = array_merge($statistical,$v);
+        }
+        $statistical['today_order'] = isset($statistical['today_order']) ? $statistical['today_order'] : '0000';
+        $statistical['yesterday_order'] = isset($statistical['yesterday_order']) ? $statistical['yesterday_order'] : '0000';
+        $statistical['week_order'] = isset($statistical['week_order']) ? $statistical['week_order'] : '0000';
+        $statistical['lastweek_order'] = isset($statistical['lastweek_order']) ? $statistical['lastweek_order'] : '0000';
+        $statistical['month_order'] = isset($statistical['month_order']) ? $statistical['month_order'] : '0000';
+        $statistical['lastmonth_order'] = isset($statistical['lastmonth_order']) ? $statistical['lastmonth_order'] : '0000';
+        $statistical['year_order'] = isset($statistical['year_order']) ? $statistical['year_order'] : '0000';
+        $statistical['history_order'] = isset($statistical['history_order']) ? $statistical['history_order'] : '0000';
+
         return $statistical;
     }
 
@@ -169,7 +206,7 @@ class OrderModel extends Model
         //获取今天24:00时间戳
         $todayend = strtotime(date('Y-m-d'.'00:00:00',time()+3600*24));
         //where条件
-        $today = [between,[$todaystart,$todayend]];
+        $today = ['between',[$todaystart,$todayend]];
         return $today;
     }
 
@@ -186,7 +223,7 @@ class OrderModel extends Model
         //获取昨天24:00时间戳
         $endYesterday=mktime(0,0,0,date('m'),date('d'),date('Y'))-1;
         //统计昨天订单
-        $yesterday = [between,[$beginYesterday,$endYesterday]];
+        $yesterday = ['between',[$beginYesterday,$endYesterday]];
         return $yesterday;
     }
 
@@ -217,7 +254,7 @@ class OrderModel extends Model
         //获取本周23:59时间戳
         $endToday=mktime(23,59,59,date('m'),date('d')-date('w')+7,date('Y'));
         //统计本周订单
-        $weekday = [between,[$startthisweek,$endToday]];
+        $weekday = ['between',[$startthisweek,$endToday]];
         return $weekday;
     }
 
@@ -233,7 +270,7 @@ class OrderModel extends Model
         //获取上周23:59时间戳
         $endLastweek=mktime(23,59,59,date('m'),date('d')-date('w')+7-7,date('Y'));
         //统计上周订单
-        $lastweek = [between,[$beginLastweek,$endLastweek]];
+        $lastweek = ['between',[$beginLastweek,$endLastweek]];
         return $lastweek;
     }
 
@@ -249,7 +286,7 @@ class OrderModel extends Model
         //获取本月23:59时间戳
         $endThismonth=mktime(23,59,59,date('m'),date('t'),date('Y'));
         //统计本月注册的订单
-        $month = [between,[$beginThismonth,$endThismonth]];
+        $month = ['between',[$beginThismonth,$endThismonth]];
         return $month;
     }
 
@@ -265,7 +302,7 @@ class OrderModel extends Model
         //获取上月23:59时间戳
         $endlastmonth=mktime(23,59,59,date('m')-1,date('t')-1,date('Y'));
         //统计上月订单
-        $lastmonth = [between,[$beginlastmonth,$endlastmonth]];
+        $lastmonth = ['between',[$beginlastmonth,$endlastmonth]];
         return $lastmonth;
     }
 
@@ -277,11 +314,11 @@ class OrderModel extends Model
      */
     Public function year(){
         //获取今年00:00时间戳
-        $beginthisyear=mktime(0,0,0,date('m')-1,1,date('Y'));
+        $beginthisyear=mktime(0,0,0,1,1,date('Y'));
         //获取今年23:59时间戳
-        $endthisyear=mktime(23,59,59,date('m')-1,date('t')-1,date('Y'));
+        $endthisyear=mktime(23,59,59,12,31,date('Y'));
         //统计今年订单
-        $year = [between,[$beginthisyear,$endthisyear]];
+        $year = ['between',[$beginthisyear,$endthisyear]];
         return $year;
     }
 
@@ -295,8 +332,16 @@ class OrderModel extends Model
     Public function return_rate_avg(){
         $order = D('Order');
         //本月退单率/历史退单率/上月退单率
-        $history['orderstatus'] = 4;
-        $order_history = $order->where($history)->field('orderprice,ordercreatetime')->select();
+        $history['orderstatus']  = 4;
+        $history['delete'] = $month_where['delete'] = $lastmonth_where['delete'] = $history_t['delete'] = 1;
+        //如果是销售
+        $userid = $_SESSION['userid'];
+        if($_SESSION['username'] != 'admin'){
+            $history['saleid'] = $history_t['saleid'] = $userid;
+            $month_where['saleid'] = $userid;
+            $lastmonth_where['saleid'] = $userid;
+        }
+        $order_history = $order->where($history)->select();
         //获取本月00:00时间戳
         $beginThismonth=mktime(0,0,0,date('m'),1,date('Y'));
         //获取本月23:59时间戳
@@ -318,21 +363,30 @@ class OrderModel extends Model
                 $report['lastmonth']['refunds'] += $z['orderprice'];
             }
         }
+        $report['history']['refunds'] = isset($report['history']['refunds']) ? $report['history']['refunds'] : '0';
+        $report['history']['chargeback'] = isset($report['history']['chargeback'])  ? $report['history']['chargeback'] : '0';
+        $report['month']['refunds'] = isset($report['month']['refunds']) ? $report['month']['refunds'] : '0';
+        $report['month']['chargeback'] = isset($report['month']['chargeback'])  ? $report['month']['chargeback'] : '0';
+        $report['lastmonth']['refunds'] = isset($report['lastmonth']['refunds']) ? $report['lastmonth']['refunds'] : '0';
+        $report['lastmonth']['chargeback'] = isset($report['lastmonth']['chargeback'])  ? $report['lastmonth']['chargeback'] : '0';
         //本月总订单数/本月订单总金额/本月退单率/本月退单金额率
         $month_where['ordercreatetime'] = $order->where_report('month');
         $report['month']['sum']         = $order->where($month_where)->count();
         $report['month']['amount']      = $order->where($month_where)->sum('orderprice');
+        $report['month']['amount']      = isset($report['month']['amount']) ? $report['month']['amount'] : '0000';
         $report['month']['avg']         = round($report['month']['chargeback'] / $report['month']['sum'],3)*100 . '%';
         $report['month']['amount_avg']         = round($report['month']['refunds'] / $report['month']['amount'],3)*100 . '%';
         //上月总订单数/上月订单总金额/上月退单率/上月退单金额率
         $lastmonth_where['ordercreatetime'] = $order->where_report('lastmonth');
         $report['lastmonth']['sum'] = $order->where($lastmonth_where)->count();
         $report['lastmonth']['amount'] = $order->where($lastmonth_where)->sum('orderprice');
+        $report['lastmonth']['amount']      = isset($report['lastmonth']['amount']) ? $report['lastmonth']['amount'] : '0000';
         $report['lastmonth']['avg']         = round($report['lastmonth']['chargeback'] / $report['lastmonth']['sum'],3)*100 . '%';
         $report['lastmonth']['amount_avg']         = round($report['lastmonth']['refunds'] / $report['lastmonth']['amount'],3)*100 . '%';
         //历史总订单数/历史订单总金额/历史退单率/历史退单金额率
-        $report['history']['sum'] = $order->count();
-        $report['history']['amount'] = $order->sum('orderprice');
+        $report['history']['sum'] = $order->where($history_t)->count();
+        $report['history']['amount'] = $order->where($history_t)->sum('orderprice');
+        $report['history']['amount'] = isset($report['history']['amount']) ? $report['history']['amount'] : '0000';
         $report['history']['avg']         = round($report['history']['chargeback'] / $report['history']['sum'],3)*100 . '%';
         $report['history']['amount_avg']         = round($report['history']['refunds'] / $report['history']['amount'],3)*100 . '%';
         //实际订单
@@ -967,12 +1021,12 @@ class OrderModel extends Model
      * anthor liu
      * 首页销售排名
      */
-    Public function wel_sale_rank($date){
+    Public function wel_sale_rank($date='null'){
         $admin = M('Admin');
         $order = D('Order');
         $where['delete'] = 1;
         $where['orderstatus'] = ['neq',4];
-        if($date) $where['ordercreatetime'] = $date;
+        if($date != 'null') $where['ordercreatetime'] = $date;
         //获取销售业绩排名
         $order_rank = $order
             ->field('saleid,count(saleid) as order_sum,sum(orderprice) as t_order')
@@ -1012,13 +1066,15 @@ class OrderModel extends Model
         //获取统计数据
         $where_order['delete'] = 1;
         $where_order['orderstatus'] = ['neq',4];
+        $userid = $_SESSION['userid'];
+        if($_SESSION['username'] != 'admin') $where_order['saleid'] = $userid;
 
         //初始化默认数据
         $where_order['ordercreatetime'] = $order->where_report('month');
         $order_info = $order->where($where_order)->select();
 
         //统计
-        $list = $order_count =[];
+        $list = $order_count = [];
         foreach ($order_info as $v){
             //获取本月00:00时间戳
             $beginThismonth=mktime(0,0,0,date('m'),1,date('Y'));
@@ -1064,6 +1120,8 @@ class OrderModel extends Model
         return $info;
     }
 
+
+
     /**
      * 2018/12/21
      * 16:15
@@ -1079,6 +1137,8 @@ class OrderModel extends Model
 
         //初始化默认数据
         $where['create_time'] = $order->where_report('month');
+        $userid = $_SESSION['userid'];
+        if($_SESSION['username'] != 'admin') $where['saleid'] = $userid;
         $customer_info = $customer->where($where)->select();
 
         //统计
@@ -1127,7 +1187,8 @@ class OrderModel extends Model
         //获取统计数据
         $where_order['delete'] = 1;
         $where_order['orderstatus'] = ['neq',4];
-
+        $userid = $_SESSION['userid'];
+        if($_SESSION['username'] != 'admin') $where_order['saleid'] = $userid;
         //初始化默认数据
         $where_order['ordercreatetime'] = $order->where_report('lastmonth');
         $order_info = $order->where($where_order)->select();
@@ -1193,6 +1254,8 @@ class OrderModel extends Model
 
         //初始化默认数据
         $where['create_time'] = $order->where_report('lastmonth');
+        $userid = $_SESSION['userid'];
+        if($_SESSION['username'] != 'admin') $where['saleid'] = $userid;
         $customer_info = $customer->where($where)->select();
 
         //统计
@@ -1226,6 +1289,128 @@ class OrderModel extends Model
         ksort($list);
         array_pop($list);
         return $list;
+    }
+
+
+
+    /**
+     * 2018/12/22
+     * 14:29
+     * @return mixed
+     * anthor liu
+     * 按天统计财务---上月
+     */
+    Public function month_day_amount_funds($month){
+        $order = D('Order');
+        //获取统计数据
+        $where_order['delete'] = 1;
+        $where_order['orderstatus'] = ['neq',4];
+
+        //初始化默认数据
+        $where_order['ordercreatetime'] = $order->where_report($month);
+        $order_info = $order->where($where_order)->select();
+        //统计
+        if($month == 'month'){
+            //获取本月00:00时间戳
+            $beginmonth=mktime(0,0,0,date('m'),1,date('Y'));
+            //获取本月23:59时间戳
+            $endmonth=mktime(23,59,59,date('m'),date('t'),date('Y'));
+        }else if($month == 'lastmonth'){
+            //获取上月00:00时间戳
+            $beginmonth=mktime(0,0,0,date('m')-1,1,date('Y'));
+            //获取上月23:59时间戳
+            $endmonth=mktime(23,59,59,date('m')-1,date('t')-1,date('Y'));
+        }else{
+            $arr = explode('-',$month);
+            $m =$arr[0];
+            $y =$arr[1];
+            $beginmonth = mktime(0,0,0,$m,1,$y);
+            $endmonth = mktime(23,59,59,$m,date('t', strtotime($month)),$y);
+        }
+
+        $list = $customer =[];
+        foreach ($order_info as $v){
+            $j = 0;
+            for($i=$beginmonth;$i<=$endmonth;$i=$i+86400){
+                $m = $i + 86400;
+                $j++;
+                if($v['ordercreatetime']>=$i and $v['ordercreatetime']< $m){
+                    $list[$j]['funds'] += $v['orderprice'];
+                    $list[$j]['courierfee'] += $v['courierfee'];
+                    $list[$j]['serverfee'] += $v['serverfee'];
+                    $list[$j]['pay'] += $v['pay'];
+                    $list[$j]['payment'] += $v['payment'];
+                    $list[$j]['refunds'] += $v['refunds'];
+                    $list[$j]['order_count'] ++;
+                    if(!in_array($v['cid'],$customer[$j])){
+                        array_push($customer[$j],$v['cid']);
+                        $list[$j]['customer'] ++;
+                    }
+                }
+            }
+        }
+
+        //获取上月天数
+        if($month == 'month'){
+            $d = date('d',time());
+        }else if($month == 'lastmonth'){
+            $d = date('t', strtotime('-1 month'));
+        }else{
+            $d = date('t', strtotime($month));
+        }
+
+        //没有业绩的补充0
+        for($i=1;$i<$d+2;$i++){
+            $date[] = $i;
+            if(!isset($list,$list[$i])){
+                $list[$i-1]['funds'] =0;
+                $list[$i-1]['courierfee'] =0;
+                $list[$i-1]['serverfee'] =0;
+                $list[$i-1]['pay'] =0;
+                $list[$i-1]['payment'] =0;
+                $list[$i-1]['refunds'] =0;
+                $list[$i-1]['order_count'] =0;
+                $list[$i-1]['customer'] =0;
+            }else{
+                $list[$i-1]['funds'] = $list[$i]['funds'];
+                $list[$i-1]['courierfee'] = $list[$i]['courierfee'];
+                $list[$i-1]['serverfee'] = $list[$i]['serverfee'];
+                $list[$i-1]['pay'] = $list[$i]['pay'];
+                $list[$i-1]['payment'] = $list[$i]['payment'];
+                $list[$i-1]['refunds'] = $list[$i]['refunds'];
+                $list[$i-1]['order_count'] = $list[$i]['order_count'];
+                $list[$i-1]['customer'] = $list[$i]['customer'];
+            }
+        }
+        ksort($list);
+        array_pop($list);
+        $info = $list;
+        return $info;
+    }
+
+    /**
+     * 2018/12/23
+     * 9:53
+     * anthor liu
+     * 历史总数据
+     */
+    Public function history(){
+        $order = M('Order');
+        $customer = M('Customer');
+        $where['delete'] = 1;
+        $where['orderstatus'] = ['neq',4];
+        $info = $order
+            ->field('sum(orderprice) as totalfunds,count(orderid) as totalorder,sum(serverfee) as totalserverfee,sum(courierfee) as totalcourierfee')
+            ->where($where)
+            ->select();
+        $map['delete'] = 1;
+        $map['buyrate'] = ['gt',0];
+        $info[] = $customer
+            ->field('count(cid) as totalcustomer')
+            ->where($map)
+            ->select();
+        $info = array_merge($info[0],$info[1][0]);
+        return $info;
     }
 
 

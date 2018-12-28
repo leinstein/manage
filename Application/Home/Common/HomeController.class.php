@@ -10,7 +10,7 @@ class HomeController extends Controller
         $admin_name = session('username');
         $nowAC = CONTROLLER_NAME."-".ACTION_NAME;
         if(empty($admin_name)){
-            $allow_auth = "Manage-login,Manage-logout,Manage-verifyImg,Manage-verifyCode";
+            $allow_auth = "Manage-login,Manage-logout,Manage-verifyImg,Manage-verifyCode,Goods-up_goods_img,Goods-delpic,Material-up_goods_img,Material-delpic";
             if(strpos($allow_auth,$nowAC) === false && !IS_POST){
                 $js = <<<eof
                     <script>
@@ -27,22 +27,20 @@ eof;
                 ->field('role_auth_ac')
                 ->where(array('m.id'=>$admin_id))
                 ->find();
-            $have_auth = $roleinfo['role_auth_ac'];
+            $have_auth = 'admin'.$roleinfo['role_auth_ac'];
             //$allow_auth = "Manage-login,Admin-logout,Index-index,Manage-verifyImg,Manage-verifyCode,System-update_avatar";
-            $allow_auth = "Manage-login,Admin-logout,Index-index,System-update_avatar";
+            $allow_auth = "Manage-login,Admin-logout,Index-index,System-update_avatar,Goods-up_goods_img,Goods-delpic,Material-up_goods_img,Material-delpic,System-update_avatar";
 
             if(strpos($have_auth,$nowAC) == false && strpos($allow_auth,$nowAC) == false && $admin_name != 'admin'){
-//                $js = <<<EOF
+//                $tip = <<<eof
 //                    <script>
-//                        layer.alert('没有访问权限,请联系管理员', {icon: 2},function () {
-//                                  return false;
-//                        });
+//                        alert('没有访问权限2,请联系管理员');
 //                    </script>
-//EOF;
-//                echo $js;
+//eof;
+//                echo $tip;
                 echo  "没有访问权限,请联系管理员";
                 return false;
-                $this->ajaxReturn(array('statu' => 202, 'msg' => "没有访问权限,请联系管理员"));
+                $this->ajaxReturn(array('statu' => 202, 'msg' => "没有访问权限2,请联系管理员"));
             }
         }
     }
