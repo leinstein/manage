@@ -4,9 +4,50 @@
     <list default="true" id="cd57e336-abb4-409d-9161-c9ce2c2a15d5" name="Default Changelist" comment="2018-12-12">
       <change afterPath="$PROJECT_DIR$/Application/Home/Controller/ServerController.class.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Application/Home/View/Manage/logout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Home/View/Report/funds.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Application/Home/View/Server/index.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Application/Home/View/Server/server.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Home/View/System/add.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Application/Home/View/System/aims.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/1e33cc344fd5dbf689cc515c5e283225.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/36fa37d88cec5b2146d5c3bd54b06f8f.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/3c86d5ba148f9b6f72e85af8039ba7e0.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/3f059d10731a0693496d2c4ab0f5e05c.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/40b47d6ed827c673a514317d1b2e347c.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/66a4ff3c44f3171bd16d5abf0df8a13f.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/6968055863ad058cb29837ae5f32d541.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/7fb1da91a4c58b95c4da1cff5cf62910.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/acecf5ffd706738a00885f87acc4fb90.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/c833f237f59cd6e39e5dd84400ec469c.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/eb8a6d01845282e2bbf458aa5bdcfaac.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/f773b9f65af8d1264ea6cb518a921941.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Logs/Common/18_12_22.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Logs/Common/18_12_23.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Logs/Common/18_12_24.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Logs/Common/18_12_25.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Logs/Common/18_12_26.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Logs/Common/18_12_27.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Logs/Common/18_12_28.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Logs/Home/18_12_22.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Logs/Home/18_12_23.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Logs/Home/18_12_24.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Logs/Home/18_12_25.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Logs/Home/18_12_26.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Logs/Home/18_12_27.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Runtime/Logs/Home/18_12_28.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/Uploads/2018-12-24/5c208672e46bd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/Uploads/2018-12-24/5c208672e46bd_s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/home/dist/layui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/home/images/avg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/home/images/bfb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/home/images/bi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/home/images/fee.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/home/images/kuai.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/home/images/mubiao.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/home/images/read.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/home/images/shou.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/home/images/xu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/home/images/yuan.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Home/Common/HomeController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Home/Common/HomeController.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Home/Controller/AuthController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Home/Controller/AuthController.class.php" afterDir="false" />
@@ -608,7 +649,7 @@
       <workItem from="1545698042478" duration="12681000" />
       <workItem from="1545788942310" duration="23715000" />
       <workItem from="1545872020449" duration="23456000" />
-      <workItem from="1545958192977" duration="9176000" />
+      <workItem from="1545958192977" duration="9775000" />
     </task>
     <task id="LOCAL-00001" summary="2018-12-12">
       <created>1544778345578</created>
@@ -642,7 +683,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="977200000" />
+    <option name="totallyTimeSpent" value="977799000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
