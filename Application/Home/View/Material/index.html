@@ -75,7 +75,7 @@
 					  	<foreach name="class" item="c">
 							<li class="layui-nav-item" id="layui-nav-item">
 								<a href="{:U('Material/index',['id'=>$c['id']])}">{$c.class_name}</a>
-								<dl class="layui-nav-child">
+								<dl class="layui-nav-child" style="top:46px">
 									<foreach name="pic_type" item="p">
 										<if condition="$c['id'] eq $p['class_id']">
 											<dd><a href="{:U('Material/index',['id'=>$c['id'],'type'=>$p['id']])}">{$p.type}</a></dd>
@@ -200,16 +200,6 @@
                 //     tips: [3, '#009e94']
                 // });
             // }
-        </script>
-
-        <script>
-            var _hmt = _hmt || [];
-            (function() {
-              var hm = document.createElement("script");
-              hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-              var s = document.getElementsByTagName("script")[0];
-              s.parentNode.insertBefore(hm, s);
-            })();
         </script>
     </body>
 </html>

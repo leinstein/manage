@@ -12,7 +12,16 @@ class RoleController extends HomeController{
      */
     function index(){
         $info = M('Role')->order('id asc')->select();
-        $this->assign('info',$info);
+        //权限按钮
+        $role = M('Role')->where(['id'=>$_SESSION['roleid']])->find();
+        $role_ac = $role['role_auth_ac'];
+        $action_name = get_action_name($role_ac);
+        $this->assign([
+            'info'=>$info,
+            'role_ac'=> $role_ac,
+            'action_name'=>$action_name
+        ]);
+//        $this->assign('info',$info);
         $this->display();
     }
 

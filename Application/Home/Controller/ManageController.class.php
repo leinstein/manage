@@ -29,6 +29,7 @@ class ManageController extends HomeController {
                     session('username',$info['username']);
                     session('nickname',$info['nickname']);
                     session('roleid',$info['role_id']);
+                    session('groupid',$info['group_id']);
                     session('grade', $info['grade']);
                     session('role_id', $info['role_id']);
                     $time = $logininfo['logintime'] = time();
@@ -63,8 +64,9 @@ class ManageController extends HomeController {
      * 退出登陆
      */
     public function logout(){
+        $this->display('logout');
         session(null);
-        redirect('login');
+        redirect('Home/Manage/login');
     }
 
     /**

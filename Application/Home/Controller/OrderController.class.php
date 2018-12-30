@@ -78,14 +78,21 @@ class OrderController extends HomeController {
          $order_s = D('Order');
          //获取统计数据
          $statistical = $order_s->statistical();
-
-         $this->assign('statistical', $statistical);
-         $this->assign('infotoday', $infotoday);
-         $this->assign('infoyestoday', $infoyestoday);
-         $this->assign('infot', $infot);
-         $this->assign('count', $count);
-         $this->assign('page', $show);
-         $this->assign('firstRow', $page->firstRow);
+         //权限按钮
+         $role = M('Role')->where(['id'=>$_SESSION['roleid']])->find();
+         $role_ac = $role['role_auth_ac'];
+         $action_name = get_action_name($role_ac);
+         $this->assign([
+             'statistical'=> $statistical,
+             'infotoday'=> $infotoday,
+             'infoyestoday'=> $infoyestoday,
+             'infot'=> $infot,
+             'count'=> $count,
+             'page'=> $show,
+             'firstRow'=> $page->firstRow,
+             'role_ac'=> $role_ac,
+             'action_name'=>$action_name
+         ]);
          $this->display();
      }
 

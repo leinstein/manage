@@ -27,9 +27,6 @@ class GoodsController extends HomeController {
         $page->setConfig('next','下一页');
         $show  = $page->show();//分页显示输出
         $list = $goods->where($where)->order('goodsid desc')->limit($page->firstRow . ',' . $page->listRows)->select();
-        $admin = M('Admin')->where(['id'=>$_SESSION['userid']])->find();
-        $role = M('Role')->where(['id'=>$admin['role_id']])->find();
-        $role_ids = $role['role_auth_ids'];
 
         $goods_pic = M('goods_pic');
         foreach ($list as $v) {
@@ -37,14 +34,27 @@ class GoodsController extends HomeController {
             $v['goods_pic'] = $goods_pic->where($where)->select();
             $list_r[]     = $v;
         }
+        //权限按钮
+        $role = M('Role')->where(['id'=>$_SESSION['roleid']])->find();
+        $role_ac = $role['role_auth_ac'];
+        $action_name = get_action_name($role_ac);
         //获取统计数据
         $statistical = $goods->statistical();
-        $this->assign('statistical', $statistical);
-        $this->assign('list', $list_r);
-        $this->assign('role_ids', $role_ids);
-        $this->assign('count', $count);
-        $this->assign('page', $show);
-        $this->assign('firstRow', $page->firstRow);
+        $this->assign([
+            'statistical'=> $statistical,
+            'list'=> $list_r,
+            'count'=> $count,
+            'page'=> $show,
+            'firstRow'=> $page->firstRow,
+            'role_ac'=> $role_ac,
+            'action_name'=>$action_name
+        ]);
+//        $this->assign('statistical', $statistical);
+//        $this->assign('list', $list_r);
+//        $this->assign('role_ids', $role_ids);
+//        $this->assign('count', $count);
+//        $this->assign('page', $show);
+//        $this->assign('firstRow', $page->firstRow);
         $this->display();
     }
 

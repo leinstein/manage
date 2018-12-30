@@ -650,4 +650,62 @@ class ReportController extends HomeController {
         $this->display();
     }
 
+    /**
+     * 2018/12/28
+     * 14:25
+     * anthor liu
+     * 项目统计
+     */
+    Public function project(){
+        $customer = D('Customer');
+        $order = D('Order');
+        if($_SESSION['username'] != 'admin') $where_user['itemid'] = $_SESSION['groupid'];
+        //获取排名---全体排名
+        //本月
+        $order_createtime_between_month = $order->month();
+        $order_rank['month'] = $order->wel_sale_rank($order_createtime_between_month);
+        //上月
+        $order_createtime_between_lastmonth = $order->lastmonth();
+        $order_rank['lastmonth'] = $order->wel_sale_rank($order_createtime_between_lastmonth);
+        //历史
+        $order_rank['history'] = $order->wel_sale_rank();
+        //复购率
+        $map_c['delete'] = 1;
+        $map_c['buyrate'] = ['gt',0];
+        $customer_info = $customer->where($map_c)->where($where_user)->select();
+        //获取总体复购率
+        $buyrate = $customer->report_rate($customer_info);
+
+        //本月按天统计业绩和订单数
+        $month_day = D('Order')->month_day_amount('group');
+        $month_day = json_encode($month_day);
+        //本月按天统计客户数
+        $month_day_customer = D('Order')->month_day_customer('group');
+        $month_day_customer = json_encode($month_day_customer);
+
+        //上月按天统计业绩和订单数
+        $lastmonth_day_amount = D('Order')->lastmonth_day_amount('group');
+        $lastmonth_day_amount = json_encode($lastmonth_day_amount);
+        //上月按天统计客户数
+        $lastmonth_day_customer = D('Order')->lastmonth_day_customer('group');
+        $lastmonth_day_customer = json_encode($lastmonth_day_customer);
+
+        $customer_stati = $customer->statistical('group');
+        $order_stati = $order->statistical('group');
+
+        //总订单数/订单总金额/退单率/退单金额率
+        $report = $order->return_rate_avg('group');
+
+        $this->assign('customer_stati',$customer_stati);
+        $this->assign('order_stati',$order_stati);
+        $this->assign('order_rank',$order_rank);
+        $this->assign('buyrate',$buyrate);
+        $this->assign('lastmonth_day_amount',$lastmonth_day_amount);
+        $this->assign('lastmonth_day_customer',$lastmonth_day_customer);
+        $this->assign('month_day',$month_day);
+        $this->assign('month_day_customer',$month_day_customer);
+        $this->assign('report',$report);
+        $this->display();
+    }
+
 }

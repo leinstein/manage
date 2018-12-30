@@ -31,13 +31,26 @@
               /*padding: 20px;*/
             }
         </style>
+        <style>
+            .layui-btn-disabled-button{
+                cursor:not-allowed;
+                opacity:1;
+            }
+        </style>
         <div class="layui-fluid">
             <div class="layui-card">
                 <div class="x-body">
                 <xblock style="background-color: white !important;margin: 0">
-                  <button class="layui-btn"  onclick="admin_add('添加商品','/Home/System/add','500','500')">
-                    <i class="layui-icon">&#xe608;</i> 添 加
-                  </button>
+                      <in name="action_name.System_add" value="$role_ac">
+                        <button class="layui-btn"  onclick="admin_add('添加商品','/Home/System/add','500','500')">
+                            <i class="layui-icon">&#xe608;</i> 添 加
+                        </button>
+                      <else />
+                        <button class="layui-btn layui-btn-disabled-button">
+                            <i class="layui-icon">&#xe608;</i> 添 加
+                        </button>
+                      </in>
+                  
                     <!--<a title="本月排名" class="layui-btn"  href="/Home/Report/rank?month=month">-->
                         <!--本月排名-->
                     <!--</a>-->

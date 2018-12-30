@@ -23,7 +23,8 @@
                     height: 45px;
                     /*width: 50%;*/
                     display: inline-block;
-                    margin-left: 1%;
+                    margin-left: 10px;
+                    margin-right: 10px;
                 }
                 #layui-nav-item,#layui-nav-item1,layui-nav-item2{
                     height: 45px;
@@ -31,12 +32,15 @@
                 }
                 
             </style>
+            <style>
+                .layui-btn-disabled-button{
+                    cursor:not-allowed;
+                    opacity:1;
+                }
+            </style>
             
             <style>.layui-table td, .layui-table th{text-align: center}</style>
             <xblock>
-                <button class="layui-btn layui-bg-green" onclick="admin_add('素材上传','/Home/Material/add','700','700')" style="height: 45px;line-height: 45px;margin-top: 7px"><i class="layui-icon">&#xe608;</i> 上 传 </button>
-                <button class="layui-btn layui-bg-green" onclick="admin_add('添加组','/Home/Material/add_class','490','300')" style="height: 45px;line-height: 45px;margin-top: 7px"><i class="layui-icon">&#xe608;</i> 添 加 组 </button>
-                <button class="layui-btn layui-bg-green" onclick="admin_add('添加类型','/Home/Material/add_pic_type','490','400')" style="height: 45px;line-height: 45px;margin-top: 7px"><i class="layui-icon">&#xe608;</i> 添 加 类 型 </button>
                 <ul class="layui-nav layui-bg-green">
                   <li class="layui-nav-item" id="layui-nav-item1"><a href="{:U('Material/management')}">首页</a></li>
                     <foreach name="class" item="c">
@@ -52,6 +56,31 @@
                         </li>
                     </foreach>
                 </ul>
+                <in name="action_name.Material_add" value="$role_ac">
+                    <button class="layui-btn layui-bg-green" onclick="admin_add('素材上传','/Home/Material/add','700','700')" style="height: 45px;line-height: 45px;margin-top: 7px"><i class="layui-icon">&#xe608;</i> 上 传 </button>
+                <else />
+                    <button class="layui-btn layui-bg-green layui-btn-disabled-button" style="height: 45px;line-height: 45px;margin-top: 7px"><i class="layui-icon">&#xe608;</i> 上 传 </button>
+                </in>
+                <in name="action_name.Material_add_class" value="$role_ac">
+                    <button class="layui-btn layui-bg-green" onclick="admin_add('添加组','/Home/Material/add_class','490','300')" style="height: 45px;line-height: 45px;margin-top: 7px"><i class="layui-icon">&#xe608;</i> 添 加 组 </button>
+                <else />
+                    <button class="layui-btn layui-bg-green layui-btn-disabled-button" style="height: 45px;line-height: 45px;margin-top: 7px"><i class="layui-icon">&#xe608;</i> 添 加 组 </button>
+                </in>
+                <in name="action_name.Material_add_pic_type" value="$role_ac">
+                    <button class="layui-btn layui-bg-green" onclick="admin_add('添加类型','/Home/Material/add_pic_type','490','320')" style="height: 45px;line-height: 45px;margin-top: 7px"><i class="layui-icon">&#xe608;</i> 添 加 类 型 </button>
+                <else />
+                    <button class="layui-btn layui-bg-green layui-btn-disabled-button" style="height: 45px;line-height: 45px;margin-top: 7px"><i class="layui-icon">&#xe608;</i> 添 加 类 型 </button>
+                </in>
+                <in name="action_name.Material_del_class" value="$role_ac">
+                     <button class="layui-btn layui-btn-danger" onclick="admin_add('删除组','/Home/Material/del_class','550','250')" style="height: 45px;line-height: 45px;margin-top: 7px"><i class="layui-icon">&#xe608;</i> 删 除 组 </button>
+                <else />
+                     <button class="layui-btn layui-btn-danger layui-btn-disabled-button"  style="height: 45px;line-height: 45px;margin-top: 7px"><i class="layui-icon">&#xe608;</i> 删 除 组 </button>
+                </in>
+                <in name="action_name.Material_del_pic_type" value="$role_ac">
+                     <button class="layui-btn layui-btn-danger" onclick="admin_add('删除类型','/Home/Material/del_pic_type','550','300')" style="height: 45px;line-height: 45px;margin-top: 7px"><i class="layui-icon">&#xe608;</i> 删 除 类 型 </button>
+                <else />
+                     <button class="layui-btn layui-btn-danger layui-btn-disabled-button" style="height: 45px;line-height: 45px;margin-top: 7px"><i class="layui-icon">&#xe608;</i> 删 除 类 型 </button>
+                </in>
             </xblock>
             <table class="layui-table">
                 <thead>
@@ -101,14 +130,26 @@
                                 {$v.create_time|date='Y-m-d',###}
                             </td>
                             <td class="td-manage" width="90px">
-                                    <a title="编辑" href="javascript:;" onclick="admin_edit('编辑','/Home/material/edit','{$v.mid}','700','700')"
-                                class="ml-5" style="text-decoration:none;margin-left: 10px">
-                                    <i class="layui-icon">&#xe642;</i>
-                                </a>
-                                <a title="删除" href="javascript:;" onclick="admin_del(this,'{$v.mid}')"
-                                style="text-decoration:none;margin-left: 10px">
-                                    <i class="layui-icon">&#xe640;</i>
-                                </a>
+                                <in name="action_name.Material_edit" value="$role_ac">
+                                     <a title="编辑" href="javascript:;" onclick="admin_edit('编辑','/Home/material/edit','{$v.mid}','700','700')"
+                                        class="ml-5" style="text-decoration:none;margin-left: 10px">
+                                         <i class="layui-icon">&#xe642;</i>
+                                     </a>
+                                <else />
+                                     <a title="编辑" href="javascript:;" class="ml-5 layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                                         <i class="layui-icon">&#xe642;</i>
+                                     </a>
+                                </in>
+                                <in name="action_name.Material_del" value="$role_ac">
+                                     <a title="删除" href="javascript:;" onclick="admin_del(this,'{$v.mid}')"
+                                        style="text-decoration:none;margin-left: 10px">
+                                         <i class="layui-icon">&#xe640;</i>
+                                     </a>
+                                <else />
+                                     <a title="删除" href="javascript:;" class="layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                                         <i class="layui-icon">&#xe640;</i>
+                                     </a>
+                                </in>
                             </td>
                         </tr>
                     </foreach>
@@ -159,7 +200,7 @@
                     });
                 });
             }
-            </script>
+        </script>
         <script>
             function big_img(w,h,urlimg){
                 layer.open({
@@ -171,14 +212,5 @@
             }
         </script>
         <script src="/Public/Home/js/x-layui.js" charset="utf-8"></script>
-        <script>
-            var _hmt = _hmt || [];
-            (function() {
-              var hm = document.createElement("script");
-              hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-              var s = document.getElementsByTagName("script")[0];
-              s.parentNode.insertBefore(hm, s);
-            })();
-        </script>
     </body>
 </html>

@@ -17,13 +17,13 @@
     <style>
         body{
             background-color: #f0f2f5;
+            overflow-x:hidden;
         }
         /*.ring{*/
             /*float: left;*/
         /*}*/
         .layui-col-md3{
             margin-top: 20px;
-            min-width: 300px;
            
         }
        
@@ -89,7 +89,7 @@
             margin-top: 0;
         }
     </style>
-    <body style="overflow-x:hidden">
+    <body>
     
         <div class="x-body">
             <!--头部统计-->
@@ -220,7 +220,7 @@
                         width: 26%;
                     }
                 </style>
-                <div class="layui-col-xs3 layui-col-sm3 layui-col-md3" style="min-width: 380px">
+                <div class="layui-col-xs3 layui-col-sm3 layui-col-md3">
                   <div class="sec_bg_color">
                         <div class="layui-tab layui-tab-brief" style="">
                           <ul class="layui-tab-title" id="title_width">
@@ -236,7 +236,6 @@
                                       height: 45px;
                                       width:57px;
                                       border-radius: 50%;
-                                      background-color: white;
                                       line-height: 45px;
                                       /*line-height: 20px;*/
                                       margin-left: 20px;
@@ -276,18 +275,13 @@
                                   /*.money_width{*/
                                       /*width: 60px !important;*/
                                   /*}*/
-                                  .list_bg img{
-                                      border-radius: 50%;
-                                      width:50px;
-                                      height: 50px;
-                                  }
                               </style>
                           <div class="layui-tab-content">
                             <div class="layui-tab-item layui-show">
                                 <ul class="list">
                                     <li style="margin-top: 8px">
                                         <span class="list_icon list_bg" style="color: white;">
-                                            <img src="{$order_rank.month.0.img_small}">
+                                            <img src="{$order_rank.month.0.img_small}"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
                                         <span class="list_name">{$order_rank.month.0.nickname}</span>
                                         <span class="">{$order_rank.month.0.order_sum} 单</span>
@@ -296,7 +290,7 @@
                                     </li>
                                     <li>
                                         <span class="list_icon list_bg" style="color: white">
-                                            <img src="{$order_rank.month.1.img_small}">
+                                            <img src="{$order_rank.month.1.img_small}"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
                                         <span class="list_name">{$order_rank.month.1.nickname}</span>
                                         <span class="">{$order_rank.month.1.order_sum} 单</span>
@@ -304,23 +298,23 @@
                                     </li>
                                     <li>
                                         <span class="list_icon list_bg" style="color: white">
-                                            <img src="{$order_rank.month.2.img_small}"  style="">
+                                            <img src="{$order_rank.month.2.img_small}"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
                                         <span class="list_name">{$order_rank.month.2.nickname}</span>
                                         <span class="">{$order_rank.month.2.order_sum} 单</span>
                                         <span class="money_width">￥ {$order_rank.month.2.t_order|substr=###,0,-3}</span>
                                     </li>
                                     <li>
-                                        <span class="list_icon list_bg">
-                                            <img src="{$order_rank.month.3.img_small}">
+                                        <span class="list_icon list_bg" style="background-color: #ddd;">
+                                            <img src="{$order_rank.month.3.img_small}"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
                                         <span class="list_name">{$order_rank.month.3.nickname}</span>
                                         <span class="">{$order_rank.month.3.order_sum} 单</span>
                                         <span class="money_width">￥ {$order_rank.month.3.t_order|substr=###,0,-3}</span>
                                     </li>
                                     <li>
-                                        <span class="list_icon list_bg">
-                                            <img src="{$order_rank.month.4.img_small}">
+                                        <span class="list_icon list_bg" style="background-color: #ddd;">
+                                            <img src="{$order_rank.month.4.img_small}"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
                                         <span class="list_name">{$order_rank.month.4.nickname}</span>
                                         <span class="">{$order_rank.month.4.order_sum} 单</span>
@@ -332,7 +326,7 @@
                                 <ul class="list">
                                     <li style="margin-top: 8px">
                                         <span class="list_icon list_bg" style="color: white;">
-                                            <img src="{$order_rank.lastmonth.0.img_small}">
+                                            <img src="{$order_rank.lastmonth.0.img_small}"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
                                         <span class="list_name">{$order_rank.lastmonth.0.nickname}</span>
                                         <span class="">{$order_rank.lastmonth.0.order_sum} 单</span>
@@ -341,7 +335,7 @@
                                     </li>
                                     <li>
                                         <span class="list_icon list_bg" style="color: white">
-                                            <img src="{$order_rank.lastmonth.1.img_small}">
+                                            <img src="{$order_rank.lastmonth.1.img_small}"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
                                         <span class="list_name">{$order_rank.lastmonth.1.nickname}</span>
                                         <span class="">{$order_rank.lastmonth.1.order_sum} 单</span>
@@ -349,23 +343,23 @@
                                     </li>
                                     <li>
                                         <span class="list_icon list_bg" style="color: white">
-                                            <img src="{$order_rank.lastmonth.2.img_small}">
+                                            <img src="{$order_rank.lastmonth.2.img_small}"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
                                         <span class="list_name">{$order_rank.lastmonth.2.nickname}</span>
                                         <span class="">{$order_rank.lastmonth.2.order_sum} 单</span>
                                         <span class="money_width">￥ {$order_rank.lastmonth.2.t_order|substr=###,0,-3}</span>
                                     </li>
                                     <li>
-                                        <span class="list_icon list_bg">
-                                            <img src="{$order_rank.lastmonth.3.img_small}">
+                                        <span class="list_icon list_bg" style="background-color: #ddd;">
+                                            <img src="{$order_rank.lastmonth.3.img_small}"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
                                         <span class="list_name">{$order_rank.lastmonth.3.nickname}</span>
                                         <span class="">{$order_rank.lastmonth.3.order_sum} 单</span>
                                         <span class="money_width">￥ {$order_rank.lastmonth.3.t_order|substr=###,0,-3}</span>
                                     </li>
                                     <li>
-                                        <span class="list_icon list_bg">
-                                            <img src="{$order_rank.lastmonth.4.img_small}">
+                                        <span class="list_icon list_bg" style="background-color: #ddd;">
+                                            <img src="{$order_rank.lastmonth.4.img_small}"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
                                         <span class="list_name">{$order_rank.lastmonth.4.nickname}</span>
                                         <span class="">{$order_rank.lastmonth.4.order_sum} 单</span>
@@ -377,7 +371,7 @@
                                 <ul class="list">
                                     <li style="margin-top: 8px">
                                         <span class="list_icon list_bg" style="color: white;">
-                                            <img src="{$order_rank.history.0.img_small}">
+                                            <img src="{$order_rank.history.0.img_small}"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
                                         <span class="list_name">{$order_rank.history.0.nickname}</span>
                                         <span class="">{$order_rank.history.0.order_sum} 单</span>
@@ -386,7 +380,7 @@
                                     </li>
                                     <li>
                                         <span class="list_icon list_bg" style="color: white">
-                                            <img src="{$order_rank.history.1.img_small}">
+                                            <img src="{$order_rank.history.1.img_small}"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
                                         <span class="list_name">{$order_rank.history.1.nickname}</span>
                                         <span class="">{$order_rank.history.1.order_sum} 单</span>
@@ -394,23 +388,23 @@
                                     </li>
                                     <li>
                                         <span class="list_icon list_bg" style="color: white">
-                                            <img src="{$order_rank.history.2.img_small}">
+                                            <img src="{$order_rank.history.2.img_small}"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
                                         <span class="list_name">{$order_rank.history.2.nickname}</span>
                                         <span class="">{$order_rank.history.2.order_sum} 单</span>
                                         <span class="money_width">￥ {$order_rank.history.2.t_order|substr=###,0,-3}</span>
                                     </li>
                                     <li>
-                                        <span class="list_icon list_bg">
-                                            <img src="{$order_rank.history.3.img_small}">
+                                        <span class="list_icon list_bg" style="background-color: #ddd;">
+                                            <img src="{$order_rank.history.3.img_small}"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
                                         <span class="list_name">{$order_rank.history.3.nickname}</span>
                                         <span class="">{$order_rank.history.3.order_sum} 单</span>
                                         <span class="money_width">￥ {$order_rank.history.3.t_order|substr=###,0,-3}</span>
                                     </li>
                                     <li>
-                                        <span class="list_icon list_bg">
-                                            <img src="{$order_rank.history.4.img_small}">
+                                        <span class="list_icon list_bg" style="background-color: #ddd;">
+                                            <img src="{$order_rank.history.4.img_small}"  style="border-radius: 50%;width:57px;height: 58px">
                                         </span>
                                         <span class="list_name">{$order_rank.history.4.nickname}</span>
                                         <span class="">{$order_rank.history.4.order_sum} 单</span>
@@ -432,7 +426,7 @@
             }
             .layui-col-md4{
                 height: 195px;
-                min-width: 524px;
+                min-width: 550px;
                 margin-top: 10px;
             }
             .content_box{

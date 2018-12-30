@@ -72,13 +72,26 @@ class MaterialController extends HomeController {
             $i++;
             $list_sort[] = $v;
         }
-
-        $this->assign('list', $list_sort);
-        $this->assign('class', $class);
-        $this->assign('pic_type', $pic_type);
-        $this->assign('count', $count);
-        $this->assign('page', $show);
-        $this->assign('firstRow', $page->firstRow);
+        //权限按钮
+        $role = M('Role')->where(['id'=>$_SESSION['roleid']])->find();
+        $role_ac = $role['role_auth_ac'];
+        $action_name = get_action_name($role_ac);
+        $this->assign([
+            'list'=> $list_sort,
+            'class'=> $class,
+            'pic_type'=> $pic_type,
+            'count'=> $count,
+            'page'=> $show,
+            'firstRow'=> $page->firstRow,
+            'role_ac'=> $role_ac,
+            'action_name'=>$action_name
+        ]);
+//        $this->assign('list', $list_sort);
+//        $this->assign('class', $class);
+//        $this->assign('pic_type', $pic_type);
+//        $this->assign('count', $count);
+//        $this->assign('page', $show);
+//        $this->assign('firstRow', $page->firstRow);
         $this->display();
     }
 
@@ -215,10 +228,10 @@ class MaterialController extends HomeController {
      */
     Public function delpic(){
         $picid = $_POST['picid'];
-        $goods_pic = M('Material')->where(['picid'=>$picid])->find();
-        $delgoodsimg = unlink($_SERVER["DOCUMENT_ROOT"].$goods_pic['goodsimg']);
-        $delgoodsthums = unlink($_SERVER["DOCUMENT_ROOT"].$goods_pic['goodsthums']);
-        if($delgoodsimg and $delgoodsthums){
+        $material_pic = M('Material')->where(['id'=>$picid])->find();
+        $delimg = unlink($_SERVER["DOCUMENT_ROOT"].$material_pic['pic_url']);
+        $delthums = unlink($_SERVER["DOCUMENT_ROOT"].$material_pic['pic_thums_url']);
+        if($delimg and $delthums){
             $goods_del = M('Material')->where(['id'=>$picid])->delete();
             if($goods_del){
                 $this->ajaxReturn(array('statu'=>200,'msg'=>'删除成功'));
@@ -298,6 +311,68 @@ class MaterialController extends HomeController {
             }
         } else {
             $this->ajaxReturn(['statu' => 202, 'msg' => "图片删除失败"]);
+        }
+    }
+
+    /**
+     * 2018/12/29
+     * 11:14
+     * anthor liu
+     * 删除组
+     */
+    Public function del_class(){
+        if(IS_POST){
+            $material = M('Material');
+            $class_id = $_POST['class_id'];
+            $material = $material->where(['class_id'=>$class_id])->select();
+            $document_root = $_SERVER["DOCUMENT_ROOT"];
+            foreach ($material as $v){
+                unlink($document_root.$v['pic_url']);
+                unlink($document_root.$v['pic_thums_url']);
+            }
+            $del_m = M('Material')->where(['class_id'=>$class_id])->delete();
+            $del_t = M('Pic_type')->where(['class_id'=>$class_id])->delete();
+            $del_c = M('Class')->where(['id'=>$class_id])->delete();
+            if($del_m){
+                $this->ajaxReturn(array('statu'=>200,'msg'=>'组及素材删除成功'));
+            }else{
+                $this->ajaxReturn(array('statu'=>202,'msg'=>'组及素材删除失败，请重试'));
+            }
+        }else{
+            $info = M('Class')->select();
+            $this->assign('class', $info);
+            $this->display();
+        }
+    }
+
+    /**
+     * 2018/12/29
+     * 11:14
+     * anthor liu
+     * 删除类型
+     */
+    Public function del_pic_type(){
+        if(IS_POST){
+            $material = M('Material');
+            $class_id = $_POST['class_id'];
+            $type_id = $_POST['type_id'];
+            $material = $material->where(['class_id'=>$class_id,'type_id'=>$type_id])->select();
+            $document_root = $_SERVER["DOCUMENT_ROOT"];
+            foreach ($material as $v){
+                unlink($document_root.$v['pic_url']);
+                unlink($document_root.$v['pic_thums_url']);
+            }
+            $del_m = M('Material')->where(['class_id'=>$class_id,'type_id'=>$type_id])->delete();
+            $del_t = M('Pic_type')->where(['id'=>$type_id])->delete();
+            if($del_m and $del_t){
+                $this->ajaxReturn(array('statu'=>200,'msg'=>'类型删除成功'));
+            }else{
+                $this->ajaxReturn(array('statu'=>202,'msg'=>'类型除失败，请重试'));
+            }
+        }else{
+            $info = M('Class')->select();
+            $this->assign('class', $info);
+            $this->display();
         }
     }
 }

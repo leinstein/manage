@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <title>
-            暴风网络科技
+            风暴网络科技
         </title>
         <meta name="renderer" content="webkit">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -17,10 +17,10 @@
     </head>
     
     <body style="background-color: #393D49">
-        <div class="x-box" style="background-color: #393D49;" color="#393D49">
+        <div class="x-box" style="background-color: #393D49;margin-top: 210px" color="#393D49">
             <div class="x-mid">
                 <div class="x-avtar">
-                    <img src="/Public/Home/images/avatar.jpg" alt="">
+                    <img src="/Public/Home/images/logo.png" alt="" style="border: 0">
                 </div>
                 <div class="input">
                     <form class="layui-form" action="#" method="post" onsubmit="return false">
@@ -60,7 +60,7 @@
                 </div>
             </div>
         </div>
-        <p style="color:#fff;text-align: center;">暴风网络科技</p>
+        <!--<p style="color:#fff;text-align: center;">风暴网络科技</p>-->
         <script src="/Public/Home/lib/layui/layui.js" charset="utf-8">
         </script>
         <script>
@@ -81,7 +81,7 @@
                             data:data,
                             success: function(data){
                                 if(data.statu == 200){
-                                    layer.msg(data.msg);
+                                    layer.msg(data.msg, {icon: 1});
                                     location.href = "/";
                                 }else{
                                     layer.msg(data.msg);

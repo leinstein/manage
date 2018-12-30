@@ -38,12 +38,25 @@ class AdminController extends HomeController {
             $v['group_name'] = $a['group_name'];
             $list_g[]     = $v;
         }
-        $id = session('id');
-        $this->assign('id', $id);
-        $this->assign('list', $list_g);
-        $this->assign('count', $count);
-        $this->assign('page', $show);
-        $this->assign('firstRow', $page->firstRow);
+        //权限按钮
+        $role = M('Role')->where(['id'=>$_SESSION['roleid']])->find();
+        $role_ac = $role['role_auth_ac'];
+        $action_name = get_action_name($role_ac);
+        $this->assign([
+            'id'=> session('id'),
+            'list'=> $list_g,
+            'count'=> $count,
+            'page'=> $show,
+            'firstRow'=> $page->firstRow,
+            'role_ac'=> $role_ac,
+            'action_name'=>$action_name
+        ]);
+//        $id = session('id');
+//        $this->assign('id', $id);
+//        $this->assign('list', $list_g);
+//        $this->assign('count', $count);
+//        $this->assign('page', $show);
+//        $this->assign('firstRow', $page->firstRow);
         $this->display();
     }
 
@@ -93,10 +106,10 @@ class AdminController extends HomeController {
         if (IS_POST) {
             $data['id']      = I('post.id');
             $data['username']      = trim(I('post.username'));
-            $data['password']      = trim(I('post.pass'));
+//            $data['password']      = trim(I('post.pass'));
             $data['nickname']      = trim(I('post.nickname'));
             $data['mobile']      = trim(I('post.phone'));
-            $data['pass']      = md5(trim(I('post.pass')));
+            $data['password']      = md5(trim(I('post.pass')));
             $pass      = trim(I('post.pass'));
             $repass      = trim(I('post.repass'));
             $data['role_id']  = $_POST['role_id'];
@@ -258,6 +271,20 @@ class AdminController extends HomeController {
     }
 
     /**
+     * 2018/12/29
+     * 15:59
+     * anthor liu
+     * 清空登录记录
+     */
+    Public function del_all_work(){
+        $res = M('Logininfo')->execute('TRUNCATE table fb_logininfo');
+//        if ($res) {
+            $this->ajaxReturn(['statu' => 200, 'msg' => '清除成功']);
+//        } else {
+//            $this->ajaxReturn(['statu' => 202, 'msg' => '清除失败，请重试']);
+//        }
+    }
+    /**
      * 2018/12/14
      * 16:36
      * anthor liu
@@ -275,7 +302,16 @@ class AdminController extends HomeController {
             $v['team'] = implode(',',$v['team']);
             $info[] = $v;
         }
-        $this->assign('info',$info);
+        //权限按钮
+        $role = M('Role')->where(['id'=>$_SESSION['roleid']])->find();
+        $role_ac = $role['role_auth_ac'];
+        $action_name = get_action_name($role_ac);
+        $this->assign([
+            'info'=>$info,
+            'role_ac'=> $role_ac,
+            'action_name'=>$action_name
+        ]);
+//        $this->assign('info',$info);
         $this->display();
     }
 

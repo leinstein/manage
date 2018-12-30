@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="x-body">
-            <form class="layui-form x-center" action="" method="post" style="width:80%">
+            <form class="layui-form x-center" action="" method="post" style="width:52%">
                 <div class="layui-form-pane" style="margin-top: 15px;">
                   <div class="layui-form-item">
                     <label class="layui-form-label">日期范围</label>
@@ -36,20 +36,19 @@
             </form>
             <style>.layui-table td, .layui-table th{text-align: center}</style>
             <xblock>
-                <in name="Think.session.roleid" value="$role_ids">
-                    <button class="layui-btn"  onclick="admin_add('添加商品','/Home/Goods/add','680','650')">
+                <in name="action_name.Goods_add" value="$role_ac">
+                    <button class="layui-btn"  onclick="admin_add('添加商品','/Home/Goods/add','680','650')" style="width: 125px;font-size: 16px">
                     <i class="layui-icon">&#xe608;</i> 添 加
                     </button>
                 <else/>
-                    <button class="layui-btn layui-btn-disabled">
+                    <button class="layui-btn layui-btn-disabled-button">
                     <i class="layui-icon">&#xe608;</i> 添 加
                     </button>
                 </in>
-                <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px;padding: 2px 4px"  href="/Home/Goods/index" title="首页">
-                    <img src="/Public/Home/images/indexw.png" style="vertical-align: baseline;width: 27px;height: 27px">
-                    </a>
-                    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
-                <!--&lt;!&ndash;<span class="x-right" style="line-height:40px">共有数据：{$count} 条</span>-->
+                <!--<a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px;padding: 2px 4px"  href="/Home/Goods/index" title="首页">-->
+                    <!--<img src="/Public/Home/images/indexw.png" style="vertical-align: baseline;width: 27px;height: 27px">-->
+                    <!--</a>-->
+                    <!--<a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>-->
                 </xblock>
             <table class="layui-table">
                 <thead>
@@ -135,8 +134,15 @@
                             <td>
                                 {$v.create_time|date="Y-m-d",###}
                             </td>
+                            <style>
+                                .layui-btn-disabled-button{
+                                    cursor:not-allowed;
+                                    opacity:1;
+                                }
+                                
+                            </style>
                             <td class="td-manage">
-                                <in name="Think.session.roleid" value="$role_ids">
+                                <in name="action_name.Goods_stop" value="$role_ac">
                                     <if condition="$v['status'] eq '1' ">
                                         <a style="text-decoration:none" onclick="admin_stop(this,'{$v.goodsid}')" href="javascript:;" title="下架">
                                             <i class="layui-icon">&#xe601;</i>
@@ -147,25 +153,25 @@
                                         </a>
                                     </if>
                                 <else/>
-                                    <a style="text-decoration:none;border: 0" href="javascript:;" class="layui-btn-disabled" title="上架">
+                                    <a style="text-decoration:none;" href="javascript:;" class="layui-btn-disabled-button" title="上架">
                                         <i class="layui-icon">&#xe62f;</i>
                                     </a>
                                 </in>
-                                <in name="Think.session.roleid" value="$role_ids">
+                                <in name="action_name.Goods_edit" value="$role_ac">
                                     <a title="编辑" href="javascript:;" onclick="admin_edit('编辑','/Home/Goods/edit','{$v.goodsid}','680','650')" class="ml-5" style="text-decoration:none;margin-left: 10px">
                                         <i class="layui-icon">&#xe642;</i>
                                     </a>
                                 <else/>
-                                   <a title="编辑" href="javascript:;" class="ml-5 layui-btn-disabled" style="text-decoration:none;margin-left: 10px;border: 0">
+                                   <a title="编辑" href="javascript:;" class="ml-5 layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px;border: 0">
                                         <i class="layui-icon">&#xe642;</i>
                                     </a>
                                 </in>
-                                <in name="Think.session.roleid" value="$role_ids">
+                                <in name="action_name.Goods_del" value="$role_ac">
                                     <a title="删除" href="javascript:;" onclick="admin_del(this,'{$v.goodsid}')" style="text-decoration:none;margin-left: 10px">
                                         <i class="layui-icon">&#xe640;</i>
                                     </a>
                                 <else/>
-                                   <a title="删除" href="javascript:;" class="layui-btn-disabled"  style="text-decoration:none;margin-left: 10px;border: 0">
+                                   <a title="删除" href="javascript:;" class="layui-btn-disabled-button"  style="text-decoration:none;margin-left: 10px;border: 0">
                                         <i class="layui-icon">&#xe640;</i>
                                     </a>
                                 </in>
@@ -253,28 +259,6 @@
                 });
             }
             
-            /*商品添加到cookie*/
-            function add_goods(obj,goodsid,goodsname) {
-                    $.ajax({
-                        type: 'POST',
-                        url: 'add_goods',
-                        dataType: 'json',
-                        data:{'goodsid':goodsid,'goodsname':goodsname},
-                        success: function(data){
-                            if(data.statu == 200){
-                                layer.msg(data.msg,{icon: 5,time:1000});
-                            }else{
-                                layer.msg(data.msg);
-                                return false;
-                            }
-                        },
-                        error:function(data) {
-                            layer.msg('系统错误');
-                        },
-                    });
-            }
-            
-
             /*启用*/
             function admin_start(obj,id){
                 layer.confirm('确认要上架吗？',function(index){
@@ -336,6 +320,7 @@
                     title: '商品图片',
                     type: 0,
                     area: [w, h], //宽高
+                    shadeClose: true,
                     content: '<img  src="'+urlimg+'" width="960px" height="540px"  alt="">'
                 });
             }

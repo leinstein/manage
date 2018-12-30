@@ -12,11 +12,12 @@ class CustomerModel extends Model
      * anthor liu
      * 客户统计信息
      */
-    Public function statistical(){
+    Public function statistical($group = 'null'){
         $customer = M('Customer');
         $where['delete'] = 1;
         $userid = $_SESSION['userid'];
-        if($userid != 1) $where['saleid'] = $userid;
+        if($_SESSION['username'] != 'admin' and $group == 'null') $where_order['saleid'] = $userid;
+        if($_SESSION['username'] != 'admin' and $group == 'group') $where['itemid'] = $_SESSION['groupid'];
         //获取今天00:00时间戳
         $todaystart = strtotime(date('Y-m-d'.'00:00:00',time()));
         //获取今天24:00时间戳
@@ -36,18 +37,17 @@ class CustomerModel extends Model
         $statistical['yesterday'] = $customer->where($yesterday)->where($where)->count();
 
         //获取本周00:00时间戳
-        $startthisweek=mktime(0,0,0,date('m'),date('d')-date('w')+1,date('Y'));
+        $startthisweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-7,date('Y'));
         //获取本周23:59时间戳
-        $endToday=mktime(23,59,59,date('m'),date('d')-date('w')+7,date('Y'));
+        $endToday=mktime(23,59,59,date('m'),date('d')-date('w'),date('Y'));
         //统计本周注册的用户
         $weekday['create_time'] = ['between',[$startthisweek,$endToday]];
         //获取本周添加客户数
         $statistical['weekday'] = $customer->where($weekday)->where($where)->count();
 
-        //获取上周00:00时间戳
-        $beginLastweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-7,date('Y'));
+        $beginLastweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-14,date('Y'));
         //获取上周23:59时间戳
-        $endLastweek=mktime(23,59,59,date('m'),date('d')-date('w')+7-7,date('Y'));
+        $endLastweek=mktime(23,59,59,date('m'),date('d')-date('w')-7,date('Y'));
         //统计上周注册的用户
         $lastweek['create_time'] = ['between',[$beginLastweek,$endLastweek]];
         //获取上周添加客户数

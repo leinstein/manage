@@ -13,12 +13,24 @@
         <meta name="format-detection" content="telephone=no">
         <link rel="stylesheet" href="/Public/Home/css/x-admin.css" media="all">
     </head>
+    <style>
+        .layui-btn-disabled-button{
+            cursor:not-allowed;
+            opacity:1;
+        }
+    </style>
     <body>
         <div class="x-body">
-            <xblock><button class="layui-btn" onclick="role_add('添加角色','add.html','500','400')"><i class="layui-icon">&#xe608;</i>添加</button>
-            <div class="layui-input-inline">
-                <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 200px"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
-            </div>
+            <xblock>
+                  <in name="action_name.Role_add" value="$role_ac">
+                    <button class="layui-btn" onclick="role_add('添加角色','/Home/Role/add','500','400')"><i class="layui-icon">&#xe608;</i>添加</button>
+                  <else />
+                    <button class="layui-btn layui-btn-disabled-button"><i class="layui-icon">&#xe608;</i>添加</button>
+                  </in>
+                
+            <!--<div class="layui-input-inline">-->
+                <!--<a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 200px"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>-->
+            <!--</div>-->
             <table class="layui-table">
                 <thead>
                     <tr>
@@ -49,18 +61,36 @@
                                 {$v.description}
                             </td>
                             <td class="td-manage">
-                                <a title="分配权限" href="javascript:;" onclick="role_distribution('分配权限','distribution.html','1000','700','{$v.id}')"
-                                   class="ml-5" style="text-decoration:none;margin-left: 10px">
-                                    <i class="layui-icon">&#xe614;</i>
-                                </a>
-                                <a title="编辑" href="javascript:;" onclick="role_edit('编辑','edit','{$v.id}','510','400')"
-                                class="ml-5" style="text-decoration:none;margin-left: 10px">
-                                    <i class="layui-icon">&#xe642;</i>
-                                </a>
-                                <a title="删除" href="javascript:;" onclick="role_del(this,'{$v.id}')"
-                                style="text-decoration:none;margin-left: 10px">
-                                    <i class="layui-icon">&#xe640;</i>
-                                </a>
+                                <in name="action_name.Role_distribution" value="$role_ac">
+                                    <a title="分配权限" href="javascript:;" onclick="role_distribution('分配权限','/Home/Role/distribution','1000','700','{$v.id}')"
+                                       class="ml-5" style="text-decoration:none;margin-left: 10px">
+                                        <i class="layui-icon">&#xe614;</i>
+                                    </a>
+                                  <else />
+                                    <a title="分配权限" href="javascript:;"  class="ml-5 layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                                        <i class="layui-icon">&#xe614;</i>
+                                    </a>
+                                </in>
+                                <in name="action_name.Role_edit" value="$role_ac">
+                                    <a title="编辑" href="javascript:;" onclick="role_edit('编辑','/Home/Role/edit','{$v.id}','510','400')"
+                                       class="ml-5" style="text-decoration:none;margin-left: 10px">
+                                        <i class="layui-icon">&#xe642;</i>
+                                    </a>
+                                  <else />
+                                    <a title="编辑" href="javascript:;"  class="ml-5 layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                                        <i class="layui-icon">&#xe642;</i>
+                                    </a>
+                                </in>
+                                 <in name="action_name.Role_del" value="$role_ac">
+                                    <a title="删除" href="javascript:;" onclick="role_del(this,'{$v.id}')"
+                                       style="text-decoration:none;margin-left: 10px">
+                                        <i class="layui-icon">&#xe640;</i>
+                                    </a>
+                                  <else />
+                                    <a title="删除" href="javascript:;" class="ml-5 layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                                        <i class="layui-icon">&#xe640;</i>
+                                    </a>
+                                </in>
                             </td>
                         </tr>
                     </foreach>
@@ -72,11 +102,9 @@
         <script src="/Public/Home/lib/layui/layui.js" charset="utf-8"></script>
         <script src="/Public/Home/js/x-layui.js" charset="utf-8"></script>
         <script>
-            layui.use(['laydate','element','laypage','layer'], function(){
+            layui.use(['element','layer'], function(){
                 $ = layui.jquery;//jquery
-              laydate = layui.laydate;//日期插件
               lement = layui.element();//面包导航
-              laypage = layui.laypage;//分页
               layer = layui.layer;//弹出层
 
               //以上模块根据需要引入
@@ -88,7 +116,7 @@
                     var role_id = id;
                     $.ajax({
                         type: 'POST',
-                        url: 'del',
+                        url: '/Home/Role/del',
                         dataType: 'json',
                         data:{'role_id':role_id},
                         success: function(data){
@@ -123,15 +151,6 @@
                 url = url+'?role_id='+id;
                 x_admin_show(title,url,w,h);
             }
-            </script>
-            <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
         </script>
     </body>
 </html>

@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/Public/Home/css/font.css">
     <link rel="stylesheet" href="/Public/Home/css/xadmin.css">
-    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/Public/Home/js/jquery.min.js"></script>
     <script type="text/javascript" src="/Public/Home/lib2/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="/Public/Home/js/xadmin.js"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
@@ -59,7 +59,7 @@
             <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 10px;padding: 2px 4px"  href="/Home/Funds/index" title="首页">
             <img src="/Public/Home/images/indexw.png" style="vertical-align: baseline;width: 27px;height: 27px">
             </a>
-            <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
+            <!--<a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>-->
         </div>
         <span class="x-right" style="line-height:40px">全部：
             <a title="订单 / 销售额"  href="/Home/Order/index?day=history">
@@ -107,6 +107,12 @@
                 height: 20px;
                 line-height: 20px;
                 width: 20px;
+            }
+        </style>
+        <style>
+            .layui-btn-disabled-button{
+                cursor:not-allowed;
+                opacity:1;
             }
         </style>
       <style>.layui-table td, .layui-table th{text-align: center;}</style>
@@ -185,12 +191,24 @@
               <td><if condition="$v['reciivingtime'] neq 0">{$v.reciivingtime|date="Y-m-d",###}</if></td>
               <td>{$v.nickname}</td>
               <td class="td-manage">
-                <a title="查看"  onclick="x_admin_show('查看','/Home/Order/show?orderid={$v.orderid}',1200,700)" href="javascript:;" style="margin-right: 10px">
-                  <i class="layui-icon"   style="vertical-align: baseline;width: 13px">&#xe63c;</i>
-                </a>
-                <a title="财务" href="javascript:;" onclick="x_admin_show('财务','/Home/Funds/update_order?orderid={$v.orderid}',800,400)" class="ml-5" style="margin-right: 10px">
-                  <img src="/Public/Home/images/caiwu.png" style="vertical-align: baseline;width: 14px;height: 14px">
-                </a>
+                  <in name="action_name.Order_show" value="$role_ac">
+                        <a title="查看"  onclick="x_admin_show('查看','/Home/Order/show?orderid={$v.orderid}',1200,700)" href="javascript:;" style="margin-right: 10px">
+                          <i class="layui-icon"   style="vertical-align: baseline;width: 13px">&#xe63c;</i>
+                        </a>
+                  <else />
+                        <a title="查看"  href="javascript:;" class="layui-btn-disabled-button" style="margin-right: 10px">
+                          <i class="layui-icon"   style="vertical-align: baseline;width: 13px">&#xe63c;</i>
+                        </a>
+                  </in>
+                  <in name="action_name.Funds_update_order" value="$role_ac">
+                        <a title="财务" href="javascript:;" onclick="x_admin_show('财务','/Home/Funds/update_order?orderid={$v.orderid}',800,400)" class="ml-5" style="margin-right: 10px">
+                          <img src="/Public/Home/images/caiwu.png" style="vertical-align: baseline;width: 14px;height: 14px">
+                        </a>
+                  <else />
+                        <a title="财务" href="javascript:;"  class="ml-5 layui-btn-disabled-button" style="margin-right: 10px">
+                          <img src="/Public/Home/images/caiwu.png" style="vertical-align: baseline;width: 14px;height: 14px">
+                        </a>
+                  </in>
               </td>
             </tr>
           </foreach>
@@ -249,12 +267,24 @@
               <td><if condition="$v['reciivingtime'] neq 0">{$v.reciivingtime|date="Y-m-d",###}</if></td>
               <td>{$v.nickname}</td>
               <td class="td-manage">
-                <a title="查看"  onclick="x_admin_show('查看','/Home/Order/show?orderid={$v.orderid}',1200,700)" href="javascript:;" style="margin-right: 10px">
-                  <i class="layui-icon"   style="vertical-align: baseline;width: 13px">&#xe63c;</i>
-                </a>
-                <a title="财务" href="javascript:;" onclick="x_admin_show('财务','/Home/Funds/update_order?orderid={$v.orderid}',800,400)" class="ml-5" style="margin-right: 10px">
-                  <img src="/Public/Home/images/caiwu.png" style="vertical-align: baseline;width: 14px;height: 14px">
-                </a>
+                    <in name="action_name.Order_show" value="$role_ac">
+                        <a title="查看"  onclick="x_admin_show('查看','/Home/Order/show?orderid={$v.orderid}',1200,700)" href="javascript:;" style="margin-right: 10px">
+                          <i class="layui-icon"   style="vertical-align: baseline;width: 13px">&#xe63c;</i>
+                        </a>
+                  <else />
+                        <a title="查看"  href="javascript:;" class="layui-btn-disabled-button" style="margin-right: 10px">
+                          <i class="layui-icon"   style="vertical-align: baseline;width: 13px">&#xe63c;</i>
+                        </a>
+                  </in>
+                  <in name="action_name.Funds_update_order" value="$role_ac">
+                        <a title="财务" href="javascript:;" onclick="x_admin_show('财务','/Home/Funds/update_order?orderid={$v.orderid}',800,400)" class="ml-5" style="margin-right: 10px">
+                          <img src="/Public/Home/images/caiwu.png" style="vertical-align: baseline;width: 14px;height: 14px">
+                        </a>
+                  <else />
+                        <a title="财务" href="javascript:;"  class="ml-5 layui-btn-disabled-button" style="margin-right: 10px">
+                          <img src="/Public/Home/images/caiwu.png" style="vertical-align: baseline;width: 14px;height: 14px">
+                        </a>
+                  </in>
               </td>
             </tr>
           </foreach>
@@ -309,12 +339,24 @@
               <td><if condition="$v['reciivingtime'] neq 0">{$v.reciivingtime|date="Y-m-d",###}</if></td>
               <td>{$v.nickname}</td>
               <td class="td-manage">
-                <a title="查看"  onclick="x_admin_show('查看','/Home/Order/show?orderid={$v.orderid}',1200,700)" href="javascript:;" style="margin-right: 10px">
-                  <i class="layui-icon"   style="vertical-align: baseline;width: 13px">&#xe63c;</i>
-                </a>
-                <a title="财务" href="javascript:;" onclick="x_admin_show('财务','/Home/Funds/update_order?orderid={$v.orderid}',800,400)" class="ml-5" style="margin-right: 10px">
-                  <img src="/Public/Home/images/caiwu.png" style="vertical-align: baseline;width: 14px;height: 14px">
-                </a>
+                    <in name="action_name.Order_show" value="$role_ac">
+                        <a title="查看"  onclick="x_admin_show('查看','/Home/Order/show?orderid={$v.orderid}',1200,700)" href="javascript:;" style="margin-right: 10px">
+                          <i class="layui-icon"   style="vertical-align: baseline;width: 13px">&#xe63c;</i>
+                        </a>
+                  <else />
+                        <a title="查看"  href="javascript:;" class="layui-btn-disabled-button" style="margin-right: 10px">
+                          <i class="layui-icon"   style="vertical-align: baseline;width: 13px">&#xe63c;</i>
+                        </a>
+                  </in>
+                  <in name="action_name.Funds_update_order" value="$role_ac">
+                        <a title="财务" href="javascript:;" onclick="x_admin_show('财务','/Home/Funds/update_order?orderid={$v.orderid}',800,400)" class="ml-5" style="margin-right: 10px">
+                          <img src="/Public/Home/images/caiwu.png" style="vertical-align: baseline;width: 14px;height: 14px">
+                        </a>
+                  <else />
+                        <a title="财务" href="javascript:;"  class="ml-5 layui-btn-disabled-button" style="margin-right: 10px">
+                          <img src="/Public/Home/images/caiwu.png" style="vertical-align: baseline;width: 14px;height: 14px">
+                        </a>
+                  </in>
               </td>
             </tr>
           </foreach>
@@ -398,12 +440,5 @@
         });
       }
     </script>
-    <script>var _hmt = _hmt || []; (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-      })();</script>
   </body>
-
 </html>

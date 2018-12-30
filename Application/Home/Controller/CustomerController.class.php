@@ -40,7 +40,8 @@ class CustomerController extends HomeController {
         $list = $customer->where($where)->order('cid desc')->limit($page->firstRow . ',' . $page->listRows)->select();
 
         $admininfo = M('Admin')->select();
-        $roleinfo = M('Role')->select();
+//        $roleinfo = M('Role')->select();
+        $group = M('Group')->select();
         $address = M('Address');
         foreach ($list as $v) {
             //销售人员姓名
@@ -50,9 +51,9 @@ class CustomerController extends HomeController {
                 }
             }
             //销售人员所在分组
-            foreach ($roleinfo as $vv){
-                if($v['itemid'] == $vv['id']){
-                    $v['item_name'] = $vv['name'];
+            foreach ($group as $vv){
+                if($v['itemid'] == $vv['group_id']){
+                    $v['item_name'] = $vv['group_name'];
                 }
             }
             $add = $address->where(['addressid'=>$v['address_id']])->find();
@@ -75,13 +76,22 @@ class CustomerController extends HomeController {
                 $infot[] = $v;
             }
         }
-        $this->assign('statistical', $statistical);
-        $this->assign('infotoday', $infotoday);
-        $this->assign('infoyestoday', $infoyestoday);
-        $this->assign('infot', $infot);
-        $this->assign('count', $count);
-        $this->assign('page', $show);
-        $this->assign('firstRow', $page->firstRow);
+        //权限按钮
+        $role = M('Role')->where(['id'=>$_SESSION['roleid']])->find();
+        $role_ac = $role['role_auth_ac'];
+        $action_name = get_action_name($role_ac);
+
+        $this->assign([
+            'statistical'=> $statistical,
+            'infotoday'=>$infotoday,
+            'infoyestoday'=>$infoyestoday,
+            'infot'=>$infot,
+            'count'=>$count,
+            'page'=>$show,
+            'firstRow'=>$page->firstRow,
+            'role_ac'=> $role_ac,
+            'action_name'=>$action_name
+        ]);
         $this->display();
 
     }
@@ -98,6 +108,7 @@ class CustomerController extends HomeController {
             $goods = M('Goods');
             $goodsdata = $goods->select();
             $data['saleid'] = session('userid');
+            $data['projectid'] = session('groupid');
             //快递ID
             $data['address_id'] = $_POST['address_id'];
             //优惠金额
@@ -242,6 +253,7 @@ class CustomerController extends HomeController {
                 $cdata['name'] = $_POST['name'];
                 $cdata['phone'] = $_POST['phone'];
                 $cdata['saleid'] = session('userid');
+                $cdata['itemid'] = session('groupid');
                 $cdata['sex'] = $_POST['sex'];
                 $cdata['c_weixin'] = $_POST['c_weixin'];
                 $cdata['a_weixin'] = $_POST['a_weixin'];
@@ -362,7 +374,6 @@ class CustomerController extends HomeController {
      * 11:18
      * anthor liu
      * 商品加入清单
-     *                           作废
      */
     Public function goods_add_card(){
         if(IS_POST){
@@ -450,13 +461,29 @@ class CustomerController extends HomeController {
             }
         }
         $statistical = D('Customer')->statistical_backlog();
-        $this->assign('statistical', $statistical);
-        $this->assign('infotoday', $infotoday);
-        $this->assign('infoyestoday', $infoyestoday);
-        $this->assign('infot', $infot);
-        $this->assign('count', $count);
-        $this->assign('page', $show);
-        $this->assign('firstRow', $page->firstRow);
+
+        //权限按钮
+        $role = M('Role')->where(['id'=>$_SESSION['roleid']])->find();
+        $role_ac = $role['role_auth_ac'];
+        $action_name = get_action_name($role_ac);
+        $this->assign([
+            'statistical'=> $statistical,
+            'infotoday'=> $infotoday,
+            'infoyestoday'=> $infoyestoday,
+            'infot'=> $infot,
+            'count'=> $count,
+            'page'=> $show,
+            'firstRow'=> $page->firstRow,
+            'role_ac'=> $role_ac,
+            'action_name'=>$action_name
+        ]);
+//        $this->assign('statistical', $statistical);
+//        $this->assign('infotoday', $infotoday);
+//        $this->assign('infoyestoday', $infoyestoday);
+//        $this->assign('infot', $infot);
+//        $this->assign('count', $count);
+//        $this->assign('page', $show);
+//        $this->assign('firstRow', $page->firstRow);
         $this->display();
     }
 

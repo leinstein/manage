@@ -12,13 +12,13 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="format-detection" content="telephone=no">
         <link rel="stylesheet" href="/Public/Home/css/x-admin.css" media="all">
-        <!--<link rel="stylesheet" href="/Public/Home/lib/layui/css/layui.css" media="all">-->
+        <link rel="stylesheet" href="/Public/Home/lib2/layui/css/layui.css" media="all">
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     </head>
     <body>
         <div class="layui-layout layui-layout-admin">
             <div class="layui-header header header-demo">
-                <div class="layui-main">
+                <div class="layui-main" style="min-width: 1142px">
                     <style>
                         .logo{
                             font-size: 24px;
@@ -61,16 +61,22 @@
                             margin-left: 12%;
                         }
                         #span{
-                            display: inline-block;
-                            width: 35%;
-                            margin-left: 20%;
+                            position:absolute;/*设定水平和垂直偏移父元素的50%，再根据实际长度将子元素上左挪回一半大小*/
+                            left:50%;
+                            top: 50%;
+                            margin-left: -300px;
+                            margin-top: -28px;
+                            width: 600px;
+                            /*width: 100%;*/
+                            /*min-width: 1036px;*/
+                            /*margin-left: 20%;*/
+                            /*margin: 0 auto;*/
                             height: 60px;
-                            margin-top: -10px;
                             vertical-align: middle;
                             line-height: 56px;
                         }
                         #span img{
-                            margin-left: 9%;
+                            margin-left: 50px;
                             height: 15px;
                         }
                         #span .number{
@@ -79,15 +85,32 @@
                             font-weight: bold;
                             font-style: italic;
                         }
+                        #aotu_content{
+                            /*display: inline-block;*/
+                            /*width: 600px;*/
+                            /*margin: 0 auto;*/
+                        }
+                        .logo{
+                            margin-left: 2px;
+                        }
+                        #crm{
+                            display: inline-block;
+                            padding: 0 2px 0 5px;
+                        }
                     </style>
                     <a class="logo" href="">
-                       风暴<font style="font-size: 26px"><i> CRM </i></font>管理系统
+                        <img src="/Public/Home/images/logo.png" style="height: 32px;display: inline-block;margin-top: -9px">
+                       <font style="font-size: 26px"><i>风暴<div id="crm">CRM</div>管理系统</i></font>
                     </a>
                     <if condition="$aim_this_month['aim'] neq 'aim'">
                         <span id="span">
-                            <img src="/Public/Home/images/mubiao.png"> 任务目标：<div class="number">{$aim_this_month.aim}</div>
-                            <img src="/Public/Home/images/read.png"> 已完成：<div class="number">{$aim_this_month.complete|substr=###,0,-3}</div>
-                            <img src="/Public/Home/images/avg.png"> 完成进度：<div class="number">{$aim_this_month.avg}</div>
+                            <!--<div id="aotu_content">-->
+                                <img src="/Public/Home/images/mubiao.png"> 任务目标：<div class="number">{$aim_this_month.aim}</div>
+                                <img src="/Public/Home/images/read.png"> 已完成：<div class="number">{$aim_this_month.complete|substr=###,0,-3}</div>
+                                <img src="/Public/Home/images/avg.png"> 完成进度：<div class="number">{$aim_this_month.avg}</div>
+                            <!--</div>-->
+                            
+                            
                         </span>
                     </if>
                     <ul class="layui-nav" lay-filter="side">
@@ -104,7 +127,7 @@
                             <a href="javascript:;">{$Think.session.nickname}</a>
                             <dl class="layui-nav-child"> <!-- 二级菜单 -->
                               <dd><a href="javascript:;" _href="Home/System/index"><cite>个人信息</cite></a></dd>
-                              <dd><a href="{:U('Manage/logout')}"><cite>退出</cite></a></dd>
+                              <a href="{:U('Manage/logout')}"><cite>退出</cite></a>
                             </dl>
                           </li>
                     </ul>
@@ -131,7 +154,7 @@
                                 </dl>
                             </li>
                         </foreach>
-                        <li class="layui-nav-item" style="height: 30px; text-align: center">
+                        <!--<li class="layui-nav-item" style="height: 30px; text-align: center">-->
                         </li>
                     </ul>
                 </div>
@@ -154,8 +177,6 @@
             </div>
         </div>
         <script src="/Public/Home/lib/layui/layui.js" charset="utf-8"></script>
-        
         <script src="/Public/Home/js/x-admin.js"></script>
-       
 </body>
 </html>

@@ -98,3 +98,34 @@ function get_area($ip = ''){
     $arr = json_decode($ret,true);
     return $arr;
 }
+
+/**
+ * @param $controller
+ * @param $role_ac
+ * 2018/12/29
+ * 9:12
+ *
+ * @return mixed
+ * anthor liu
+ * 获取方法名称
+ */
+function get_action_name($role_ac){
+    $role_ac_arr = explode(',',$role_ac);
+    foreach ($role_ac_arr as $c){
+            $action =  explode('-',$c);
+            $action = $action[0] . '_' .$action[1];
+            $action_name[$action] = $c;
+    }
+    return $action_name;
+//    $count_controller = strlen($controller);
+//    $role_ac_arr = explode(',',$role_ac);
+//    foreach ($role_ac_arr as $c){
+//        $controller_str = substr($c,0,$count_controller);
+//        if($controller_str == $controller){
+//            $action =  explode('-',$c);
+//            $action = $action[1];
+//            $action_name[$action] = $c;
+//        }
+//    }
+//    return $action_name;
+}

@@ -72,9 +72,7 @@
                       <div class="layui-input-inline">
                           <select name="type_id" id="type">
                               <option value="">请选择类型</option>
-                              <foreach name="pic_type" item="vv">
-                                  <option value="{$v.id}">{$vv.type}</option>
-                              </foreach>
+                             
                           </select>
                       </div>
                 </div>
@@ -159,8 +157,7 @@
 
                         $("#type").html('<option value="">请选择类型</option>' + optionstring);
 
-                        form.render('select'); //这个很重要
-
+                        form.render('select');
                     });
 
                 });
@@ -228,15 +225,5 @@
                 });
             }
         </script>
-        <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-        </script>
     </body>
-
 </html>

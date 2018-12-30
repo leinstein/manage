@@ -12,12 +12,14 @@ class OrderModel extends Model
      * anthor liu
      * 按日期统计数据
      */
-    Public function statistical(){
+    Public function statistical($group = 'null'){
         $order = M('Order');
         $where['orderstatus'] =['neq',4]; //不计算退单
         $where['delete'] = 1; //删除的订单不计算
         $userid = $_SESSION['userid'];
-        if($userid != 1) $where['saleid'] = $userid;
+        if($_SESSION['username'] != 'admin' and $group == 'null') $where_order['saleid'] = $userid;
+        if($_SESSION['username'] != 'admin' and $group == 'group') $where['projectid'] = $_SESSION['groupid'];
+
         //获取今天00:00时间戳
         $todaystart = strtotime(date('Y-m-d'.'00:00:00',time()));
         //获取今天24:00时间戳
@@ -45,9 +47,9 @@ class OrderModel extends Model
             ->find();
 
         //获取本周00:00时间戳
-        $startthisweek=mktime(0,0,0,date('m'),date('d')-date('w')+1,date('Y'));
+        $startthisweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-7,date('Y'));
         //获取本周23:59时间戳
-        $endToday=mktime(23,59,59,date('m'),date('d')-date('w')+7,date('Y'));
+        $endToday=mktime(23,59,59,date('m'),date('d')-date('w'),date('Y'));
         //统计本周订单
         $weekday['ordercreatetime'] = ['between',[$startthisweek,$endToday]];
         //获取本周添加订单数
@@ -57,10 +59,9 @@ class OrderModel extends Model
             ->where($where)
             ->find();
 
-        //获取上周00:00时间戳
-        $beginLastweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-7,date('Y'));
+        $beginLastweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-14,date('Y'));
         //获取上周23:59时间戳
-        $endLastweek=mktime(23,59,59,date('m'),date('d')-date('w')+7-7,date('Y'));
+        $endLastweek=mktime(23,59,59,date('m'),date('d')-date('w')-7,date('Y'));
         //统计上周订单
         $lastweek['ordercreatetime'] = ['between',[$beginLastweek,$endLastweek]];
         //获取上周添加订单数
@@ -102,6 +103,130 @@ class OrderModel extends Model
         $endthisyear=mktime(23,59,59,12,31,date('Y'));
         //统计今年订单
         $year['ordercreatetime'] = ['between',[$beginthisyear,$endthisyear]];
+        //获取今年添加订单数
+        $statistical_info[] = $order
+            ->field('count(orderid) as year,sum(orderprice) as year_order')
+            ->where($year)
+            ->where($where)
+            ->find();
+
+        //历史订单数
+        $statistical_info[] = $order
+            ->field('count(orderid) as history,sum(orderprice) as history_order')
+            ->where($where)
+            ->find();
+
+        $statistical = [];
+        foreach ($statistical_info as $v){
+            $statistical = array_merge($statistical,$v);
+        }
+        $statistical['today_order'] = isset($statistical['today_order']) ? $statistical['today_order'] : '0000';
+        $statistical['yesterday_order'] = isset($statistical['yesterday_order']) ? $statistical['yesterday_order'] : '0000';
+        $statistical['week_order'] = isset($statistical['week_order']) ? $statistical['week_order'] : '0000';
+        $statistical['lastweek_order'] = isset($statistical['lastweek_order']) ? $statistical['lastweek_order'] : '0000';
+        $statistical['month_order'] = isset($statistical['month_order']) ? $statistical['month_order'] : '0000';
+        $statistical['lastmonth_order'] = isset($statistical['lastmonth_order']) ? $statistical['lastmonth_order'] : '0000';
+        $statistical['year_order'] = isset($statistical['year_order']) ? $statistical['year_order'] : '0000';
+        $statistical['history_order'] = isset($statistical['history_order']) ? $statistical['history_order'] : '0000';
+
+        return $statistical;
+    }
+
+    /**
+     * 2018/12/30
+     * 15:29
+     * @return array
+     * anthor liu
+     * 客户服务统计
+     */
+    Public function statistical_server(){
+        $order = M('Order');
+        $where['orderstatus'] =3; //不计算退单
+        $where['delete'] = 1; //删除的订单不计算
+
+        //获取今天00:00时间戳
+        $todaystart = strtotime(date('Y-m-d'.'00:00:00',time()));
+        //获取今天24:00时间戳
+        $todayend = strtotime(date('Y-m-d'.'00:00:00',time()+3600*24));
+        //where条件
+        $today['reciivingtime'] = ['between',[$todaystart,$todayend]];
+        //获取今天添加订单数
+        $statistical_info[] = $order
+            ->field('count(orderid) as today,sum(orderprice) as today_order')
+            ->where($today)
+            ->where($where)
+            ->find();
+
+        //获取昨天00:00时间戳
+        $beginYesterday=mktime(0,0,0,date('m'),date('d')-1,date('Y'));
+        //获取昨天24:00时间戳
+        $endYesterday=mktime(0,0,0,date('m'),date('d'),date('Y'))-1;
+        //统计昨天订单
+        $yesterday['reciivingtime'] = ['between',[$beginYesterday,$endYesterday]];
+        //获取昨天添加订单数
+        $statistical_info[] = $order
+            ->field('count(orderid) as yesterday,sum(orderprice) as yesterday_order')
+            ->where($yesterday)
+            ->where($where)
+            ->find();
+
+        //获取本周00:00时间戳
+        $startthisweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-7,date('Y'));
+        //获取本周23:59时间戳
+        $endToday=mktime(23,59,59,date('m'),date('d')-date('w'),date('Y'));
+        //统计本周订单
+        $weekday['reciivingtime'] = ['between',[$startthisweek,$endToday]];
+        //获取本周添加订单数
+        $statistical_info[] = $order
+            ->field('count(orderid) as weekday,sum(orderprice) as week_order')
+            ->where($weekday)
+            ->where($where)
+            ->find();
+
+        $beginLastweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-14,date('Y'));
+        //获取上周23:59时间戳
+        $endLastweek=mktime(23,59,59,date('m'),date('d')-date('w')-7,date('Y'));
+        //统计上周订单
+        $lastweek['reciivingtime'] = ['between',[$beginLastweek,$endLastweek]];
+        //获取上周添加订单数
+        $statistical_info[] = $order
+            ->field('count(orderid) as lastweek,sum(orderprice) as lastweek_order')
+            ->where($lastweek)
+            ->where($where)
+            ->find();
+
+        //获取本月00:00时间戳
+        $beginThismonth=mktime(0,0,0,date('m'),1,date('Y'));
+        //获取本月23:59时间戳
+        $endThismonth=mktime(23,59,59,date('m'),date('t'),date('Y'));
+        //统计本月注册的订单
+        $month['reciivingtime'] = ['between',[$beginThismonth,$endThismonth]];
+        //获取本月添加订单数
+        $statistical_info[] = $order
+            ->field('count(orderid) as month,sum(orderprice) as month_order')
+            ->where($month)
+            ->where($where)
+            ->find();
+
+        //获取上月00:00时间戳
+        $beginlastmonth=mktime(0,0,0,date('m')-1,1,date('Y'));
+        //获取上月23:59时间戳
+        $endlastmonth=mktime(23,59,59,date('m')-1,date('t')-1,date('Y'));
+        //统计上月订单
+        $lastmonth['reciivingtime'] = ['between',[$beginlastmonth,$endlastmonth]];
+        //获取上月添加订单数
+        $statistical_info[] = $order
+            ->field('count(orderid) as lastmonth,sum(orderprice) as lastmonth_order')
+            ->where($lastmonth)
+            ->where($where)
+            ->find();
+
+        //获取今年00:00时间戳
+        $beginthisyear=mktime(0,0,0,1,1,date('Y'));
+        //获取今年23:59时间戳
+        $endthisyear=mktime(23,59,59,12,31,date('Y'));
+        //统计今年订单
+        $year['reciivingtime'] = ['between',[$beginthisyear,$endthisyear]];
         //获取今年添加订单数
         $statistical_info[] = $order
             ->field('count(orderid) as year,sum(orderprice) as year_order')
@@ -250,9 +375,9 @@ class OrderModel extends Model
      */
     Public function weekday(){
         //获取本周00:00时间戳
-        $startthisweek=mktime(0,0,0,date('m'),date('d')-date('w')+1,date('Y'));
+        $startthisweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-7,date('Y'));
         //获取本周23:59时间戳
-        $endToday=mktime(23,59,59,date('m'),date('d')-date('w')+7,date('Y'));
+        $endToday=mktime(23,59,59,date('m'),date('d')-date('w'),date('Y'));
         //统计本周订单
         $weekday = ['between',[$startthisweek,$endToday]];
         return $weekday;
@@ -266,9 +391,9 @@ class OrderModel extends Model
      */
     Public function lastweek(){
         //获取上周00:00时间戳
-        $beginLastweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-7,date('Y'));
+        $beginLastweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-14,date('Y'));
         //获取上周23:59时间戳
-        $endLastweek=mktime(23,59,59,date('m'),date('d')-date('w')+7-7,date('Y'));
+        $endLastweek=mktime(23,59,59,date('m'),date('d')-date('w')-7,date('Y'));
         //统计上周订单
         $lastweek = ['between',[$beginLastweek,$endLastweek]];
         return $lastweek;
@@ -329,17 +454,23 @@ class OrderModel extends Model
      * anthor liu
      * 退单率，退单数，退单金额...
      */
-    Public function return_rate_avg(){
+    Public function return_rate_avg($group='null'){
         $order = D('Order');
         //本月退单率/历史退单率/上月退单率
         $history['orderstatus']  = 4;
         $history['delete'] = $month_where['delete'] = $lastmonth_where['delete'] = $history_t['delete'] = 1;
         //如果是销售
         $userid = $_SESSION['userid'];
-        if($_SESSION['username'] != 'admin'){
+        $groupid = $_SESSION['groupid'];
+        if($_SESSION['username'] != 'admin' and $group == 'null'){
             $history['saleid'] = $history_t['saleid'] = $userid;
             $month_where['saleid'] = $userid;
             $lastmonth_where['saleid'] = $userid;
+        }
+        if($_SESSION['username'] != 'admin' and $group == 'group'){
+            $history['projectid'] = $history_t['projectid'] = $groupid;
+            $month_where['projectid'] = $groupid;
+            $lastmonth_where['projectid'] = $groupid;
         }
         $order_history = $order->where($history)->select();
         //获取本月00:00时间戳
@@ -1061,13 +1192,14 @@ class OrderModel extends Model
      * anthor liu
      * 按天统计业绩---本月
      */
-    Public function month_day_amount(){
+    Public function month_day_amount($group = 'null'){
         $order = D('Order');
         //获取统计数据
         $where_order['delete'] = 1;
         $where_order['orderstatus'] = ['neq',4];
         $userid = $_SESSION['userid'];
-        if($_SESSION['username'] != 'admin') $where_order['saleid'] = $userid;
+        if($_SESSION['username'] != 'admin' and $group == 'null') $where_order['saleid'] = $userid;
+        if($_SESSION['username'] != 'admin' and $group == 'group') $where_order['projectid'] = $_SESSION['groupid'];
 
         //初始化默认数据
         $where_order['ordercreatetime'] = $order->where_report('month');
@@ -1129,7 +1261,7 @@ class OrderModel extends Model
      * anthor liu
      * 按天统计顾客数---本月
      */
-    Public function month_day_customer(){
+    Public function month_day_customer($group='null'){
         $order = D('Order');
         $customer = D('Customer');
         //获取统计数据
@@ -1138,7 +1270,8 @@ class OrderModel extends Model
         //初始化默认数据
         $where['create_time'] = $order->where_report('month');
         $userid = $_SESSION['userid'];
-        if($_SESSION['username'] != 'admin') $where['saleid'] = $userid;
+        if($_SESSION['username'] != 'admin' and $group == 'null') $where['saleid'] = $userid;
+        if($_SESSION['username'] != 'admin' and $group == 'group') $where['itemid'] = $_SESSION['groupid'];
         $customer_info = $customer->where($where)->select();
 
         //统计
@@ -1182,13 +1315,14 @@ class OrderModel extends Model
      * anthor liu
      * 按天统计订单---上月
      */
-    Public function lastmonth_day_amount(){
+    Public function lastmonth_day_amount($group='null'){
         $order = D('Order');
         //获取统计数据
         $where_order['delete'] = 1;
         $where_order['orderstatus'] = ['neq',4];
         $userid = $_SESSION['userid'];
-        if($_SESSION['username'] != 'admin') $where_order['saleid'] = $userid;
+        if($_SESSION['username'] != 'admin' and $group == 'null') $where_order['saleid'] = $userid;
+        if($_SESSION['username'] != 'admin' and $group == 'group') $where['projectid'] = $_SESSION['groupid'];
         //初始化默认数据
         $where_order['ordercreatetime'] = $order->where_report('lastmonth');
         $order_info = $order->where($where_order)->select();
@@ -1246,7 +1380,7 @@ class OrderModel extends Model
      * anthor liu
      * 按天统计顾客数---上月
      */
-    Public function lastmonth_day_customer(){
+    Public function lastmonth_day_customer($group='null'){
         $order = D('Order');
         $customer = D('Customer');
         //获取统计数据
@@ -1255,7 +1389,8 @@ class OrderModel extends Model
         //初始化默认数据
         $where['create_time'] = $order->where_report('lastmonth');
         $userid = $_SESSION['userid'];
-        if($_SESSION['username'] != 'admin') $where['saleid'] = $userid;
+        if($_SESSION['username'] != 'admin' and $group == 'null') $where['saleid'] = $userid;
+        if($_SESSION['username'] != 'admin' and $group == 'group') $where['itemid'] = $_SESSION['groupid'];
         $customer_info = $customer->where($where)->select();
 
         //统计

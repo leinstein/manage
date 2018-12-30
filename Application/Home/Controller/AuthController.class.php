@@ -20,8 +20,18 @@ class AuthController extends HomeController{
             $infos[] = $v;
         }
         $count = $auth->count();//满足条件的数量
-        $this->assign('count', $count);
-        $this->assign('info', $infos);
+        //权限按钮
+        $role = M('Role')->where(['id'=>$_SESSION['roleid']])->find();
+        $role_ac = $role['role_auth_ac'];
+        $action_name = get_action_name($role_ac);
+        $this->assign([
+            'count'=> $count,
+            'info'=> $infos,
+            'role_ac'=> $role_ac,
+            'action_name'=>$action_name
+        ]);
+//        $this->assign('count', $count);
+//        $this->assign('info', $infos);
         $this->display();
     }
 

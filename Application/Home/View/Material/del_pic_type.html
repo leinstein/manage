@@ -22,7 +22,7 @@
                           <span class="x-red">*</span>分组
                       </label>
                       <div class="layui-input-inline">
-                          <select name="class_id">
+                          <select name="class_id" lay-filter="class_name">
                               <option value="">请选择分组</option>
                               <foreach name="class" item="v">
                                   <option value="{$v.id}">{$v.class_name}</option>
@@ -31,19 +31,24 @@
                       </div>
                 </div>
                 <div class="layui-form-item">
-                      <label for="class_name" class="layui-form-label">
-                          <span class="x-red">*</span>素材类型
+                      <label for="type" class="layui-form-label">
+                          <span class="x-red">*</span>类型
                       </label>
                       <div class="layui-input-inline">
-                          <input type="text" id="type"  name="type" value="" required=""
-                                 autocomplete="off" class="layui-input" style="width: 300px">
+                          <select name="type_id" id="type">
+                              <option value="">请选择类型</option>
+                             
+                          </select>
+                      </div>
+                     <div class="layui-form-mid layui-word-aux">
+                        删除类型及类型中所有素材
                       </div>
                 </div>
                 <div class="layui-form-item">
                     <label for="L_repass" class="layui-form-label">
                     </label>
-                    <button  class="layui-btn" lay-filter="add" lay-submit="">
-                        增加
+                    <button  class="layui-btn layui-btn-danger" lay-filter="add" lay-submit="">
+                        删除
                     </button>
                 </div>
             </form>
@@ -59,14 +64,31 @@
                 var form = layui.form()
                     ,layer = layui.layer;
 
+                form.on('select(class_name)', function(data){
 
+                    $.getJSON("/Home/Material/type_add?id="+data.value, function(data){
+
+                        var optionstring = "";
+
+                        $.each(data.msg, function(i,item){
+
+                            optionstring += "<option value=\"" + item.id + "\" >" + item.type + "</option>";
+
+                        });
+
+                        $("#type").html('<option value="">请选择类型</option>' + optionstring);
+
+                        form.render('select');
+                    });
+
+                });
                 //监听提交
                 form.on('submit(add)', function(data){
                     var data = data.field;
                     console.log(data);
                     $.ajax({
                         type: 'POST',
-                        url: '/Home/Material/add_pic_type',
+                        url: '/Home/Material/del_pic_type',
                         dataType: 'json',
                         data:data,
                         success: function(data){

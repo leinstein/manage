@@ -13,13 +13,29 @@
         <meta name="format-detection" content="telephone=no">
         <link rel="stylesheet" href="/Public/Home/css/x-admin.css" media="all">
     </head>
+    <style>
+        .td-manage a{
+            margin-left: 10px;
+        }
+        
+         .layui-btn-disabled-button{
+             cursor:not-allowed;
+             opacity:1;
+         }
+
+    </style>
     <body>
         <div class="x-body">
             <xblock>
-                <button class="layui-btn" onclick="admin_add('添加权限','add','600','500')"><i class="layui-icon">&#xe608;</i>添加权限</button>
-                <div class="layui-input-inline">
-                    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 200px;float:right"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
-                </div>
+                <in name="action_name.Auth_add" value="$role_ac">
+                    <button class="layui-btn" onclick="admin_add('添加权限','/Home/Auth/add','600','500')"><i class="layui-icon">&#xe608;</i>添加权限</button>
+                <else />
+                    <button class="layui-btn layui-btn-disabled-button"><i class="layui-icon">&#xe608;</i>添加权限</button>
+                </in>
+                
+                <!--<div class="layui-input-inline">-->
+                    <!--<a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 200px;float:right"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>-->
+                <!--</div>-->
                 <span class="x-right" style="line-height:40px">共有数据：{$count} 条</span>
             </xblock>
             <table class="layui-table">
@@ -40,7 +56,7 @@
                         <!--<th>-->
                             <!--所属分类-->
                         <!--</th>-->
-                        <th>
+                        <th width="65px">
                             操作
                         </th>
                     </tr>
@@ -64,14 +80,26 @@
                                 <!--会员相关-->
                             <!--</td>-->
                             <td class="td-manage">
-                                <a title="编辑" href="javascript:;" onclick="rule_edit('编辑','edit','{$v.auth_id}','600','500')"
-                                class="ml-5" style="text-decoration:none">
-                                    <i class="layui-icon">&#xe642;</i>
-                                </a>
-                                <a title="删除" href="javascript:;" onclick="rule_del(this,'{$v.auth_id}')"
-                                style="text-decoration:none">
+                                <in name="action_name.Auth_edit" value="$role_ac">
+                                    <a title="编辑" href="javascript:;" onclick="rule_edit('编辑','/Home/Auth/edit','{$v.auth_id}','600','500')"
+                                       class="ml-5" style="text-decoration:none">
+                                        <i class="layui-icon">&#xe642;</i>
+                                    </a>
+                                <else />
+                                   <a title="编辑" href="javascript:;" class="ml-5 layui-btn-disabled-button" style="text-decoration:none">
+                                        <i class="layui-icon">&#xe642;</i>
+                                    </a>
+                                </in>
+                                <in name="action_name.Auth_del" value="$role_ac">
+                                    <a title="删除" href="javascript:;" onclick="rule_del(this,'{$v.auth_id}')"
+                                       style="text-decoration:none">
+                                        <i class="layui-icon">&#xe640;</i>
+                                    </a>
+                                <else />
+                                   <a title="删除" href="javascript:;" class="ml-5 layui-btn-disabled-button" style="text-decoration:none">
                                     <i class="layui-icon">&#xe640;</i>
                                 </a>
+                                </in>
                             </td>
                         </tr>
                     </foreach>
@@ -83,10 +111,9 @@
         <script src="/Public/Home/lib/layui/layui.js" charset="utf-8"></script>
         <script src="/Public/Home/js/x-layui.js" charset="utf-8"></script>
         <script>
-            layui.use(['element','laypage','layer','form'], function(){
+            layui.use(['element','layer','form'], function(){
                 $ = layui.jquery;//jquery
               lement = layui.element();//面包导航
-              laypage = layui.laypage;//分页
               layer = layui.layer;//弹出层
               form = layui.form();//弹出层
             })
@@ -96,16 +123,7 @@
                 x_admin_show(title,url,w,h);
             }
 
-            //批量删除提交
-             function delAll () {
-                layer.confirm('确认要删除吗？',function(index){
-                    //捉到所有被选中的，发异步进行删除
-                    layer.msg('删除成功', {icon: 1});
-                });
-             }
             
-            
-
             //-编辑
             function rule_edit (title,url,id,w,h) {
                 url = url + '?auth_id=' + id;
@@ -118,7 +136,7 @@
                     var auth_id = id;
                     $.ajax({
                         type: 'POST',
-                        url: 'del',
+                        url: '/Home/Auth/del',
                         dataType: 'json',
                         data:{'auth_id':auth_id},
                         success: function(data){
@@ -137,14 +155,5 @@
                 });
             }
             </script>
-            <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-        </script>
     </body>
 </html>

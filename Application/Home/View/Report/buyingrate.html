@@ -17,7 +17,7 @@
     </head>
     <style>
         .x-body{
-            padding: 0;
+            padding: 0 20px 20px 20px;
         }
     </style>
     <body  style="background-color: #f0f2f5">
@@ -93,10 +93,7 @@
                 }
             </style>
             <style>.layui-col-md2{width: 14.2857143%;min-width: 220px;height: 165px;margin-top: 20px;margin-bottom: 20px}</style>
-            <div class="layui-fluid">
-            <div class="layui-card">
-            <div class="layui-row" style="width: 101%;margin-left: -0.5%;background-color: #f0f2f5">
-                <div class="layui-row layui-col-space20" style="width: 100%;margin-left: 0;">
+            <div class="layui-row layui-col-space20" style="">
                     <div class="layui-col-md2">
                         <div class="bg_color_div">
                               <div class="rate_title">
@@ -108,7 +105,7 @@
                               </div>
                               <div id="ring_one" class="ring"></div>
                               <div class="order_total order_top">复购/订单：{$buyrate.one} / {$buyrate.basic}</div>
-                              <!--<div class="order_total">总订单数：{$buyrate.basic}</div>-->
+                            
                         </div>
                     </div>
                     <div class="layui-col-md2">
@@ -122,8 +119,6 @@
                             </div>
                             <div id="ring_two" class="ring"></div>
                             <div class="order_total order_top">复购/订单：{$buyrate.two} / {$buyrate.basic}</div>
-                            <!--<div class="order_total order_top">复购单数：{$buyrate.two}</div>-->
-                            <!--<div class="order_total">总订单数：{$buyrate.basic}</div>-->
                         </div>
                     </div>
                     <div class="layui-col-md2">
@@ -137,8 +132,6 @@
                             </div>
                             <div id="ring_three" class="ring"></div>
                             <div class="order_total order_top">复购/订单：{$buyrate.three} / {$buyrate.basic}</div>
-                            <!--<div class="order_total order_top">复购单数：{$buyrate.three}</div>-->
-                            <!--<div class="order_total">总订单数：{$buyrate.basic}</div>-->
                         </div>
                     </div>
                     <div class="layui-col-md2">
@@ -152,8 +145,6 @@
                             </div>
                             <div id="ring_four" class="ring"></div>
                             <div class="order_total order_top">复购/订单：{$buyrate.four} / {$buyrate.basic}</div>
-                            <!--<div class="order_total order_top">复购单数：{$buyrate.four}</div>-->
-                            <!--<div class="order_total">总订单数：{$buyrate.basic}</div>-->
                         </div>
                     </div>
                    <div class="layui-col-md2">
@@ -167,8 +158,6 @@
                             </div>
                             <div id="ring_five" class="ring"></div>
                            <div class="order_total order_top">复购/订单：{$buyrate.five} / {$buyrate.basic}</div>
-                            <!--<div class="order_total order_top">复购单数：{$buyrate.five}</div>-->
-                            <!--<div class="order_total">总订单数：{$buyrate.basic}</div>-->
                        </div>
                     </div>
                     <div class="layui-col-md2">
@@ -182,8 +171,6 @@
                             </div>
                             <div id="ring_six" class="ring"></div>
                             <div class="order_total order_top">复购/订单：{$buyrate.six} / {$buyrate.basic}</div>
-                            <!--<div class="order_total order_top">复购单数：{$buyrate.six}</div>-->
-                            <!--<div class="order_total">总订单数：{$buyrate.basic}</div>-->
                         </div>
                     </div>
                     <div class="layui-col-md2">
@@ -197,61 +184,13 @@
                             </div>
                             <div id="ring_seven" class="ring"></div>
                             <div class="order_total order_top">复购/订单：{$buyrate.seven} / {$buyrate.basic}</div>
-                            <!--<div class="order_total order_top">复购单数：{$buyrate.seven}</div>-->
-                            <!--<div class="order_total">总订单数：{$buyrate.basic}</div>-->
                         </div>
                     </div>
                 </div>
-            </div>
-            <!--<form class="layui-form x-center" action="" style="width:800px">-->
-                <!--<div class="layui-form-pane" style="margin-top: 15px;">-->
-                  <!--<div class="layui-form-item" style="width: 120%">-->
-                    <!--<label class="layui-form-label">日期范围</label>-->
-                    <!--<div class="layui-input-inline">-->
-                      <!--<input class="layui-input" name="stat_date" placeholder="开始日" id="LAY_demorange_s"  autocomplete="off">-->
-                    <!--</div>-->
-                    <!--<div class="layui-input-inline">-->
-                      <!--<input class="layui-input" name="stop_date" placeholder="截止日" id="LAY_demorange_e"  autocomplete="off">-->
-                    <!--</div>-->
-                    <!--<div class="layui-input-inline">-->
-                      <!--<input type="text" name="name"  placeholder="登录名 | 姓名 | 电话" autocomplete="off" class="layui-input">-->
-                    <!--</div>-->
-                    <!--<div class="layui-input-inline" style="width:120px">-->
-                        <!--<button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i> 搜 索</button>-->
-                    <!--</div>-->
-                  <!--</div>-->
-                <!--</div>-->
-            <!--</form>-->
-            <!--<xblock>-->
-                <!--<a title="本月排名" class="layui-btn"  href="/Home/Report/rank?month=month">-->
-                    <!--本月排名-->
-                <!--</a>-->
-                <!--<a title="上月排名" class="layui-btn"  href="/Home/Report/rank?month=lastmonth">-->
-                    <!--上月排名-->
-                <!--</a>-->
-                <!--<a title="历史排名" class="layui-btn"  href="/Home/Report/rank?month=history">-->
-                    <!--历史排名-->
-                <!--</a>-->
-                <!--<div class="layui-input-inline">-->
-                    <!--<a class="layui-btn layui-btn-small" style="padding: 4px 4px"  href="/Home/Report/buyingrate" title="首页">-->
-                    <!--<img src="/Public/Home/images/indexw.png" style="vertical-align: baseline;width: 27px;height: 27px">-->
-                    <!--</a>-->
-                    <!--<a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>-->
-                <!--</div>-->
-                <!--<span class="x-right" style="line-height:40px">全部：-->
-                    <!--<a title="查看历史客户"  href="javascript;">-->
-                       <!--{$count}-->
-                    <!--</a>-->
-                <!--</span>-->
-            <!--</xblock>-->
-            <style>
-                #layui_table_w{
-                    width: 98%;
-                    margin-left: 1%;
-                    margin-top: 20px;
-                }
-            </style>
-            <table class="layui-table" id="layui_table_w">
+            <div class="layui-fluid" style="padding: 0">
+            <div class="layui-card">
+            <div class="layui-row" style="background-color: white;padding: 10px 20px">
+                <table class="layui-table" id="layui_table_w">
                 <thead>
                     <tr>
                         <th width="30px"    rowspan="2">
@@ -342,7 +281,7 @@
                     }
                     .rate_font{
                         font-size: 24px !important;
-                         font-weight: bold;
+                        font-weight: bold;
                         font-style: italic;
                     }
                 </style>
@@ -407,9 +346,10 @@
                     </foreach>
                 </tbody>
             </table>
-            <div id="page" style="margin-bottom: 70px;">{$page}</div>
+             <div id="page" style="margin-bottom: 20px;">{$page}</div>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
         <script src="/Public/Home/lib/layui/layui.js" charset="utf-8"></script>
         <script src="/Public/Home/js/x-layui.js" charset="utf-8"></script>
@@ -852,15 +792,6 @@
             if (option && typeof option === "object") {
                 myChart.setOption(option, true);
             }
-        </script>
-        <script>
-            var _hmt = _hmt || [];
-            (function() {
-              var hm = document.createElement("script");
-              hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-              var s = document.getElementsByTagName("script")[0];
-              s.parentNode.insertBefore(hm, s);
-            })();
         </script>
     </body>
 </html>

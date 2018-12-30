@@ -17,9 +17,6 @@ class ServerController extends HomeController{
         if($_GET['stat_date'] and !$_GET['stop_date']) $where['ordercreatetime'] = ['egt',strtotime($_GET['stat_date'])];
         if(!$_GET['stat_date'] and $_GET['stop_date']) $where['ordercreatetime'] = ['elt',strtotime($_GET['stop_date'])];
         if($_GET['stat_date'] and $_GET['stop_date']) $where['ordercreatetime'] = ['between',[strtotime($_GET['stat_date']),strtotime($_GET['stop_date'])]];
-//        if($_GET['paytype']) $where['paytype'] = $_GET['paytype'];
-//        if($_GET['payform']) $where['payform'] = $_GET['payform'];
-//        if($_GET['orderstatus']) $where['orderstatus'] = $_GET['orderstatus'];
         if($_GET['server_status'] == 1) $where['server_status'] = 1;
         if($_GET['server_status'] == 2) $where['server_status'] = ['neq',1];
         if($_GET['word']){
@@ -31,7 +28,7 @@ class ServerController extends HomeController{
             if($_GET['day'] == 'history'){
                 $where['delete'] = 1;
             }else{
-                $where['ordercreatetime'] = $order->where_s($_GET['day']);
+                $where['reciivingtime'] = $order->where_s($_GET['day']);
             }
         }
 
@@ -73,31 +70,21 @@ class ServerController extends HomeController{
             $v['realfee'] = $v['refunds'] + $v['pay'] - $v['courierfee'];
             $info[] = $v;
         }
-//        //获取本月00:00时间戳
-//        $beginThismonth=mktime(0,0,0,date('m'),1,date('Y'));
-//        //获取上月00:00时间戳
-//        $beginlastmonth=mktime(0,0,0,date('m')-1,1,date('Y'));
-//        //获取上月23:59时间戳
-//        $endlastmonth=mktime(23,59,59,date('m')-1,date('t')-1,date('Y'));
-//        foreach ($info as $v){
-//            if($v['ordercreatetime'] > $beginThismonth){
-//                $infotoday[] = $v;
-//            }else if($v['ordercreatetime'] < $endlastmonth and $v['ordercreatetime'] > $beginlastmonth){
-//                $infoyestoday[] = $v;
-//            }else{
-//                $infot[] = $v;
-//            }
-//        }
         //获取统计数据
-        $statistical = $order->statistical();
-        $this->assign('statistical', $statistical);
-        $this->assign('info', $info);
-//        $this->assign('infotoday', $infotoday);
-//        $this->assign('infoyestoday', $infoyestoday);
-//        $this->assign('infot', $infot);
-        $this->assign('count', $count);
-        $this->assign('page', $show);
-        $this->assign('firstRow', $page->firstRow);
+        $statistical = $order->statistical_server();
+        //权限按钮
+        $role = M('Role')->where(['id'=>$_SESSION['roleid']])->find();
+        $role_ac = $role['role_auth_ac'];
+        $action_name = get_action_name($role_ac);
+        $this->assign([
+            'statistical'=> $statistical,
+            'info'=> $info,
+            'count'=> $count,
+            'page'=> $show,
+            'firstRow'=> $page->firstRow,
+            'role_ac'=> $role_ac,
+            'action_name'=>$action_name
+        ]);
         $this->display();
     }
 

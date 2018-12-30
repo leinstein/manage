@@ -49,8 +49,12 @@ class IndexController extends HomeController {
             $end = time();
             $map['delete'] = 1;
             $map['orderstatus'] = ['neq',4];
+            if($_SESSION['username'] != 'admin'){
+                $map['saleid'] = $_SESSION['userid'];
+            }
             $map['ordercreatetime'] = ['between',[$star,$end]];
             $aim_this_month['complete'] = $order->where($map)->sum('orderprice');
+            $aim_this_month['complete'] = isset($aim_this_month['complete']) ? $aim_this_month['complete'] : '0000';
             $aim_this_month['avg'] = round($aim_this_month['complete'] / $aims['aim'] , 3) * 100 . '%';
             $aim_this_month['aim'] = $aims['aim'];
         }else{

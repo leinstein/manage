@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="x-body">
-            <form class="layui-form x-center" action="" method="post" style="width:80%">
+            <form class="layui-form x-center" action="" method="post" style="width:50%">
                 <div class="layui-form-pane" style="margin-top: 15px;">
                   <div class="layui-form-item">
                     <label class="layui-form-label">日期范围</label>
@@ -32,13 +32,31 @@
                     <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i> 搜 索</button>
 
                     </div>
-                    <div class="layui-input-inline">
-                        <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
-                    </div>
+                    <!--<div class="layui-input-inline">-->
+                        <!--<a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>-->
+                    <!--</div>-->
                   </div>
                 </div> 
             </form>
-            <xblock><button class="layui-btn" onclick="admin_add('添加用户','/Home/Admin/add','600','530')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：{$count} 条</span></xblock>
+            <style>
+                .td-manage a{
+                    margin-left: 10px;
+                }
+            </style>
+            <style>
+                .layui-btn-disabled-button{
+                    cursor:not-allowed;
+                    opacity:1;
+                }
+            </style>
+            <xblock>
+                  <in name="action_name.Admin_add" value="$role_ac">
+                    <button class="layui-btn" onclick="admin_add('添加用户','/Home/Admin/add','600','530')"><i class="layui-icon">&#xe608;</i>添加</button>
+                  <else />
+                    <button class="layui-btn layui-btn-disabled-button"><i class="layui-icon">&#xe608;</i>添加</button>
+                  </in>
+                  <span class="x-right" style="line-height:40px">共有数据：{$count} 条</span>
+            </xblock>
             <table class="layui-table">
                 <thead>
                     <tr>
@@ -72,7 +90,7 @@
                         <th>
                             状态
                         </th>
-                        <th>
+                        <th width="130px">
                             操作
                         </th>
                     </tr>
@@ -119,27 +137,51 @@
                                 </if>
                             </td>
                             <td class="td-manage">
-                                <if condition="$v['status'] eq '1' ">
+                                <in name="action_name.Admin_stop" value="$role_ac">
+                                    <if condition="$v['status'] eq '1' ">
                                         <a style="text-decoration:none" onclick="admin_stop(this,'{$v.id}')" href="javascript:;" title="停用">
                                             <i class="layui-icon">&#xe601;</i>
                                         </a>
-                                    <else />
-                                        <a style="text-decoration:none" onClick="admin_start(this,'{$v.id}')" href="javascript:;" title="启用">
-                                            <i class="layui-icon">&#xe62f;</i>
-                                        </a>
-                                </if>
-                                <a title="编辑" href="javascript:;" onclick="admin_edit('编辑','/Home/Admin/edit','{$v.id}','','510')"
-                                class="ml-5" style="text-decoration:none">
-                                    <i class="layui-icon">&#xe642;</i>
-                                </a>
-                                <a style="text-decoration:none"  onclick="admin_group('划分项目组','/Home/Admin/group','{$v.role_id}','470','400','{$v.id}','{$v.group_id}')"
-                                   href="javascript:;" title="划分项目组">
-                                <i class="layui-icon">&#xe631;</i>
-                                </a>
-                                <a title="删除" href="javascript:;" onclick="admin_del(this,'{$v.id}')"
-                                style="text-decoration:none">
-                                    <i class="layui-icon">&#xe640;</i>
-                                </a>
+                                        <else />
+                                            <a style="text-decoration:none" onClick="admin_start(this,'{$v.id}')" href="javascript:;" title="启用">
+                                                <i class="layui-icon">&#xe62f;</i>
+                                            </a>
+                                    </if>
+                                  <else />
+                                    <a style="text-decoration:none" class="layui-btn-disabled-button" href="javascript:;" title="停用">
+                                        <i class="layui-icon">&#xe601;</i>
+                                    </a>
+                                </in>
+                                <in name="action_name.Admin_edit" value="$role_ac">
+                                    <a title="编辑" href="javascript:;" onclick="admin_edit('编辑','/Home/Admin/edit','{$v.id}','','510')"
+                                       class="ml-5" style="text-decoration:none">
+                                        <i class="layui-icon">&#xe642;</i>
+                                    </a>
+                                  <else />
+                                    <a title="编辑" href="javascript:;" class="ml-5 layui-btn-disabled-button" style="text-decoration:none">
+                                        <i class="layui-icon">&#xe642;</i>
+                                    </a>
+                                </in>
+                                <in name="action_name.Admin_group" value="$role_ac">
+                                    <a style="text-decoration:none"  onclick="admin_group('划分项目组','/Home/Admin/group','{$v.role_id}','470','400','{$v.id}','{$v.group_id}')"
+                                       href="javascript:;" title="划分项目组">
+                                        <i class="layui-icon">&#xe631;</i>
+                                    </a>
+                                  <else />
+                                    <a style="text-decoration:none" href="javascript:;" class="ml-5 layui-btn-disabled-button" title="划分项目组">
+                                        <i class="layui-icon">&#xe631;</i>
+                                    </a>
+                                </in>
+                                <in name="action_name.Admin_del" value="$role_ac">
+                                    <a title="删除" href="javascript:;" onclick="admin_del(this,'{$v.id}')"
+                                       style="text-decoration:none">
+                                        <i class="layui-icon">&#xe640;</i>
+                                    </a>
+                                  <else />
+                                    <a title="删除" href="javascript:;" class="ml-5 layui-btn-disabled-button" style="text-decoration:none">
+                                        <i class="layui-icon">&#xe640;</i>
+                                    </a>
+                                </in>
                             </td>
                         </tr>
                     </foreach>
@@ -149,7 +191,7 @@
         </div>
         <script src="/Public/Home/lib/layui/layui.js" charset="utf-8"></script>
         <script>
-            layui.use(['laydate','element','laypage','layer'], function(){
+            layui.use(['laydate','element','layer'], function(){
                 $ = layui.jquery;//jquery
                 laydate = layui.laydate;//日期插件
                 layer = layui.layer;//弹出层
@@ -179,14 +221,7 @@
                 }
 
             });
-
-            //批量删除提交
-            function delAll () {
-                layer.confirm('确认要删除吗？',function(index){
-                    //捉到所有被选中的，发异步进行删除
-                    layer.msg('删除成功', {icon: 1});
-                });
-            }
+            
             /*添加*/
             function admin_add(title,url,w,h){
                 x_admin_show(title,url,w,h);
@@ -280,14 +315,5 @@
             }
             </script>
         <script src="/Public/Home/js/x-layui.js" charset="utf-8"></script>
-            <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-        </script>
     </body>
 </html>

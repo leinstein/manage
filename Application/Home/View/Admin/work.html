@@ -35,13 +35,29 @@
                   </div>
                 </div> 
             </form>
+            <style>
+                .size_btn{
+                    width: 125px;
+                }
+            </style>
+            <style>
+                .layui-btn-disabled-button{
+                    cursor:not-allowed;
+                    opacity:1;
+                }
+            </style>
             <xblock>
-                <div class="layui-input-inline">
-                    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px;padding: 2px 4px"  href="/Home/Admin/work" title="首页">
-                    <img src="/Public/Home/images/indexw.png" style="vertical-align: baseline;width: 27px;height: 27px">
-                    </a>
-                    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
-                </div>
+                <in name="action_name.Admin_add" value="$role_ac">
+                    <button class="layui-btn layui-btn-danger size_btn"  onclick="delAll('清空记录','/Home/Admin/del_all_work')"><i class="layui-icon">&#xe608;</i>清空记录</button>
+                  <else />
+                    <button class="layui-btn layui-btn-disabled-button size_btn"><i class="layui-icon">&#xe608;</i>清空记录</button>
+                </in>
+                <!--<div class="layui-input-inline">-->
+                    <!--<a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px;padding: 2px 4px"  href="/Home/Admin/work" title="首页">-->
+                    <!--<img src="/Public/Home/images/indexw.png" style="vertical-align: baseline;width: 27px;height: 27px">-->
+                    <!--</a>-->
+                    <!--<a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>-->
+                <!--</div>-->
                 <span class="x-right" style="line-height:40px">共有数据：{$count} 条</span>
             </xblock>
             <table class="layui-table">
@@ -136,10 +152,24 @@
             });
 
             //批量删除提交
-            function delAll () {
-                layer.confirm('确认要删除吗？',function(index){
-                    //捉到所有被选中的，发异步进行删除
-                    layer.msg('删除成功', {icon: 1});
+            function delAll (title,url) {
+                layer.confirm('确认要删除所有记录吗？',function(index){
+                    $.ajax({
+                        type: 'POST',
+                        url: url,
+                        dataType: 'json',
+                        success: function(data){
+                            if(data.statu == 200){
+                                layer.msg(data.msg, {icon: 1});
+                            }else{
+                                layer.msg(data.msg);
+                                return false;
+                            }
+                        },
+                        error:function(data) {
+                            layer.msg('系统错误');
+                        },
+                    });
                 });
             }
             /*添加*/
@@ -223,7 +253,7 @@
                                 $(obj).parents("tr").remove();
                                 layer.msg('已删除!',{icon:1,time:1000});
                             }else{
-                                layer.msg(data.msg);
+                                layer.msg(data.msg, {icon: 1});
                                 return false;
                             }
                         },
@@ -235,14 +265,5 @@
             }
             </script>
         <script src="/Public/Home/js/x-layui.js" charset="utf-8"></script>
-            <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-        </script>
     </body>
 </html>

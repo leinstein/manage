@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="/Public/Home/lib2/layui/css/layui.css" media="all">
 
     </head>
-    <body style="background-color: #f0f2f5">
+    <body style="background-color: #f0f2f5;overflow-x:hidden">
         <style>
             .bg_color_div{
                 background-color: white;
@@ -75,7 +75,7 @@
                 color: rgba(0,0,0,.4);
             }
             .x-body {
-                padding: 0 20px 20px 20px;
+                padding: 0 20px 10px 20px;
             }
             .month_btn{
                 margin-top: 12px;
@@ -210,121 +210,121 @@
         <div class="layui-fluid">
             <div class="layui-card">
                 <div class="x-body">
-                <xblock style="background-color: white !important;">
-                    <a title="本月排名" class="layui-btn month_btn"  href="/Home/Report/return_rate?month=month">
-                        本月排名
-                    </a>
-                    <a title="上月排名" class="layui-btn month_btn"  href="/Home/Report/return_rate?month=lastmonth">
-                        上月排名
-                    </a>
-                    <a title="历史排名" class="layui-btn month_btn"  href="/Home/Report/return_rate?month=history">
-                        历史排名
-                    </a>
-                    <span class="x-right" style="line-height:40px">
-                        <form class="layui-form x-center" action="" style="width:800px">
-                            <div class="layui-form-pane" style="margin-top: 15px;">
-                              <div class="layui-form-item" style="width: 120%">
-                                <label class="layui-form-label">日期范围</label>
-                                <div class="layui-input-inline">
-                                  <input class="layui-input" name="stat_date" placeholder="开始日" id="LAY_demorange_s"  autocomplete="off">
+                    <xblock style="background-color: white !important;">
+                        <a title="本月排名" class="layui-btn month_btn"  href="/Home/Report/return_rate?month=month">
+                            本月排名
+                        </a>
+                        <a title="上月排名" class="layui-btn month_btn"  href="/Home/Report/return_rate?month=lastmonth">
+                            上月排名
+                        </a>
+                        <a title="历史排名" class="layui-btn month_btn"  href="/Home/Report/return_rate?month=history">
+                            历史排名
+                        </a>
+                        <span class="x-right" style="line-height:40px">
+                            <form class="layui-form x-center" action="" style="width:800px">
+                                <div class="layui-form-pane" style="margin-top: 15px;">
+                                  <div class="layui-form-item" style="width: 120%">
+                                    <label class="layui-form-label">日期范围</label>
+                                    <div class="layui-input-inline">
+                                      <input class="layui-input" name="stat_date" placeholder="开始日" id="LAY_demorange_s"  autocomplete="off">
+                                    </div>
+                                    <div class="layui-input-inline">
+                                      <input class="layui-input" name="stop_date" placeholder="截止日" id="LAY_demorange_e"  autocomplete="off">
+                                    </div>
+                                    <div class="layui-input-inline">
+                                      <input type="text" name="name"  placeholder="登录名 | 姓名 | 电话" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-input-inline" style="width:120px;margin-top: -4px">
+                                        <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i> 搜 索</button>
+                                    </div>
+                                  </div>
                                 </div>
-                                <div class="layui-input-inline">
-                                  <input class="layui-input" name="stop_date" placeholder="截止日" id="LAY_demorange_e"  autocomplete="off">
-                                </div>
-                                <div class="layui-input-inline">
-                                  <input type="text" name="name"  placeholder="登录名 | 姓名 | 电话" autocomplete="off" class="layui-input">
-                                </div>
-                                <div class="layui-input-inline" style="width:120px;margin-top: -4px">
-                                    <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i> 搜 索</button>
-                                </div>
-                              </div>
-                            </div>
-                        </form>
-                    </span>
-                </xblock>
-            <!--</div>-->
-                <table class="layui-table">
-                    <thead>
-                        <tr>
-                            <th width="30px">
-                                排名
-                            </th>
-                            <th width="90px">
-                                销售头像
-                            </th>
-                            <th width="90px">
-                                销售姓名
-                            </th>
-                            <th>
-                                总订单
-                            </th>
-                            <th>
-                                退单数
-                            </th>
-                            <th>
-                                退单率
-                            </th>
-                            <th>
-                                总订单金额
-                            </th>
-                            <th>
-                                退单金额
-                            </th>
-                            <th>
-                                退单金额率
-                            </th>
-                        </tr>
-                    </thead>
-                    <style>.layui-table td, .layui-table th{text-align: center;}</style>
-                    <style>
-                        .order_total_amount{
-                            font-size: 18px;
-                            font-weight: bold;
-                            color: #009688;
-                        }
-                        .rate_font{
-                            font-size: 24px !important;
-                            font-weight: bold;
-                            font-style: italic;
-                            color: #666;
-                        }
-                    </style>
-                    <tbody>
-                        <foreach name="info" item="v">
+                            </form>
+                        </span>
+                    </xblock>
+                <!--</div>-->
+                    <table class="layui-table">
+                        <thead>
                             <tr>
-                                <td class="rate_font">
-                                    {$v.sort_rate}
-                                </td>
-                                <td style="padding: 3px">
-                                    <img src="{$v.img_small}" style="width: 40px;height: 40px;border-radius: 50%">
-                                </td>
-                                <td>
-                                    {$v.nickname}
-                                </td>
-                                <td>
-                                    {$v.order_rate}
-                                </td>
-                                <td>
-                                    {$v.order_tui_rate}
-                                </td>
-                                <td class="order_total_amount">
-                                    {$v.order_tui_average}
-                                </td>
-                                <td>
-                                    {$v.order_total_amount}
-                                </td>
-                                <td>
-                                    {$v.order_total_tui_amount}
-                                </td>
-                                <td>
-                                    {$v.order_tui_funds_average}
-                                </td>
+                                <th width="30px">
+                                    排名
+                                </th>
+                                <th width="90px">
+                                    销售头像
+                                </th>
+                                <th width="90px">
+                                    销售姓名
+                                </th>
+                                <th>
+                                    总订单
+                                </th>
+                                <th>
+                                    退单数
+                                </th>
+                                <th>
+                                    退单率
+                                </th>
+                                <th>
+                                    总订单金额
+                                </th>
+                                <th>
+                                    退单金额
+                                </th>
+                                <th>
+                                    退单金额率
+                                </th>
                             </tr>
-                        </foreach>
-                    </tbody>
-                </table>
-                <div id="page" style="margin-bottom: 70px;">{$page}</div>
-        </div>
+                        </thead>
+                        <style>.layui-table td, .layui-table th{text-align: center;}</style>
+                        <style>
+                            .order_total_amount{
+                                font-size: 18px;
+                                font-weight: bold;
+                                color: #009688;
+                            }
+                            .rate_font{
+                                font-size: 24px !important;
+                                font-weight: bold;
+                                font-style: italic;
+                                color: #666;
+                            }
+                        </style>
+                        <tbody>
+                            <foreach name="info" item="v">
+                                <tr>
+                                    <td class="rate_font">
+                                        {$v.sort_rate}
+                                    </td>
+                                    <td style="padding: 3px">
+                                        <img src="{$v.img_small}" style="width: 40px;height: 40px;border-radius: 50%">
+                                    </td>
+                                    <td>
+                                        {$v.nickname}
+                                    </td>
+                                    <td>
+                                        {$v.order_rate}
+                                    </td>
+                                    <td>
+                                        {$v.order_tui_rate}
+                                    </td>
+                                    <td class="order_total_amount">
+                                        {$v.order_tui_average}
+                                    </td>
+                                    <td>
+                                        {$v.order_total_amount}
+                                    </td>
+                                    <td>
+                                        {$v.order_total_tui_amount}
+                                    </td>
+                                    <td>
+                                        {$v.order_tui_funds_average}
+                                    </td>
+                                </tr>
+                            </foreach>
+                        </tbody>
+                    </table>
+                   <div id="page" style="margin-bottom: 50px;">{$page}</div>
+                </div>
             </div>
         </div>
         
@@ -564,14 +564,5 @@
                 });
             }
             </script>
-            <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(hm, s);
-        })();
-        </script>
     </body>
 </html>

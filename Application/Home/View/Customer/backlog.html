@@ -40,7 +40,7 @@
                     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px;padding: 2px 4px"  href="/Home/Customer/backlog" title="首页">
                     <img src="/Public/Home/images/indexw.png" style="vertical-align: baseline;width: 27px;height: 27px">
                     </a>
-                    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
+                    <!--<a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>-->
                 </div>
         <span class="x-right" style="line-height:40px">全部：
             <a title="查看历史订单"  href="/Home/Customer/backlog?day=history">
@@ -99,6 +99,12 @@
                         </th>
                     </tr>
                 </thead>
+                <style>
+                    .layui-btn-disabled-button{
+                        cursor:not-allowed;
+                        opacity:1;
+                    }
+                </style>
                 <style>.layui-table td, .layui-table th{text-align: center;}</style>
                 <tbody>
                     <if condition="$infotoday neq ''">
@@ -136,10 +142,16 @@
                                 {$v.nickname}
                             </td>
                             <td class="td-manage">
-                                <a title="添加待办任务" href="javascript:;" onclick="member_edit('处理待办任务','/Home/Customer/editbacklog','{$v.bid}','1000','700')"
-                                   class="ml-5" style="text-decoration:none;">
-                                            <i class="layui-icon">&#xe642;</i>
-                                </a>
+                                <in name="action_name.Customer_editbacklog" value="$role_ac">
+                                    <a title="添加待办任务" href="javascript:;" onclick="member_edit('处理待办任务','/Home/Customer/editbacklog','{$v.bid}','1000','700')"
+                                       class="ml-5" style="text-decoration:none;">
+                                        <i class="layui-icon">&#xe642;</i>
+                                    </a>
+                                <else />
+                                    <a title="添加待办任务" href="javascript:;" class="ml-5 layui-btn-disabled-button" style="text-decoration:none;">
+                                        <i class="layui-icon">&#xe642;</i>
+                                    </a>
+                                </in>
                             </td>
                         </tr>
                     </foreach>
@@ -288,14 +300,5 @@
             }
             
             </script>
-            <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(hm, s);
-        })();
-        </script>
     </body>
 </html>

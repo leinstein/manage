@@ -52,7 +52,7 @@
             <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 10px;padding: 2px 4px"  href="/Home/Order/index" title="首页">
             <img src="/Public/Home/images/indexw.png" style="vertical-align: baseline;width: 27px;height: 27px">
             </a>
-            <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
+            <!--<a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>-->
         </div>
         <span class="x-right" style="line-height:40px">全部：
             <a title="订单 / 销售额"  href="/Home/Order/index?day=history">
@@ -102,6 +102,12 @@
                 width: 20px;
             }
         </style>
+        <style>
+            .layui-btn-disabled-button{
+                cursor:not-allowed;
+                opacity:1;
+            }
+        </style>
       <style>.layui-table td, .layui-table th{text-align: center;}</style>
       <table class="layui-table">
         <thead>
@@ -125,10 +131,10 @@
             <tr><td  colspan="12" class="bg_tr">今天</td></tr>
           </if>
           <foreach name="infotoday" item="v">
-          <if condition="$v['orderstatus'] eq 1"><tr></if>
-          <if condition="$v['orderstatus'] eq 2"><tr style="color:#009688"></if>
-          <if condition="$v['orderstatus'] eq 3"><tr style="color:red"></if>
-          <if condition="$v['orderstatus'] eq 4"><tr style="color:#999"></if>
+              <if condition="$v['orderstatus'] eq 1"><tr></if>
+              <if condition="$v['orderstatus'] eq 2"><tr style="color:#009688"></if>
+              <if condition="$v['orderstatus'] eq 3"><tr style="color:red"></if>
+              <if condition="$v['orderstatus'] eq 4"><tr style="color:#999"></if>
               <td>
                   {++$i}
               </td>
@@ -158,18 +164,42 @@
               <td>{$v.deliverytime|date="Y-m-d",###}</td>
               <td>{$v.nickname}</td>
               <td class="td-manage">
-                <a title="查看"  onclick="x_admin_show('查看','/Home/Order/show?orderid={$v.orderid}',1200,700)" href="javascript:;" style="margin-right: 10px">
-                  <i class="layui-icon"   style="vertical-align: baseline;width: 13px">&#xe63c;</i>
-                </a>
-                <a title="编辑" href="javascript:;" onclick="x_admin_show('编辑','/Home/Order/edit?orderid={$v.orderid}',1280,760)" class="ml-5" style="margin-right: 10px">
-                  <i class="layui-icon">&#xe642;</i>
-                </a>
-                <a title="仓管" href="javascript:;" onclick="x_admin_show('仓管','/Home/Order/update_order?orderid={$v.orderid}',800,500)" class="ml-5" style="margin-right: 10px">
-                  <img src="/Public/Home/images/cangku.png" style="vertical-align: baseline;width: 14px;height: 14px">
-                </a>
-                <a title="删除" onclick="member_del(this,'{$v.orderid}')" href="javascript:;">
-                  <i class="layui-icon">&#xe640;</i>
-                </a>
+                  <in name="action_name.Order_show" value="$role_ac">
+                        <a title="查看"  onclick="x_admin_show('查看','/Home/Order/show?orderid={$v.orderid}',1200,700)" href="javascript:;" style="margin-right: 10px">
+                          <i class="layui-icon"   style="vertical-align: baseline;width: 13px">&#xe63c;</i>
+                        </a>
+                  <else />
+                        <a title="查看"   href="javascript:;" class="layui-btn-disabled-button" style="margin-right: 10px">
+                          <i class="layui-icon"   style="vertical-align: baseline;width: 13px">&#xe63c;</i>
+                        </a>
+                  </in>
+                  <in name="action_name.Order_edit" value="$role_ac">
+                        <a title="编辑" href="javascript:;" onclick="x_admin_show('编辑','/Home/Order/edit?orderid={$v.orderid}',1280,760)" class="ml-5" style="margin-right: 10px">
+                          <i class="layui-icon">&#xe642;</i>
+                        </a>
+                  <else />
+                        <a title="编辑" href="javascript:;"  class="ml-5 layui-btn-disabled-button" style="margin-right: 10px">
+                          <i class="layui-icon">&#xe642;</i>
+                        </a>
+                  </in>
+                  <in name="action_name.Order_update_order" value="$role_ac">
+                        <a title="仓管" href="javascript:;" onclick="x_admin_show('仓管','/Home/Order/update_order?orderid={$v.orderid}',800,500)" class="ml-5" style="margin-right: 10px">
+                          <img src="/Public/Home/images/cangku.png" style="vertical-align: baseline;width: 14px;height: 14px">
+                        </a>
+                  <else />
+                        <a title="仓管" href="javascript:;"  class="ml-5 layui-btn-disabled-button" style="margin-right: 10px">
+                          <img src="/Public/Home/images/cangku.png" style="vertical-align: baseline;width: 14px;height: 14px">
+                        </a>
+                  </in>
+                  <in name="action_name.Order_del" value="$role_ac">
+                        <a title="删除" onclick="member_del(this,'{$v.orderid}')" href="javascript:;">
+                          <i class="layui-icon">&#xe640;</i>
+                        </a>
+                  <else />
+                        <a title="删除" class="layui-btn-disabled-button"  href="javascript:;">
+                          <i class="layui-icon">&#xe640;</i>
+                        </a>
+                  </in>
               </td>
             </tr>
           </foreach>
@@ -210,18 +240,42 @@
               <td>{$v.deliverytime|date="Y-m-d",###}</td>
               <td>{$v.nickname}</td>
               <td class="td-manage">
-                <a title="查看"  onclick="x_admin_show('查看','/Home/Order/show?orderid={$v.orderid}',1200,700)" href="javascript:;" style="margin-right: 10px">
-                  <i class="layui-icon">&#xe63c;</i>
-                </a>
-                <a title="编辑" href="javascript:;" onclick="x_admin_show('编辑','/Home/Order/edit?orderid={$v.orderid}',1280,760)" class="ml-5" style="margin-right: 10px">
-                  <i class="layui-icon">&#xe642;</i>
-                </a>
-                <a title="仓管" href="javascript:;" onclick="x_admin_show('仓管','/Home/Order/update_order?orderid={$v.orderid}',800,500)" class="ml-5" style="margin-right: 10px">
-                  <img src="/Public/Home/images/cangku.png" style="vertical-align: baseline;width: 14px;height: 14px">
-                </a>
-                <a title="删除" onclick="member_del(this,'{$v.orderid}')" href="javascript:;">
-                  <i class="layui-icon">&#xe640;</i>
-                </a>
+                <in name="action_name.Order_show" value="$role_ac">
+                        <a title="查看"  onclick="x_admin_show('查看','/Home/Order/show?orderid={$v.orderid}',1200,700)" href="javascript:;" style="margin-right: 10px">
+                          <i class="layui-icon"   style="vertical-align: baseline;width: 13px">&#xe63c;</i>
+                        </a>
+                  <else />
+                        <a title="查看"   href="javascript:;" class="layui-btn-disabled-button" style="margin-right: 10px">
+                          <i class="layui-icon"   style="vertical-align: baseline;width: 13px">&#xe63c;</i>
+                        </a>
+                  </in>
+                  <in name="action_name.Order_edit" value="$role_ac">
+                        <a title="编辑" href="javascript:;" onclick="x_admin_show('编辑','/Home/Order/edit?orderid={$v.orderid}',1280,760)" class="ml-5" style="margin-right: 10px">
+                          <i class="layui-icon">&#xe642;</i>
+                        </a>
+                  <else />
+                        <a title="编辑" href="javascript:;"  class="ml-5 layui-btn-disabled-button" style="margin-right: 10px">
+                          <i class="layui-icon">&#xe642;</i>
+                        </a>
+                  </in>
+                  <in name="action_name.Order_update_order" value="$role_ac">
+                        <a title="仓管" href="javascript:;" onclick="x_admin_show('仓管','/Home/Order/update_order?orderid={$v.orderid}',800,500)" class="ml-5" style="margin-right: 10px">
+                          <img src="/Public/Home/images/cangku.png" style="vertical-align: baseline;width: 14px;height: 14px">
+                        </a>
+                  <else />
+                        <a title="仓管" href="javascript:;"  class="ml-5 layui-btn-disabled-button" style="margin-right: 10px">
+                          <img src="/Public/Home/images/cangku.png" style="vertical-align: baseline;width: 14px;height: 14px">
+                        </a>
+                  </in>
+                  <in name="action_name.Order_del" value="$role_ac">
+                        <a title="删除" onclick="member_del(this,'{$v.orderid}')" href="javascript:;">
+                          <i class="layui-icon">&#xe640;</i>
+                        </a>
+                  <else />
+                        <a title="删除" class="layui-btn-disabled-button"  href="javascript:;">
+                          <i class="layui-icon">&#xe640;</i>
+                        </a>
+                  </in>
               </td>
             </tr>
           </foreach>
@@ -262,18 +316,42 @@
               <td>{$v.deliverytime|date="Y-m-d",###}</td>
               <td>{$v.nickname}</td>
               <td class="td-manage">
-                <a title="订单详情"  onclick="x_admin_show('查看','/Home/Order/show?orderid={$v.orderid}',1200,700)" href="javascript:;" style="margin-right: 10px">
-                  <i class="layui-icon">&#xe63c;</i>
-                </a>
-               <a title="编辑" href="javascript:;" onclick="x_admin_show('编辑','/Home/Order/edit?orderid={$v.orderid}',1280,760)" class="ml-5" style="margin-right: 10px">
-                  <i class="layui-icon">&#xe642;</i>
-                </a>
-                <a title="仓管" href="javascript:;" onclick="x_admin_show('仓管','/Home/Order/update_order?orderid={$v.orderid}',800,500)" class="ml-5" style="margin-right: 10px">
-                  <img src="/Public/Home/images/cangku.png" style="vertical-align: baseline;width: 14px;height: 14px">
-                </a>
-                <a title="删除" onclick="member_del(this,'{$v.orderid}')" href="javascript:;">
-                  <i class="layui-icon">&#xe640;</i>
-                </a>
+                <in name="action_name.Order_show" value="$role_ac">
+                        <a title="查看"  onclick="x_admin_show('查看','/Home/Order/show?orderid={$v.orderid}',1200,700)" href="javascript:;" style="margin-right: 10px">
+                          <i class="layui-icon"   style="vertical-align: baseline;width: 13px">&#xe63c;</i>
+                        </a>
+                  <else />
+                        <a title="查看"   href="javascript:;" class="layui-btn-disabled-button" style="margin-right: 10px">
+                          <i class="layui-icon"   style="vertical-align: baseline;width: 13px">&#xe63c;</i>
+                        </a>
+                  </in>
+                  <in name="action_name.Order_edit" value="$role_ac">
+                        <a title="编辑" href="javascript:;" onclick="x_admin_show('编辑','/Home/Order/edit?orderid={$v.orderid}',1280,760)" class="ml-5" style="margin-right: 10px">
+                          <i class="layui-icon">&#xe642;</i>
+                        </a>
+                  <else />
+                        <a title="编辑" href="javascript:;"  class="ml-5 layui-btn-disabled-button" style="margin-right: 10px">
+                          <i class="layui-icon">&#xe642;</i>
+                        </a>
+                  </in>
+                  <in name="action_name.Order_update_order" value="$role_ac">
+                        <a title="仓管" href="javascript:;" onclick="x_admin_show('仓管','/Home/Order/update_order?orderid={$v.orderid}',800,500)" class="ml-5" style="margin-right: 10px">
+                          <img src="/Public/Home/images/cangku.png" style="vertical-align: baseline;width: 14px;height: 14px">
+                        </a>
+                  <else />
+                        <a title="仓管" href="javascript:;"  class="ml-5 layui-btn-disabled-button" style="margin-right: 10px">
+                          <img src="/Public/Home/images/cangku.png" style="vertical-align: baseline;width: 14px;height: 14px">
+                        </a>
+                  </in>
+                  <in name="action_name.Order_del" value="$role_ac">
+                        <a title="删除" onclick="member_del(this,'{$v.orderid}')" href="javascript:;">
+                          <i class="layui-icon">&#xe640;</i>
+                        </a>
+                  <else />
+                        <a title="删除" class="layui-btn-disabled-button"  href="javascript:;">
+                          <i class="layui-icon">&#xe640;</i>
+                        </a>
+                  </in>
               </td>
             </tr>
           </foreach>
@@ -345,5 +423,4 @@
       }
     </script>
   </body>
-
 </html>

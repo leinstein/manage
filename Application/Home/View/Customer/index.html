@@ -13,6 +13,12 @@
         <meta name="format-detection" content="telephone=no">
         <link rel="stylesheet" href="/Public/Home/css/x-admin.css" media="all">
     </head>
+    <style>
+        .layui-btn-disabled-button{
+            cursor:not-allowed;
+            opacity:1;
+        }
+    </style>
     <body>
         <div class="x-body">
             <form class="layui-form x-center" action="" style="width:800px">
@@ -35,12 +41,17 @@
                 </div> 
             </form>
             <xblock>
-                <button class="layui-btn" style="width: 125px;font-size: 16px;" onclick="member_add('添加客户','/Home/Customer/member-add','1000','760')"><i class="layui-icon">&#xe608;</i> 添 加</button>
+                <in name="action_name.Customer_add" value="$role_ac">
+                    <button class="layui-btn" style="width: 125px;font-size: 16px;" onclick="member_add('添加客户','/Home/Customer/add','1000','760')"><i class="layui-icon">&#xe608;</i> 添 加</button>
+                <else />
+                    <button class="layui-btn layui-btn-disabled-button" style="width: 125px;font-size: 16px;"><i class="layui-icon">&#xe608;</i> 添 加</button>
+                </in>
+                
                 <div class="layui-input-inline">
                     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px;padding: 2px 4px"  href="/Home/Customer/index" title="首页">
                     <img src="/Public/Home/images/indexw.png" style="vertical-align: baseline;width: 27px;height: 27px">
                     </a>
-                    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
+                    <!--<a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>-->
                 </div>
         <!--<span class="x-right" style="line-height:40px">找到：-->
             <!--<a>-->
@@ -137,12 +148,18 @@
                     <foreach name="infotoday" item="v">
                         <tr>
                             <td>
-                                <?php $i++;echo $i; ?>
+                                {++$i}
                             </td>
                             <td>
-                                <u style="cursor:pointer;color:#01AAED;text-decoration: none;font-size: 14px" onclick="member_show('{$v.name}','/Home/Customer/show?cid={$v.cid}','10001','1000','550')">
-                                    {$v.name}
-                                </u>
+                                <in name="action_name.Customer_show" value="$role_ac">
+                                    <u style="cursor:pointer;color:#01AAED;text-decoration: none;font-size: 14px" onclick="member_show('{$v.name}','/Home/Customer/show?cid={$v.cid}','10001','1000','550')">
+                                        {$v.name}
+                                    </u>
+                                <else/>
+                                    <u style="cursor:pointer;color:#01AAED;text-decoration: none;font-size: 14px" class="layui-btn-disabled-button">
+                                        {$v.name}
+                                    </u>
+                                </in>
                             </td>
                             <td >
                                 {$v.phone}
@@ -176,22 +193,43 @@
                                 {$v.create_time|date="Y-m-d",###}
                             </td>
                             <td class="td-manage">
-                                <a title="添加订单" href="javascript:;" onclick="order_add_list('添加订单','/Home/Customer/order_add','{$v.cid}','1280','760','{$v.nickname}')"
-                           class="ml-5" style="text-decoration:none">
-                                    <img src="/Public/Home/images/jia.png" width="15px">
-                                </a>
-                                <a title="编辑客户" href="javascript:;" onclick="member_edit('编辑客户','/Home/Customer/edit','{$v.cid}','1000','760')"
-                                   class="ml-5" style="text-decoration:none;margin-left: 10px">
-                                    <i class="layui-icon">&#xe642;</i>
-                                </a>
-                                <a title="添加待办任务" href="javascript:;" onclick="member_edit('添加待办任务','/Home/Customer/addbacklog','{$v.cid}','1000','700')"
-                                   class="ml-5" style="text-decoration:none;margin-left: 10px">
-                                    <i class="layui-icon">&#xe609;</i>
-                                </a>
-                                <a title="删除客户" href="javascript:;" onclick="member_del(this,'{$v.cid}')"
-                                   style="text-decoration:none;margin-left: 10px">
-                                    <i class="layui-icon">&#xe640;</i>
-                                </a>
+                                <in name="action_name.Customer_order_add" value="$role_ac">
+                                    <a title="添加订单" href="javascript:;" onclick="order_add_list('添加订单','/Home/Customer/order_add','{$v.cid}','1280','760','{$v.nickname}')" class="ml-5" style="text-decoration:none">
+                                        <img src="/Public/Home/images/jia.png" width="15px">
+                                    </a>
+                                <else />
+                                    <a title="添加订单" href="javascript:;" class="ml-5 layui-btn-disabled-button" style="text-decoration:none">
+                                        <img src="/Public/Home/images/jia.png" width="15px">
+                                    </a>
+                                </in>
+                                <in name="action_name.Customer_edit" value="$role_ac">
+                                    <a title="编辑客户" href="javascript:;" onclick="member_edit('编辑客户','/Home/Customer/edit','{$v.cid}','1000','760')" class="ml-5" style="text-decoration:none;margin-left: 10px">
+                                        <i class="layui-icon">&#xe642;</i>
+                                    </a>
+                                <else />
+                                    <a title="编辑客户" href="javascript:;"  class="ml-5 layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                                        <i class="layui-icon">&#xe642;</i>
+                                    </a>
+                                </in>
+                                <in name="action_name.Customer_addbacklog" value="$role_ac">
+                                    <a title="添加待办任务" href="javascript:;" onclick="member_edit('添加待办任务','/Home/Customer/addbacklog','{$v.cid}','1000','700')" class="ml-5" style="text-decoration:none;margin-left: 10px">
+                                        <i class="layui-icon">&#xe609;</i>
+                                    </a>
+                                <else />
+                                    <a title="添加待办任务" href="javascript:;" class="ml-5 layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                                        <i class="layui-icon">&#xe609;</i>
+                                    </a>
+                                </in>
+                                <in name="action_name.Customer_del" value="$role_ac">
+                                    <a title="删除客户" href="javascript:;" onclick="member_del(this,'{$v.cid}')"
+                                       style="text-decoration:none;margin-left: 10px">
+                                        <i class="layui-icon">&#xe640;</i>
+                                    </a>
+                                <else />
+                                    <a title="删除客户" href="javascript:;" class="layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                                        <i class="layui-icon">&#xe640;</i>
+                                    </a>
+                                </in>
                             </td>
                         </tr>
                     </foreach>
@@ -201,12 +239,18 @@
                     <foreach name="infoyestoday" item="v">
                             <tr>
                                 <td>
-                                    <?php $i++;echo $i; ?>
+                                    {++$i}
                                 </td>
                                 <td>
-                                    <u style="cursor:pointer;color:#01AAED;text-decoration: none;font-size: 14px" onclick="member_show('{$v.name}','/Home/Customer/show?cid={$v.cid}','10001','1000','550')">
-                                        {$v.name}
-                                    </u>
+                                    <in name="action_name.Customer_show" value="$role_ac">
+                                        <u style="cursor:pointer;color:#01AAED;text-decoration: none;font-size: 14px" onclick="member_show('{$v.name}','/Home/Customer/show?cid={$v.cid}','10001','1000','550')">
+                                            {$v.name}
+                                        </u>
+                                    <else/>
+                                        <u style="cursor:pointer;color:#01AAED;text-decoration: none;font-size: 14px" class="layui-btn-disabled-button">
+                                            {$v.name}
+                                        </u>
+                                    </in>
                                 </td>
                                 <td >
                                     {$v.phone}
@@ -240,22 +284,43 @@
                                     {$v.create_time|date="Y-m-d",###}
                                 </td>
                                 <td class="td-manage">
-                                    <a title="添加订单" href="javascript:;" onclick="order_add_list('添加订单','/Home/Customer/order_add','{$v.cid}','1280','760','{$v.nickname}')"
-                                       class="ml-5" style="text-decoration:none">
+                                    <in name="action_name.Customer_order_add" value="$role_ac">
+                                        <a title="添加订单" href="javascript:;" onclick="order_add_list('添加订单','/Home/Customer/order_add','{$v.cid}','1280','760','{$v.nickname}')" class="ml-5" style="text-decoration:none">
                                             <img src="/Public/Home/images/jia.png" width="15px">
                                         </a>
-                                        <a title="编辑客户" href="javascript:;" onclick="member_edit('编辑客户','/Home/Customer/edit','{$v.cid}','1000','760')"
-                                           class="ml-5" style="text-decoration:none;margin-left: 10px">
+                                    <else />
+                                        <a title="添加订单" href="javascript:;" class="ml-5 layui-btn-disabled-button" style="text-decoration:none">
+                                            <img src="/Public/Home/images/jia.png" width="15px">
+                                        </a>
+                                    </in>
+                                    <in name="action_name.Customer_edit" value="$role_ac">
+                                        <a title="编辑客户" href="javascript:;" onclick="member_edit('编辑客户','/Home/Customer/edit','{$v.cid}','1000','760')" class="ml-5" style="text-decoration:none;margin-left: 10px">
                                             <i class="layui-icon">&#xe642;</i>
                                         </a>
-                                        <a title="添加待办任务" href="javascript:;" onclick="member_edit('添加待办任务','/Home/Customer/addbacklog','{$v.cid}','1000','700')"
-                                           class="ml-5" style="text-decoration:none;margin-left: 10px">
+                                    <else />
+                                        <a title="编辑客户" href="javascript:;"  class="ml-5 layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                                            <i class="layui-icon">&#xe642;</i>
+                                        </a>
+                                    </in>
+                                    <in name="action_name.Customer_addbacklog" value="$role_ac">
+                                        <a title="添加待办任务" href="javascript:;" onclick="member_edit('添加待办任务','/Home/Customer/addbacklog','{$v.cid}','1000','700')" class="ml-5" style="text-decoration:none;margin-left: 10px">
                                             <i class="layui-icon">&#xe609;</i>
                                         </a>
+                                    <else />
+                                        <a title="添加待办任务" href="javascript:;" class="ml-5 layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                                            <i class="layui-icon">&#xe609;</i>
+                                        </a>
+                                    </in>
+                                    <in name="action_name.Customer_del" value="$role_ac">
                                         <a title="删除客户" href="javascript:;" onclick="member_del(this,'{$v.cid}')"
                                            style="text-decoration:none;margin-left: 10px">
                                             <i class="layui-icon">&#xe640;</i>
                                         </a>
+                                    <else />
+                                        <a title="删除客户" href="javascript:;" class="layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                                            <i class="layui-icon">&#xe640;</i>
+                                        </a>
+                                    </in>
                                 </td>
                             </tr>
                         </foreach>
@@ -265,12 +330,18 @@
                         <foreach name="infot" item="v">
                                 <tr>
                                     <td>
-                                        <?php $i++;echo $i; ?>
+                                        {++$i}
                                     </td>
                                     <td>
-                                        <u style="cursor:pointer;color:#01AAED;text-decoration: none;font-size: 14px" onclick="member_show('{$v.name}','/Home/Customer/show?cid={$v.cid}','10001','1000','550')">
-                                            {$v.name}
-                                        </u>
+                                        <in name="action_name.Customer_show" value="$role_ac">
+                                            <u style="cursor:pointer;color:#01AAED;text-decoration: none;font-size: 14px" onclick="member_show('{$v.name}','/Home/Customer/show?cid={$v.cid}','10001','1000','550')">
+                                                {$v.name}
+                                            </u>
+                                        <else/>
+                                            <u style="cursor:pointer;color:#01AAED;text-decoration: none;font-size: 14px" class="layui-btn-disabled-button">
+                                                {$v.name}
+                                            </u>
+                                        </in>
                                     </td>
                                     <td >
                                         {$v.phone}
@@ -304,22 +375,43 @@
                                         {$v.create_time|date="Y-m-d",###}
                                     </td>
                                     <td class="td-manage">
-                                        <a title="添加订单" href="javascript:;" onclick="order_add_list('添加订单','/Home/Customer/order_add','{$v.cid}','1280','760','{$v.nickname}')"
-                                           class="ml-5" style="text-decoration:none">
-                                            <img src="/Public/Home/images/jia.png" width="15px">
-                                        </a>
-                                        <a title="编辑客户" href="javascript:;" onclick="member_edit('编辑客户','/Home/Customer/edit','{$v.cid}','1000','760')"
-                                           class="ml-5" style="text-decoration:none;margin-left: 10px">
-                                            <i class="layui-icon">&#xe642;</i>
-                                        </a>
-                                        <a title="添加待办任务" href="javascript:;" onclick="member_edit('添加待办任务','/Home/Customer/addbacklog','{$v.cid}','1000','700')"
-                                           class="ml-5" style="text-decoration:none;margin-left: 10px">
-                                            <i class="layui-icon">&#xe609;</i>
-                                        </a>
-                                        <a title="删除客户" href="javascript:;" onclick="member_del(this,'{$v.cid}')"
-                                           style="text-decoration:none;margin-left: 10px">
-                                            <i class="layui-icon">&#xe640;</i>
-                                        </a>
+                                        <in name="action_name.Customer_order_add" value="$role_ac">
+                                            <a title="添加订单" href="javascript:;" onclick="order_add_list('添加订单','/Home/Customer/order_add','{$v.cid}','1280','760','{$v.nickname}')" class="ml-5" style="text-decoration:none">
+                                                <img src="/Public/Home/images/jia.png" width="15px">
+                                            </a>
+                                        <else />
+                                            <a title="添加订单" href="javascript:;" class="ml-5 layui-btn-disabled-button" style="text-decoration:none">
+                                                <img src="/Public/Home/images/jia.png" width="15px">
+                                            </a>
+                                        </in>
+                                        <in name="action_name.Customer_edit" value="$role_ac">
+                                            <a title="编辑客户" href="javascript:;" onclick="member_edit('编辑客户','/Home/Customer/edit','{$v.cid}','1000','760')" class="ml-5" style="text-decoration:none;margin-left: 10px">
+                                                <i class="layui-icon">&#xe642;</i>
+                                            </a>
+                                        <else />
+                                            <a title="编辑客户" href="javascript:;"  class="ml-5 layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                                                <i class="layui-icon">&#xe642;</i>
+                                            </a>
+                                        </in>
+                                        <in name="action_name.Customer_addbacklog" value="$role_ac">
+                                            <a title="添加待办任务" href="javascript:;" onclick="member_edit('添加待办任务','/Home/Customer/addbacklog','{$v.cid}','1000','700')" class="ml-5" style="text-decoration:none;margin-left: 10px">
+                                                <i class="layui-icon">&#xe609;</i>
+                                            </a>
+                                        <else />
+                                            <a title="添加待办任务" href="javascript:;" class="ml-5 layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                                                <i class="layui-icon">&#xe609;</i>
+                                            </a>
+                                        </in>
+                                        <in name="action_name.Customer_del" value="$role_ac">
+                                            <a title="删除客户" href="javascript:;" onclick="member_del(this,'{$v.cid}')"
+                                               style="text-decoration:none;margin-left: 10px">
+                                                <i class="layui-icon">&#xe640;</i>
+                                            </a>
+                                        <else />
+                                            <a title="删除客户" href="javascript:;" class="layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                                                <i class="layui-icon">&#xe640;</i>
+                                            </a>
+                                        </in>
                                     </td>
                                 </tr>
                             </foreach>
@@ -414,14 +506,5 @@
                 });
             }
             </script>
-            <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(hm, s);
-        })();
-        </script>
     </body>
 </html>

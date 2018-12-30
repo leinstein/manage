@@ -113,11 +113,11 @@ class SystemController extends HomeController{
             //上月以前的直接存储，不去查询
             //上月和本月的，每次去查询完成金额
             //现在以后的空着不管
-            if($v['complete']  == '' and $u_aim_time < time()){
+            if($v['complete']  == 0 and $u_aim_time < time()){
                     $star = mktime(0,0,0,$m,1,$y);
                     $end = mktime(23,59,59,$m,date('t', strtotime($v['month'])),$y);
                     $map['delete'] = 1;
-                    if($_SESSION['userid'] != 'admin'){
+                    if($_SESSION['username'] != 'admin'){
                         $map['saleid'] = $userid;
                     }
                     $map['orderstatus'] = ['neq',4];
@@ -130,7 +130,16 @@ class SystemController extends HomeController{
             $v['avg'] = round($v['complete'] / $v['aim'] , 3) * 100 . '%';
             $info_full[] = $v;
         }
-        $this->assign('info',$info_full);
+        //权限按钮
+        $role = M('Role')->where(['id'=>$_SESSION['roleid']])->find();
+        $role_ac = $role['role_auth_ac'];
+        $action_name = get_action_name($role_ac);
+
+        $this->assign([
+            'info'=>$info_full,
+            'role_ac'=> $role_ac,
+            'action_name'=>$action_name
+        ]);
         $this->display();
     }
 
