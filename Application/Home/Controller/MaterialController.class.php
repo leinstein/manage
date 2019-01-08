@@ -22,13 +22,14 @@ class MaterialController extends HomeController {
         $list = $material->where($where)->order('id desc')->limit($page->firstRow . ',' . $page->listRows)->select();
         $class = M('Class')->select();
         $pic_type = M('Pic_type')->select();
-
-        $this->assign('list', $list);
-        $this->assign('class', $class);
-        $this->assign('pic_type', $pic_type);
-        $this->assign('count', $count);
-        $this->assign('page', $show);
-        $this->assign('firstRow', $page->firstRow);
+        $this->assign([
+            'list'=>$list,
+            'class'=> $class,
+            'pic_type'=> $pic_type,
+            'count'=> $count,
+            'page'=> $show,
+            'firstRow'=> $page->firstRow
+        ]);
         $this->display();
     }
 
@@ -86,12 +87,6 @@ class MaterialController extends HomeController {
             'role_ac'=> $role_ac,
             'action_name'=>$action_name
         ]);
-//        $this->assign('list', $list_sort);
-//        $this->assign('class', $class);
-//        $this->assign('pic_type', $pic_type);
-//        $this->assign('count', $count);
-//        $this->assign('page', $show);
-//        $this->assign('firstRow', $page->firstRow);
         $this->display();
     }
 
@@ -324,16 +319,16 @@ class MaterialController extends HomeController {
         if(IS_POST){
             $material = M('Material');
             $class_id = $_POST['class_id'];
-            $material = $material->where(['class_id'=>$class_id])->select();
+            $material_info = $material->where(['class_id'=>$class_id])->select();
             $document_root = $_SERVER["DOCUMENT_ROOT"];
-            foreach ($material as $v){
+            foreach ($material_info as $v){
                 unlink($document_root.$v['pic_url']);
                 unlink($document_root.$v['pic_thums_url']);
             }
             $del_m = M('Material')->where(['class_id'=>$class_id])->delete();
             $del_t = M('Pic_type')->where(['class_id'=>$class_id])->delete();
             $del_c = M('Class')->where(['id'=>$class_id])->delete();
-            if($del_m){
+            if($del_c){
                 $this->ajaxReturn(array('statu'=>200,'msg'=>'组及素材删除成功'));
             }else{
                 $this->ajaxReturn(array('statu'=>202,'msg'=>'组及素材删除失败，请重试'));
@@ -364,7 +359,7 @@ class MaterialController extends HomeController {
             }
             $del_m = M('Material')->where(['class_id'=>$class_id,'type_id'=>$type_id])->delete();
             $del_t = M('Pic_type')->where(['id'=>$type_id])->delete();
-            if($del_m and $del_t){
+            if($del_t){
                 $this->ajaxReturn(array('statu'=>200,'msg'=>'类型删除成功'));
             }else{
                 $this->ajaxReturn(array('statu'=>202,'msg'=>'类型除失败，请重试'));

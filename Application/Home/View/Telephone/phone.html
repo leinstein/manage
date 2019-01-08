@@ -1,0 +1,147 @@
+<include file="Common:header" />
+    </head>
+    <body>
+        <div class="x-body">
+            <style>
+                .layui-table td, .layui-table th{text-align: center;}
+                .layui-layer-dialog{background-color: #f8f8f8}
+                xblock{height: 40px}
+            </style>
+            <xblock>
+                <span class="x-right" style="line-height:40px">全部：
+                    <a title="全部"  href="/Home/Telephone/phone">
+                       {$avg.totle}
+                    </a>
+                </span>
+                <span class="x-right" style="line-height:40px">未使用：
+                    <a title="未使用"  href="/Home/Telephone/phone?day=unused">
+                      {$avg.unused}
+                    </a>
+                </span>
+                <span class="x-right" style="line-height:40px">已使用：
+                    <a title="已使用"  href="/Home/Telephone/phone?day=use">
+                      {$avg.use}
+                    </a>
+                </span>
+                <span class="x-right" style="line-height:40px">上月：
+                    <a title="上月"  href="/Home/Telephone/phone?day=lastmonth">
+                        {$avg.lastmonth}
+                    </a></span>
+                <span class="x-right" style="line-height:40px">本月：
+                    <a title="本月"  href="/Home/Telephone/phone?day=month">
+                        {$avg.month}
+                    </a>
+                </span>
+                <span class="x-right" style="line-height:40px">昨天：
+                    <a title="昨天"  href="/Home/Telephone/phone?day=yestoday">
+                        {$avg.yestoday}
+                    </a>
+                </span>
+                <span class="x-right" style="line-height:40px">今天：
+                    <a title="今天"  href="/Home/Telephone/phone?day=today">
+                        {$avg.today}
+                    </a>
+                </span>
+            </xblock>
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th width="30px">
+                            序号
+                        </th>
+                        <th>
+                            电话号码
+                        </th>
+                        <th>
+                            使用状态
+                        </th>
+                        <th>
+                            使用人
+                        </th>
+                        <th width="90px">
+                            上传时间
+                        </th>
+                        <th width="90px">
+                            使用时间
+                        </th>
+                        <th width="60px">
+                            操作
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <foreach name="list" item="v">
+                        <tr>
+                            <td>
+                                {++$i}
+                            </td>
+                            <td>
+                                {$v.phone}
+                            </td>
+                            <td >
+                                {$v.weixin}
+                            </td>
+                            <td >
+                                {$v.nickname}
+                            </td>
+                            <td >
+                                <if condition="$v['create_time'] gt 100">
+                                    {$v.create_time|date="Y-m-d",###}
+                                </if>
+                            </td>
+                            <td>
+                                <if condition="$v['use_time'] gt 100">
+                                    {$v.use_time|date="Y-m-d",###}
+                                </if>
+                            </td>
+                            <td class="td-manage">
+                                <in name="action_name.Goods_del" value="$role_ac">
+                                    <a title="删除" href="javascript:;" onclick="admin_del(this,'{$v.id}')" style="text-decoration:none;margin-left: 10px">
+                                        <i class="layui-icon">&#xe640;</i>
+                                    </a>
+                                <else/>
+                                   <a title="删除" href="javascript:;" class="layui-btn-disabled-button"  style="text-decoration:none;margin-left: 10px;border: 0">
+                                        <i class="layui-icon">&#xe640;</i>
+                                    </a>
+                                </in>
+                            </td>
+                        </tr>
+                    </foreach>
+                </tbody>
+            </table>
+            <div id="page" style="margin-bottom: 50px">{$page}</div>
+        </div>
+        <script src="/Public/Home/lib/layui/layui.js" charset="utf-8"></script>
+        <script>
+            layui.use(['element','layer'], function(){
+                $ = layui.jquery;//jquery
+                layer = layui.layer;//弹出层
+            });
+            
+            /*删除*/
+            function admin_del(obj,id){
+                layer.confirm('确认要删除吗？',function(index){
+                    $.ajax({
+                        type: 'POST',
+                        url: '/Home/Telephone/del',
+                        dataType: 'json',
+                        data:{'id':id},
+                        success: function(data){
+                            if(data.statu == 200){
+                                $(obj).parents("tr").remove();
+                                layer.msg('已删除!',{icon:1,time:1000});
+                            }else{
+                                layer.msg(data.msg);
+                                return false;
+                            }
+                        },
+                        error:function(data) {
+                            layer.msg('系统错误');
+                        },
+                    });
+                });
+            }
+        </script>
+        <script src="/Public/Home/js/x-layui.js" charset="utf-8"></script>
+    </body>
+</html>

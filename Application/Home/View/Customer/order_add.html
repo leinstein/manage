@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
-  
   <head>
     <meta charset="UTF-8">
-    <title>欢迎页面-X-admin2.0</title>
+    <title>风暴CRM管理系统</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -13,6 +12,7 @@
     <script type="text/javascript" src="/Public/Home/lib2/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="/Public/Home/js/xadmin.js"></script>
     <link rel="stylesheet" href="/Public/Home/laydate/theme/default/laydate.css">
+    <link rel="stylesheet" href="/Public/Home/css/fengbao.css" media="all">
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <!--[if lt IE 9]>
       <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -20,155 +20,10 @@
     <![endif]-->
   </head>
   <style>
-      .layui-form-select .layui-edge{
-          right: -285px;
-      }
-      .layui-input, .layui-textarea{
-          width: 481px;
-      }
-      .layui-form-item{
-          width: 48%;
-          display: inline-block;
-      }
-      .layui-textarea{
-          min-height: 50px;
-      }
-    #goodsbox{
-        width: 1075px;
-        border: 1px solid #1ba194;
-        border-radius: 2px;
-        margin-left: 110px;
-        display: none;
-        margin-bottom: 30px;
-        margin-top: -7px;
-    }
-    #goodsitem{
-        margin: 15px 10px;
-    }
-    #goodsnumber{
-        width: 45px;
-        display: inline;
-        height: 24px;
-        line-height: 24px;
-        line-height: 24px\9;
-        border: 1px solid #e2e2e2;
-        background-color: #fff;
-        border-radius: 2px;
-    }
-    #orderfee{
-        margin-left: 110px;
-    }
-      #orderfee th{
-          color: #777;
-          border: 0px;
-          padding-right: 2px;
-      }
-      #orderfee td{
-          border: 0px;
-          padding-left: 2px;
-      }
-      #show_goods{
-          cursor: pointer;
-          text-align: center;
-          background-color: #1ba194;
-          border-radius: 5px;
-          border:0px;
-          width: 100px;
-          color: #ffffff;
-          font-size: 16px;
-      }
-      .icon_shop{
-          cursor: pointer;
-          margin: 0 10px;
-          font-size: 28px;
-          color: #000000;
-      }
-    #orderfee tr{
-        background-color: #f2f2f2;
-    }
-    #orderfee th{
-        text-align: right;
-    }
-    #orderfee td{
-        font-size: 24px;
-    
-    }
-    #orderfee td font{
-        color: #999;
-    }
-    #orderfee td blod{
-        color: red;
-    }
-      .zengp{
-          display: inline-block;
-          /*border:1px solid #777;*/
-          padding: 5px 30px;
-          /*margin: -3px;*/
-          border-radius: 3px;
-      }
-      #show_zeng{
-          cursor: pointer;
-          background-color: #1ba194;
-          width: 130px;
-          height: 37px;
-          border-radius: 5px;
-          line-height: 37px;
-          text-align: center;
-          display: inline-block;
-          margin-top: 5px;
-          color: #ffffff;
-          font-size: 16px;
-      }
-      .zengpar{
-          margin-right: 20px;
-          float: left;
-          height: 45px;
-          background-color: #f2f2f2;
-          width: 31%;
-          text-align: center;
-          margin-bottom: 15px;
-      }
-      #zengbox{
-          width: 1075px;
-          border: 1px solid #1ba194;
-          border-radius: 2px;
-          margin-left: 110px;
-          display: none;
-          margin-bottom: 30px;
-          margin-top: 7px;
-      }
-      #zengsitem{
-          margin: 15px 10px;
-      }
-      #btn_sub{
-          margin-left: 596px;
-      }
-      #btn_sub button{
-          /*float: right;*/
-          display: inline-block;
-          width: 165px;
-          height: 39px;
-          position: relative;
-          vertical-align: middle;
-          line-height: 39px;
-          cursor: pointer;
-          text-align: center;
-          font-size: 16px;
-          font-weight: 700;
-          background: #ff0036;
-          color: #fff;
-          margin-left: 422px;
-          margin-top: 30px;
-      }
-      .btn_order{
-          float: right;
-          padding: 9px 15px;
-          min-height: 20px;
-          line-height: 20px;
-          font-size: 20px;
-          color: #666;
-          margin-top: 20px;
-      }
+      .layui-form-select .layui-edge{right: -285px;}
+      .layui-input, .layui-textarea{width: 481px;}
+      .layui-form-item{ width: 48%;display: inline-block;}
+      .layui-textarea{min-height: 50px;}
   </style>
   <body>
     <div class="x-body">
@@ -179,7 +34,7 @@
                   <span class="x-red"></span>姓名
               </label>
               <div class="layui-input-inline">
-                  <input type="text" value="{$data.cname}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$customer.phone}" required="" disabled="disabled"
+                  <input type="text" value="{$customer.name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$customer.phone}" required="" disabled="disabled"
                          autocomplete="off" class="layui-input" style="border: 0px;">
               </div>
           </div>
@@ -203,9 +58,9 @@
                   <table class="layui-table" style="width: 108%">
                       <thead>
                         <tr>
-                            <td>商品名</td>
-                            <td>商品单价</td>
-                            <td>商品库存</td>
+                            <td width="180px">商品名</td>
+                            <td width="90px">商品单价</td>
+                            <td width="90px">商品库存</td>
                             <td>购买数量</td>
                             <td>单品总价</td>
                             <td>操作</td>
@@ -216,7 +71,7 @@
                         <tr>
                             <td id="show_goods" onclick="show_goods()">
                                 <i class="layui-icon">&#xe608;</i> 添 加 商 品
-                                    <!--<i class="layui-icon" id="show_goods" onclick="show_goods()" style="font-size: 31px;color: #009688;">+</i>-->
+                                
                             </td>
                         </tr>
                       </tbody>
@@ -337,8 +192,6 @@
                         <td><font>￥</font> <span style="color: red" id="payyi">0</span></td>
                         <th>快递代收款:</th>
                         <td><font>￥</font> <span style="color: red" id="paydai">0</span></td>
-                        <!--<th>订单金额</th>-->
-                        <!--<td><font>￥</font> <span  id="nowpay">0</span></td>-->
                     </tr>
                 </table>
             </div>
@@ -382,6 +235,7 @@
                                 var index = parent.layer.getFrameIndex(window.name);
                                 //关闭当前frame
                                 parent.layer.close(index);
+                                window.parent.location.reload();
                             });
                         }else{
                             layer.msg(data.msg);
@@ -459,7 +313,7 @@
                      if(data.statu == 200){
                          $("#zeng_add").prepend('<div class="zengpar">\n' +
                              '<div class="zengp" onselectstart="return false">'+data.msg.goodsname +
-                             '&nbsp;&nbsp;&nbsp;<span onclick="shop_pre(this)" class="icon_shop">-</span>\n' +
+                             '<span onclick="shop_pre(this)" class="icon_shop">-</span>\n' +
                              '<input type="text" readonly="readonly"  class="layui-input" id="goodsnumber" name="zengsnumber_'+ data.msg.goodsid +'" value="1">\n' +
                              '<span onclick="shop_nex(this)" class="icon_shop">+</span>&nbsp;&nbsp;&nbsp;\n' +
                              '<a title="删除"  href="javascript:;" onclick="zeng_del(this)" style="text-decoration:none">\n' +

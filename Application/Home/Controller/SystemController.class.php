@@ -171,4 +171,271 @@ class SystemController extends HomeController{
             $this->display();
         }
     }
+
+    /**
+     * 2019/1/1
+     * 12:35
+     * anthor liu
+     * 删除的客户
+     */
+    Public function customer(){
+        $where['delete'] = 0;
+        if($_GET['stat_date'] and !$_GET['stop_date']) $where['create_time'] = ['egt',strtotime($_GET['stat_date'])];
+        if(!$_GET['stat_date'] and $_GET['stop_date']) $where['create_time'] = ['elt',strtotime($_GET['stop_date'])];
+        if($_GET['stat_date'] and $_GET['stop_date']) $where['create_time'] = ['between',[strtotime($_GET['stat_date']),strtotime($_GET['stop_date'])]];
+        if($_GET['name']){
+            $word = '%'.trim($_GET['name']).'%';
+            $where['name|note|phone|age'] =array('like',$word);
+        }
+        $customer = D('Customer');
+        $order = D('Order');
+        //获取统计数据
+        if($_GET['day']){
+            if($_GET['day'] == 'history'){
+                $where['delete'] = 1;
+            }else{
+                $where['create_time'] = $order->where_s($_GET['day']);
+            }
+        }
+        $statistical = $customer->statistical();
+        $count = $customer->where($where)->count();//满足条件的数量
+        $page  = new \Think\Page($count, 25);//实例化分页
+
+        $page->setConfig('prev','上一页');
+        $page->setConfig('next','下一页');
+        $show  = $page->show();//分页显示输出
+        $list = $customer->where($where)->order('cid desc')->limit($page->firstRow . ',' . $page->listRows)->select();
+
+        $admininfo = M('Admin')->select();
+        $group = M('Group')->select();
+        $address = M('Address');
+        foreach ($list as $v) {
+            //销售人员姓名
+            foreach ($admininfo as $vv){
+                if($v['saleid'] == $vv['id']){
+                    $v['nickname'] = $vv['nickname'];
+                }
+            }
+            //销售人员所在分组
+            foreach ($group as $vv){
+                if($v['itemid'] == $vv['group_id']){
+                    $v['item_name'] = $vv['group_name'];
+                }
+            }
+            $add = $address->where(['addressid'=>$v['address_id']])->find();
+            $v['address'] = $add['province'].'-'.$add['city'];
+            $info[] = $v;
+        }
+        //获取今天00:00时间戳
+        $todaystart = strtotime(date('Y-m-d'.'00:00:00',time()));
+        //获取昨天00:00时间戳
+        $beginYesterday=mktime(0,0,0,date('m'),date('d')-1,date('Y'));
+        //昨天结束
+        $endYesterday=mktime(0,0,0,date('m'),date('d'),date('Y'))-1;
+        foreach ($info as $v){
+            if($v['create_time'] > $todaystart){
+                $infotoday[] = $v;
+            }else if($v['create_time'] < $endYesterday and $v['create_time'] > $beginYesterday){
+                $infoyestoday[] = $v;
+            }else{
+                $infot[] = $v;
+            }
+        }
+        //权限按钮
+        $role = M('Role')->where(['id'=>$_SESSION['roleid']])->find();
+        $role_ac = $role['role_auth_ac'];
+        $action_name = get_action_name($role_ac);
+
+        $this->assign([
+            'statistical'=> $statistical,
+            'infotoday'=>$infotoday,
+            'infoyestoday'=>$infoyestoday,
+            'infot'=>$infot,
+            'count'=>$count,
+            'page'=>$show,
+            'firstRow'=>$page->firstRow,
+            'role_ac'=> $role_ac,
+            'action_name'=>$action_name
+        ]);
+        $this->display();
+
+    }
+
+    /**
+     * 2019/1/1
+     * 17:14
+     * anthor liu
+     * 恢复客户
+     */
+    Public function restore_customer(){
+        $cid = $_POST['cid'];
+        $res = M('Customer')->save(['cid'=>$cid,'delete'=>1]);
+        if ($res) {
+            $this->ajaxReturn(['statu' => 200, 'msg' => '恢复成功']);
+        } else {
+            $this->ajaxReturn(['statu' => 202, 'msg' => "恢复出错，请重试"]);
+        }
+    }
+
+    /**
+     * 2019/1/1
+     * 17:14
+     * anthor liu
+     *彻底删除客户
+     */
+    Public function real_del_customer(){
+        $cid = $_POST['cid'];
+        $res = M('Customer')->where(['cid'=>$cid])->delete();
+        if ($res) {
+            $this->ajaxReturn(['statu' => 200, 'msg' => '成功删除']);
+        } else {
+            $this->ajaxReturn(['statu' => 202, 'msg' => "删除出错"]);
+        }
+    }
+
+    /**
+     * 2019/1/1
+     * 12:37
+     * anthor liu
+     * 删除的订单
+     */
+    Public function order(){
+        $order = D('Order');
+        $where['delete'] = 0;
+        $groupid = $_SESSION['groupid'];
+        if($_SESSION['username'] != 'admin') $where['projectid'] = $groupid;
+        if($_GET['stat_date'] and !$_GET['stop_date']) $where['ordercreatetime'] = ['egt',strtotime($_GET['stat_date'])];
+        if(!$_GET['stat_date'] and $_GET['stop_date']) $where['ordercreatetime'] = ['elt',strtotime($_GET['stop_date'])];
+        if($_GET['stat_date'] and $_GET['stop_date']) $where['ordercreatetime'] = ['between',[strtotime($_GET['stat_date']),strtotime($_GET['stop_date'])]];
+        if($_GET['paytype']) $where['paytype'] = $_GET['paytype'];
+        if($_GET['payform']) $where['payform'] = $_GET['payform'];
+        if($_GET['orderstatus']) $where['orderstatus'] = $_GET['orderstatus'];
+        if($_GET['word']){
+            $word = '%'.trim($_GET['word']).'%';
+            $where['orderno|desc|couriername|courierlist|goods_de|orderprice|cheapprice|pay|payment|paymentfee'] =array('like',$word);
+        }
+        //获取统计数据
+        if($_GET['day']){
+            if($_GET['day'] == 'history'){
+                $where['delete'] = 1;
+            }else{
+                $where['ordercreatetime'] = $order->where_s($_GET['day']);
+            }
+        }
+
+        $count = $order->where($where)->count();//满足条件的数量
+        $page  = new \Think\Page($count, 25);//实例化分页
+        $page->setConfig('prev','上一页');
+        $page->setConfig('next','下一页');
+        $show  = $page->show();//分页显示输出
+        $list = $order->where($where)->order('orderid desc')->limit($page->firstRow . ',' . $page->listRows)->select();
+        $customer = M('Customer')->select();
+        $admin = M('Admin')->select();
+
+        foreach ($list as $v) {
+            foreach ($customer as $vv){
+                if($v['cid'] == $vv['cid']){
+                    $v['customer_name'] = $vv['name'];
+                    $v['customer_phone'] = $vv['phone'];
+                    break;
+                }
+            }
+            foreach ($admin as $vvv){
+                if($vvv['id'] == $v['saleid']){
+                    $v['nickname'] = $vvv['nickname'];
+                    break;
+                }
+            }
+            $v['paynow'] = $v['orderprice'];
+            $info[] = $v;
+        }
+        //获取今天00:00时间戳
+        $todaystart = strtotime(date('Y-m-d'.'00:00:00',time()));
+        //获取昨天00:00时间戳
+        $beginYesterday=mktime(0,0,0,date('m'),date('d')-1,date('Y'));
+        //昨天结束
+        $endYesterday=mktime(0,0,0,date('m'),date('d'),date('Y'))-1;
+        foreach ($info as $v){
+            if($v['ordercreatetime'] > $todaystart){
+                $infotoday[] = $v;
+            }else if($v['ordercreatetime'] < $endYesterday and $v['ordercreatetime'] > $beginYesterday){
+                $infoyestoday[] = $v;
+            }else{
+                $infot[] = $v;
+            }
+        }
+        $order_s = D('Order');
+        //获取统计数据
+        $statistical = $order_s->statistical();
+        //权限按钮
+        $role = M('Role')->where(['id'=>$_SESSION['roleid']])->find();
+        $role_ac = $role['role_auth_ac'];
+        $action_name = get_action_name($role_ac);
+        $this->assign([
+            'statistical'=> $statistical,
+            'infotoday'=> $infotoday,
+            'infoyestoday'=> $infoyestoday,
+            'infot'=> $infot,
+            'count'=> $count,
+            'page'=> $show,
+            'firstRow'=> $page->firstRow,
+            'role_ac'=> $role_ac,
+            'action_name'=>$action_name
+        ]);
+        $this->display();
+    }
+
+    /**
+     * 2019/1/1
+     * 17:14
+     * anthor liu
+     * 恢复订单
+     */
+    Public function restore_order(){
+        $orderid = $_POST['orderid'];
+        $order = M('Order');
+        $res = $order->save(['orderid'=>$orderid,'delete'=>1]);
+        if ($res) {
+            $order_info = $order->where(['orderid'=>$orderid])->find();
+            $cid = $order_info['cid'];
+            if($order_info['orderstatus'] != 4){
+                M('Customer')->where(['cid'=>$cid])->setInc('buyrate');
+            }
+            $this->ajaxReturn(['statu' => 200, 'msg' => '恢复成功']);
+        } else {
+            $this->ajaxReturn(['statu' => 202, 'msg' => "恢复出错，请重试"]);
+        }
+    }
+
+    /**
+     * 2019/1/1
+     * 17:14
+     * anthor liu
+     *彻底删除订单
+     */
+    Public function real_del_order(){
+        $orderid = $_POST['orderid'];
+        $res = M('Order')->where(['orderid'=>$orderid])->delete();
+        if ($res) {
+            $this->ajaxReturn(['statu' => 200, 'msg' => '成功删除']);
+        } else {
+            $this->ajaxReturn(['statu' => 202, 'msg' => "删除出错"]);
+        }
+    }
+
+    /**
+     * 2019/1/1
+     * 16:52
+     * anthor liu
+     * 删除目标
+     */
+    Public function del_aim(){
+        $id = $_POST['id'];
+        $res = M('Aim')->where(['id'=>$id])->delete();
+        if ($res) {
+            $this->ajaxReturn(['statu' => 200, 'msg' => '成功删除']);
+        } else {
+            $this->ajaxReturn(['statu' => 202, 'msg' => "删除出错"]);
+        }
+    }
 }

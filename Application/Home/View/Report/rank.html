@@ -1,37 +1,13 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>
-            X-admin v1.0
-        </title>
-        <meta name="renderer" content="webkit">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="format-detection" content="telephone=no">
-        <link rel="stylesheet" href="/Public/Home/css/x-admin.css" media="all">
+<include file="Common:header" />
     </head>
     <body style="background-color: #f0f2f5;overflow-x:hidden">
         <style>
-            .layui-fluid{
-                margin-top: 20px;
-                width: 98%;
-                margin-left: 1%;
-                background-color: white;
-            }
-            .layui-input{
-                color: #666;
-                font-weight: normal;
-            }
-            .layui-card{
-                padding: 20px;
-            }
+            .layui-fluid{margin-top: 20px;width: 98%;margin-left: 1%;background-color: white;}
+            .layui-input{color: #666;font-weight: normal}
+            .layui-card{padding: 20px 20px 80px 20px;}
         </style>
         <div class="layui-fluid">
             <div class="layui-card">
-                <!--<div class="x-body">-->
                 <xblock style="background-color: white !important;margin: 0">
                     <a title="本月排名" class="layui-btn"  href="/Home/Report/rank?month=month">
                         本月排名
@@ -44,9 +20,8 @@
                     </a>
                     <div class="layui-input-inline">
                         <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px;padding: 2px 4px"  href="/Home/Report/rank?month=month" title="首页">
-                        <img src="/Public/Home/images/indexw.png" style="vertical-align: baseline;width: 27px;height: 27px">
+                            <img src="/Public/Home/images/indexw.png" style="vertical-align: baseline;width: 27px;height: 27px">
                         </a>
-                        <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
                     </div>
                     <span class="x-right" style="line-height:40px">
                         <form class="layui-form x-center" action="" style="width:810px;margin-top: -15px;">
@@ -112,19 +87,6 @@
                         </tr>
                     </thead>
                     <style>.layui-table td, .layui-table th{text-align: center;}</style>
-                    <style>
-                        .order_total_amount{
-                            font-size: 18px;
-                            font-weight: bold;
-                            color: #009688;
-                        }
-                        .rate_font{
-                            font-size: 24px !important;
-                            font-weight: bold;
-                            font-style: italic;
-                            color: #666;
-                        }
-                    </style>
                     <tbody>
                         <foreach name="info" item="v">
                             <tr>
@@ -168,16 +130,15 @@
                         </foreach>
                     </tbody>
                 </table>
-                <div id="page" style="margin-bottom: 70px;">{$page}</div>
+                <div id="page" style="margin-bottom: 50px;margin-top: 20px">{$page}</div>
               </div>
            </div>
          </div>
-    
         <script src="/Public/Home/lib/layui/layui.js" charset="utf-8"></script>
         <script src="/Public/Home/js/x-layui.js" charset="utf-8"></script>
         
         <script>
-            layui.use(['laydate','element','laypage','layer'], function(){
+            layui.use(['laydate','element','layer'], function(){
                 $ = layui.jquery;//jquery
               laydate = layui.laydate;//日期插件
               layer = layui.layer;//弹出层

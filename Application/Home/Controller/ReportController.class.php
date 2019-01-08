@@ -96,20 +96,28 @@ class ReportController extends HomeController {
         }
         //初始化默认数据
         if(!$_GET['stat_date'] and !$_GET['stop_date'] and !$_GET['month']) $where_order['ordercreatetime'] = $order->where_report('month');
-        $map['pid'] = array('gt',1);
-        $role_info_ids = $role->where($map)->field('id')->select();
-        foreach ($role_info_ids as $k=>$v){
-            $role_ids[] = $v['id'];
-        }
-        $role_ids = implode(',',$role_ids);
-        $where['role_id'] = ['in',$role_ids];
+//        $map['pid'] = array('gt',1);
+//        $role_info_ids = $role->where($map)->field('id')->select();
+//        foreach ($role_info_ids as $k=>$v){
+//            $role_ids[] = $v['id'];
+//        }
+//        $role_ids = implode(',',$role_ids);
+//        $where['role_id'] = ['in',$role_ids];
         //获取做业绩的人员/分页
-        $count = $admin->where($where)->count();//满足条件的数量
+        //$count = $admin->where($where)->count();//满足条件的数量
+        $count = $admin->count();//满足条件的数量
         $page  = new \Think\Page($count, 25);//实例化分页
         $page->setConfig('prev','上一页');
         $page->setConfig('next','下一页');
         $show  = $page->show();//分页显示输出
-        $admin_info = $admin->where($where)->limit($page->firstRow . ',' . $page->listRows)->select();
+        //$admin_info = $admin->where($where)->limit($page->firstRow . ',' . $page->listRows)->select();
+        $group = M('Group')->field('group_id')->where(['issale'=>'是'])->select();
+        foreach ($group as $g){
+            $group_ids[] = $g['group_id'];
+        }
+        $group_ids = implode(',',$group_ids);
+        $group_map['group_id'] = ['in',$group_ids];
+        $admin_info = $admin->where($group_map)->select();
         //$admin_info = $admin->where($ids)->select();
         $order_info = $order->where($where_order)->select();
         //统计销售人员订单/客户/销售额
@@ -155,12 +163,16 @@ class ReportController extends HomeController {
         }
         array_multisort($sort,SORT_DESC,$info);
         //排名排序
-        $i=$page->firstRow + 1;
+        $i=1;
+
         foreach ($info as $v){
             $v['sort_amount'] = $i;
             $i++;
             $info_sort[] = $v;
         }
+        $p1 = $page->firstRow;
+        $p2 = $page->listRows;
+        $info_sort = array_slice($info_sort,$p1,$p2);
         $this->assign('count', $count);
         $this->assign('page', $show);
         $this->assign('firstRow', $page->firstRow);
@@ -362,14 +374,9 @@ class ReportController extends HomeController {
 
         //where条件
         //时间搜索订单  关键词搜索客户
-        $where = 1;
         if($_GET['stat_date'] and !$_GET['stop_date']) $where_order['ordercreatetime'] = ['egt',strtotime($_GET['stat_date'])];
         if(!$_GET['stat_date'] and $_GET['stop_date']) $where_order['ordercreatetime'] = ['elt',strtotime($_GET['stop_date'])];
         if($_GET['stat_date'] and $_GET['stop_date']) $where_order['ordercreatetime'] = ['between',[strtotime($_GET['stat_date']),strtotime($_GET['stop_date'])]];
-//        if($_GET['name']){
-//            $word = '%'.trim($_GET['name']).'%';
-//            $where['username|nickname|mobile'] =array('like',$word);
-//        }
 
         //获取统计数据
         $where_order['delete'] = 1;
@@ -470,15 +477,13 @@ class ReportController extends HomeController {
         $group_lastmonth = $order->group_lastmonth();
         $group_history = $order->group_histort();
         //上月-天   本月-天  年-月
-        $info_lastmonth_day = D('Order')->group_lastmonth_day();
-
+        $info_lastmonth_day = $order->group_lastmonth_day();
         $info_lastmonth_day = json_encode($info_lastmonth_day);
 
-        $info_month_day = D('Order')->group_month_day();
-
+        $info_month_day = $order->group_month_day();
         $info_month_day = json_encode($info_month_day);
 
-        $info_year_month = D('Order')->group_year();
+        $info_year_month = $order->group_year();
         $info_year_month = json_encode($info_year_month);
 
         //排名
@@ -487,14 +492,16 @@ class ReportController extends HomeController {
         }
         array_multisort($sort,SORT_DESC,$info);
 
-        $this->assign('info',$info);
-        $this->assign('group_sum',$group_sum);
-        $this->assign('group_month',$group_month);
-        $this->assign('group_lastmonth',$group_lastmonth);
-        $this->assign('info_month_day',$info_month_day);
-        $this->assign('info_lastmonth_day',$info_lastmonth_day);
-        $this->assign('info_year_month',$info_year_month);
-        $this->assign('group_history',$group_history);
+        $this->assign([
+            'info'=>$info,
+            'group_sum'=>$group_sum,
+            'group_month'=>$group_month,
+            'group_lastmonth'=>$group_lastmonth,
+            'info_month_day'=>$info_month_day,
+            'info_lastmonth_day'=>$info_lastmonth_day,
+            'info_year_month'=>$info_year_month,
+            'group_history'=>$group_history
+        ]);
         $this->display();
     }
 
@@ -507,22 +514,18 @@ class ReportController extends HomeController {
     Public function consume(){
         $admin = M('Admin');
         $order = D('Order');
-        $role  = M('Role');
-        $customer = M('Customer');
         $address = M('Address');
+        $where_order['od.delete'] = 1;
+        $where_order['od.orderstatus'] = ['neq',4];
         //where条件
         //时间搜索订单  关键词搜索客户
         if($_GET['stat_date'] and !$_GET['stop_date']) $where_order['ordercreatetime'] = ['egt',strtotime($_GET['stat_date'])];
         if(!$_GET['stat_date'] and $_GET['stop_date']) $where_order['ordercreatetime'] = ['elt',strtotime($_GET['stop_date'])];
         if($_GET['stat_date'] and $_GET['stop_date']) $where_order['ordercreatetime'] = ['between',[strtotime($_GET['stat_date']),strtotime($_GET['stop_date'])]];
-        if($_GET['name']){
-            $word = '%'.trim($_GET['name']).'%';
-            $where['name|note|phone|c_weixin|a_role|a_weixin'] =array('like',$word);
-        }
         //获取统计数据
         if($_GET['month']){
             if($_GET['month'] == 'history'){
-                $where_order = 1;
+                $where_order['od.delete'] = 1;
             }else if($_GET['month'] == 'lastmonth'){
                 $where_order['ordercreatetime'] = $order->where_report('lastmonth');
             }else if($_GET['month'] == 'month'){
@@ -530,22 +533,14 @@ class ReportController extends HomeController {
             }
         }
         //初始化默认数据
-
-
         if(!$_GET['stat_date'] and !$_GET['stop_date'] and !$_GET['month']) $where_order['ordercreatetime'] = $order->where_report('month');
         //分页
-//        $count = $customer->where($where)->count();//满足条件的数量
-        $count = 10;
-        $page  = new \Think\Page($count, 25);//实例化分页
-        $page->setConfig('prev','上一页');
-        $page->setConfig('next','下一页');
-        $show  = $page->show();//分页显示输出
+        $count = 10;//满足条件的数量
+        $page  = new \Think\Page($count, 100);//实例化分页
         $Order_info = $order
             ->alias('od')
             ->join('__CUSTOMER__ as cs ON cs.cid = od.cid','left')
-            ->field('*,sum(od.orderprice) as totalorder,sum(buyrate) as rate,cs.address_id as addr')
-            ->where('orderstatus < 4')
-            ->where('od.delete = 1')
+            ->field('*,sum(od.orderprice) as totalorder,count(orderid) as rate,cs.address_id as addr')
             ->where($where_order)
             ->group('od.cid')
             ->order('totalorder desc')
@@ -557,7 +552,7 @@ class ReportController extends HomeController {
             ->alias('a')
             ->join('__GROUP__ as g ON g.group_id = a.group_id','left')
             ->field('a.nickname,a.id,g.group_name')
-            ->where('g.issale = "是"')
+//            ->where('g.issale = "是"')
             ->select();
         $i=$page->firstRow + 1;
         foreach ($Order_info as $v){
@@ -574,10 +569,6 @@ class ReportController extends HomeController {
             $i++;
             $info_sort[] = $v;
         }
-
-        $this->assign('count', $count);
-        $this->assign('page', $show);
-        $this->assign('firstRow', $page->firstRow);
         $this->assign('info',$info_sort);
         $this->display();
     }
@@ -605,10 +596,10 @@ class ReportController extends HomeController {
         $customer_stati = $customer->statistical();
         $order_stati = $order->statistical();
         //本月销售额---天
-        $month_day = D('Order')->month_day_amount();
+        $month_day = $order->month_day_amount();
         $month_day = json_encode($month_day);
         //上月销售额---天
-        $lastmonth_day = D('Order')->lastmonth_day_amount();
+        $lastmonth_day = $order->lastmonth_day_amount();
         $lastmonth_day = json_encode($lastmonth_day);
 
         //按天统计订单数据
@@ -616,7 +607,8 @@ class ReportController extends HomeController {
         $info = $order->month_day_amount_funds($month);
 
         //历史总数据
-        $history = $order->history();
+        $history = $order->history_funds();
+
         $history['chengbenli'] = round(($history['totalserverfee'] + $history['totalcourierfee']) / $history['totalfunds'],3) * 100 . '%';
         $history['totalfunds'] = substr($history['totalfunds'],0,-3);
         $history['totalserverfee'] = substr($history['totalserverfee'],0,-3);
@@ -639,14 +631,16 @@ class ReportController extends HomeController {
         }
         $composite['amount_avg'] = round($composite['funds'] / $composite['order_count'],1);
 
-        $this->assign('customer_stati',$customer_stati);
-        $this->assign('order_stati',$order_stati);
-        $this->assign('month_day',$month_day);
-        $this->assign('lastmonth_day',$lastmonth_day);
-        $this->assign('info',$info_list);
-        $this->assign('month',$month_m);
-        $this->assign('history',$history);
-        $this->assign('composite',$composite);
+        $this->assign([
+            'customer_stati'=>$customer_stati,
+            'order_stati'=>$order_stati,
+            'month_day'=>$month_day,
+            'lastmonth_day'=>$lastmonth_day,
+            'info'=>$info_list,
+            'month'=>$month_m,
+            'history'=>$history,
+            'composite'=>$composite
+        ]);
         $this->display();
     }
 
@@ -659,7 +653,7 @@ class ReportController extends HomeController {
     Public function project(){
         $customer = D('Customer');
         $order = D('Order');
-        if($_SESSION['username'] != 'admin') $where_user['itemid'] = $_SESSION['groupid'];
+        if($_SESSION['username'] != 'admin' && $_SESSION['salesman'] == 'yes') $where_user['itemid'] = $_SESSION['groupid'];
         //获取排名---全体排名
         //本月
         $order_createtime_between_month = $order->month();
@@ -696,15 +690,94 @@ class ReportController extends HomeController {
         //总订单数/订单总金额/退单率/退单金额率
         $report = $order->return_rate_avg('group');
 
-        $this->assign('customer_stati',$customer_stati);
-        $this->assign('order_stati',$order_stati);
-        $this->assign('order_rank',$order_rank);
-        $this->assign('buyrate',$buyrate);
-        $this->assign('lastmonth_day_amount',$lastmonth_day_amount);
-        $this->assign('lastmonth_day_customer',$lastmonth_day_customer);
-        $this->assign('month_day',$month_day);
-        $this->assign('month_day_customer',$month_day_customer);
-        $this->assign('report',$report);
+        $this->assign([
+            'customer_stati'=>$customer_stati,
+            'order_stati'=>$order_stati,
+            'order_rank'=>$order_rank,
+            'buyrate'=>$buyrate,
+            'lastmonth_day_amount'=>$lastmonth_day_amount,
+            'lastmonth_day_customer'=>$lastmonth_day_customer,
+            'month_day'=>$month_day,
+            'month_day_customer'=>$month_day_customer,
+            'report'=>$report
+        ]);
+        $this->display();
+    }
+
+    /**
+     * 2019/1/7
+     * 15:39
+     * anthor liu
+     * 资源统计
+     */
+    Public function resource(){
+        $phone = M('Phone');
+        $admin = M('Admin');
+        $month = isset($_GET['month']) ? $_GET['month'] : 'month';
+        $y = date('Y',time());
+        $m = date('m',time());
+        if($month == 'month'){
+            $month_m = $y . '-' . $m;
+        }elseif ($month == 'lastmonth'){
+            $month_m = $y . '-' . ($m - 1);
+        }else{
+            $month_m = $month;
+        }
+        $arr = explode('-',$month_m);
+        $y =$arr[0];
+        $m =$arr[1];
+        $beginmonth = mktime(0,0,0,$m,1,$y);
+        if($month == 'month'){
+            $endmonth = time();
+        }else{
+            $endmonth = mktime(23,59,59,$m,date('t', strtotime($month_m)),$y);
+        }
+
+        $map['use_time'] = ['between',[$beginmonth,$endmonth]];
+        $phone_info = $phone
+            ->field('uid,use_time')
+            ->where(['weixin'=>2])
+            ->where($map)
+            ->select();
+        $list = [];
+        foreach ($phone_info as $v){
+            $j = 0;
+            for($i=$beginmonth;$i<=$endmonth;$i=$i+86400){
+                $m = $i + 86400;
+                $j++;
+                if($v['use_time']>=$i and $v['use_time']< $m){
+                    $list[$v['uid']][$j]['count'] ++;
+                }else{
+                    $list[$v['uid']][$j]['count'] += 0;
+                }
+            }
+        }
+        $admin_info = $admin->field('id,nickname')->where(['group_id'=>8])->select();
+        foreach ($list as $k=>$m){
+            foreach ($admin_info as $mm){
+                if($k==$mm['id']){
+                    $mm['day'] = $m;
+                    $info[] = $mm;
+                    break;
+                }
+            }
+        }
+
+        foreach ($info as $value){
+            $h = 0;
+            foreach ($value['day'] as $k=>$heng){
+                $h++;
+                $value['avg'] += $heng['count'];
+                $c[$h][] = $heng;
+            }
+            $cc = $c;
+            $info_t[] = $value;
+        }
+        $this->assign([
+            'info'=>$info_t,
+            'cc'=>$cc,
+            'month'=>$month_m
+        ]);
         $this->display();
     }
 

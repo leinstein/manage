@@ -1,92 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>
-            X-admin v1.0
-        </title>
-        <meta name="renderer" content="webkit">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="format-detection" content="telephone=no">
-        <link rel="stylesheet" href="/Public/Home/css/x-admin.css" media="all">
-        <link rel="stylesheet" href="/Public/Home/lib2/layui/css/layui.css" media="all">
-
+<include file="Common:header" />
+      <link rel="stylesheet" href="/Public/Home/lib2/layui/css/layui.css" media="all">
     </head>
     <body style="background-color: #f0f2f5;overflow-x:hidden">
-        <style>
-            .bg_color_div{
-                background-color: white;
-                height: 100%;
-            }
-            .layui-col-md4{
-                height: 195px;
-                min-width: 550px;
-                margin-top: 20px;
-            }
-            .layui-row{
-                width: 99.4%;
-                margin-left: 0.3%;
-            }
-            .content{
-                display: inline-block;
-                height: 100%;
-            }
-            .content1{
-                width: 30%;
-                margin-left: 0;
-                
-            }
-            .content2{
-                width: 36%;
-                margin-left: 0;
-            }
-            .content2,.content3{
-                margin-left: -0.8%;
-            }
-            .content3{
-                position: relative;
-                top: -35px;
-                width: 34%;
-            }
-            .table_title{
-                padding-left: 25px;
-            }
-            .content_table{
-                margin-top: 18px;
-            }
-            .content_table td{
-                height: 35px;
-                color: rgba(0,0,0,.65);
-            }
-            .ring{
-                width: 100px;
-                height: 100px;
-                margin-left: 25%;
-            }
-            .month{
-                position: relative;
-                display: inline-block;
-                font-size: 38px;
-                width: 100%;
-                margin-left: 30%;
-                color: rgba(0,0,0,.4);
-            }
-            .x-body {
-                padding: 0 20px 10px 20px;
-            }
-            .month_btn{
-                margin-top: 12px;
-            }
-            .layui-input{
-                color: #666;
-                font-weight: normal;
-            }
-        </style>
-        <div class="layui-row layui-col-space20">
-            <div class="layui-col-xs12 layui-col-sm6 layui-col-md4">
+        <div class="layui-row layui-col-space20" id="layui-row">
+            <div class="layui-col-xs12 layui-col-sm6 layui-col-md4 rete_layui-col-md4">
                 <div class="bg_color_div">
                     <div class="content content1">
                         <table class="content_table">
@@ -121,12 +38,12 @@
                         </table>
                     </div>
                     <div class="content content3">
-                        <div id="ring_one" class="ring"></div>
+                        <div id="ring_one" class="ring_rate"></div>
                         <span class="month">本月</span>
                     </div>
                 </div>
             </div>
-            <div class="layui-col-xs12 layui-col-sm6 layui-col-md4">
+            <div class="layui-col-xs12 layui-col-sm6 layui-col-md4 rete_layui-col-md4">
                 <div class="bg_color_div">
                     <div class="content content1">
                         <table class="content_table">
@@ -161,12 +78,12 @@
                         </table>
                     </div>
                     <div class="content content3">
-                        <div id="ring_two" class="ring"></div>
+                        <div id="ring_two" class="ring_rate"></div>
                         <span class="month">上月</span>
                     </div>
                 </div>
             </div>
-            <div class="layui-col-xs12 layui-col-sm6 layui-col-md4">
+            <div class="layui-col-xs12 layui-col-sm6 layui-col-md4 rete_layui-col-md4">
                 <div class="bg_color_div">
                     <div class="content content1">
                         <table class="content_table">
@@ -201,7 +118,7 @@
                         </table>
                     </div>
                     <div class="content content3">
-                        <div id="ring_three" class="ring"></div>
+                        <div id="ring_three" class="ring_rate"></div>
                         <span class="month">历史</span>
                     </div>
                 </div>
@@ -209,15 +126,15 @@
         </div>
         <div class="layui-fluid">
             <div class="layui-card">
-                <div class="x-body">
+                <div class="x-body" style="padding: 0 20px 80px 20px;">
                     <xblock style="background-color: white !important;">
-                        <a title="本月排名" class="layui-btn month_btn"  href="/Home/Report/return_rate?month=month">
+                        <a title="本月排名" class="layui-btn month_btn_rate"  href="/Home/Report/return_rate?month=month">
                             本月排名
                         </a>
-                        <a title="上月排名" class="layui-btn month_btn"  href="/Home/Report/return_rate?month=lastmonth">
+                        <a title="上月排名" class="layui-btn month_btn_rate"  href="/Home/Report/return_rate?month=lastmonth">
                             上月排名
                         </a>
-                        <a title="历史排名" class="layui-btn month_btn"  href="/Home/Report/return_rate?month=history">
+                        <a title="历史排名" class="layui-btn month_btn_rate"  href="/Home/Report/return_rate?month=history">
                             历史排名
                         </a>
                         <span class="x-right" style="line-height:40px">
@@ -276,19 +193,6 @@
                             </tr>
                         </thead>
                         <style>.layui-table td, .layui-table th{text-align: center;}</style>
-                        <style>
-                            .order_total_amount{
-                                font-size: 18px;
-                                font-weight: bold;
-                                color: #009688;
-                            }
-                            .rate_font{
-                                font-size: 24px !important;
-                                font-weight: bold;
-                                font-style: italic;
-                                color: #666;
-                            }
-                        </style>
                         <tbody>
                             <foreach name="info" item="v">
                                 <tr>
@@ -323,7 +227,7 @@
                             </foreach>
                         </tbody>
                     </table>
-                   <div id="page" style="margin-bottom: 50px;">{$page}</div>
+                   <div id="page" style="margin-bottom: 50px;margin-top: 20px">{$page}</div>
                 </div>
             </div>
         </div>
@@ -481,7 +385,7 @@
         </script>
         
         <script>
-            layui.use(['laydate','element','laypage','layer'], function(){
+            layui.use(['laydate','element','layer'], function(){
                 $ = layui.jquery;//jquery
               laydate = layui.laydate;//日期插件
               layer = layui.layer;//弹出层

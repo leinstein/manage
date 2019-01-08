@@ -12,7 +12,7 @@ class CustomerController extends HomeController {
     Public function index(){
         $where['delete'] = 1;
         $userid = $_SESSION['userid'];
-        if($_SESSION['username'] != 'admin') $where['saleid'] = $userid;
+        if($_SESSION['username'] != 'admin' && $_SESSION['salesman'] == 'yes') $where['saleid'] = $userid;
         if($_GET['stat_date'] and !$_GET['stop_date']) $where['create_time'] = ['egt',strtotime($_GET['stat_date'])];
         if(!$_GET['stat_date'] and $_GET['stop_date']) $where['create_time'] = ['elt',strtotime($_GET['stop_date'])];
         if($_GET['stat_date'] and $_GET['stop_date']) $where['create_time'] = ['between',[strtotime($_GET['stat_date']),strtotime($_GET['stop_date'])]];
@@ -190,9 +190,7 @@ class CustomerController extends HomeController {
             //新增订单
             $res = M('Order')->add($data);
             if($res){
-                $customer = M('Customer')->where(['cid'=>$data['cid']])->find();
-                $buyrate = $customer['buyrate'] + 1;
-                M('Customer')->save(['cid'=>$data['cid'],'buyrate'=>$buyrate]);
+                M('Customer')->where(['cid'=>$data['cid']])->setInc('buyrate');
                 //返回
                 $this->ajaxReturn(['statu' => 200, 'msg' => '添加订单成功']);
             }else{
@@ -208,7 +206,7 @@ class CustomerController extends HomeController {
             //收货地址
             $add = M('Address')->where(['cid'=>$cid])->select();
             //所有商品
-            $goods = M('Goods')->where(['status'=>1])->select();
+            $goods = M('Goods')->where(['status'=>1,'goodsdelete'=>1])->select();
             foreach ($add as $v){
                 $dat['add'] = $v['province'].$v['city'].$v['area'].$v['address'];
                 $dat['addressid'] = $v['addressid'];
@@ -222,12 +220,14 @@ class CustomerController extends HomeController {
                     $goods_z[] = $v;
                 }
             }
-            $this->assign('data',$data);
-            $this->assign('courier',$courier);
-            $this->assign('customer',$customer);
-            $this->assign('add_ress',$add_ress);
-            $this->assign('goods_s',$goods_s);
-            $this->assign('goods_z',$goods_z);
+            $this->assign([
+                'data'=>$data,
+                'courier'=>$courier,
+                'customer'=>$customer,
+                'add_ress'=>$add_ress,
+                'goods_s'=>$goods_s,
+                'goods_z'=>$goods_z
+            ]);
             $this->display();
         }
     }
@@ -312,7 +312,9 @@ class CustomerController extends HomeController {
                 $cdata['sex'] = $_POST['sex'];
                 $cdata['age'] = $_POST['age'];
                 $cdata['note'] = $_POST['note'];
-                $cdata['address_id'] = $addressid;
+                if($_POST['address']){
+                    $cdata['address_id'] = $addressid;
+                }
                 $cdata['update_time'] = time();
                 if($customer->save($cdata)){
                     $this->ajaxReturn(['statu' => 200, 'msg' => '客户修改成功']);
@@ -323,9 +325,14 @@ class CustomerController extends HomeController {
                 $this->ajaxReturn(['statu' => 202, 'msg' => '地址添加失败']);
             }
         }else{
-            $cid = $_GET['cid'];
+            $cid = $_GET['id'];
             $data = $customer->where(['cid'=>$cid])->find();
-            $this->assign('data',$data);
+            $address = M('Address')->where(['addressid'=>$data['address_id']])->find();
+            $address['add'] = $address['province'].$address['city'].$address['area'].$address['address'];
+            $this->assign([
+                'data'=>$data,
+                'address'=>$address
+            ]);
             $this->display('member-edit');
         }
     }
@@ -343,7 +350,7 @@ class CustomerController extends HomeController {
         $order = M('Order');
         $address = M('Address');
         $c_info = $customer->where(['cid'=>$cid])->find();
-        $o_info = $order->where(['cid'=>$cid])->select();
+        $o_info = $order->where(['cid'=>$cid,'delete'=>1])->select();
         $add = $address->where(['addressid'=>$c_info['address_id']])->find();
         $c_info['address'] = $add['province'].$add['city'].$add['area'].$add['address'];
         $this->assign('c_info',$c_info);
@@ -368,6 +375,22 @@ class CustomerController extends HomeController {
         }
     }
 
+    /**
+     * 2019/1/1
+     * 16:16
+     * anthor liu
+     * 删除待办任务
+     */
+    public function backlog_del()
+    {
+        $bid = $_POST['bid'];
+        $res = M('Backlog')->where(['bid'=>$bid])->delete();
+        if ($res) {
+            $this->ajaxReturn(['statu' => 200, 'msg' => '成功删除']);
+        } else {
+            $this->ajaxReturn(['statu' => 202, 'msg' => "删除出错"]);
+        }
+    }
 
     /**
      * 2018/11/25
@@ -378,7 +401,7 @@ class CustomerController extends HomeController {
     Public function goods_add_card(){
         if(IS_POST){
             $goodsid = $_POST['goodsid'];
-            $res = M('Goods')->where(['goodsid'=>$goodsid])->find();
+            $res = M('Goods')->where(['goodsid'=>$goodsid,'delete'=>1])->find();
             $res['goodsprice'] = substr($res['goodsprice'],0,-3);
             if($res){
                 $this->ajaxReturn(['statu' => 200, 'msg' => $res]);
@@ -396,21 +419,26 @@ class CustomerController extends HomeController {
      */
     Public function backlog(){
         $where = '';
-        if($_GET['stat_date']) $where['create_time'] = ['gt',strtotime($_GET['stat_date'])];
-        if($_GET['stop_date']) $where['create_time'] = ['lt',strtotime($_GET['stop_date'])];
+        $order = D('Order');
+        if($_GET['stat_date']) $where['do_time'] = ['gt',strtotime($_GET['stat_date'])];
+        if($_GET['stop_date']) $where['do_time'] = ['lt',strtotime($_GET['stop_date'])];
         if($_GET['name']){
             $word = '%'.trim($_GET['name']).'%';
-            $where['content'] =array('like',$word);
+            $where['content|recontent'] =array('like',$word);
         }
         //获取统计数据
         if($_GET['day']){
             if($_GET['day'] == 'history'){
                 $where['delete'] = 1;
+            }else if($_GET['day'] == 'tomorrow'){
+                $where['do_time'] = $order->where_s($_GET['day']);
             }else{
-                $where['create_time'] = D('Order')->where_s($_GET['day']);
+                $where['do_time'] = $order->where_s('today');
+                if($_GET['day'] == 'undo_today') $where['status'] = 1;
+                if($_GET['day'] == 'ready_today') $where['status'] = 2;
             }
         }
-        if($_SESSION['username'] != 'admin')  $where['uid'] = $_SESSION['userid'];
+        if($_SESSION['username'] != 'admin' and $_SESSION['roleid'] != 1)  $where['uid'] = $_SESSION['userid'];
         $backlog = D('Backlog');
         $count = $backlog->where($where)->count();//满足条件的数量
         $page  = new \Think\Page($count, 25);//实例化分页
@@ -421,7 +449,6 @@ class CustomerController extends HomeController {
         $list = $backlog->where($where)->order('bid desc')->limit($page->firstRow . ',' . $page->listRows)->select();
 
         $admininfo = M('Admin')->select();
-        //$roleinfo = M('Role')->select();
         $customer = M('Customer')->select();
         foreach ($list as $v) {
             //销售人员姓名
@@ -437,12 +464,6 @@ class CustomerController extends HomeController {
                     $v['itemid'] = $vv['role_id'];
                 }
             }
-            //销售人员所在分组
-//            foreach ($roleinfo as $vv){
-//                if($v['itemid'] == $vv['id']){
-//                    $v['item_name'] = $vv['name'];
-//                }
-//            }
             $info[] = $v;
         }
         //获取今天00:00时间戳
@@ -452,9 +473,9 @@ class CustomerController extends HomeController {
         //昨天结束
         $endYesterday=mktime(0,0,0,date('m'),date('d'),date('Y'))-1;
         foreach ($info as $v){
-            if($v['create_time'] > $todaystart){
+            if($v['do_time'] > $todaystart){
                 $infotoday[] = $v;
-            }else if($v['create_time'] < $endYesterday and $v['create_time'] > $beginYesterday){
+            }else if($v['do_time'] < $endYesterday and $v['do_time'] > $beginYesterday){
                 $infoyestoday[] = $v;
             }else{
                 $infot[] = $v;
@@ -477,13 +498,6 @@ class CustomerController extends HomeController {
             'role_ac'=> $role_ac,
             'action_name'=>$action_name
         ]);
-//        $this->assign('statistical', $statistical);
-//        $this->assign('infotoday', $infotoday);
-//        $this->assign('infoyestoday', $infoyestoday);
-//        $this->assign('infot', $infot);
-//        $this->assign('count', $count);
-//        $this->assign('page', $show);
-//        $this->assign('firstRow', $page->firstRow);
         $this->display();
     }
 
@@ -512,7 +526,7 @@ class CustomerController extends HomeController {
                 $this->ajaxReturn(['statu' => 202, 'msg' => '任务添加失败，请重新添加']);
             }
         }else{
-            $data['cid'] = $cid = $_GET['cid'];
+            $data['cid'] = $cid = $_GET['id'];
             //当前客户信息
             $customer = $customer->where(['cid'=>$cid])->find();
             //收货地址
@@ -554,7 +568,7 @@ class CustomerController extends HomeController {
                 $this->ajaxReturn(['statu' => 202, 'msg' => '保存失败，请重新保存']);
             }
         }else{
-            $bid = $_GET['bid'];
+            $bid = $_GET['id'];
             $backlog_b = $backlog->where(['bid'=>$bid])->find();
             $cid = $backlog_b['cid'];
             //当前客户信息
@@ -652,6 +666,99 @@ class CustomerController extends HomeController {
         $this->assign('count', $count);
         $this->assign('page', $show);
         $this->assign('firstRow', $page->firstRow);
+        $this->display();
+
+    }
+
+    /**
+     * 2019/1/1
+     * 12:35
+     * anthor liu
+     * 项目客户
+     */
+    Public function team(){
+        $where['delete'] = 1;
+        $groupid = $_SESSION['groupid'];
+        if($_SESSION['username'] != 'admin') $where['itemid'] = $groupid;
+        if($_GET['stat_date'] and !$_GET['stop_date']) $where['create_time'] = ['egt',strtotime($_GET['stat_date'])];
+        if(!$_GET['stat_date'] and $_GET['stop_date']) $where['create_time'] = ['elt',strtotime($_GET['stop_date'])];
+        if($_GET['stat_date'] and $_GET['stop_date']) $where['create_time'] = ['between',[strtotime($_GET['stat_date']),strtotime($_GET['stop_date'])]];
+        if($_GET['name']){
+            $word = '%'.trim($_GET['name']).'%';
+            $where['name|note|phone|age'] =array('like',$word);
+        }
+        $customer = D('Customer');
+        $order = D('Order');
+        //获取统计数据
+        if($_GET['day']){
+            if($_GET['day'] == 'history'){
+                $where['delete'] = 1;
+            }else{
+                $where['create_time'] = $order->where_s($_GET['day']);
+            }
+        }
+        $statistical = $customer->statistical();
+        $count = $customer->where($where)->count();//满足条件的数量
+        $page  = new \Think\Page($count, 25);//实例化分页
+
+        $page->setConfig('prev','上一页');
+        $page->setConfig('next','下一页');
+        $show  = $page->show();//分页显示输出
+        $list = $customer->where($where)->order('cid desc')->limit($page->firstRow . ',' . $page->listRows)->select();
+
+        $admininfo = M('Admin')->select();
+//        $roleinfo = M('Role')->select();
+        $group = M('Group')->select();
+        $address = M('Address');
+        foreach ($list as $v) {
+            //销售人员姓名
+            foreach ($admininfo as $vv){
+                if($v['saleid'] == $vv['id']){
+                    $v['nickname'] = $vv['nickname'];
+                }
+            }
+            //销售人员所在分组
+            foreach ($group as $vv){
+                if($v['itemid'] == $vv['group_id']){
+                    $v['item_name'] = $vv['group_name'];
+                }
+            }
+            $add = $address->where(['addressid'=>$v['address_id']])->find();
+            $v['address'] = $add['province'].'-'.$add['city'];
+//            $v['address'] = $add['province'].$add['city'].$add['area'].$add['address'];
+            $info[] = $v;
+        }
+        //获取今天00:00时间戳
+        $todaystart = strtotime(date('Y-m-d'.'00:00:00',time()));
+        //获取昨天00:00时间戳
+        $beginYesterday=mktime(0,0,0,date('m'),date('d')-1,date('Y'));
+        //昨天结束
+        $endYesterday=mktime(0,0,0,date('m'),date('d'),date('Y'))-1;
+        foreach ($info as $v){
+            if($v['create_time'] > $todaystart){
+                $infotoday[] = $v;
+            }else if($v['create_time'] < $endYesterday and $v['create_time'] > $beginYesterday){
+                $infoyestoday[] = $v;
+            }else{
+                $infot[] = $v;
+            }
+        }
+        //权限按钮
+        $role = M('Role')->where(['id'=>$_SESSION['roleid']])->find();
+        $role_ac = $role['role_auth_ac'];
+        $action_name = get_action_name($role_ac);
+
+        $this->assign([
+            'statistical'=> $statistical,
+            'infotoday'=>$infotoday,
+            'infoyestoday'=>$infoyestoday,
+            'infot'=>$infot,
+            'count'=>$count,
+            'page'=>$show,
+            'firstRow'=>$page->firstRow,
+            'role_ac'=> $role_ac,
+            'action_name'=>$action_name
+        ]);
         $this->display();
 
     }

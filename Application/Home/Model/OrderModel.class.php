@@ -17,8 +17,15 @@ class OrderModel extends Model
         $where['orderstatus'] =['neq',4]; //不计算退单
         $where['delete'] = 1; //删除的订单不计算
         $userid = $_SESSION['userid'];
-        if($_SESSION['username'] != 'admin' and $group == 'null') $where_order['saleid'] = $userid;
-        if($_SESSION['username'] != 'admin' and $group == 'group') $where['projectid'] = $_SESSION['groupid'];
+//        if($_SESSION['username'] != 'admin' and $group == 'null') $where['saleid'] = $userid;
+//        if($_SESSION['username'] != 'admin' and $group == 'group') $where['projectid'] = $_SESSION['groupid'];
+//        if($_SESSION['username'] != 'admin' && $_SESSION['roleid'] !=1 && $_SESSION['roleid'] !=3 && $group == 'null') $where['saleid'] = $userid;
+//        if($_SESSION['username'] != 'admin' && $_SESSION['roleid'] !=1 && $_SESSION['roleid'] !=3 && $group == 'group') $where['projectid'] = $_SESSION['groupid'];
+        if($_SESSION['username'] != 'admin' && $_SESSION['salesman'] == 'yes' && $group == 'null') $where['saleid'] = $userid;
+        if($_SESSION['username'] != 'admin' && $_SESSION['salesman'] == 'yes' && $group == 'group') $where['projectid'] = $_SESSION['groupid'];
+
+//        $userid = $_SESSION['userid'];
+//        if($_SESSION['username'] != 'admin' && $_SESSION['salesman'] != 'no') $where['saleid'] = $userid;
 
         //获取今天00:00时间戳
         $todaystart = strtotime(date('Y-m-d'.'00:00:00',time()));
@@ -47,9 +54,9 @@ class OrderModel extends Model
             ->find();
 
         //获取本周00:00时间戳
-        $startthisweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-7,date('Y'));
+        $startthisweek=mktime(0,0,0,date('m'),date('d')-date('w')+1,date('Y'));
         //获取本周23:59时间戳
-        $endToday=mktime(23,59,59,date('m'),date('d')-date('w'),date('Y'));
+        $endToday=mktime(23,59,59,date('m'),date('d')-date('w')+7,date('Y'));
         //统计本周订单
         $weekday['ordercreatetime'] = ['between',[$startthisweek,$endToday]];
         //获取本周添加订单数
@@ -59,9 +66,9 @@ class OrderModel extends Model
             ->where($where)
             ->find();
 
-        $beginLastweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-14,date('Y'));
+        $beginLastweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-7,date('Y'));
         //获取上周23:59时间戳
-        $endLastweek=mktime(23,59,59,date('m'),date('d')-date('w')-7,date('Y'));
+        $endLastweek=mktime(23,59,59,date('m'),date('d')-date('w'),date('Y'));
         //统计上周订单
         $lastweek['ordercreatetime'] = ['between',[$beginLastweek,$endLastweek]];
         //获取上周添加订单数
@@ -87,7 +94,7 @@ class OrderModel extends Model
         //获取上月00:00时间戳
         $beginlastmonth=mktime(0,0,0,date('m')-1,1,date('Y'));
         //获取上月23:59时间戳
-        $endlastmonth=mktime(23,59,59,date('m')-1,date('t')-1,date('Y'));
+        $endlastmonth=strtotime(date("Y-m-d 23:59:59", strtotime(-date('d').'day')));
         //统计上月订单
         $lastmonth['ordercreatetime'] = ['between',[$beginlastmonth,$endlastmonth]];
         //获取上月添加订单数
@@ -171,9 +178,9 @@ class OrderModel extends Model
             ->find();
 
         //获取本周00:00时间戳
-        $startthisweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-7,date('Y'));
+        $startthisweek=mktime(0,0,0,date('m'),date('d')-date('w')+1,date('Y'));
         //获取本周23:59时间戳
-        $endToday=mktime(23,59,59,date('m'),date('d')-date('w'),date('Y'));
+        $endToday=mktime(23,59,59,date('m'),date('d')-date('w')+7,date('Y'));
         //统计本周订单
         $weekday['reciivingtime'] = ['between',[$startthisweek,$endToday]];
         //获取本周添加订单数
@@ -183,9 +190,9 @@ class OrderModel extends Model
             ->where($where)
             ->find();
 
-        $beginLastweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-14,date('Y'));
+        $beginLastweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-7,date('Y'));
         //获取上周23:59时间戳
-        $endLastweek=mktime(23,59,59,date('m'),date('d')-date('w')-7,date('Y'));
+        $endLastweek=mktime(23,59,59,date('m'),date('d')-date('w'),date('Y'));
         //统计上周订单
         $lastweek['reciivingtime'] = ['between',[$beginLastweek,$endLastweek]];
         //获取上周添加订单数
@@ -211,7 +218,7 @@ class OrderModel extends Model
         //获取上月00:00时间戳
         $beginlastmonth=mktime(0,0,0,date('m')-1,1,date('Y'));
         //获取上月23:59时间戳
-        $endlastmonth=mktime(23,59,59,date('m')-1,date('t')-1,date('Y'));
+        $endlastmonth=strtotime(date("Y-m-d 23:59:59", strtotime(-date('d').'day')));
         //统计上月订单
         $lastmonth['reciivingtime'] = ['between',[$beginlastmonth,$endlastmonth]];
         //获取上月添加订单数
@@ -268,6 +275,9 @@ class OrderModel extends Model
     Public function where_s($day){
         switch ($day)
         {
+            case 'tomorrow':
+                $where = $this->tomorrow();
+                break;
             case 'today':
                 $where = $this->today();
                 break;
@@ -323,8 +333,24 @@ class OrderModel extends Model
      * 2018/12/4
      * 15:22
      * anthor liu
-     * 今日数据
+     * 明日数据
      */
+    Public function tomorrow(){
+        //获取明天00:00时间戳
+        $beginTomorrow=mktime(0,0,0,date('m'),date('d')+1,date('Y'));
+        //获取明天24:00时间戳
+        $endTomorrow=mktime(0,0,0,date('m'),date('d')+2,date('Y'))-1;
+        //where条件
+        $tomorrow = ['between',[$beginTomorrow,$endTomorrow]];
+        return $tomorrow;
+    }
+
+    /**
+         * 2018/12/4
+         * 15:22
+         * anthor liu
+         * 今日数据
+         */
     Public function today(){
         //获取今天00:00时间戳
         $todaystart = strtotime(date('Y-m-d'.'00:00:00',time()));
@@ -375,9 +401,9 @@ class OrderModel extends Model
      */
     Public function weekday(){
         //获取本周00:00时间戳
-        $startthisweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-7,date('Y'));
+        $startthisweek=mktime(0,0,0,date('m'),date('d')-date('w')+1,date('Y'));
         //获取本周23:59时间戳
-        $endToday=mktime(23,59,59,date('m'),date('d')-date('w'),date('Y'));
+        $endToday=mktime(23,59,59,date('m'),date('d')-date('w')+7,date('Y'));
         //统计本周订单
         $weekday = ['between',[$startthisweek,$endToday]];
         return $weekday;
@@ -391,9 +417,9 @@ class OrderModel extends Model
      */
     Public function lastweek(){
         //获取上周00:00时间戳
-        $beginLastweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-14,date('Y'));
+        $beginLastweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-7,date('Y'));
         //获取上周23:59时间戳
-        $endLastweek=mktime(23,59,59,date('m'),date('d')-date('w')-7,date('Y'));
+        $endLastweek=mktime(23,59,59,date('m'),date('d')-date('w'),date('Y'));
         //统计上周订单
         $lastweek = ['between',[$beginLastweek,$endLastweek]];
         return $lastweek;
@@ -425,7 +451,7 @@ class OrderModel extends Model
         //获取上月00:00时间戳
         $beginlastmonth=mktime(0,0,0,date('m')-1,1,date('Y'));
         //获取上月23:59时间戳
-        $endlastmonth=mktime(23,59,59,date('m')-1,date('t')-1,date('Y'));
+        $endlastmonth=strtotime(date("Y-m-d 23:59:59", strtotime(-date('d').'day')));
         //统计上月订单
         $lastmonth = ['between',[$beginlastmonth,$endlastmonth]];
         return $lastmonth;
@@ -462,12 +488,14 @@ class OrderModel extends Model
         //如果是销售
         $userid = $_SESSION['userid'];
         $groupid = $_SESSION['groupid'];
-        if($_SESSION['username'] != 'admin' and $group == 'null'){
+
+        if($_SESSION['username'] != 'admin' && $_SESSION['salesman'] == 'yes' && $group == 'null'){
             $history['saleid'] = $history_t['saleid'] = $userid;
             $month_where['saleid'] = $userid;
             $lastmonth_where['saleid'] = $userid;
         }
-        if($_SESSION['username'] != 'admin' and $group == 'group'){
+
+        if($_SESSION['username'] != 'admin' && $_SESSION['salesman'] == 'yes' && $group == 'group'){
             $history['projectid'] = $history_t['projectid'] = $groupid;
             $month_where['projectid'] = $groupid;
             $lastmonth_where['projectid'] = $groupid;
@@ -480,7 +508,7 @@ class OrderModel extends Model
         //获取上月00:00时间戳
         $beginlastmonth=mktime(0,0,0,date('m')-1,1,date('Y'));
         //获取上月23:59时间戳
-        $endlastmonth=mktime(23,59,59,date('m')-1,date('t')-1,date('Y'));
+        $endlastmonth=strtotime(date("Y-m-d 23:59:59", strtotime(-date('d').'day')));
         $report = [];
         foreach ($order_history as $z){
             $report['history']['chargeback'] += 1;
@@ -855,7 +883,7 @@ class OrderModel extends Model
         //获取统计数据
         $where_order['delete'] = 1;
 
-        $group_info = $group->where(['issale'=>'是'])->limit(6)->select();
+        $group_info = $group->where(['issale'=>'是'])->select();
         $admin_info = $admin->select();
         //初始化默认数据
         $where_order['ordercreatetime'] = $order->where_report('lastmonth');
@@ -876,12 +904,13 @@ class OrderModel extends Model
                             //获取上月00:00时间戳
                             $beginlastmonth=mktime(0,0,0,date('m')-1,1,date('Y'));
                             //获取上月23:59时间戳
-                            $endlastmonth=mktime(23,59,59,date('m')-1,date('t')-1,date('Y'));
+                            $endlastmonth=strtotime(date("Y-m-d 23:59:59", strtotime(-date('d').'day')));
                             $j = 0;
                             for($i=$beginlastmonth;$i<=$endlastmonth;$i=$i+86400){
                                 $m = $i + 86400;
                                 $j++;
                                 $g = $vvv['group_id'];
+                                $day_funds['dayprice'][$g][$j] += 0;
                                 if($vvvv['ordercreatetime']>=$i and $vvvv['ordercreatetime']< $m){
                                     $day_funds['dayprice'][$g][$j] += $vvvv['orderprice'];
                                 }
@@ -892,8 +921,9 @@ class OrderModel extends Model
                 $c['day_funds'] = $day_funds;
             }
             unset($v['team']);
-            $v['funds'] = $c['day_funds']['dayprice'];
-            $grooup_list = $v['funds'];
+            //$v['funds'] = $c['day_funds']['dayprice'];
+            //$grooup_list = $v['funds'];
+            $grooup_list = $day_funds['dayprice'];
         }
         //获取上月天数
         $d = date('t', strtotime('-1 month'));
@@ -924,17 +954,13 @@ class OrderModel extends Model
         for($i=1;$i<=$d;$i++){
             $date[] = $i;
         }
-//        $date = implode(',',$date);
-        //整理返回值
-//        $arr = ['one','two','three','four','five','six'];
-//        $b = 0;
         foreach ($list_in as $k=>$v){
             $info['group_name'][] = $k;
             ksort($v);
-//            $k_b = $arr[$b];
+
             $info['group_amount_day']['name'][] = $k;
             $info['group_amount_day']['day'][] = $v;
-//            $b++;
+
         }
         $info['group_date'] = $date;
         return $info;
@@ -954,11 +980,12 @@ class OrderModel extends Model
         //获取统计数据
         $where_order['delete'] = 1;
 
-        $group_info = $group->where(['issale'=>'是'])->limit(6)->select();
+        $group_info = $group->where(['issale'=>'是'])->select();
         $admin_info = $admin->select();
         //初始化默认数据
         $where_order['ordercreatetime'] = $order->where_report('month');
         $order_info = $order->where($where_order)->select();
+
         foreach ($group_info as $v){
             //获取分组组员
             foreach ($admin_info as $vv){
@@ -966,6 +993,7 @@ class OrderModel extends Model
                     $v['team'][] = $vv;
                 }
             }
+
             //统计小组业绩
             $c = [];
             foreach ($v['team'] as $vvv){
@@ -982,6 +1010,7 @@ class OrderModel extends Model
                                 $m = $i + 86400;
                                 $j++;
                                 $g = $vvv['group_id'];
+                                $day_funds['dayprice'][$g][$j] += 0;
                                 if($vvvv['ordercreatetime']>=$i and $vvvv['ordercreatetime']< $m){
                                     $day_funds['dayprice'][$g][$j] += $vvvv['orderprice'];
                                 }
@@ -992,11 +1021,12 @@ class OrderModel extends Model
                 $c['day_funds'] = $day_funds;
             }
             unset($v['team']);
-            $v['funds'] = $c['day_funds']['dayprice'];
-            $grooup_list = $v['funds'];
+            //$v['funds'] = $c['day_funds']['dayprice'];
+            //$grooup_list = $v['funds'];
+            $grooup_list = $day_funds['dayprice'];
         }
+
         //获取本月天数
-//        $d = date("t");
         $d = date('d',time());
         if($d <= 7) $d = 7;
         foreach ($group_info as $g){
@@ -1025,17 +1055,13 @@ class OrderModel extends Model
         for($i=1;$i<=$d;$i++){
             $date[] = $i;
         }
-//        $date = implode(',',$date);
-        //整理返回值
-//        $arr = ['one','two','three','four','five','six'];
-//        $b = 0;
+
         foreach ($list_in as $k=>$v){
             $info['group_name'][] = $k;
             ksort($v);
-//            $k_b = $arr[$b];
+
             $info['group_amount_day']['name'][] = $k;
             $info['group_amount_day']['day'][] = $v;
-//            $b++;
         }
         $info['group_date'] = $date;
         return $info;
@@ -1055,7 +1081,7 @@ class OrderModel extends Model
         //获取统计数据
         $where_order['delete'] = 1;
 
-        $group_info = $group->where(['issale'=>'是'])->limit(6)->select();
+        $group_info = $group->where(['issale'=>'是'])->select();
         $admin_info = $admin->select();
         //获取今年00:00时间戳
         $beginthisyear=mktime(0,0,0,1,1,date('Y'));
@@ -1069,6 +1095,8 @@ class OrderModel extends Model
             foreach ($admin_info as $vv){
                 if($vv['group_id'] == $v['group_id']){
                     $v['team'][] = $vv;
+                }else{
+                    $v['team'][] = '';
                 }
             }
             //统计小组业绩
@@ -1095,16 +1123,10 @@ class OrderModel extends Model
                 $c['day_funds'] = $day_funds;
             }
             unset($v['team']);
-            $v['funds'] = $c['day_funds']['dayprice'];
-            $grooup_list = $v['funds'];
+            //$v['funds'] = $c['day_funds']['dayprice'];
+            //$grooup_list = $v['funds'];
+            $grooup_list = $day_funds['dayprice'];
         }
-//        echo "<pre>";
-//        echo ' ';
-//        print_r( $grooup_list);
-//        exit();
-        //获取本月天数
-//        $d = date("t");
-//        $d = 12;
 
         foreach ($group_info as $g){
             foreach ($grooup_list as $k=>$value){
@@ -1123,23 +1145,15 @@ class OrderModel extends Model
             }
             $list_in[$key] = $l;
         }
-        //生产日期
-//        for($i=1;$i<=12;$i++){
-//            $date[] = $i;
-//        }
+
 //        $date = ['Jan','Feb','Mar','Apr','May','June','July','Aug','Sept','Oct','Nov','Dec'];
         $date = ['1 月','2 月','3 月','4 月','5 月','6 月','7 月','8 月','9 月','10 月','11 月','12 月'];
-//        $date = implode(',',$date);
-        //整理返回值
-//        $arr = ['one','two','three','four','five','six'];
-//        $b = 0;
+
         foreach ($list_in as $k=>$v){
             $info['group_name'][] = $k;
             ksort($v);
-//            $k_b = $arr[$b];
             $info['group_amount_day']['name'][] = $k;
             $info['group_amount_day']['day'][] = $v;
-//            $b++;
         }
         $info['group_date'] = $date;
         return $info;
@@ -1198,8 +1212,13 @@ class OrderModel extends Model
         $where_order['delete'] = 1;
         $where_order['orderstatus'] = ['neq',4];
         $userid = $_SESSION['userid'];
-        if($_SESSION['username'] != 'admin' and $group == 'null') $where_order['saleid'] = $userid;
-        if($_SESSION['username'] != 'admin' and $group == 'group') $where_order['projectid'] = $_SESSION['groupid'];
+        if($_SESSION['username'] != 'admin' && $_SESSION['salesman'] == 'yes' && $group == 'null'){
+            $where_order['saleid'] = $userid;
+        }
+        if($_SESSION['username'] != 'admin' && $_SESSION['salesman'] == 'yes' && $group == 'group'){
+            $where_order['projectid'] = $_SESSION['groupid'];
+        }
+
 
         //初始化默认数据
         $where_order['ordercreatetime'] = $order->where_report('month');
@@ -1270,8 +1289,14 @@ class OrderModel extends Model
         //初始化默认数据
         $where['create_time'] = $order->where_report('month');
         $userid = $_SESSION['userid'];
-        if($_SESSION['username'] != 'admin' and $group == 'null') $where['saleid'] = $userid;
-        if($_SESSION['username'] != 'admin' and $group == 'group') $where['itemid'] = $_SESSION['groupid'];
+//        if($_SESSION['username'] != 'admin' and $group == 'null') $where['saleid'] = $userid;
+//        if($_SESSION['username'] != 'admin' and $group == 'group') $where['itemid'] = $_SESSION['groupid'];
+        if($_SESSION['username'] != 'admin' && $_SESSION['salesman'] == 'yes' && $group == 'null') $where_order['saleid'] = $userid;
+        if($_SESSION['username'] != 'admin' && $_SESSION['salesman'] == 'yes' && $group == 'group') $where['itemid'] = $_SESSION['groupid'];
+//        if($group != 'all'){
+//            unset($where_order['saleid']);
+//            unset($where_order['projectid']);
+//        }
         $customer_info = $customer->where($where)->select();
 
         //统计
@@ -1321,8 +1346,10 @@ class OrderModel extends Model
         $where_order['delete'] = 1;
         $where_order['orderstatus'] = ['neq',4];
         $userid = $_SESSION['userid'];
-        if($_SESSION['username'] != 'admin' and $group == 'null') $where_order['saleid'] = $userid;
-        if($_SESSION['username'] != 'admin' and $group == 'group') $where['projectid'] = $_SESSION['groupid'];
+//        if($_SESSION['username'] != 'admin' and $group == 'null') $where_order['saleid'] = $userid;
+//        if($_SESSION['username'] != 'admin' and $group == 'group') $where['projectid'] = $_SESSION['groupid'];
+        if($_SESSION['username'] != 'admin' && $_SESSION['salesman'] == 'yes' && $group == 'null') $where_order['saleid'] = $userid;
+        if($_SESSION['username'] != 'admin' && $_SESSION['salesman'] == 'yes' && $group == 'group') $where_order['projectid'] = $_SESSION['groupid'];
         //初始化默认数据
         $where_order['ordercreatetime'] = $order->where_report('lastmonth');
         $order_info = $order->where($where_order)->select();
@@ -1333,7 +1360,7 @@ class OrderModel extends Model
             //获取上月00:00时间戳
             $beginlastmonth=mktime(0,0,0,date('m')-1,1,date('Y'));
             //获取上月23:59时间戳
-            $endlastmonth=mktime(23,59,59,date('m')-1,date('t')-1,date('Y'));
+            $endlastmonth=strtotime(date("Y-m-d 23:59:59", strtotime(-date('d').'day')));
             $j = 0;
             for($i=$beginlastmonth;$i<=$endlastmonth;$i=$i+86400){
                 $m = $i + 86400;
@@ -1389,8 +1416,11 @@ class OrderModel extends Model
         //初始化默认数据
         $where['create_time'] = $order->where_report('lastmonth');
         $userid = $_SESSION['userid'];
-        if($_SESSION['username'] != 'admin' and $group == 'null') $where['saleid'] = $userid;
-        if($_SESSION['username'] != 'admin' and $group == 'group') $where['itemid'] = $_SESSION['groupid'];
+//        if($_SESSION['username'] != 'admin' and $group == 'null') $where['saleid'] = $userid;
+//        if($_SESSION['username'] != 'admin' and $group == 'group') $where['itemid'] = $_SESSION['groupid'];
+        if($_SESSION['username'] != 'admin' && $_SESSION['salesman'] == 'yes' && $group == 'null') $where['saleid'] = $userid;
+        if($_SESSION['username'] != 'admin' && $_SESSION['salesman'] == 'yes' && $group == 'group') $where['itemid'] = $_SESSION['groupid'];
+
         $customer_info = $customer->where($where)->select();
 
         //统计
@@ -1399,7 +1429,7 @@ class OrderModel extends Model
             //获取上月00:00时间戳
             $beginlastmonth=mktime(0,0,0,date('m')-1,1,date('Y'));
             //获取上月23:59时间戳
-            $endlastmonth=mktime(23,59,59,date('m')-1,date('t')-1,date('Y'));
+            $endlastmonth=strtotime(date("Y-m-d 23:59:59", strtotime(-date('d').'day')));
             $j = 0;
             for($i=$beginlastmonth;$i<=$endlastmonth;$i=$i+86400){
                 $m = $i + 86400;
@@ -1454,7 +1484,7 @@ class OrderModel extends Model
             //获取上月00:00时间戳
             $beginmonth=mktime(0,0,0,date('m')-1,1,date('Y'));
             //获取上月23:59时间戳
-            $endmonth=mktime(23,59,59,date('m')-1,date('t')-1,date('Y'));
+            $endmonth=strtotime(date("Y-m-d 23:59:59", strtotime(-date('d').'day')));
         }else{
             $arr = explode('-',$month);
             $m =$arr[0];
@@ -1545,6 +1575,36 @@ class OrderModel extends Model
             ->where($map)
             ->select();
         $info = array_merge($info[0],$info[1][0]);
+        return $info;
+    }
+
+    /**
+     * 2019/1/1
+     * 1:56
+     * @return array|mixed
+     * anthor liu
+     */
+    Public function history_funds(){
+        $order = M('Order');
+        $customer = M('Customer');
+        $where['delete'] = 1;
+        $where_ben['orderstatus'] = ['neq',4];
+        $info[] = $order
+            ->field('sum(orderprice) as totalfunds,count(orderid) as totalorder')
+            ->where($where)
+            ->where($where_ben)
+            ->select();
+        $info[] = $order
+            ->field('sum(serverfee) as totalserverfee,sum(courierfee) as totalcourierfee')
+            ->where($where)
+            ->select();
+        $map['delete'] = 1;
+        $map['buyrate'] = ['gt',0];
+        $info[] = $customer
+            ->field('count(cid) as totalcustomer')
+            ->where($map)
+            ->select();
+        $info = array_merge($info[0][0],$info[1][0],$info[2][0]);
         return $info;
     }
 

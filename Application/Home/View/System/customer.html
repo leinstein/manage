@@ -1,0 +1,349 @@
+<include file="Common:header" />
+    </head>
+    <body>
+        <div class="x-body">
+            <form class="layui-form x-center form-width" action="">
+                <div class="layui-form-pane" style="margin-top: 15px;">
+                  <div class="layui-form-item" style="width: 120%">
+                    <label class="layui-form-label">日期范围</label>
+                    <div class="layui-input-inline">
+                      <input class="layui-input" name="stat_date" placeholder="开始日" id="LAY_demorange_s"  autocomplete="off">
+                    </div>
+                    <div class="layui-input-inline">
+                      <input class="layui-input" name="stat_date" placeholder="截止日" id="LAY_demorange_e"  autocomplete="off">
+                    </div>
+                    <div class="layui-input-inline">
+                      <input type="text" name="name"  placeholder="模糊搜索" autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="layui-input-inline" style="width:120px">
+                        <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i> 搜 索</button>
+                    </div>
+                  </div>
+                </div> 
+            </form>
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th width="30px">
+                            序号
+                        </th>
+                        <th width="60px">
+                            姓名
+                        </th>
+                        <th width="90px">
+                            联系方式
+                        </th>
+                        <th width="30px">
+                            性别
+                        </th>
+                        <th  width="30px">
+                            年龄
+                        </th>
+                        <th width="45px">
+                            销售
+                        </th>
+                        <th width="80px">
+                            项目
+                        </th>
+                        <th  width="110px">
+                            地区
+                        </th>
+                        <th  width="45px">
+                            订单数
+                        </th>
+                        <th style="text-align: center">
+                            备注
+                        </th>
+                        <th  width="80px">
+                            添加时间
+                        </th>
+                        <th  width="115px">
+                            操作
+                        </th>
+                    </tr>
+                </thead>
+                <style>.layui-table td, .layui-table th{text-align: center;}</style>
+                <tbody>
+                    <if condition="$infotoday neq ''">
+                        <tr><td  colspan="12" class="bg_tr">今天</td></tr>
+                    </if>
+                    <foreach name="infotoday" item="v">
+                        <tr>
+                            <td>
+                                {++$i}
+                            </td>
+                            <td>
+                                <in name="action_name.Customer_show" value="$role_ac">
+                                    <u style="cursor:pointer;color:#01AAED;text-decoration: none;font-size: 14px" onclick="member_show('{$v.name}','/Home/Customer/show?cid={$v.cid}','10001','1000','550')">
+                                        {$v.name}
+                                    </u>
+                                <else/>
+                                    <u style="cursor:pointer;color:#01AAED;text-decoration: none;font-size: 14px" class="layui-btn-disabled-button">
+                                        {$v.name}
+                                    </u>
+                                </in>
+                            </td>
+                            <td >
+                                {$v.phone}
+                            </td>
+                            <td >
+                                <if condition="$v['sex'] eq 1">
+                                    男
+                                    <else />
+                                    女
+                                </if>
+                            </td>
+                            <td >
+                                {$v.age}
+                            </td>
+                            <td >
+                                {$v.nickname}
+                            </td>
+                            <td >
+                                {$v.item_name}
+                            </td>
+                            <td >
+                                {$v.address}
+                            </td>
+                            <td >
+                                {$v.buyrate}
+                            </td>
+                            <td  class="note_text" style="text-align: left">
+                                {$v.note}
+                            </td>
+                            <td>
+                                {$v.create_time|date="Y-m-d",###}
+                            </td>
+                            <td class="td-manage">
+                                <in name="action_name.System_restore_customer" value="$role_ac">
+                                    <a title="恢复客户" href="javascript:;" onclick="member_restore(this,'{$v.cid}')"
+                                       style="text-decoration:none;margin-left: 10px">
+                                        <i class="layui-icon">&#x1005;</i>
+                                    </a>
+                                <else />
+                                    <a title="恢复" href="javascript:;" class="layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                                        <i class="layui-icon">&#x1005;</i>
+                                    </a>
+                                </in>
+                                <in name="action_name.System_real_del_customer" value="$role_ac">
+                                    <a title="彻底删除" href="javascript:;" onclick="member_del(this,'{$v.cid}')"
+                                       style="text-decoration:none;margin-left: 10px">
+                                        <i class="layui-icon">&#xe640;</i>
+                                    </a>
+                                <else />
+                                    <a title="彻底删除" href="javascript:;" class="layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                                        <i class="layui-icon">&#xe640;</i>
+                                    </a>
+                                </in>
+                            </td>
+                        </tr>
+                    </foreach>
+                    <if condition="$infoyestoday neq ''">
+                        <tr><td  colspan="12"  class="bg_tr">昨天</td></tr>
+                    </if>
+                    <foreach name="infoyestoday" item="v">
+                            <tr>
+                                <td>
+                                    {++$i}
+                                </td>
+                                <td>
+                                    <in name="action_name.Customer_show" value="$role_ac">
+                                        <u style="cursor:pointer;color:#01AAED;text-decoration: none;font-size: 14px" onclick="member_show('{$v.name}','/Home/Customer/show?cid={$v.cid}','10001','1000','550')">
+                                            {$v.name}
+                                        </u>
+                                    <else/>
+                                        <u style="cursor:pointer;color:#01AAED;text-decoration: none;font-size: 14px" class="layui-btn-disabled-button">
+                                            {$v.name}
+                                        </u>
+                                    </in>
+                                </td>
+                                <td >
+                                    {$v.phone}
+                                </td>
+                                <td >
+                                    <if condition="$v['sex'] eq 1">
+                                        男
+                                        <else />
+                                        女
+                                    </if>
+                                </td>
+                                <td >
+                                    {$v.age}
+                                </td>
+                                <td >
+                                    {$v.nickname}
+                                </td>
+                                <td >
+                                    {$v.item_name}
+                                </td>
+                                <td >
+                                    {$v.address}
+                                </td>
+                                <td >
+                                    {$v.buyrate}
+                                </td>
+                                <td  style="text-align: left">
+                                    {$v.note}
+                                </td>
+                                <td>
+                                    {$v.create_time|date="Y-m-d",###}
+                                </td>
+                                <td class="td-manage">
+                                    <in name="action_name.System_restore_customer" value="$role_ac">
+                                    <a title="恢复客户" href="javascript:;" onclick="member_restore(this,'{$v.cid}')"
+                                       style="text-decoration:none;margin-left: 10px">
+                                        <i class="layui-icon">&#x1005;</i>
+                                    </a>
+                                <else />
+                                    <a title="恢复" href="javascript:;" class="layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                                        <i class="layui-icon">&#x1005;</i>
+                                    </a>
+                                </in>
+                                <in name="action_name.System_real_del_customer" value="$role_ac">
+                                    <a title="彻底删除" href="javascript:;" onclick="member_del(this,'{$v.cid}')"
+                                       style="text-decoration:none;margin-left: 10px">
+                                        <i class="layui-icon">&#xe640;</i>
+                                    </a>
+                                <else />
+                                    <a title="彻底删除" href="javascript:;" class="layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                                        <i class="layui-icon">&#xe640;</i>
+                                    </a>
+                                </in>
+                                </td>
+                            </tr>
+                        </foreach>
+                        <if condition="$infot neq ''">
+                            <tr><td  colspan="12" class="bg_tr">昨天以前</td></tr>
+                        </if>
+                        <foreach name="infot" item="v">
+                                <tr>
+                                    <td>
+                                        {++$i}
+                                    </td>
+                                    <td>
+                                        <in name="action_name.Customer_show" value="$role_ac">
+                                            <u style="cursor:pointer;color:#01AAED;text-decoration: none;font-size: 14px" onclick="member_show('{$v.name}','/Home/Customer/show?cid={$v.cid}','10001','1000','550')">
+                                                {$v.name}
+                                            </u>
+                                        <else/>
+                                            <u style="cursor:pointer;color:#01AAED;text-decoration: none;font-size: 14px" class="layui-btn-disabled-button">
+                                                {$v.name}
+                                            </u>
+                                        </in>
+                                    </td>
+                                    <td >
+                                        {$v.phone}
+                                    </td>
+                                    <td >
+                                        <if condition="$v['sex'] eq 1">
+                                            男
+                                            <else />
+                                            女
+                                        </if>
+                                    </td>
+                                    <td >
+                                        {$v.age}
+                                    </td>
+                                    <td >
+                                        {$v.nickname}
+                                    </td>
+                                    <td >
+                                        {$v.item_name}
+                                    </td>
+                                    <td >
+                                        {$v.address}
+                                    </td>
+                                    <td >
+                                        {$v.buyrate}
+                                    </td>
+                                    <td  style="text-align: left">
+                                        {$v.note}
+                                    </td>
+                                    <td>
+                                        {$v.create_time|date="Y-m-d",###}
+                                    </td>
+                                    <td class="td-manage">
+                                        <in name="action_name.System_restore_customer" value="$role_ac">
+                                            <a title="恢复客户" href="javascript:;" onclick="member_restore(this,'{$v.cid}')"
+                                               style="text-decoration:none;margin-left: 10px">
+                                                <i class="layui-icon">&#x1005;</i>
+                                            </a>
+                                        <else />
+                                            <a title="恢复" href="javascript:;" class="layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                                                <i class="layui-icon">&#x1005;</i>
+                                            </a>
+                                        </in>
+                                        <in name="action_name.System_real_del_customer" value="$role_ac">
+                                            <a title="彻底删除" href="javascript:;" onclick="member_del(this,'{$v.cid}')"
+                                               style="text-decoration:none;margin-left: 10px">
+                                                <i class="layui-icon">&#xe640;</i>
+                                            </a>
+                                        <else />
+                                            <a title="彻底删除" href="javascript:;" class="layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                                                <i class="layui-icon">&#xe640;</i>
+                                            </a>
+                                        </in>
+                                    </td>
+                                </tr>
+                            </foreach>
+                </tbody>
+            </table>
+                <div id="page" style="margin-bottom: 50px;">{$page}</div>
+        </div>
+        <script src="/Public/Home/lib/layui/layui.js" charset="utf-8"></script>
+        <script src="/Public/Home/js/x-layui.js" charset="utf-8"></script>
+        <script>
+            layui.use(['element','layer'], function(){
+                $ = layui.jquery;//jquery
+              layer = layui.layer;//弹出层
+            });
+            
+            
+            function member_restore(obj,id){
+                layer.confirm('确认要恢复这个客户吗？',function(index){
+                    $.ajax({
+                        type: 'POST',
+                        url: '/Home/System/restore_customer',
+                        dataType: 'json',
+                        data:{'cid':id},
+                        success: function(data){
+                            if(data.statu == 200){
+                                $(obj).parents("tr").remove();
+                                layer.msg('客户已恢复!',{icon:1,time:1000});
+                            }else{
+                                layer.msg(data.msg);
+                                return false;
+                            }
+                        },
+                        error:function(data) {
+                            layer.msg('系统错误');
+                        },
+                    });
+                });
+            }
+            /*用户-删除*/
+            function member_del(obj,id){
+                layer.confirm('确认要删除这个客户吗？',function(index){
+                    $.ajax({
+                        type: 'POST',
+                        url: '/Home/System/real_del_customer',
+                        dataType: 'json',
+                        data:{'cid':id},
+                        success: function(data){
+                            if(data.statu == 200){
+                                $(obj).parents("tr").remove();
+                                layer.msg('客户已彻底删除!',{icon:1,time:1000});
+                            }else{
+                                layer.msg(data.msg);
+                                return false;
+                            }
+                        },
+                        error:function(data) {
+                            layer.msg('系统错误');
+                        },
+                    });
+                });
+            }
+        </script>
+    </body>
+</html>

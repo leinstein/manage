@@ -44,7 +44,7 @@ class GoodsModel extends Model
         //获取上周00:00时间戳
         $beginLastweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-7,date('Y'));
         //获取上周23:59时间戳
-        $endLastweek=mktime(23,59,59,date('m'),date('d')-date('w')+7-7,date('Y'));
+        $endLastweek=mktime(23,59,59,date('m'),date('d')-date('w'),date('Y'));
         //统计上周订单
         $lastweek['create_time'] = [between,[$beginLastweek,$endLastweek]];
         //获取上周添加订单数
@@ -62,7 +62,7 @@ class GoodsModel extends Model
         //获取上月00:00时间戳
         $beginlastmonth=mktime(0,0,0,date('m')-1,1,date('Y'));
         //获取上月23:59时间戳
-        $endlastmonth=mktime(23,59,59,date('m')-1,date('t')-1,date('Y'));
+        $endlastmonth=strtotime(date("Y-m-d 23:59:59", strtotime(-date('d').'day')));
         //统计上月订单
         $lastmonth['create_time'] = [between,[$beginlastmonth,$endlastmonth]];
         //获取上月添加订单数

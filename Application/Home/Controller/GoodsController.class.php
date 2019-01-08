@@ -31,7 +31,7 @@ class GoodsController extends HomeController {
         $goods_pic = M('goods_pic');
         foreach ($list as $v) {
             $where['picid'] = ['in',$v["goods_pic_id"]];
-            $v['goods_pic'] = $goods_pic->where($where)->select();
+            if($v["goods_pic_id"] != '') $v['goods_pic'] = $goods_pic->where($where)->select();
             $list_r[]     = $v;
         }
         //权限按钮
@@ -49,12 +49,6 @@ class GoodsController extends HomeController {
             'role_ac'=> $role_ac,
             'action_name'=>$action_name
         ]);
-//        $this->assign('statistical', $statistical);
-//        $this->assign('list', $list_r);
-//        $this->assign('role_ids', $role_ids);
-//        $this->assign('count', $count);
-//        $this->assign('page', $show);
-//        $this->assign('firstRow', $page->firstRow);
         $this->display();
     }
 

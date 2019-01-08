@@ -12,15 +12,15 @@ class AdminController extends HomeController {
     public function index()
     {
         $where = '';
-        if($_GET['stat_date'] and !$_GET['stop_date']) $where['create_time'] = ['egt',strtotime($_GET['stat_date'])];
-        if(!$_GET['stat_date'] and $_GET['stop_date']) $where['create_time'] = ['elt',strtotime($_GET['stop_date'])];
-        if($_GET['stat_date'] and $_GET['stop_date']) $where['create_time'] = ['between',[strtotime($_GET['stat_date']),strtotime($_GET['stop_date'])]];
-        if($_GET['word']){
-            $word = '%'.trim($_GET['name']).'%';
+        if($_POST['stat_date'] and !$_POST['stop_date']) $where['create_time'] = ['egt',strtotime($_POST['stat_date'])];
+        if(!$_POST['stat_date'] and $_POST['stop_date']) $where['create_time'] = ['elt',strtotime($_POST['stop_date'])];
+        if($_POST['stat_date'] and $_POST['stop_date']) $where['create_time'] = ['between',[strtotime($_POST['stat_date']),strtotime($_GET['stop_date'])]];
+        if($_POST['word']){
+            $word = '%'.trim($_POST['word']).'%';
             $where['username|nickname|mobile'] =array('like',$word);
         }
         $admin = M('Admin');
-        $count = $admin->count();//满足条件的数量
+        $count = $admin->where($where)->count();//满足条件的数量
         $page  = new \Think\Page($count, 25);//实例化分页
         $page->setConfig('prev','上一页');
         $page->setConfig('next','下一页');
@@ -262,7 +262,7 @@ class AdminController extends HomeController {
         $page->setConfig('prev','上一页');
         $page->setConfig('next','下一页');
         $show  = $page->show();//分页显示输出
-        $list = $logininfo->where($where)->limit($page->firstRow . ',' . $page->listRows)->select();
+        $list = $logininfo->where($where)->order('id desc')->limit($page->firstRow . ',' . $page->listRows)->select();
         $this->assign('list', $list);
         $this->assign('count', $count);
         $this->assign('page', $show);

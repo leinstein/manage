@@ -1,0 +1,656 @@
+/*index   */
+.logo{
+    font-size: 24px;
+    margin-left: 2px;
+}
+#avatar{
+    width:30px;
+    height:30px;
+}
+.nav_class .nav_class_item{
+    line-height: 59px;
+}
+#tips{
+    width: 20px;
+}
+#message span{
+    position: relative;
+    top: -7px;
+    left: -3px;
+    color: red;
+}
+#message cite{
+    display: none;
+}
+#span{
+    position:absolute;/*设定水平和垂直偏移父元素的50%，再根据实际长度将子元素上左挪回一半大小*/
+    left:50%;
+    top: 50%;
+    margin-left: -300px;
+    margin-top: -28px;
+    width: 600px;
+    height: 60px;
+    vertical-align: middle;
+    line-height: 56px;
+}
+#span img{
+    margin-left: 50px;
+    height: 15px;
+}
+#span .number{
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+}
+#crm{
+    display: inline-block;
+    padding: 0 2px 0 5px;
+}
+.logo img{
+    height: 32px;
+    display: inline-block;
+    margin-top: -9px;
+}
+/*wel*/
+.col_content{
+    margin-top: 20px;
+    min-width: 300px;
+}
+.word{
+    position: relative;
+    top: -56px;
+    left: 58px;
+    font-size: 28px;
+    display: inline-block;
+    color: rgba(0,0,0,.45);
+}
+.img_icon{
+    margin: -42px 0 0 56px;
+}
+.word_title{
+    font-size: 14px;
+}
+.word_number{
+    font-size: 22px;
+    color: rgba(0,0,0,.85);
+
+}
+.word_box{
+    height: 8px;
+}
+.word_english{
+    height: 25px;
+    font-weight: inherit;
+    width: 83%;
+    margin-top: 12px;
+    color: rgba(0,0,0,.45);
+}
+.l_box{
+    width: 45%;
+    display: inline-block;
+}
+.r_box{
+    width: 53%;
+    margin-top: 10px;
+    display: inline-block;
+    color: rgba(0,0,0,.85);
+}
+.bg_color{
+    height: 160px;
+    background-color: white;
+}
+.sec_bg_color{
+    height: 400px;
+    background-color: white;
+}
+.sec_black{
+    margin-top: 10px;
+}
+#title_width li{
+    width: 26%;
+}
+/*customer-index*/
+.layui-btn-disabled-button{
+    cursor:not-allowed;
+    opacity:1;
+}
+.form-width{
+    width:800px;
+}
+/*order-add*/
+#goodsbox{
+    width: 1075px;
+    border: 1px solid #1ba194;
+    border-radius: 2px;
+    margin-left: 110px;
+    display: none;
+    margin-bottom: 30px;
+    margin-top: -7px;
+}
+#goodsitem{
+    margin: 15px 10px;
+}
+#goodsnumber{
+    width: 45px;
+    display: inline;
+    height: 24px;
+    line-height: 24px;
+    line-height: 24px\9;
+    border: 1px solid #e2e2e2;
+    background-color: #fff;
+    border-radius: 2px;
+}
+#orderfee{
+    margin-left: 110px;
+}
+#orderfee th{
+    color: #777;
+    border: 0px;
+    padding-right: 2px;
+}
+#orderfee td{
+    border: 0px;
+    padding-left: 2px;
+}
+#show_goods{
+    cursor: pointer;
+    text-align: center;
+    background-color: #1ba194;
+    border-radius: 5px;
+    border:0px;
+    width: 100px;
+    color: #ffffff;
+    font-size: 16px;
+}
+.icon_shop{
+    cursor: pointer;
+    margin: 0 10px;
+    font-size: 28px;
+    color: #000000;
+}
+#orderfee tr{
+    background-color: #f2f2f2;
+}
+#orderfee th{
+    text-align: right;
+}
+#orderfee td{
+    font-size: 24px;
+}
+#orderfee td font{
+    color: #999;
+}
+#orderfee td blod{
+    color: red;
+}
+.zengp{
+    display: inline-block;
+    padding: 5px;
+    border-radius: 3px;
+}
+#show_zeng{
+    cursor: pointer;
+    background-color: #1ba194;
+    width: 210px;
+    height: 37px;
+    border-radius: 5px;
+    line-height: 37px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 5px;
+    color: #ffffff;
+    font-size: 16px;
+}
+.zengpar{
+    margin-right: 20px;
+    float: left;
+    height: 45px;
+    background-color: #f2f2f2;
+    width: 31%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+#zengbox{
+    width: 1075px;
+    border: 1px solid #1ba194;
+    border-radius: 2px;
+    margin-left: 110px;
+    display: none;
+    margin-bottom: 30px;
+    margin-top: 7px;
+}
+#zengsitem{
+    margin: 15px 10px;
+}
+#btn_sub{
+    margin-left: 596px;
+}
+#btn_sub button{
+    display: inline-block;
+    width: 165px;
+    height: 39px;
+    position: relative;
+    vertical-align: middle;
+    line-height: 39px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    background: #ff0036;
+    color: #fff;
+    margin-left: 422px;
+    margin-top: 30px;
+}
+.btn_order{
+    float: right;
+    padding: 9px 15px;
+    min-height: 20px;
+    line-height: 20px;
+    font-size: 20px;
+    color: #666;
+    margin-top: 20px;
+}
+/*editbacklog*/
+.infoitem{
+    display: inline-block;
+    border: 0;
+}
+.title_box{
+    margin: 35px 0 30px 30px;
+    border-bottom: 2px solid #009688;
+    width: 92%;
+    font-size: 18px;
+    color: #009688;
+    font-weight: bold;
+    padding: 2px;
+}
+.track-rcol {
+    width: 92%;
+    /*border: 1px solid #eee;*/
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+.track-list {
+    margin: 20px;
+    padding-left: 5px;
+    position: relative;
+}
+
+.track-list li {
+    position: relative;
+    padding: 20px 0 10px 25px;
+    line-height: 18px;
+    border-left: 1px solid #d9d9d9;
+    color: #777;
+}
+
+.track-list li.first {
+    color: red;
+    padding-top: 0;
+    border-left-color: #d9d9d9;
+    margin-bottom: 15px;
+}
+
+.track-list li .node-icon {
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: #009688;
+}
+
+.track-list li.first .node-icon {
+    background-position: 0 -72px;
+}
+
+.track-list li .time {
+    margin-right: 20px;
+    position: relative;
+    top: 4px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.track-list li .txt {
+    position: relative;
+    top: 4px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.track-list li.first .time {
+    margin-right: 20px;
+}
+
+.track-list li.first .txt {
+    max-width: 600px;
+}
+.title_t{
+    margin: 35px 0 30px 3px;
+    border-bottom: 2px solid #009688;
+    width: 104%;
+    font-size: 18px;
+    color: #009688;
+    font-weight: bold;
+    padding: 2px;
+    margin-left: -17px;
+}
+/*order-index*/
+.btn_style{
+    padding: 0 !important;
+    height: 20px !important;
+    line-height: 20px !important;
+    width: 20px !important;
+}
+/*order-show*/
+.block_title{
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.title3{
+    margin-top: 35px;
+}
+/*report-index*/
+#title_width li{
+    width: 26%;
+}
+#report_li_width li{
+    width: 8%;
+}
+/*report-conums*/
+.order_total_amount{
+    font-size: 18px;
+    font-weight: bold;
+    color: #009688;
+}
+.rate_font{
+    font-size: 24px !important;
+    font-weight: bold;
+    font-style: italic;
+    color: #666;
+}
+/*report-team*/
+.report_sec_black{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    width: 98%;
+    margin-left: 1%;
+}
+.report_layui-tab-content{
+    margin-bottom: -45px;
+}
+.month_btn{
+    margin-top: 1px;
+}
+#team_li_width li{
+    width: 8%;
+}
+#team_rank_width li{
+    width: 26%;
+}
+#list li span{
+    color: rgba(0,0,0,.8);
+    display: inline-block;
+    margin-left: 20px;
+}
+#list{
+    height: 320px;
+}
+#list li{
+    height: 47px;
+    line-height: 47px;
+}
+.list_icon{
+    display: inline-block;
+    font-size: 18px;
+    margin-right: 16px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 50%;
+    width: 35px;
+    text-align: center;
+    margin-top: 1.5px;
+    background-color: #1AA094;
+}
+.list_name{
+    margin-right: 8px;
+}
+.list_bg{
+    background-color: #314659;
+    color: white;
+}
+.order_count{
+    width: 58px;
+}
+.layui-input{
+    color: #666;
+    font-weight: normal;
+}
+.zonghe td{
+    font-weight: bold;
+    font-size: 18px;
+}
+/*buyingrate*/
+.ring,.buy_rate{
+    display: inline-block;
+    height: 80px;
+}
+.buyrate div{
+    color: #E2E2E2;
+}
+.rate_title{
+    height: 40px;
+    color: rgba(0,0,0,.65);
+    font-size: 16px;
+    width: 70px;
+    transition: all .3s;
+    margin-left: 18%;
+}
+.rate_title span{
+    display: inline-block;
+    margin-top: 16px;
+}
+.buy_rate{
+    position: relative;
+    top: -22px;
+    left: 4%;
+    width: 48%;
+}
+.ring{
+    position: relative;
+    top: -14px;
+    margin-left: 18px;
+    height: 78px;
+    width: 78px;
+}
+.repart_rate{
+    color: rgba(0,0,0,.45);
+    font-size: 14px;
+    height: 22px;
+    line-height: 22px;
+    margin-left: 30%;
+    margin-top: 10px;
+}
+.buying_rate{
+    color: rgba(0,0,0,.85);
+    line-height: 32px;
+    height: 32px;
+    font-size: 24px;
+    margin-left: 30%;
+}
+.order_total{
+    color: rgba(0,0,0,.45);
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+}
+.bg_color_div{
+    background-color: white;
+    height: 100%;
+}
+.order_top{
+    margin-top: -32px;
+}
+.rete_layui-col-md4{
+    height: 195px;
+    min-width: 550px;
+    margin-top: 20px;
+}
+#layui-row{
+    width: 99.4%;
+    margin-left: 0.3%;
+}
+.content{
+    display: inline-block;
+    height: 100%;
+}
+.content1{
+    width: 30%;
+    margin-left: 0;
+
+}
+.content2{
+    width: 36%;
+    margin-left: 0;
+}
+.content2,.content3{
+    margin-left: -0.8%;
+}
+.content3{
+    position: relative;
+    top: -35px;
+    width: 34%;
+}
+.table_title{
+    padding-left: 25px;
+}
+.content_table{
+    margin-top: 18px;
+}
+.content_table td{
+    height: 35px;
+    color: rgba(0,0,0,.65);
+}
+.month{
+    position: relative;
+    display: inline-block;
+    font-size: 38px;
+    width: 100%;
+    margin-left: 30%;
+    color: rgba(0,0,0,.4);
+}
+.month_btn_rate{
+    margin-top: 12px;
+}
+.ring_rate{
+    width: 100px;
+    height: 100px;
+    margin-left: 25%;
+}
+#sec_black{
+    width: 100%;
+    margin-left: 0%;
+    margin-top: 10px;
+}
+.bg_color_md3{
+    height: 400px;
+    margin-top: 10px;
+    background-color: white;
+    border-left: 3px solid #f2f2f2;
+}
+#title_z{
+    font-size: 24px;
+    margin-left: 30px;
+    color: rgba(0,0,0,.5);
+}
+#title_z,.z_ke,.z_ding,.z_amount,.z_count{
+    display: inline-block;
+
+}
+.z_count{
+    font-size: 24px;
+    height: 50px;
+    line-height: 50px;
+    color: rgba(0,0,0,.5);
+
+}
+#title_z{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.z_ke,.z_ding,.z_amount{
+    font-size: 18px;
+    height: 50px;
+    line-height: 50px;
+    margin-left: 30px;
+    color: rgba(0,0,0,.5);
+}
+.amount_icon{
+    font-size: 18px;
+    color: rgba(0,0,0,.4);
+}
+.title_span{
+    color: rgba(0,0,0,.4);
+    display: inline-block;
+    float: right;
+    margin-right: 30px;
+    margin-top: 30px;
+}
+.title_img{
+    width: 20px;
+}
+.buyrate div{
+    color: #E2E2E2;
+}
+.rate_title span{
+    display: inline-block;
+    margin-top: 16px;
+}
+#LAY_demorange_s{
+    color: #666;
+}
+.layui-table th,td{
+    text-align: center;
+}
+.zonghe td{
+    font-weight: bold;
+    font-size: 18px;
+}
+.size_btn{
+    width: 125px;
+}
+#content_sm{
+    height: 200px;
+    overflow: hidden;
+}
+#content_sm img{
+    height: 200px;
+}
+.grid-demo-bg1{
+    text-align: center;
+}
+#page{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.delbtn{
+    color: white;
+    width: 14px;
+    height: 15px;
+    line-height: 15px;
+    padding: 1px 1px 2px 4px;
+    font-size: 20px;
+    background-color: red;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-left: -29px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}

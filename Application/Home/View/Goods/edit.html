@@ -72,6 +72,19 @@
                     </div>
                 </div>
                 <div class="layui-form-item">
+                    <label class="layui-form-label">类型</label>
+                    <div class="layui-input-block">
+                        <if condition="$info['zeng'] eq 1">
+                            <input type="radio" name="zeng" value="1" title="商品" checked>
+                            <input type="radio" name="zeng" value="2" title="赠品">
+                            <else />
+                            <input type="radio" name="zeng" value="1" title="商品">
+                            <input type="radio" name="zeng" value="2" title="赠品" checked>
+                        </if>
+                      
+                    </div>
+                </div>
+                <div class="layui-form-item">
                     <label for="goodsprice" class="layui-form-label">
                         <span class="x-red">*</span>价格
                     </label>

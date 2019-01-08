@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html>
-  
-  <head>
-    <meta charset="UTF-8">
-    <title>欢迎页面-X-admin2.0</title>
-    <meta name="renderer" content="webkit">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/Public/Home/css/font.css">
+<include file="Common:header" />
     <link rel="stylesheet" href="/Public/Home/css/xadmin.css">
     <script type="text/javascript" src="/Public/Home/js/jquery.min.js"></script>
     <script type="text/javascript" src="/Public/Home/lib2/layui/layui.js" charset="utf-8"></script>
@@ -22,13 +12,6 @@
       <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <style>
-      .infoitem{
-          display: inline-block;
-          border: 0;
-      }
-      
-  </style>
   <body>
     <div class="x-body">
         <form class="layui-form" onsubmit="return false">
@@ -60,74 +43,60 @@
                          autocomplete="off" class="layui-input" style="width: 350px;border: 0;">
               </div>
           </div>
-            
-                    <table class="layui-table" style="width: 92%;margin-left: 30px;margin-bottom: 20px">
-                    <thead>
+            <table class="layui-table" style="width: 92%;margin-left: 30px;margin-bottom: 20px">
+            <thead>
+                <tr>
+                    <th>
+                        序号
+                    </th>
+                    <th>
+                        订单金额
+                    </th>
+                    <th>
+                        商品
+                    </th>
+                    <th>
+                        订单状态
+                    </th>
+                    <th>
+                        下单时间
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <if condition="$o_info eq null">
+                    <tr><td colspan="5" style="text-align: center">此客户还没有订单</td></tr>
+                <else />
+                    <foreach name="o_info" item="v">
                         <tr>
-                            <th>
-                                序号
-                            </th>
-                            <th>
-                                订单金额
-                            </th>
-                            <th>
-                                商品
-                            </th>
-                            <th>
-                                订单状态
-                            </th>
-                            <th>
-                                下单时间
-                            </th>
+                            <td>
+                                {++$i}
+                            </td>
+                            <td>
+                                {$v.orderprice|substr=###,0,-3}
+                            </td>
+                            <td>
+                                {$v.goods_de}
+                            </td>
+                            <td>
+                                <if condition="$v['orderstatus'] eq 1">待发货</if>
+                                <if condition="$v['orderstatus'] eq 2">已发货</if>
+                                <if condition="$v['orderstatus'] eq 3">已签收</if>
+                                <if condition="$v['orderstatus'] eq 4">退单</if>
+                            </td>
+                            <td>
+                                <if condition="$v['ordercreatetime'] neq 0">
+                                    {$v.ordercreatetime|date="Y-m-d",###}
+                                </if>
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <if condition="$o_info eq null">
-                            <tr><td colspan="5" style="text-align: center">此客户还没有订单</td></tr>
-                        <else />
-                            <foreach name="o_info" item="v">
-                                <tr>
-                                    <td>
-                                        {++$i}
-                                    </td>
-                                    <td>
-                                        {$v.orderprice|substr=###,0,-3}
-                                    </td>
-                                    <td>
-                                        {$v.goods_de}
-                                    </td>
-                                    <td>
-                                        <if condition="$v['orderstatus'] eq 1">待发货</if>
-                                        <if condition="$v['orderstatus'] eq 2">已发货</if>
-                                        <if condition="$v['orderstatus'] eq 3">已签收</if>
-                                        <if condition="$v['orderstatus'] eq 4">退单</if>
-                                    </td>
-                                    <td>
-                                        <if condition="$v['ordercreatetime'] neq 0">
-                                            {$v.ordercreatetime|date="Y-m-d",###}
-                                        </if>
-                                    </td>
-                                </tr>
-                            </foreach>
-                        </if>
-                    </tbody>
-                </table>
-            
-            <style>
-                .title_box{
-                    margin: 35px 0 30px 30px;
-                    border-bottom: 2px solid #009688;
-                    width: 92%;
-                    font-size: 18px;
-                    color: #009688;
-                    font-weight: bold;
-                    padding: 2px;
-                }
-            </style>
-            <div class="title_box">
-                添加待办任务
-            </div>
-            
+                    </foreach>
+                  </if>
+                </tbody>
+            </table>
+        <div class="title_box">
+            添加待办任务
+        </div>
           <div class="layui-form-item" style="width: 47%;display: inline-block;">
               <label for="type" class="layui-form-label">
                   <span class="x-red">*</span>执行类型
@@ -163,88 +132,7 @@
               </button>
           </div>
       </form>
-        <style>
-            ul li {
-                list-style: none;
-            }
-            .track-rcol {
-                width: 92%;
-                /*border: 1px solid #eee;*/
-                margin-top: 40px;
-                margin-left: 30px;
-            }
-
-            .track-list {
-                margin: 20px;
-                padding-left: 5px;
-                position: relative;
-            }
-
-            .track-list li {
-                position: relative;
-                padding: 20px 0 10px 25px;
-                line-height: 18px;
-                border-left: 1px solid #d9d9d9;
-                color: #777;
-            }
-
-            .track-list li.first {
-                color: red;
-                padding-top: 0;
-                border-left-color: #fff;
-                margin-bottom: 15px;
-            }
-
-            .track-list li .node-icon {
-                position: absolute;
-                left: -6px;
-                top: 50%;
-                width: 9px;
-                height: 9px;
-                border-radius: 50%;
-                background-color: #777;
-            }
-
-            .track-list li.first .node-icon {
-                background-position: 0 -72px;
-            }
-
-            .track-list li .time {
-                margin-right: 20px;
-                position: relative;
-                top: 4px;
-                display: inline-block;
-                vertical-align: middle;
-            }
-
-            .track-list li .txt {
-                position: relative;
-                top: 4px;
-                display: inline-block;
-                vertical-align: middle;
-            }
-
-            .track-list li.first .time {
-                margin-right: 20px;
-            }
-
-            .track-list li.first .txt {
-                max-width: 600px;
-            }
-
-        </style>
-        <style>
-                .title_t{
-                    margin: 35px 0 30px 3px;
-                    border-bottom: 2px solid #009688;
-                    width: 104%;
-                    font-size: 18px;
-                    color: #009688;
-                    font-weight: bold;
-                    padding: 2px;
-                    margin-left: -17px;
-                }
-            </style>
+        <style>ul li {list-style: none;}</style>
         <div class="track-rcol">
 			<div class="track-list">
                 <ul>

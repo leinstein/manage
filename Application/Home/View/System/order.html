@@ -1,0 +1,301 @@
+<include file="Common:header" />
+    <link rel="stylesheet" href="/Public/Home/css/xadmin.css">
+    <script type="text/javascript" src="/Public/Home/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/Public/Home/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/Public/Home/js/xadmin.js"></script>
+  </head>
+  <body>
+    <div class="x-body">
+      <div class="layui-row">
+        <form class="layui-form layui-col-md12 x-so" style="text-align: center">
+          <input class="layui-input" placeholder="开始日" name="stat_date" id="start" autocomplete="off">
+          <input class="layui-input" placeholder="截止日" name="stop_date" id="end" autocomplete="off">
+          <div class="layui-input-inline">
+            <select name="paytype">
+              <option value="">支付状态</option>
+              <option value="3">货到付款</option>
+              <option value="1">已付全款</option>
+              <option value="2">付定金-货到付款</option>
+            </select>
+          </div>
+          <div class="layui-input-inline">
+            <select name="payform">
+              <option value="">支付方式</option>
+              <option value="1">微信</option>
+              <option value="2">支付宝</option>
+              <option value="3">银行卡转账</option>
+              <option value="4">快递代收</option>
+            </select>
+          </div>
+          <div class="layui-input-inline">
+            <select name="orderstatus">
+              <option value="">订单状态</option>
+              <option value="1">待发货</option>
+              <option value="2">已发货</option>
+              <option value="3">已签收</option>
+              <option value="4">退单</option>
+            </select>
+          </div>
+          <input type="text" name="word"  placeholder="模糊搜索" autocomplete="off" class="layui-input" style="width: 120px">
+          <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i> 搜 索</button>
+        </form>
+      </div>
+      <style>.layui-table td, .layui-table th{text-align: center;}</style>
+      <table class="layui-table">
+        <thead>
+          <tr>
+            <th width="30px">序号</th>
+            <th>客户姓名</th>
+            <th>成交金额</th>
+            <th width="480px">商品</th>
+            <th>支付状态</th>
+            <th width="60px">发货状态</th>
+            <th>物流</th>
+            <th>物流单号</th>
+            <th>下单时间</th>
+            <th>发货时间</th>
+            <th>销售人员</th>
+            <th width="120px">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+          <if condition="$infotoday neq ''">
+            <tr><td  colspan="12" class="bg_tr">今天</td></tr>
+          </if>
+          <foreach name="infotoday" item="v">
+              <if condition="$v['orderstatus'] eq 1"><tr></if>
+              <if condition="$v['orderstatus'] eq 2"><tr style="color:#009688"></if>
+              <if condition="$v['orderstatus'] eq 3"><tr style="color:red"></if>
+              <if condition="$v['orderstatus'] eq 4"><tr style="color:#999"></if>
+              <td>
+                  {++$i}
+              </td>
+              <td>{$v.customer_name}</td>
+              <td>{$v.orderprice|substr=###,0,-3}</td>
+              <td style="text-align: left">{$v.goods_de}</td>
+              <td>
+                <if condition="$v['paytype'] eq 1">
+                    付全款
+                    <else />
+                        <if condition="$v['paytype'] eq 2">
+                              付定金
+                            <else />
+                              货到付款
+                        </if>
+                  </if>
+              </td>
+              <td>
+                <if condition="$v['orderstatus'] eq 1"><button class="layui-btn btn_style" style="background-color: #393d49;">待</button></if>
+                    <if condition="$v['orderstatus'] eq 2"><button class="layui-btn btn_style">发</button></if>
+                    <if condition="$v['orderstatus'] eq 3"><button class="layui-btn btn_style" style="background-color: red">签</button></if>
+                    <if condition="$v['orderstatus'] eq 4"><button class="layui-btn btn_style" style="background-color: #999;">退</button></if>
+              </td>
+              <td>{$v.couriername}</td>
+              <td>{$v.courierlist}</td>
+              <td>{$v.ordercreatetime|date="Y-m-d",###}</td>
+              <td>{$v.deliverytime|date="Y-m-d",###}</td>
+              <td>{$v.nickname}</td>
+              <td class="td-manage">
+                  <in name="action_name.System_restore_order" value="$role_ac">
+                        <a title="恢复订单" href="javascript:;" onclick="member_restore(this,'{$v.orderid}')"
+                           style="text-decoration:none;margin-left: 10px">
+                            <i class="layui-icon">&#x1005;</i>
+                        </a>
+                    <else />
+                        <a title="恢复" href="javascript:;" class="layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                            <i class="layui-icon">&#x1005;</i>
+                        </a>
+                    </in>
+                    <in name="action_name.System_real_del_order" value="$role_ac">
+                        <a title="彻底删除" href="javascript:;" onclick="member_del(this,'{$v.orderid}')"
+                           style="text-decoration:none;margin-left: 10px">
+                            <i class="layui-icon">&#xe640;</i>
+                        </a>
+                    <else />
+                        <a title="彻底删除" href="javascript:;" class="layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                            <i class="layui-icon">&#xe640;</i>
+                        </a>
+                    </in>
+              </td>
+            </tr>
+          </foreach>
+          <if condition="$infoyestoday neq ''">
+            <tr><td  colspan="12"  class="bg_tr">昨天</td></tr>
+          </if>
+          <foreach name="infoyestoday" item="v">
+          <if condition="$v['orderstatus'] eq 1"><tr></if>
+          <if condition="$v['orderstatus'] eq 2"><tr style="color:#009688"></if>
+          <if condition="$v['orderstatus'] eq 3"><tr style="color:red"></if>
+          <if condition="$v['orderstatus'] eq 4"><tr style="color:#999"></if>
+              <td>
+                  {++$i}
+              </td>
+              <td>{$v.customer_name}</td>
+              <td>{$v.orderprice|substr=###,0,-3}</td>
+              <td style="text-align: left">{$v.goods_de}</td>
+              <td>
+                <if condition="$v['paytype'] eq 1">
+                    付全款
+                    <else />
+                        <if condition="$v['paytype'] eq 2">
+                              付定金
+                            <else />
+                              货到付款
+                        </if>
+                  </if>
+              </td>
+              <td>
+                <if condition="$v['orderstatus'] eq 1"><button class="layui-btn btn_style" style="background-color: #393d49;">待</button></if>
+                    <if condition="$v['orderstatus'] eq 2"><button class="layui-btn btn_style">发</button></if>
+                    <if condition="$v['orderstatus'] eq 3"><button class="layui-btn btn_style" style="background-color: red">签</button></if>
+                    <if condition="$v['orderstatus'] eq 4"><button class="layui-btn btn_style" style="background-color: #999;">退</button></if>
+              </td>
+              <td>{$v.couriername}</td>
+              <td>{$v.courierlist}</td>
+              <td>{$v.ordercreatetime|date="Y-m-d",###}</td>
+              <td>{$v.deliverytime|date="Y-m-d",###}</td>
+              <td>{$v.nickname}</td>
+              <td class="td-manage">
+                <in name="action_name.System_restore_order" value="$role_ac">
+                        <a title="恢复订单" href="javascript:;" onclick="member_restore(this,'{$v.orderid}')"
+                           style="text-decoration:none;margin-left: 10px">
+                            <i class="layui-icon">&#x1005;</i>
+                        </a>
+                    <else />
+                        <a title="恢复" href="javascript:;" class="layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                            <i class="layui-icon">&#x1005;</i>
+                        </a>
+                    </in>
+                    <in name="action_name.System_real_del_order" value="$role_ac">
+                        <a title="彻底删除" href="javascript:;" onclick="member_del(this,'{$v.orderid}')"
+                           style="text-decoration:none;margin-left: 10px">
+                            <i class="layui-icon">&#xe640;</i>
+                        </a>
+                    <else />
+                        <a title="彻底删除" href="javascript:;" class="layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                            <i class="layui-icon">&#xe640;</i>
+                        </a>
+                    </in>
+              </td>
+            </tr>
+          </foreach>
+          <if condition="$infot neq ''">
+            <tr><td  colspan="12" class="bg_tr">昨天以前</td></tr>
+          </if>
+          <foreach name="infot" item="v">
+          <if condition="$v['orderstatus'] eq 1"><tr></if>
+          <if condition="$v['orderstatus'] eq 2"><tr style="color:#009688"></if>
+          <if condition="$v['orderstatus'] eq 3"><tr style="color:red"></if>
+          <if condition="$v['orderstatus'] eq 4"><tr style="color:#999"></if>
+              <td>
+                  {++$i}
+              </td>
+              <td>{$v.customer_name}</td>
+              <td>{$v.orderprice|substr=###,0,-3}</td>
+              <td style="text-align: left">{$v.goods_de}</td>
+              <td>
+                <if condition="$v['paytype'] eq 1">
+                    付全款
+                    <else />
+                        <if condition="$v['paytype'] eq 2">
+                              付定金
+                            <else />
+                              货到付款
+                        </if>
+                  </if>
+              </td>
+              <td>
+                <if condition="$v['orderstatus'] eq 1"><button class="layui-btn btn_style" style="background-color: #393d49;">待</button></if>
+                    <if condition="$v['orderstatus'] eq 2"><button class="layui-btn btn_style">发</button></if>
+                    <if condition="$v['orderstatus'] eq 3"><button class="layui-btn btn_style" style="background-color: red">签</button></if>
+                    <if condition="$v['orderstatus'] eq 4"><button class="layui-btn btn_style" style="background-color: #999;">退</button></if>
+              </td>
+              <td>{$v.couriername}</td>
+              <td>{$v.courierlist}</td>
+              <td>{$v.ordercreatetime|date="Y-m-d",###}</td>
+              <td>{$v.deliverytime|date="Y-m-d",###}</td>
+              <td>{$v.nickname}</td>
+              <td class="td-manage">
+                <in name="action_name.System_restore_order" value="$role_ac">
+                        <a title="恢复订单" href="javascript:;" onclick="member_restore(this,'{$v.orderid}')"
+                           style="text-decoration:none;margin-left: 10px">
+                            <i class="layui-icon">&#x1005;</i>
+                        </a>
+                    <else />
+                        <a title="恢复" href="javascript:;" class="layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                            <i class="layui-icon">&#x1005;</i>
+                        </a>
+                    </in>
+                    <in name="action_name.System_real_del_order" value="$role_ac">
+                        <a title="彻底删除" href="javascript:;" onclick="member_del(this,'{$v.orderid}')"
+                           style="text-decoration:none;margin-left: 10px">
+                            <i class="layui-icon">&#xe640;</i>
+                        </a>
+                    <else />
+                        <a title="彻底删除" href="javascript:;" class="layui-btn-disabled-button" style="text-decoration:none;margin-left: 10px">
+                            <i class="layui-icon">&#xe640;</i>
+                        </a>
+                    </in>
+              </td>
+            </tr>
+          </foreach>
+        </tbody>
+      </table>
+      <div class="page" style="text-align: right;margin-bottom: 30px">{$page}</div>
+    </div>
+    </div>
+    <script>
+        layui.use(['element','layer'], function(){
+            $ = layui.jquery;//jquery
+            layer = layui.layer;//弹出层
+        });
+
+
+        function member_restore(obj,id){
+            layer.confirm('确认要恢复这个订单吗？',function(index){
+                $.ajax({
+                    type: 'POST',
+                    url: '/Home/System/restore_order',
+                    dataType: 'json',
+                    data:{'orderid':id},
+                    success: function(data){
+                        if(data.statu == 200){
+                            $(obj).parents("tr").remove();
+                            layer.msg('订单已恢复!',{icon:1,time:1000});
+                        }else{
+                            layer.msg(data.msg);
+                            return false;
+                        }
+                    },
+                    error:function(data) {
+                        layer.msg('系统错误');
+                    },
+                });
+            });
+        }
+        /*用户-删除*/
+        function member_del(obj,id){
+            layer.confirm('确认要删除这个订单吗？',function(index){
+                $.ajax({
+                    type: 'POST',
+                    url: '/Home/System/real_del_order',
+                    dataType: 'json',
+                    data:{'orderid':id},
+                    success: function(data){
+                        if(data.statu == 200){
+                            $(obj).parents("tr").remove();
+                            layer.msg('订单已彻底删除!',{icon:1,time:1000});
+                        }else{
+                            layer.msg(data.msg);
+                            return false;
+                        }
+                    },
+                    error:function(data) {
+                        layer.msg('系统错误');
+                    },
+                });
+            });
+        }
+    </script>
+  </body>
+</html>

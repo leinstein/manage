@@ -50,7 +50,7 @@ class FundsController extends HomeController
             }
             $v['paynow'] = $v['orderprice'];
             $v['chengben'] = $v['serverfee'] + $v['courierfee'];
-            $v['realfee'] = $v['refunds'] + $v['pay'] - $v['courierfee'];
+            $v['realfee'] = $v['orderprice'] - $v['serverfee'] - $v['courierfee'];
             $info[] = $v;
         }
         //获取今天00:00时间戳
@@ -104,13 +104,21 @@ class FundsController extends HomeController
     Public function update_order(){
         if(IS_POST){
             $data['orderid'] = $_POST['orderid'];
-            $data['refunds'] = $_POST['refunds'];
-            $data['serverfee'] = $_POST['serverfee'];
+            $data['refunds'] = isset($_POST['refunds']) ? $_POST['refunds'] : 0;
+            $data['serverfee'] = isset($_POST['serverfee']) ? $_POST['serverfee'] : 0;
             $data['orderstatus'] = $_POST['orderstatus'];
             $data['desc'] = $_POST['desc'];
             //签单时间
-            $data['reciivingtime'] = time();
+            if ($data['orderstatus'] == 3){
+                $data['reciivingtime'] = isset($_POST['reciivingtime']) ? strtotime($_POST['reciivingtime']) : time();
+            }else{
+                $data['reciivingtime'] = 0;
+            }
+
             if(M('Order')->save($data)){
+                if($_POST['orderstatus'] == 4){
+                    M('Customer')->where(['cid'=>$_POST['cid']])->setDec('buyrate');
+                }
                 $this->ajaxReturn(['statu' => 200, 'msg' => '修改订单成功']);
             }else{
                 $this->ajaxReturn(['statu' => 202, 'msg' => '修改订单失败']);
@@ -120,10 +128,12 @@ class FundsController extends HomeController
             $order = M('Order')->where(['orderid'=>$orderid])->find();
             $customer = M('Customer')->where(['cid'=>$order['cid']])->find();
             $address = M('Address')->where(['addressid'=>$order['address_id']])->find();
-            $this->assign('name',$customer['name']);
-            $this->assign('order',$order);
-            $this->assign('phone',$customer['phone']);
-            $this->assign('address',$address['province'].$address['city'].$address['area'].$address['address']);
+            $this->assign([
+                'name'=>$customer['name'],
+                'order'=>$order,
+                'phone'=>$customer['phone'],
+                'address'=>$address['province'].$address['city'].$address['area'].$address['address']
+            ]);
             $this->display();
         }
     }

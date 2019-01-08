@@ -14,7 +14,7 @@ class ManageController extends HomeController {
             //$manager_verify = I('post.manager_verify');
             $signup_ip = $logininfo['ip'] = get_client_ip();
             $iptype = get_area($signup_ip);
-            $logininfo['city'] = $iptype['data']['country'].' '.$iptype['data']['region'].' '.$iptype['data']['country'].' '.$iptype['data']['isp'];
+            $logininfo['city'] = $iptype['data']['country'].' '.$iptype['data']['region'].' '.$iptype['data']['city'].' '.$iptype['data']['isp'];
            // $verify = $this->verifyCode($manager_verify);
             //if ($verify){
                 $name = I('post.username');
@@ -25,13 +25,17 @@ class ManageController extends HomeController {
                     ->find();
                 if($info){
                     if($info['status'] == 0) $this->ajaxReturn(['statu' => 202, 'msg' => '账号冻结,请联系管理员']);
+                    $group = M('Group')->where(['group_id'=>$info['group_id']])->find();
+                    $salesman = $group['issale'] == '是' ? 'yes' : 'no';
                     session('userid',$info['id']);
                     session('username',$info['username']);
                     session('nickname',$info['nickname']);
                     session('roleid',$info['role_id']);
                     session('groupid',$info['group_id']);
-                    session('grade', $info['grade']);
+//                    session('grade', $info['grade']);
                     session('role_id', $info['role_id']);
+                    session('salesman', $salesman);
+                    session('login_time', mktime());
                     $time = $logininfo['logintime'] = time();
                     M('Admin')->where(['id'=>$info['id']])->save(['last_login_time'=>$time,'signup_ip'=>$signup_ip]);
                     $logininfo['loginstatus'] = 1;
@@ -64,7 +68,6 @@ class ManageController extends HomeController {
      * 退出登陆
      */
     public function logout(){
-        $this->display('logout');
         session(null);
         redirect('Home/Manage/login');
     }

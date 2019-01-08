@@ -49,7 +49,7 @@ class IndexController extends HomeController {
             $end = time();
             $map['delete'] = 1;
             $map['orderstatus'] = ['neq',4];
-            if($_SESSION['username'] != 'admin'){
+            if($_SESSION['username'] != 'admin' && $_SESSION['salesman'] == 'yes'){
                 $map['saleid'] = $_SESSION['userid'];
             }
             $map['ordercreatetime'] = ['between',[$star,$end]];
@@ -60,13 +60,13 @@ class IndexController extends HomeController {
         }else{
             $aim_this_month['aim'] = 'aim';
         }
-
-
-//        $this->assign('time',date('Y-m-d H:i:s',$info['last_login_time']));
-        $this->assign('avatar',$info['img_big']);
-        $this->assign('backlog_count',$backlog_count);
-        $this->assign('aim_this_month',$aim_this_month);
-        $this->assign('id',$id);
+        $this->assign([
+            'avatar'=>$info['img_big'],
+            'backlog_count'=>$backlog_count,
+            'aim_this_month'=>$aim_this_month,
+            'id'=>$id,
+            'roleid'=>$_SESSION['roleid']
+        ]);
         $this->display();
     }
 
@@ -80,7 +80,7 @@ class IndexController extends HomeController {
         $customer = D('Customer');
         $order = D('Order');
         $userid = $_SESSION['userid'];
-        if($_SESSION['username'] != 'admin') $where_user['saleid'] = $userid;
+        if($_SESSION['username'] != 'admin' && $_SESSION['salesman'] == 'yes') $where_user['saleid'] = $userid;
         //获取排名
         //本月
         $order_createtime_between_month = $order->month();
@@ -98,17 +98,17 @@ class IndexController extends HomeController {
         $buyrate = $customer->report_rate($customer_info);
 
         //本月按天统计业绩和订单数
-        $month_day = D('Order')->month_day_amount();
+        $month_day = $order->month_day_amount();
         $month_day = json_encode($month_day);
         //本月按天统计客户数
-        $month_day_customer = D('Order')->month_day_customer();
+        $month_day_customer = $order->month_day_customer();
         $month_day_customer = json_encode($month_day_customer);
 
         //上月按天统计业绩和订单数
-        $lastmonth_day_amount = D('Order')->lastmonth_day_amount();
+        $lastmonth_day_amount = $order->lastmonth_day_amount();
         $lastmonth_day_amount = json_encode($lastmonth_day_amount);
         //上月按天统计客户数
-        $lastmonth_day_customer = D('Order')->lastmonth_day_customer();
+        $lastmonth_day_customer = $order->lastmonth_day_customer();
         $lastmonth_day_customer = json_encode($lastmonth_day_customer);
 
         $customer_stati = $customer->statistical();
@@ -117,15 +117,17 @@ class IndexController extends HomeController {
         //总订单数/订单总金额/退单率/退单金额率
         $report = $order->return_rate_avg();
 
-        $this->assign('customer_stati',$customer_stati);
-        $this->assign('order_stati',$order_stati);
-        $this->assign('order_rank',$order_rank);
-        $this->assign('buyrate',$buyrate);
-        $this->assign('lastmonth_day_amount',$lastmonth_day_amount);
-        $this->assign('lastmonth_day_customer',$lastmonth_day_customer);
-        $this->assign('month_day',$month_day);
-        $this->assign('month_day_customer',$month_day_customer);
-        $this->assign('report',$report);
+        $this->assign([
+            'customer_stati'=>$customer_stati,
+            'order_stati'=>$order_stati,
+            'order_rank'=>$order_rank,
+            'buyrate'=>$buyrate,
+            'lastmonth_day_amount'=>$lastmonth_day_amount,
+            'lastmonth_day_customer'=>$lastmonth_day_customer,
+            'month_day'=>$month_day,
+            'month_day_customer'=>$month_day_customer,
+            'report'=>$report
+        ]);
         $this->display('welcome');
     }
 }

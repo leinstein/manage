@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>欢迎页面-X-admin2.0</title>
-    <meta name="renderer" content="webkit">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/Public/Home/css/font.css">
+<include file="Common:header" />
     <link rel="stylesheet" href="/Public/Home/css/xadmin.css">
     <script type="text/javascript" src="/Public/Home/js/jquery.min.js"></script>
     <script type="text/javascript" src="/Public/Home/lib2/layui/layui.js" charset="utf-8"></script>
-    <script type="text/javascript" src="/Public/Home/js/xadmin.js"></script>
+    <link rel="stylesheet" href="/Public/Home/laydate/theme/default/laydate.css">
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <!--[if lt IE 9]>
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -24,23 +15,6 @@
         <form class="layui-form layui-col-md12 x-so" style="text-align: center">
           <input class="layui-input" placeholder="开始日" name="stat_date" id="start" autocomplete="off">
           <input class="layui-input" placeholder="截止日" name="stop_date" id="end" autocomplete="off">
-          <!--<div class="layui-input-inline">-->
-            <!--<select name="paytype">-->
-              <!--<option value="">支付状态</option>-->
-              <!--<option value="3">货到付款</option>-->
-              <!--<option value="1">已付全款</option>-->
-              <!--<option value="2">付定金-货到付款</option>-->
-            <!--</select>-->
-          <!--</div>-->
-          <!--<div class="layui-input-inline">-->
-            <!--<select name="payform">-->
-              <!--<option value="">支付方式</option>-->
-              <!--<option value="1">微信</option>-->
-              <!--<option value="2">支付宝</option>-->
-              <!--<option value="3">银行卡转账</option>-->
-              <!--<option value="4">快递代收</option>-->
-            <!--</select>-->
-          <!--</div>-->
           <div class="layui-input-inline">
             <select name="server_status">
               <option value="">回访状态</option>
@@ -57,7 +31,6 @@
             <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 10px;padding: 2px 4px"  href="/Home/Server/index" title="首页">
             <img src="/Public/Home/images/indexw.png" style="vertical-align: baseline;width: 27px;height: 27px">
             </a>
-            <!--<a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;margin-left: 20px"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>-->
         </div>
         <span class="x-right" style="line-height:40px">全部：
             <a title="订单"  href="/Home/Server/index?day=history">
@@ -99,23 +72,6 @@
             </a>
         </span>
       </xblock>
-        <style>
-            .btn_style{
-              padding: 0;
-              height: 20px;
-              line-height: 20px;
-              width: 20px;
-            }
-            .note{
-                text-align: left !important;
-            }
-        </style>
-        <style>
-            .layui-btn-disabled-button{
-                cursor:not-allowed;
-                opacity:1;
-            }
-        </style>
       <style>.layui-table td, .layui-table th{text-align: center;}</style>
       <table class="layui-table">
         <thead>
@@ -134,9 +90,6 @@
             </tr>
         </thead>
         <tbody>
-          <!--<if condition="$infotoday neq ''">-->
-            <!--<tr><td  colspan="18" class="bg_tr">本月</td></tr>-->
-          <!--</if>-->
           <foreach name="info" item="v">
               <tr <if condition="$v['server_status'] neq 0">style="color:red"</if>>
               <td>{++$i}</td>
@@ -152,7 +105,6 @@
                         <button class="layui-btn btn_style" style="background-color: red">已</button>
                     </if>
                 </td>
-              <!--<td><if condition="$v['reciivingtime'] neq 0">{$v.reciivingtime|date="Y-m-d",###}</if></td>-->
               <td><if condition="$v['create_time_note'] neq null">{$v.create_time_note|date="Y-m-d",###}</if></td>
               <td><if condition="$v['reciivingtime'] neq null">{$v.create_time_note|date="Y-m-d",###}</if></td>
               <td>{$v.nickname}</td>
@@ -180,7 +132,7 @@
           </foreach>
         </tbody>
       </table>
-      <div class="page" style="text-align: right;">{$page}</div>
+      <div class="page" style="text-align: right;margin-bottom: 30px">{$page}</div>
     </div>
     </div>
     <script>

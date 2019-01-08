@@ -1,52 +1,22 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>
-            风暴网络科技
-        </title>
-        <meta name="renderer" content="webkit">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="format-detection" content="telephone=no">
-        <link rel="stylesheet" href="/Public/Home/css/x-admin.css" media="all">
+<include file="Common:header" />
         <link rel="stylesheet" href="/Public/Home/lib2/layui/css/layui.css" media="all">
 
     </head>
     <body>
         <div class="x-body">
             <style>
-                .layui-nav{
-                    /*background-color: #009e94;*/
-                    height: 45px;
-                    /*width: 50%;*/
-                    display: inline-block;
-                    margin-left: 10px;
-                    margin-right: 10px;
-                }
-                #layui-nav-item,#layui-nav-item1,layui-nav-item2{
-                    height: 45px;
-                    line-height: 45px;
-                }
-                
+                .layui-nav{height: 45px;display: inline-block;margin-left: 10px;margin-right: 10px;}
+                #layui-nav-item,#layui-nav-item1,layui-nav-item2{height: 45px;line-height: 45px;}
+                .layui-table td, .layui-table th{text-align: center}
+                .layui-layer-dialog{background-color: #f8f8f8}
             </style>
-            <style>
-                .layui-btn-disabled-button{
-                    cursor:not-allowed;
-                    opacity:1;
-                }
-            </style>
-            
-            <style>.layui-table td, .layui-table th{text-align: center}</style>
             <xblock>
                 <ul class="layui-nav layui-bg-green">
                   <li class="layui-nav-item" id="layui-nav-item1"><a href="{:U('Material/management')}">首页</a></li>
                     <foreach name="class" item="c">
                         <li class="layui-nav-item" id="layui-nav-item">
                             <a href="{:U('Material/management',['id'=>$c['id']])}">{$c.class_name}</a>
-                            <dl class="layui-nav-child">
+                            <dl class="layui-nav-child"  style="top:46px">
                                 <foreach name="pic_type" item="p">
                                     <if condition="$c['id'] eq $p['class_id']">
                                         <dd><a href="{:U('Material/management',['id'=>$c['id'],'type'=>$p['id']])}">{$p.type}</a></dd>
@@ -159,11 +129,9 @@
         </div>
         <script src="/Public/Home/lib/layui/layui.js" charset="utf-8"></script>
         <script>
-            layui.use(['element','laypage','layer'], function(){
+            layui.use(['element','layer'], function(){
                 $ = layui.jquery;//jquery
                 layer = layui.layer;//弹出层
-                
-
             });
 
             

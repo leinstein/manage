@@ -1,100 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>
-            X-admin v1.0
-        </title>
-        <meta name="renderer" content="webkit">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="format-detection" content="telephone=no">
-        <!--<link rel="stylesheet" href="/Public/home/css/x-admin.css" media="all">-->
+<include file="Common:header" />
         <link rel="stylesheet" href="/Public/Home/lib2/layui/css/layui.css" media="all">
     </head>
-    <style>
-        body{
-            background-color: #f0f2f5;
-        }
-        /*.ring{*/
-            /*float: left;*/
-        /*}*/
-        .layui-col-md3{
-            margin-top: 20px;
-            min-width: 300px;
-           
-        }
-       
-        .content_title_box{
-            /*width: 96%;*/
-            /*margin-left: 2%;*/
-        }
-        .word{
-            position: relative;
-            top: -56px;
-            left: 58px;
-            font-size: 28px;
-            display: inline-block;
-            color: rgba(0,0,0,.45);
-        }
-        .img_icon{
-            margin: -42px 0 0 56px;
-        }
-        .word_title{
-            font-size: 14px;
-        }
-        .word_number{
-            font-size: 22px;
-            color: rgba(0,0,0,.85);
-            
-        }
-        .word_box{
-            height: 8px;
-        }
-        .word_english{
-            height: 25px;
-            /*font-size: 12px;*/
-            font-weight: inherit;
-            width: 83%;
-            /*text-align: center;*/
-            margin-top: 12px;
-            color: rgba(0,0,0,.45);
-        }
-        .l_box{
-            width: 45%;
-            display: inline-block;
-        }
-        .r_box{
-            width: 53%;
-            margin-top: 10px;
-            display: inline-block;
-            color: rgba(0,0,0,.85);
-        }
-        .bg_color{
-            height: 160px;
-            background-color: white;
-        }
-        .sec_bg_color{
-            height: 400px;
-            background-color: white;
-        }
-        .sec_black{
-            /*width: 95%;*/
-            /*margin-left: 2.5%;*/
-            margin-top: 10px;
-        }
-        .layui-col-sm3{
-            margin-top: 0;
-        }
-    </style>
-    <body style="overflow-x:hidden">
-    
+    <body style="overflow-x:hidden;background-color: #f0f2f5;">
         <div class="x-body">
             <!--头部统计-->
             <div class="layui-row content_title_box layui-col-space20">
-                <div class="layui-col-xs6 layui-col-sm6 layui-col-md3">
+                <div class="layui-col-xs6 layui-col-sm6 layui-col-md3 col_content">
                     <div class="bg_color">
                         <div class="l_box">
                             <span class="word">今天</span><br>
@@ -118,7 +29,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="layui-col-xs6 layui-col-sm6 layui-col-md3">
+                <div class="layui-col-xs6 layui-col-sm6 layui-col-md3 col_content">
                     <div class="bg_color">
                         <div class="l_box">
                             <span class="word">昨天</span><br>
@@ -142,7 +53,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="layui-col-xs6 layui-col-sm6 layui-col-md3">
+                <div class="layui-col-xs6 layui-col-sm6 layui-col-md3 col_content">
                     <div class="bg_color">
                         <div class="l_box">
                             <span class="word">本月</span><br>
@@ -166,7 +77,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="layui-col-xs6 layui-col-sm6 layui-col-md3">
+                <div class="layui-col-xs6 layui-col-sm6 layui-col-md3 col_content">
                     <div class="bg_color">
                         <div class="l_box">
                             <span class="word">上月</span><br>
@@ -215,12 +126,7 @@
                         </div>
                     </div>
                 </div>
-                <style>
-                    #title_width li{
-                        width: 26%;
-                    }
-                </style>
-                <div class="layui-col-xs3 layui-col-sm3 layui-col-md3" style="min-width: 380px">
+                <div class="layui-col-xs3 layui-col-sm3 layui-col-md3  col_content" style="min-width: 380px;margin-top: 0">
                   <div class="sec_bg_color">
                         <div class="layui-tab layui-tab-brief" style="">
                           <ul class="layui-tab-title" id="title_width">
@@ -996,19 +902,19 @@
                         },
                         series: [
                             {
-                                name:'上月订单',
+                                name:'订单',
                                 type:'line',
                                 stack: '总量',
                                 data:day.order_count
                             },
                             {
-                                name:'上月销售额',
+                                name:'销售额',
                                 type:'line',
                                 stack: '总量',
                                 data:day.list
                             },
                             {
-                                name:'上月顾客',
+                                name:'顾客',
                                 type:'line',
                                 stack: '总量',
                                 data:day_customer

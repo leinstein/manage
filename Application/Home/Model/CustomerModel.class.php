@@ -16,8 +16,8 @@ class CustomerModel extends Model
         $customer = M('Customer');
         $where['delete'] = 1;
         $userid = $_SESSION['userid'];
-        if($_SESSION['username'] != 'admin' and $group == 'null') $where_order['saleid'] = $userid;
-        if($_SESSION['username'] != 'admin' and $group == 'group') $where['itemid'] = $_SESSION['groupid'];
+        if($_SESSION['username'] != 'admin' && $_SESSION['salesman'] == 'yes' && $group == 'null') $where_order['saleid'] = $userid;
+        if($_SESSION['username'] != 'admin' && $_SESSION['salesman'] == 'yes' && $group == 'group') $where_order['itemid'] = $_SESSION['groupid'];
         //获取今天00:00时间戳
         $todaystart = strtotime(date('Y-m-d'.'00:00:00',time()));
         //获取今天24:00时间戳
@@ -37,17 +37,17 @@ class CustomerModel extends Model
         $statistical['yesterday'] = $customer->where($yesterday)->where($where)->count();
 
         //获取本周00:00时间戳
-        $startthisweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-7,date('Y'));
+        $startthisweek=mktime(0,0,0,date('m'),date('d')-date('w')+1,date('Y'));
         //获取本周23:59时间戳
-        $endToday=mktime(23,59,59,date('m'),date('d')-date('w'),date('Y'));
+        $endToday=mktime(23,59,59,date('m'),date('d')-date('w')+7,date('Y'));
         //统计本周注册的用户
         $weekday['create_time'] = ['between',[$startthisweek,$endToday]];
         //获取本周添加客户数
         $statistical['weekday'] = $customer->where($weekday)->where($where)->count();
 
-        $beginLastweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-14,date('Y'));
+        $beginLastweek=mktime(0,0,0,date('m'),date('d')-date('w')+1-7,date('Y'));
         //获取上周23:59时间戳
-        $endLastweek=mktime(23,59,59,date('m'),date('d')-date('w')-7,date('Y'));
+        $endLastweek=mktime(23,59,59,date('m'),date('d')-date('w'),date('Y'));
         //统计上周注册的用户
         $lastweek['create_time'] = ['between',[$beginLastweek,$endLastweek]];
         //获取上周添加客户数
@@ -65,7 +65,7 @@ class CustomerModel extends Model
         //获取上月00:00时间戳
         $beginlastmonth=mktime(0,0,0,date('m')-1,1,date('Y'));
         //获取上月23:59时间戳
-        $endlastmonth=mktime(23,59,59,date('m')-1,date('t')-1,date('Y'));
+        $endlastmonth=strtotime(date("Y-m-d 23:59:59", strtotime(-date('d').'day')));
         //统计上月注册的用户
         $lastmonth['create_time'] = ['between',[$beginlastmonth,$endlastmonth]];
         //获取上月添加客户数
@@ -93,28 +93,35 @@ class CustomerModel extends Model
      * 待办任务统计信息
      */
     Public function statistical_backlog(){
-        $customer = M('Backlog');
+        $backlog = M('Backlog');
+        $userid = $_SESSION['userid'];
+        if($_SESSION['username'] != 'admin' && $_SESSION['roleid'] != 1){
+            $today['uid'] = $userid;
+            $tomorrow['uid'] = $userid;
+            $history['uid'] = $userid;
+        }
         //获取今天00:00时间戳
         $todaystart = strtotime(date('Y-m-d'.'00:00:00',time()));
         //获取今天24:00时间戳
         $todayend = strtotime(date('Y-m-d'.'00:00:00',time()+3600*24));
         //where条件
-        $today['create_time'] = ['between',[$todaystart,$todayend]];
+        $today['do_time'] = ['between',[$todaystart,$todayend]];
         //获取今天添加客户数
-        $statistical['today'] = $customer->where($today)->where(['delete'=>1])->count();
+        $statistical['today'] = $backlog->where($today)->count();
+        $statistical['ready_today'] = $backlog->where($today)->where(['status'=>2])->count();
+        $statistical['undo_today'] = $backlog->where($today)->where(['status'=>1])->count();
 
-        //获取昨天00:00时间戳
-        $beginYesterday=mktime(0,0,0,date('m'),date('d')-1,date('Y'));
-        //获取昨天24:00时间戳
-        $endYesterday=mktime(0,0,0,date('m'),date('d'),date('Y'))-1;
-        //统计昨天注册的用户
-        $yesterday['create_time'] = ['between',[$beginYesterday,$endYesterday]];
-        //获取昨天添加客户数
-        $statistical['yesterday'] = $customer->where($yesterday)->where(['delete'=>1])->count();
+        //获取明天00:00时间戳
+        $beginTomorrow=mktime(0,0,0,date('m'),date('d')+1,date('Y'));
+        //获取明天24:00时间戳
+        $endTomorrow=mktime(0,0,0,date('m'),date('d')+2,date('Y'))-1;
+        //统计明天
+        $tomorrow['do_time'] = ['between',[$beginTomorrow,$endTomorrow]];
+        $statistical['tomorrow'] = $backlog->where($tomorrow)->count();
 
         //历史用户数
-        $statistical['history'] = $customer->where(['delete'=>1])->count();
-        $statistical['yesterdayprev'] = $statistical['history'] - $statistical['yesterday'] - $statistical['today'];
+        $history['do_time'] = ['gt',1];
+        $statistical['history'] = $backlog->where($history)->count();
         return $statistical;
     }
 
